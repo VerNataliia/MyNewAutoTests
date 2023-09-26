@@ -1,0 +1,85 @@
+
+
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+    id 'io.qameta.allure' version '2.11.2'
+
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+//Properties
+ext {
+    guavaVersion = '31.1-jre'
+    seleniumVersion = '4.12.1'
+    testngVersion = '7.8.0'
+    allureVersion = '2.23.0'
+    restAssuredVersion = '5.3.0'
+    poiVersion = '5.2.3'
+    xmlbeansVersion = '5.1.1'
+    aspectjVersion = '1.9.20'
+    selenideVersion = '6.18.0'
+    selenideTestngVersion = '6.18.0'
+    log4jVersion = '2.20.0'
+    slf4jVersion = '2.0.9'
+}
+
+dependencies {
+    implementation "com.google.guava:guava:$guavaVersion"
+    implementation group: 'com.codeborne', name: 'selenide', version: "$selenideVersion"
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: "$seleniumVersion"
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-api', version: "$seleniumVersion"
+    implementation group: 'org.testng', name: 'testng', version: "$testngVersion"
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: "$restAssuredVersion"
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$log4jVersion"
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: "$slf4jVersion"
+
+    implementation group: 'org.apache.poi', name: 'poi', version: "$poiVersion"
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: "$poiVersion"
+    implementation group: 'org.apache.poi', name: 'poi-ooxml-lite', version: "$poiVersion"
+    implementation group: 'org.apache.xmlbeans', name: 'xmlbeans', version: "$xmlbeansVersion"
+
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: "$allureVersion"
+    implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: "$allureVersion"
+    implementation group: 'io.qameta.allure', name: 'allure-commandline', version: "$allureVersion", ext: 'pom'
+    implementation group: 'io.qameta.allure', name: 'allure-assertj', version: "$allureVersion"
+    implementation group: 'io.qameta.allure', name: 'allure-selenide', version: "$allureVersion"
+    implementation group: 'com.codeborne', name: 'selenide-testng', version: "$selenideTestngVersion"
+
+    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
+
+}
+
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'readtheoty.App'
+}
+
+tasks.named('test') {
+    // Use TestNG for unit tests.
+    useTestNG()
+}
+test {
+    useTestNG()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+}
+
+test {
+    systemProperty 'aspectj.version', "$aspectjVersion"
+}
+
+//sourceCompatibility = '1.8'
+//targetCompatibility = '1.8'
