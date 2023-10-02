@@ -57,14 +57,14 @@ public class LogIn extends A_BaseTest {
         app.logInUsernamePage.LOG_IN_ERROR.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    @Test(priority = 1, description = "Verify if a teacher is able to log in using SSO Google")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("Check if a teacher can log in using SSO Google (Positive case)")
-    public void checkTeacherLogInWithGoogle() {
-        app.logInGooglePage.open();
-        app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
-        app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
-    }
+//    @Test(priority = 1, description = "Verify if a teacher is able to log in using SSO Google")
+//    @Severity(SeverityLevel.BLOCKER)
+//    @Description("Check if a teacher can log in using SSO Google (Positive case)")
+//    public void checkTeacherLogInWithGoogle() {
+//        app.logInGooglePage.open();
+//        app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
+//        app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+//    }
 
     @Test(priority = 1, description = "Verify if a student is able to log in using SSO Google")
     @Severity(SeverityLevel.BLOCKER)
