@@ -57,14 +57,14 @@ public class LogIn extends A_BaseTest {
         app.logInUsernamePage.LOG_IN_ERROR.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-//    @Test(priority = 1, description = "Verify if a teacher is able to log in using SSO Google")
-//    @Severity(SeverityLevel.BLOCKER)
-//    @Description("Check if a teacher can log in using SSO Google (Positive case)")
-//    public void checkTeacherLogInWithGoogle() {
-//        app.logInGooglePage.open();
-//        app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
-//        app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
-//    }
+    @Test(priority = 1, description = "Verify if a teacher is able to log in using SSO Google")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Check if a teacher can log in using SSO Google (Positive case)")
+    public void checkTeacherLogInWithGoogle() {
+        app.logInGooglePage.open();
+        app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
+        app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+    }
 
     @Test(priority = 1, description = "Verify if a student is able to log in using SSO Google")
     @Severity(SeverityLevel.BLOCKER)
@@ -75,14 +75,14 @@ public class LogIn extends A_BaseTest {
         app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-//    @Test(priority = 2, description = "Verify if a user ISN'T able to log in using SSO Google with non existing user")
-//    @Severity(SeverityLevel.NORMAL)
-//    @Description("Check if a user can log in using SSO Google if no such user in the database(Negative case)")
-//    public void checkLogInWithGoogleWithNonExistingUser() {
-//        app.logInGooglePage.open();
-//        app.logInGooglePage.logInWithGoogle(USER_GOOGLE_NON_EXISTING_IN_DATABASE_EMAIL, USER_GOOGLE_NON_EXISTING_IN_DATABASE_PASSWORD);
-//        app.logInGooglePage.GOOGLE_ERROR_NO_ACCOUNT.shouldBe(visible, Duration.ofSeconds(10));
-//    }
+    @Test(priority = 2, description = "Verify if a user ISN'T able to log in using SSO Google with non existing user")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Check if a user can log in using SSO Google if no such user in the database(Negative case)")
+    public void checkLogInWithGoogleWithNonExistingUser() {
+        app.logInGooglePage.open();
+        app.logInGooglePage.logInWithGoogle(USER_GOOGLE_NON_EXISTING_IN_DATABASE_EMAIL, USER_GOOGLE_NON_EXISTING_IN_DATABASE_PASSWORD);
+        app.logInGooglePage.GOOGLE_ERROR_NO_ACCOUNT.shouldBe(visible, Duration.ofSeconds(10));
+    }
 
     // Я зупинилась на тому, що потрібно дізнатись як система може трошки чекати доки завантажиться сторінка, бо певні тести через це падають + останній тест потрібно новий емейдл
 
