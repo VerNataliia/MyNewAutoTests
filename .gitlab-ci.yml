@@ -16,4 +16,4 @@ Integration tests with Allure:
   artifacts:
     when: always
     paths:
-      - build/allure-results/*
+      - build/reports/allure-report/allureReport/*
