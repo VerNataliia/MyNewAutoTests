@@ -10,9 +10,9 @@ import static com.codeborne.selenide.Condition.visible;
 @Epic("Regression Tests")
 @Feature("Login")
 
-public class LogIn extends A_BaseTest {
+public class LoginTests extends A_BaseTest {
 
-    @Test(groups = "Login", priority = 1, description = "Verify if a student is able to log in using username and password credentials")
+    @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a student can log in (Positive case)")
     public void checkStudentLogIn() {
@@ -21,7 +21,7 @@ public class LogIn extends A_BaseTest {
         app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    @Test(groups = "Login", priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
+    @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can log in (Positive case)")
     public void checkTeacherLogIn() {
@@ -30,7 +30,7 @@ public class LogIn extends A_BaseTest {
         app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    @Test(groups = "Login", priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
+    @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a parent can log in (Positive case)")
     public void checkParentLogIn() {

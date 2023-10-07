@@ -12,7 +12,7 @@ Login tests:
   stage: Login
   allow_failure: true
   script:
-    - ./gradlew -x test Login
+    - ./gradlew -x test loginTest
   artifacts:
     paths:
       - app/build/allure-results
