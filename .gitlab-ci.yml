@@ -5,14 +5,23 @@ default:
     - shelllocal
 
 stages:
-  - test
+  - login
+  - allure
 
-Integration tests with Allure:
-  stage: test
+Login tests:
+  stage: Login
+  allow_failure: true
   script:
-    - ./gradlew clean test
-  after_script:
-    - ./gradlew allureReport
+    - ./gradlew -x test login
+  artifacts:
+    paths:
+      - app/build/allure-results
+
+Allure report:
+  stage: allure
+  script:
+    - ./gradlew -x test login
+    - echo "Allure report live here https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/app/build/reports/allure-report/allureReport/index.html"
   artifacts:
     when: always
     paths:

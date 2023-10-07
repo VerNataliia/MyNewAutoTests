@@ -81,5 +81,11 @@ test {
     systemProperty 'aspectj.version', "$aspectjVersion"
 }
 
+def loginTest = tasks.register("loginTests", Test) {
+    useTestNG {
+        includeGroups 'Login'
+    }
+}
+
 //sourceCompatibility = '1.8'
 //targetCompatibility = '1.8'

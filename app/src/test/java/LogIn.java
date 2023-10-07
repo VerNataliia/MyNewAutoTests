@@ -1,5 +1,6 @@
 
 import io.qameta.allure.*;
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import static app.TestData.*;
@@ -12,7 +13,7 @@ import static com.codeborne.selenide.Condition.visible;
 
 public class LogIn extends A_BaseTest {
 
-    @Test(priority = 1, description = "Verify if a student is able to log in using username and password credentials")
+    @Test(groups = "login", priority = 1, description = "Verify if a student is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a student can log in (Positive case)")
     public void checkStudentLogIn() {
@@ -21,7 +22,7 @@ public class LogIn extends A_BaseTest {
         app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    @Test(priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
+    @Test(groups = "login", priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can log in (Positive case)")
     public void checkTeacherLogIn() {
