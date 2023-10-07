@@ -20,7 +20,7 @@ Login tests:
 Allure report:
   stage: allure
   script:
-    - ./gradlew -x test Login
+    - ./gradlew allureReport
     - echo "Allure report live here https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/app/build/reports/allure-report/allureReport/index.html"
 
   artifacts:
