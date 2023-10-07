@@ -19,6 +19,7 @@ class A_BaseTest {
     protected SoftAssert softAssert;
     //protected Logger logger;
 
+    @BeforeMethod (alwaysRun = true)
     @BeforeClass
     public void setUp() {
 
