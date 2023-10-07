@@ -1,6 +1,5 @@
 
 import io.qameta.allure.*;
-import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import static app.TestData.*;
