@@ -81,7 +81,7 @@ test {
     systemProperty 'aspectj.version', "$aspectjVersion"
 }
 
-def loginTest = tasks.register("loginTests", Test) {
+tasks.register("loginTest", Test) {
     useTestNG {
         includeGroups 'Login'
     }
