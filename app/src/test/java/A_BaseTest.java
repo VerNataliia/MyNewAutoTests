@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 class A_BaseTest {
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     static void setupAllureReports() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
@@ -19,8 +19,7 @@ class A_BaseTest {
     protected SoftAssert softAssert;
     //protected Logger logger;
 
-    @BeforeMethod (alwaysRun = true)
-    @BeforeClass
+    @BeforeClass (alwaysRun = true)
     public void setUp() {
 
         Driver.initDriver();
@@ -32,12 +31,12 @@ class A_BaseTest {
         //DOMConfigurator.configure("src/main/resources/log4j.xml");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void clearCookies() {
         Driver.clearCookies();
     }
 
-    @AfterClass
+    @AfterClass (alwaysRun = true)
     public void tearDown() {
         Driver.close();
     }
