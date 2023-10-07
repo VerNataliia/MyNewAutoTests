@@ -85,5 +85,4 @@ public class LoginTests extends A_BaseTest {
     }
 
     // Я зупинилась на тому, що потрібно дізнатись як система може трошки чекати доки завантажиться сторінка, бо певні тести через це падають + останній тест потрібно новий емейдл
-//     - echo "Allure report live here https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/app/build/reports/allure-report/allureReport/index.html"
 }
