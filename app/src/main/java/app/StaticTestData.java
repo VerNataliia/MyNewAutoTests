@@ -1,6 +1,6 @@
 package app;
 
-public class TestData {
+public class StaticTestData {
     public static final String STUDENT_USERNAME = "StudentTest66";
     public static final String STUDENT_PASSWORD = "349872yd";
     public static final String TEACHER_USERNAME = "TestTeatcher3";
@@ -15,3 +15,4 @@ public class TestData {
     public static final String PARENT_PASSWORD = "349872yd";
 
 }
+

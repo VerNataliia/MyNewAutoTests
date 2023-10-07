@@ -87,6 +87,12 @@ tasks.register("loginTest", Test) {
     }
 }
 
+tasks.register("SignUp", Test) {
+    useTestNG {
+        includeGroups 'SignUp'
+    }
+}
+
 
 //sourceCompatibility = '1.8'
 //targetCompatibility = '1.8'

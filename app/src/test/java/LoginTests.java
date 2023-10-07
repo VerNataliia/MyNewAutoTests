@@ -2,12 +2,12 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import java.time.Duration;
-import static app.TestData.*;
-import static app.TestData.TEACHER_PASSWORD;
+import static app.StaticTestData.*;
+import static app.StaticTestData.TEACHER_PASSWORD;
 import static com.codeborne.selenide.Condition.visible;
 
 
-@Epic("Regression Tests")
+@Epic("Login")
 @Feature("Login")
 
 public class LoginTests extends A_BaseTest {

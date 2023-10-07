@@ -1,7 +1,6 @@
 package app.pages.login;
 
 import app.pages.base.BasePage;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
