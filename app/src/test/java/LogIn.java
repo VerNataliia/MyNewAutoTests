@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Condition.visible;
 
 public class LogIn extends A_BaseTest {
 
-    @Test(groups = "login", priority = 1, description = "Verify if a student is able to log in using username and password credentials")
+    @Test(groups = "Login", priority = 1, description = "Verify if a student is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a student can log in (Positive case)")
     public void checkStudentLogIn() {
@@ -22,7 +22,7 @@ public class LogIn extends A_BaseTest {
         app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    @Test(groups = "login", priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
+    @Test(groups = "Login", priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can log in (Positive case)")
     public void checkTeacherLogIn() {
