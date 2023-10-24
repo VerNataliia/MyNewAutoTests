@@ -21,13 +21,13 @@ public class SignUpSelectRolePage extends BasePage {
     public void assertSelectRolePageTitle(String header) {
         SELECT_ROLE_PAGE_TITLE.shouldHave(text(header));
     }
-    public void clickOnSelectStudentRole() {
+    public void selectStudentRoleForSignUp() {
         STUDENT_ROLE_BUTTON.click();
     }
-    public void clickOnSelectTeacherRole() {
+    public void selectTeacherRoleForSignUp() {
         TEACHER_ROLE_BUTTON.click();
     }
-    public void clickOnSelectParentRole() {
+    public void selectParentRoleForSignUp() {
         PARENT_ROLE_BUTTON.click();
     }
 

@@ -5,8 +5,6 @@ import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import java.util.Random;
-
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,7 +21,6 @@ public class StudentSignUpPage extends BasePage {
     STUDENT_SIGNUP_USERNAME_INPUT = $(byXpath("//input[@placeholder='Username']")),
     STUDENT_SIGNUP_PASSWORD_INPUT = $(byXpath("//input[@placeholder='Password']")),
     STUDENT_SIGNUP_SELECT_AGE_FIELD = $(byXpath("//div[@class='vs__selected-options']")),
-    STUDENT_SIGNUP_SELECT_AGE_DROP_DOWN_LIST = $(byXpath("//ul[@id='vs1__listbox']")),
     STUDENT_SIGNUP_CLASS_CODE_INPUT = $(byXpath("//input[@placeholder='Class Code (Optional)']")),
     STUDENT_SIGNUP_BUTTON = $(byXpath("//div[@class='primary-button']")),
     STUDENT_SIGN_UP_NOT_STUDENT_BUTTON = $(byXpath("//a[contains(text(),\"Oops, I'm not a student\")]")),
@@ -47,22 +44,14 @@ public class StudentSignUpPage extends BasePage {
         STUDENT_SIGNUP_WITH_CLEVER_BUTTON.click();
     }
     DataGenerator dataGenerator = new DataGenerator();
-    String newStudentUsername = dataGenerator.generateNewStudentUsername();
-    String passwordForNewStudent = dataGenerator.generateNewPassword();
-
     public void setNewStudentUsername() {
+        String newStudentUsername = "NewStudentAutotest"+ dataGenerator.getRandomNumber(1000, 9999);
         STUDENT_SIGNUP_USERNAME_INPUT.sendKeys(newStudentUsername);
     }
     public void setNewStudentPassword() {
+        String passwordForNewStudent = "NewStudentAutotest"+ dataGenerator.getRandomNumber(1000, 9999);
         STUDENT_SIGNUP_PASSWORD_INPUT.sendKeys(passwordForNewStudent);
     }
-
-//    List<String> valuesToCompare = Arrays.asList(
-//            "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21 or older"
-//    );
-//    public void checkStudentSignUpAgeOptions() {
-//        //STUDENT_SIGNUP_SELECT_AGE_DROP_DOWN_LIST.shouldHave(exactTexts("4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21 or older"));
-//    }
 
     public void selectRandomStudentAgeOptionFromDropDown() {
             STUDENT_SIGNUP_SELECT_AGE_FIELD.click();

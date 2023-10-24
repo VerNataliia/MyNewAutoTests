@@ -4,9 +4,7 @@ import app.pages.classes.MyClassesPage;
 import app.pages.login.LogInGooglePage;
 import app.pages.login.LogInUsernamePage;
 import app.pages.quizPage.DashboardPage;
-import app.pages.signup.SignUpSelectRolePage;
-import app.pages.signup.StudentSignUpPage;
-import app.pages.signup.TeacherSignupPage;
+import app.pages.signup.*;
 
 public class PageBuilder {
 
@@ -16,7 +14,6 @@ public class PageBuilder {
     public static LogInGooglePage buildLoginGooglePage() {
         return new LogInGooglePage("/auth/login");
     }
-
     public static DashboardPage buildDashboardPage() {
         return new DashboardPage("/app/student/dashboard");
     }
@@ -25,6 +22,9 @@ public class PageBuilder {
     }
     public static StudentSignUpPage bulidStudentSignUpPage() {return new StudentSignUpPage("/app/sign-up/create-account/student");}
     public static SignUpSelectRolePage buildSignUpSelectRolePage() {return new SignUpSelectRolePage("/app/sign-up/role");}
+    public static TeacherSignupStepOnePage buildTeacherSignupStepOnePage() {return new TeacherSignupStepOnePage("/app/sign-up/create-account/teacher");}
+    public static TeacherSignupStepTwoPage buildTeacherSignupStepTwoPage() {return new TeacherSignupStepTwoPage("/app/sign-up/more-info");}
+    public static TeacherSignUpStepThreePage buildTeacherSignUpStepThreePage() {return new TeacherSignUpStepThreePage("/app/sign-up/school-info");}
 
 
 }

@@ -10,7 +10,7 @@ public class StudentSignUpTests extends A_BaseTest{
     public void checkStudentSignUpWithUsername() {
         app.signUpSelectRolePage.open();
         app.signUpSelectRolePage.assertSelectRolePageTitle("Welcome to ReadTheory!");
-        app.signUpSelectRolePage.clickOnSelectStudentRole();
+        app.signUpSelectRolePage.selectStudentRoleForSignUp();
         app.studentSignUpPage.assertStudentSignUpPageTitle("Create your student account");
         app.studentSignUpPage.setNewStudentUsername();
         app.studentSignUpPage.setNewStudentPassword();
