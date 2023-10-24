@@ -21,8 +21,8 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-    contents: write  # To push a branch
-    pull-requests: write  # To create a PR from that branch
+    contents: write
+    pull-requests: write
 
     steps:
     - uses: actions/checkout@v3
