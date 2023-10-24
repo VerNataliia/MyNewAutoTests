@@ -31,6 +31,7 @@ abstract public class Driver {
             case "firefox" -> Configuration.browser = Browsers.FIREFOX;
             case "safari" -> Configuration.browser = Browsers.SAFARI;
             default -> Configuration.browser = Browsers.CHROME;
+
         }
     }
 
