@@ -37,5 +37,5 @@ jobs:
       uses: Xotabu4/selenoid-github-action@v2
     - run: allurectl watch -- ./gradlew clean test
       env:
-        ALLURE_RESULTS: build/allure-results
+        ALLURE_RESULTS: app/build/allure-results
 
