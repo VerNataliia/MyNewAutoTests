@@ -33,8 +33,8 @@ jobs:
         allure-endpoint: https://autotestreadtheory.testops.cloud
         allure-token: ${{ secrets.ALLURE_TOKEN }}
         allure-project-id: 1
-    - name: Start selenoid
-      uses: Xotabu4/selenoid-github-action@v2
+    - uses: browser-actions/setup-chrome@v1
+    - run: chrome --version
     - run: allurectl watch -- ./gradlew clean test
       env:
         ALLURE_RESULTS: app/build/allure-results

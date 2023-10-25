@@ -20,12 +20,13 @@ import java.util.List;
 abstract public class Driver {
     public static void initDriver() {
         TestConfig.initConfig();
-        Configuration.remote = "http://localhost:4444/wd/hub";
+        //Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.pageLoadStrategy = "eager"; //Waite until all pages ae loaded
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-        Configuration.headless = TestConfig.isHeadless();
+        Configuration.headless = true;
+        //Configuration.headless = TestConfig.isHeadless();
 
         switch (TestConfig.browser) {
             case "firefox" -> Configuration.browser = Browsers.FIREFOX;
