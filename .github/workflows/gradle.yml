@@ -1,4 +1,4 @@
-name: Test run
+name: Login tests
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
         allure-project-id: 1
     - uses: browser-actions/setup-chrome@v1
     - run: chrome --version
-    - run: allurectl watch -- ./gradlew clean test
+    - run: allurectl watch -- ./gradlew -x test loginTest
       env:
         ALLURE_RESULTS: app/build/allure-results
 
