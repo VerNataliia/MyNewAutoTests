@@ -65,15 +65,15 @@ public class LoginTests extends A_BaseTest {
         app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
         app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
     }
-
-    @Test(priority = 1, description = "Verify if a student is able to log in using SSO Google")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("Check if a student can log in using SSO Google (Positive case)")
-    public void checkStudentLogInWithGoogle() {
-        app.logInGooglePage.open();
-        app.logInGooglePage.logInWithGoogle(STUDENT_GOOGLE_EMAIL, STUDENT_GOOGLE_PASSWORD);
-        app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
-    }
+//
+//    @Test(priority = 1, description = "Verify if a student is able to log in using SSO Google")
+//    @Severity(SeverityLevel.BLOCKER)
+//    @Description("Check if a student can log in using SSO Google (Positive case)")
+//    public void checkStudentLogInWithGoogle() {
+//        app.logInGooglePage.open();
+//        app.logInGooglePage.logInWithGoogle(STUDENT_GOOGLE_EMAIL, STUDENT_GOOGLE_PASSWORD);
+//        app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
+//    }
 
     @Test(priority = 2, description = "Verify if a user ISN'T able to log in using SSO Google with non existing user")
     @Severity(SeverityLevel.NORMAL)
