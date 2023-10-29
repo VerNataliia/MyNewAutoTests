@@ -29,14 +29,14 @@ public class LogInGooglePage extends BasePage {
         if (GOOGLE_CHOOSE_ANOTHER_ACCOUNT_BUTTON.isDisplayed()) {
             GOOGLE_CHOOSE_ANOTHER_ACCOUNT_BUTTON.click();
             GOOGLE_EMAIL_INPUT.sendKeys(strUserName);
+            GOOGLE_EMAIL_INPUT.pressEnter();
         }
         else {
             GOOGLE_EMAIL_INPUT.sendKeys(strUserName);
             GOOGLE_EMAIL_INPUT.pressEnter();
         }
-//        GOOGLE_CONTINUE_BUTTON.shouldBe(visible).click();
         GOOGLE_PASSWORD_INPUT.shouldBe(visible).sendKeys(strPassword);
-        GOOGLE_CONTINUE_BUTTON.shouldBe(visible).click();
+        GOOGLE_PASSWORD_INPUT.pressEnter();
 
     }
 
