@@ -2,14 +2,6 @@ name: Login tests
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to run tests (staging or production)'
-        required: true
-        default: 'staging'
-        options:
-          - staging
-          - production
 
 permissions:
   contents: write
@@ -33,16 +25,8 @@ jobs:
           allure-project-id: 1
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
-
       - name: Run tests
-        run: |
-          if [[ ${{ github.event.inputs.environment }} == 'staging' ]]; then
-            ./gradlew -x test loginTest -Denvironment=staging
-          elif [[ ${{ github.event.inputs.environment }} == 'production' ]]; then
-            ./gradlew -x test loginTest -Denvironment=production
-          else
-            echo "Invalid environment specified"
-            exit 1
-          fi
+        run: allurectl watch -- ./gradlew -x test loginTest -Denvironment=$ENVIRONMENT
         env:
           ALLURE_RESULTS: app/build/allure-results
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
