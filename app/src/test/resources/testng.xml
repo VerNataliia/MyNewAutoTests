@@ -2,7 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Login Tests" verbose="1">
     <test name="Login tests">
-        <parameter name="environment" value="stage"/>
         <classes>
             <class name="LoginTests"/>
         </classes>

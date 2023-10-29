@@ -80,26 +80,15 @@ test {
     systemProperty 'aspectj.version', "$aspectjVersion"
 }
 
-//Set default environment - production
-test {
-    systemProperty "environment", System.getProperty("environment", "production")
-}
-//Set production environment
-tasks.register('testProduction', Test) {
-    systemProperty "environment", "production"
-}
-//Set staging environment
-tasks.register('testStaging', Test) {
-    systemProperty "environment", "staging"
-}
-
 tasks.register("loginTest", Test) {
+    systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'Login'
     }
 }
 
 tasks.register("SignUp", Test) {
+    systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'SignUp'
     }
