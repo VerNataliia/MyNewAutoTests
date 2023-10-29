@@ -1,8 +1,11 @@
 package app.pages.login;
 
 import app.pages.base.BasePage;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -30,9 +33,9 @@ public class LogInGooglePage extends BasePage {
         else {
             GOOGLE_EMAIL_INPUT.sendKeys(strUserName);
         }
-        GOOGLE_CONTINUE_BUTTON.shouldBe(Condition.appear).click();
-        GOOGLE_PASSWORD_INPUT.sendKeys(strPassword);
-        GOOGLE_CONTINUE_BUTTON.shouldBe(Condition.visible).click();
+        GOOGLE_CONTINUE_BUTTON.shouldBe(visible, Duration.ofSeconds(10)).click();
+        GOOGLE_PASSWORD_INPUT.shouldBe(visible, Duration.ofSeconds(10)).sendKeys(strPassword);
+        GOOGLE_CONTINUE_BUTTON.shouldBe(visible, Duration.ofSeconds(10)).click();
 
     }
 
