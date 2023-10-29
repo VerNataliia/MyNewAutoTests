@@ -87,7 +87,7 @@ tasks.register("loginTest", Test) {
     }
 }
 
-tasks.register("SignUp", Test) {
+tasks.register("signUp", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'SignUp'
