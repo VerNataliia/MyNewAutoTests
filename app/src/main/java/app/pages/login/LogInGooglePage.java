@@ -14,7 +14,7 @@ public class LogInGooglePage extends BasePage {
     GOOGLE_LOG_IN_BUTTON = $(byId("googleLogIn-button")),
     GOOGLE_CHOOSE_ANOTHER_ACCOUNT_BUTTON = $(byXpath("//div[@class='UXurCe']")),
     GOOGLE_EMAIL_INPUT = $(byXpath("//input[@type='email']")),
-    GOOGLE_CONTINUE_BUTTON = $(byXpath("//button[@class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 qIypjc TrZEUc lw1w4b']//div[@class='VfPpkd-RLmnJb']")),
+    GOOGLE_CONTINUE_BUTTON = $(byXpath("//button[@class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 qIypjc TrZEUc lw1w4b']")),
     GOOGLE_PASSWORD_INPUT = $(byXpath("//input[@type='password']")),
     GOOGLE_ERROR_NO_ACCOUNT = $(byXpath("//span[contains(text(), 'It looks like you don't have an account yet. Creat')]"));
 

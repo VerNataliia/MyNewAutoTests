@@ -9,8 +9,9 @@ public class AppConfig {
 
         if ("production".equals(environment)) {
             BASE_URL = "https://readtheory.org";
-        } else {
+        } else if ("staging".equals(environment)) {
             BASE_URL = "https://rt-readtheory-staging.readtheory.org";
+        } else {
+            BASE_URL = "https://readtheory.org";}
         }
-    }
 }
