@@ -21,7 +21,7 @@ public class LogInGooglePage extends BasePage {
 
 
 
-    public void logInWithGoogle(String strUserName, String strPassword) {
+    public void logInWithGoogle(String strUserName, String strPassword) throws InterruptedException {
         GOOGLE_LOG_IN_BUTTON.click();
         if (GOOGLE_CHOOSE_ANOTHER_ACCOUNT_BUTTON.isDisplayed()) {
             GOOGLE_CHOOSE_ANOTHER_ACCOUNT_BUTTON.click();
@@ -30,7 +30,8 @@ public class LogInGooglePage extends BasePage {
         else {
             GOOGLE_EMAIL_INPUT.sendKeys(strUserName);
         }
-        GOOGLE_CONTINUE_BUTTON.shouldBe(Condition.visible).click();
+        GOOGLE_CONTINUE_BUTTON.wait(5000);
+        GOOGLE_CONTINUE_BUTTON.click();
         GOOGLE_PASSWORD_INPUT.sendKeys(strPassword);
         GOOGLE_CONTINUE_BUTTON.shouldBe(Condition.visible).click();
 
