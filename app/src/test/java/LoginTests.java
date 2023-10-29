@@ -1,5 +1,8 @@
 
 import io.qameta.allure.*;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import static app.StaticTestData.*;
@@ -66,6 +69,11 @@ public class LoginTests extends A_BaseTest {
             app.logInGooglePage.open();
             app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
             app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+        } else {
+            // Mark the test as skipped
+            ITestResult result = Reporter.getCurrentTestResult();
+            result.setStatus(ITestResult.SKIP);
+            throw new SkipException("Skipping the test as the environment is not 'production'.");
         }
     }
 
