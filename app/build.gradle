@@ -93,7 +93,6 @@ tasks.register('testStaging', Test) {
     systemProperty "environment", "staging"
 }
 
-
 tasks.register("loginTest", Test) {
     useTestNG {
         includeGroups 'Login'
