@@ -1,4 +1,4 @@
-name: Login tests (staging and production)
+name: Login tests
 
 on:
   workflow_dispatch:
