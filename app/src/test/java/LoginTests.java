@@ -64,13 +64,15 @@ public class LoginTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can log in using SSO Google (Positive case)")
     public void checkTeacherLogInWithGoogle() {
+
         String environment = System.getProperty("environment");
+
         if ("production".equals(environment)) {
             app.logInGooglePage.open();
             app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
             app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
         } else {
-            // Mark the test as skipped
+            // Mark the test as skipped for staging
             ITestResult result = Reporter.getCurrentTestResult();
             result.setStatus(ITestResult.SKIP);
             throw new SkipException("Skipping the test as the environment is not 'production'.");
@@ -81,18 +83,37 @@ public class LoginTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a student can log in using SSO Google (Positive case)")
     public void checkStudentLogInWithGoogle() {
-        app.logInGooglePage.open();
-        app.logInGooglePage.logInWithGoogle(STUDENT_GOOGLE_EMAIL, STUDENT_GOOGLE_PASSWORD);
-        app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
+
+        String environment = System.getProperty("environment");
+
+        if ("production".equals(environment)) {
+            app.logInGooglePage.open();
+            app.logInGooglePage.logInWithGoogle(STUDENT_GOOGLE_EMAIL, STUDENT_GOOGLE_PASSWORD);
+            app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
+        } else {
+            // Mark the test as skipped for staging
+            ITestResult result = Reporter.getCurrentTestResult();
+            result.setStatus(ITestResult.SKIP);
+            throw new SkipException("Skipping the test as the environment is not 'production'.");
+        }
     }
 
     @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using SSO Google with non existing user")
     @Severity(SeverityLevel.NORMAL)
     @Description("Check if a user can't log in using SSO Google if no such user in the database(Negative case)")
     public void checkLogInWithGoogleWithNonExistingUser() {
-        app.logInGooglePage.open();
-        app.logInGooglePage.logInWithGoogle(USER_GOOGLE_NON_EXISTING_IN_DATABASE_EMAIL, USER_GOOGLE_NON_EXISTING_IN_DATABASE_PASSWORD);
-        app.logInGooglePage.GOOGLE_ERROR_NO_ACCOUNT.shouldBe(visible, Duration.ofSeconds(10));
-    }
 
+        String environment = System.getProperty("environment");
+
+        if ("production".equals(environment)) {
+            app.logInGooglePage.open();
+            app.logInGooglePage.logInWithGoogle(USER_GOOGLE_NON_EXISTING_IN_DATABASE_EMAIL, USER_GOOGLE_NON_EXISTING_IN_DATABASE_PASSWORD);
+            app.logInGooglePage.GOOGLE_ERROR_NO_ACCOUNT.shouldBe(visible, Duration.ofSeconds(10));
+        } else {
+            // Mark the test as skipped for staging
+            ITestResult result = Reporter.getCurrentTestResult();
+            result.setStatus(ITestResult.SKIP);
+            throw new SkipException("Skipping the test as the environment is not 'production'.");
+        }
+    }
 }
