@@ -11,7 +11,7 @@ public class StaticTestData {
             STUDENT_USERNAME = "StudentTest66";
             STUDENT_PASSWORD = "349872yd";
         } else if ("staging".equals(environment)) {
-            STUDENT_USERNAME = "STUDENTTeacher8888";
+            STUDENT_USERNAME = "StudentTEACHEr54445";
             STUDENT_PASSWORD = "349872yd";
         }
     }
