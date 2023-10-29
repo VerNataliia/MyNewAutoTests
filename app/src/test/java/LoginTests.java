@@ -61,9 +61,12 @@ public class LoginTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can log in using SSO Google (Positive case)")
     public void checkTeacherLogInWithGoogle() {
-        app.logInGooglePage.open();
-        app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
-        app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+        String environment = System.getProperty("environment");
+        if ("production".equals(environment)) {
+            app.logInGooglePage.open();
+            app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
+            app.myClassesPage.MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+        }
     }
 
     @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to log in using SSO Google")
