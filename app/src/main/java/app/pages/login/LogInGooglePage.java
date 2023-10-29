@@ -33,9 +33,9 @@ public class LogInGooglePage extends BasePage {
         else {
             GOOGLE_EMAIL_INPUT.sendKeys(strUserName);
         }
-        GOOGLE_CONTINUE_BUTTON.shouldBe(visible, Duration.ofSeconds(10)).click();
-        GOOGLE_PASSWORD_INPUT.shouldBe(visible, Duration.ofSeconds(10)).sendKeys(strPassword);
-        GOOGLE_CONTINUE_BUTTON.shouldBe(visible, Duration.ofSeconds(10)).click();
+        GOOGLE_CONTINUE_BUTTON.shouldBe(visible, Duration.ofSeconds(20)).click();
+        GOOGLE_PASSWORD_INPUT.shouldBe(visible, Duration.ofSeconds(20)).sendKeys(strPassword);
+        GOOGLE_CONTINUE_BUTTON.shouldBe(visible, Duration.ofSeconds(20)).click();
 
     }
 
