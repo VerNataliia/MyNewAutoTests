@@ -49,7 +49,6 @@ dependencies {
     implementation group: 'io.qameta.allure', name: 'allure-assertj', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: "$allureVersion"
     implementation group: 'com.codeborne', name: 'selenide-testng', version: "$selenideTestngVersion"
-
     runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
 
 }
@@ -61,13 +60,13 @@ java {
     }
 }
 
+// Define the main class for the application
 application {
-    // Define the main class for the application.
     mainClass = 'readtheoty.App'
 }
 
+// Use TestNG for unit tests
 tasks.named('test') {
-    // Use TestNG for unit tests.
     useTestNG()
 }
 test {
@@ -81,6 +80,20 @@ test {
     systemProperty 'aspectj.version', "$aspectjVersion"
 }
 
+//Set default environment - production
+test {
+    systemProperty "environment", System.getProperty("environment", "production")
+}
+//Set production environment
+tasks.register('testProduction', Test) {
+    systemProperty "environment", "production"
+}
+//Set staging environment
+tasks.register('testStaging', Test) {
+    systemProperty "environment", "staging"
+}
+
+
 tasks.register("loginTest", Test) {
     useTestNG {
         includeGroups 'Login'
@@ -92,7 +105,3 @@ tasks.register("SignUp", Test) {
         includeGroups 'SignUp'
     }
 }
-
-
-//sourceCompatibility = '1.8'
-//targetCompatibility = '1.8'
