@@ -30,7 +30,7 @@ public class LogInGooglePage extends BasePage {
         else {
             GOOGLE_EMAIL_INPUT.sendKeys(strUserName);
         }
-        GOOGLE_CONTINUE_BUTTON.click();
+        GOOGLE_CONTINUE_BUTTON.shouldBe(Condition.appear).click();
         GOOGLE_PASSWORD_INPUT.sendKeys(strPassword);
         GOOGLE_CONTINUE_BUTTON.shouldBe(Condition.visible).click();
 
