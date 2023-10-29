@@ -19,20 +19,12 @@ import java.util.List;
 
 abstract public class Driver {
     public static void initDriver() {
-        TestConfig.initConfig();
+        Configuration.browser = Browsers.CHROME;
         Configuration.pageLoadStrategy = "eager"; //Waite until all pages ae loaded
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
         Configuration.headless = true;
-       // Configuration.headless = TestConfig.isHeadless();
-
-        switch (TestConfig.browser) {
-            case "firefox" -> Configuration.browser = Browsers.FIREFOX;
-            case "safari" -> Configuration.browser = Browsers.SAFARI;
-            default -> Configuration.browser = Browsers.CHROME;
-
-        }
     }
 
         public static WebDriver currentDriver() {

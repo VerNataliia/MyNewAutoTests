@@ -77,7 +77,7 @@ public class LoginTests extends A_BaseTest {
 
     @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using SSO Google with non existing user")
     @Severity(SeverityLevel.NORMAL)
-    @Description("Check if a user can log in using SSO Google if no such user in the database(Negative case)")
+    @Description("Check if a user can't log in using SSO Google if no such user in the database(Negative case)")
     public void checkLogInWithGoogleWithNonExistingUser() {
         app.logInGooglePage.open();
         app.logInGooglePage.logInWithGoogle(USER_GOOGLE_NON_EXISTING_IN_DATABASE_EMAIL, USER_GOOGLE_NON_EXISTING_IN_DATABASE_PASSWORD);
