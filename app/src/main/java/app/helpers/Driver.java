@@ -74,7 +74,7 @@ abstract public class Driver {
             open(AppConfig.BASE_URL);
             Selenide.clearBrowserCookies();
             Selenide.clearBrowserLocalStorage();
-            Selenide.refresh();
+            //Selenide.refresh();
         }
 
         public static void close() {
