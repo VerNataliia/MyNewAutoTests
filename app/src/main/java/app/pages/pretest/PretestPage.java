@@ -26,7 +26,8 @@ public class PretestPage {
     PRETEST_PASSAGE_TEXT_BODY = $(byXpath("//div[@class='quiz-article__content']")),
     PRETEST_QUESTION_NUMBER = $(byXpath("//div[@class='rt-text rt-text--body-3 text-transform-uppercase rt-text-gray-70 rt-quiz-question__title']")),
     PRETEST_QUESTION_TEXT = $(byXpath("//div[@class='rt-text rt-text--body-1 font-weight-bold rt-quiz-question__question']")),
-    PRETEST_SUBMIT_OR_NEXT_BUTTON = $(byXpath("//button[@class='rt-btn rt-btn__primary--orange rt-btn--xl']"));
+    PRETEST_SUBMIT_OR_NEXT_BUTTON = $(byXpath("//button[@class='rt-btn rt-btn__primary--orange rt-btn--xl']")),
+    PRETEST_COMPLETED_POP_UP = $(byXpath("//div[@class='rt-modal__content']"));
 
     private final ElementsCollection
     PRETEST_ANSWERS_OPTIONS = $$x("//section[@class='rt-quiz-item rt-bg-white']"),
@@ -56,6 +57,8 @@ public class PretestPage {
         }
     }
 
-
+    public void assertPretestCompletedPopUpIsShown() {
+        PRETEST_COMPLETED_POP_UP.shouldBe(visible);
+    }
 
 }

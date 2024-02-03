@@ -11,5 +11,6 @@ public class StudentSignUp extends A_BaseTest {
         app.studentSignUpPage.selectRandomStudentAgeOptionFromDropDown();
         app.studentSignUpPage.assertSignUpButtonIsAble();
         app.studentSignUpPage.clickOnSignUpButtonAsStudent();
+        app.summaryPage.assertSummaryPageTitle("Let the learning begin!");
     }
 }

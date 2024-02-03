@@ -16,6 +16,7 @@ public class CompletePretestTest extends A_BaseTest {
         StudentSignUp.signUpAsStudent(app);
         app.summaryPage.clickOnStartButton();
         app.pretestPage.completePassageWithRandomAnswers(8);
+        app.pretestPage.assertPretestCompletedPopUpIsShown();
     }
 
 }
