@@ -8,6 +8,7 @@ public class CompletePretestTest extends A_BaseTest {
     @Test(groups = ("Pretest"), priority = 1, description = "Verify if a student can complete a pretest")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Verify if a student can complete a pretest with random answers (Positive case)")
+    @AllureId("1")
 
     public void checkPretestExecution() {
         StudentSignUp.signUpAsStudent(app);
