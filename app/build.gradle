@@ -82,16 +82,23 @@ test {
 }
 
 
-//tasks.register("loginTest", Test) {
-//    systemProperty 'environment', System.properties['environment']
-//    useTestNG {
-//        includeGroups 'Login'
-//    }
-//}
-//
-//tasks.register("signUp", Test) {
-//    systemProperty 'environment', System.properties['environment']
-//    useTestNG {
-//        includeGroups 'SignUp'
-//    }
-//}
+tasks.register("loginTest", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'Login'
+    }
+}
+
+tasks.register("signUpTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'SignUp'
+    }
+}
+
+tasks.register("pretestTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'Pretest'
+    }
+}

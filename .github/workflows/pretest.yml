@@ -1,4 +1,4 @@
-name: Signup tests
+name: Pretest tests
 
 on:
   workflow_dispatch:
@@ -28,11 +28,11 @@ jobs:
           distribution: 'zulu'
       - uses: allure-framework/setup-allurectl@v1
         with:
-          allure-endpoint: https://autotestreadtheory.testops.cloud
+          allure-endpoint: https://autotestdemo1.testops.cloud
           allure-token: ${{ secrets.ALLURE_TOKEN }}
           allure-project-id: 1
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
-      - run: allurectl watch -- ./gradlew signUpTests -Denvironment=$ENVIRONMENT
+      - run: allurectl watch -- ./gradlew pretestTests -Denvironment=$ENVIRONMENT
         env:
           ALLURE_RESULTS: app/build/allure-results
