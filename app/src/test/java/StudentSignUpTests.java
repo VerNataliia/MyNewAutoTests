@@ -8,15 +8,7 @@ public class StudentSignUpTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a student can sign up with username (Positive case)")
         public void checkStudentSignUpWithUsername() {
-        app.signUpSelectRolePage.open();
-        app.signUpSelectRolePage.assertSelectRolePageTitle("Welcome to ReadTheory!");
-        app.signUpSelectRolePage.selectStudentRoleForSignUp();
-        app.studentSignUpPage.assertStudentSignUpPageTitle("Create your student account");
-        app.studentSignUpPage.setNewStudentUsername();
-        app.studentSignUpPage.setNewStudentPassword();
-        app.studentSignUpPage.selectRandomStudentAgeOptionFromDropDown();
-        app.studentSignUpPage.assertSignUpButtonIsAble();
-        app.studentSignUpPage.clickOnSignUpButtonAsStudent();
+        StudentSignUp.signUpAsStudent(app);
         }
 
 }

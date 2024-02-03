@@ -1,6 +1,7 @@
+import app.App;
 
 public class StudentSignUp extends A_BaseTest {
-    public void signUpWithUsername() {
+    public static void signUpAsStudent(App app) {
         app.signUpSelectRolePage.open();
         app.signUpSelectRolePage.assertSelectRolePageTitle("Welcome to ReadTheory!");
         app.signUpSelectRolePage.selectStudentRoleForSignUp();

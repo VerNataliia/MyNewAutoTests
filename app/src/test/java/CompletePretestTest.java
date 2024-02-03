@@ -10,15 +10,7 @@ public class CompletePretestTest extends A_BaseTest {
     @Description("Verify if a student can complete a pretest with random answers (Positive case)")
 
     public void checkPretestExecution() {
-        app.signUpSelectRolePage.open();
-        app.signUpSelectRolePage.assertSelectRolePageTitle("Welcome to ReadTheory!");
-        app.signUpSelectRolePage.selectStudentRoleForSignUp();
-        app.studentSignUpPage.assertStudentSignUpPageTitle("Create your student account");
-        app.studentSignUpPage.setNewStudentUsername();
-        app.studentSignUpPage.setNewStudentPassword();
-        app.studentSignUpPage.selectRandomStudentAgeOptionFromDropDown();
-        app.studentSignUpPage.assertSignUpButtonIsAble();
-        app.studentSignUpPage.clickOnSignUpButtonAsStudent();;
+        StudentSignUp.signUpAsStudent(app);
         app.summaryPage.clickOnStartButton();
         app.pretestPage.completePassageWithRandomAnswers(8);
     }
