@@ -1,13 +1,12 @@
 import app.App;
 import app.helpers.Driver;
+import app.pages.headerMenu.TeacherHeaderMenu;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.apache.logging.log4j.LogManager;
-import org.slf4j.Logger;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
-class A_BaseTest {
+public class A_BaseTest {
 
     @BeforeSuite(alwaysRun = true)
     static void setupAllureReports() {
@@ -16,6 +15,7 @@ class A_BaseTest {
         );
     }
     protected App app;
+    protected TeacherHeaderMenu teacherHeaderMenu;
     protected SoftAssert softAssert;
     //protected Logger logger;
 
@@ -25,6 +25,7 @@ class A_BaseTest {
         Driver.initDriver();
 
         app = new App();
+        teacherHeaderMenu = new TeacherHeaderMenu();
         softAssert = new SoftAssert();
 
         //logger = (Logger) LogManager.getLogger("");

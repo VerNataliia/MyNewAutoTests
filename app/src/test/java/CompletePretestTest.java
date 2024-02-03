@@ -1,13 +1,15 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-@Epic("SignUp")
-@Feature("StudentSignUp")
-public class StudentSignUpTests extends A_BaseTest {
-    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a student can sign up with username and password")
+@Epic("Pretest")
+@Feature("Pretest")
+
+public class CompletePretestTest extends A_BaseTest {
+    @Test(groups = ("Pretest"), priority = 1, description = "Verify if a student can complete a pretest")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("Check if a student can sign up with username (Positive case)")
-        public void checkStudentSignUpWithUsername() {
+    @Description("Verify if a student can complete a pretest with random answers (Positive case)")
+
+    public void checkPretestExecution() {
         app.signUpSelectRolePage.open();
         app.signUpSelectRolePage.assertSelectRolePageTitle("Welcome to ReadTheory!");
         app.signUpSelectRolePage.selectStudentRoleForSignUp();
@@ -16,7 +18,9 @@ public class StudentSignUpTests extends A_BaseTest {
         app.studentSignUpPage.setNewStudentPassword();
         app.studentSignUpPage.selectRandomStudentAgeOptionFromDropDown();
         app.studentSignUpPage.assertSignUpButtonIsAble();
-        app.studentSignUpPage.clickOnSignUpButtonAsStudent();
-        }
+        app.studentSignUpPage.clickOnSignUpButtonAsStudent();;
+        app.summaryPage.clickOnStartButton();
+        app.pretestPage.completePassageWithRandomAnswers(8);
+    }
 
 }

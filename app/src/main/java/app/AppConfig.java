@@ -7,11 +7,11 @@ public class AppConfig {
     static {
         String environment = System.getProperty("environment");
 
-        if ("production".equals(environment)) {
-            BASE_URL = "https://readtheory.org";
-        } else if ("staging".equals(environment)) {
+        if ("staging".equals(environment)) {
             BASE_URL = "https://rt-readtheory-staging.readtheory.org";
+        } else if ("production".equals(environment)) {
+            BASE_URL = "https://readtheory.org";
         } else {
-            BASE_URL = "https://readtheory.org";}
+            BASE_URL = "https://rt-readtheory-staging.readtheory.org";}
         }
 }

@@ -78,18 +78,20 @@ test {
 
 test {
     systemProperty 'aspectj.version', "$aspectjVersion"
+    systemProperty 'aspectj.version', "$aspectjVersion"
 }
 
-tasks.register("loginTest", Test) {
-    systemProperty 'environment', System.properties['environment']
-    useTestNG {
-        includeGroups 'Login'
-    }
-}
 
-tasks.register("signUp", Test) {
-    systemProperty 'environment', System.properties['environment']
-    useTestNG {
-        includeGroups 'SignUp'
-    }
-}
+//tasks.register("loginTest", Test) {
+//    systemProperty 'environment', System.properties['environment']
+//    useTestNG {
+//        includeGroups 'Login'
+//    }
+//}
+//
+//tasks.register("signUp", Test) {
+//    systemProperty 'environment', System.properties['environment']
+//    useTestNG {
+//        includeGroups 'SignUp'
+//    }
+//}

@@ -17,6 +17,8 @@ public class TeacherSignUpStepThreePage extends BasePage {
 
     private final SelenideElement
     TEACHER_SIGNUP_STEP_THREE_PAGE_TITLE = $(byTagName("h1")),
+    TEACHER_SIGNUP_STEP_THREE_SKIP_BUTTON = $(byId("skip-signup-step")),
+    TEACHER_SIGNUP_STEP_THREE_BACK_BUTTON = $(byXpath("//div[contains(text(),'Back')]")),
     TEACHER_SIGNUP_SELECT_SCHOOL_INPUT = $(byXpath("//input[@placeholder='Search for your school']")),
     TEACHER_SIGNUP_ADD_SCHOOL_MANUALLY_BUTTON = $(byXpath("//a[@class='manual-add']")),
     TEACHER_SIGNUP_CONFIRM_AND_CONTINUE_BUTTON = $(byXpath("//div[@class='primary-button btn-continue']")),
@@ -35,6 +37,10 @@ public class TeacherSignUpStepThreePage extends BasePage {
 
     public void assertTeacherSignUpPageTitle(String header) {
         TEACHER_SIGNUP_STEP_THREE_PAGE_TITLE.shouldHave(Condition.text(header));
+    }
+
+    public void clickOnSkipSelectSchoolPageButton() {
+        TEACHER_SIGNUP_STEP_THREE_SKIP_BUTTON.click();
     }
     DataGenerator dataGenerator = new DataGenerator();
     public void selectSchoolFromTheList() {

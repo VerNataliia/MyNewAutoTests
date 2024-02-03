@@ -1,42 +1,42 @@
-image: gradle:alpine
-
-default:
-  tags:
-    - shelllocal
-
-stages:
-  - Login
-  - SignUp
-  - allure
-
-Login tests:
-  stage: Login
-  allow_failure: true
-  script:
-    - ./gradlew -x test loginTest
-  artifacts:
-    when: always
-    paths:
-      - app/build/allure-results
-
-SignUp tests:
-  stage: SignUp
-  allow_failure: true
-  script:
-    - ./gradlew -x test SignUp
-  artifacts:
-    when: always
-    paths:
-      - app/build/allure-results
-
-Allure report:
-  stage: allure
-  script:
-    - ./gradlew allureReport
-    - echo "Allure report live here https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/app/build/reports/allure-report/allureReport/index.html"
-  artifacts:
-    when: always
-    paths:
-      - app/build/reports/allure-report/allureReport/*
-
-
+#image: gradle:alpine
+#
+#default:
+#  tags:
+#    - shelllocal
+#
+#stages:
+#  - Login
+#  - SignUp
+#  - allure
+#
+#Login tests:
+#  stage: Login
+#  allow_failure: true
+#  script:
+#    - ./gradlew -x test loginTest
+#  artifacts:
+#    when: always
+#    paths:
+#      - app/build/allure-results
+#
+#SignUp tests:
+#  stage: SignUp
+#  allow_failure: true
+#  script:
+#    - ./gradlew -x test SignUp
+#  artifacts:
+#    when: always
+#    paths:
+#      - app/build/allure-results
+#
+#Allure report:
+#  stage: allure
+#  script:
+#    - ./gradlew allureReport
+#    - echo "Allure report live here https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/app/build/reports/allure-report/allureReport/index.html"
+#  artifacts:
+#    when: always
+#    paths:
+#      - app/build/reports/allure-report/allureReport/*
+#
+#

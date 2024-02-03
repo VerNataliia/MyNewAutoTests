@@ -49,8 +49,7 @@ public class StudentSignUpPage extends BasePage {
         STUDENT_SIGNUP_USERNAME_INPUT.sendKeys(newStudentUsername);
     }
     public void setNewStudentPassword() {
-        String passwordForNewStudent = "NewStudentAutotest"+ dataGenerator.getRandomNumber(1000, 9999);
-        STUDENT_SIGNUP_PASSWORD_INPUT.sendKeys(passwordForNewStudent);
+        STUDENT_SIGNUP_PASSWORD_INPUT.sendKeys("12345qwert");
     }
 
     public void selectRandomStudentAgeOptionFromDropDown() {
