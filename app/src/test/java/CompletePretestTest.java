@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 @Feature("Pretest")
 
 public class CompletePretestTest extends A_BaseTest {
-    @Test(groups = ("Pretest"), priority = 1, description = "Verify if a student can complete a pretest567656")
+    @Test(groups = ("Pretest"), priority = 1, description = "Verify if a student can complete a pretest")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Verify if a student can complete a pretest with random answers (Positive case)")
 
