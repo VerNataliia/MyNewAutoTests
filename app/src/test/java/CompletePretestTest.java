@@ -1,8 +1,6 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-import static io.qameta.allure.Allure.step;
-
 @Epic("Pretest")
 @Feature("Pretest")
 
