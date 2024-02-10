@@ -7,15 +7,16 @@ import static com.codeborne.selenide.Selenide.*;
 public class TeacherHeaderMenu {
     private final SelenideElement
     TEACHER_HEADER_MENU_USERNAME_BUTTON = $(byXpath("//div[@class='account-button-wrapper']")),
-    TEACHER_HEADER_MENU_SIGNOUT_BUTTON = $(byXpath("//span[contains(text(),'Sign out')]"));
+    TEACHER_HEADER_MENU_SIGN_OUT_BUTTON = $(byXpath("//div[@class='account-menu-wrapper']//div[5]//a[1]"));
+
 
     public void clickOnUsernameInHeaderTeacher() {
         TEACHER_HEADER_MENU_USERNAME_BUTTON.click();
-
     }
 
-    public void clickOnSignUpButton() {
-        TEACHER_HEADER_MENU_SIGNOUT_BUTTON.click();
+    public void clickOnSignOutButton() {
+        clickOnUsernameInHeaderTeacher();
+        TEACHER_HEADER_MENU_SIGN_OUT_BUTTON.click();
     }
 
 }
