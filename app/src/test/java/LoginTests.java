@@ -15,6 +15,7 @@ import static com.codeborne.selenide.Condition.visible;
 public class LoginTests extends A_BaseTest {
 
         @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to log in using username and password credentials")
+        @AllureId("3")
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if a student can log in (Positive case)")
         public void checkStudentLogIn() {
@@ -24,6 +25,7 @@ public class LoginTests extends A_BaseTest {
         }
 
         @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
+        @AllureId("8")
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if a teacher can log in (Positive case)")
         public void checkTeacherLogIn() {
@@ -33,6 +35,7 @@ public class LoginTests extends A_BaseTest {
         }
 
         @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
+        @AllureId("5")
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if a parent can log in (Positive case)")
         public void checkParentLogIn() {
@@ -42,6 +45,7 @@ public class LoginTests extends A_BaseTest {
         }
 
         @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
+        @AllureId("7")
         @Severity(SeverityLevel.NORMAL)
         @Description("Check if a user can't log in using not correct username (Negative case)")
         public void checkLogInWithInvalidUsername() {
@@ -51,6 +55,7 @@ public class LoginTests extends A_BaseTest {
         }
 
         @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
+        @AllureId("6")
         @Severity(SeverityLevel.NORMAL)
         @Description("Check if a user can't log in using not correct password (Negative case)")
         public void checkLogInWithInvalidPassword() {
