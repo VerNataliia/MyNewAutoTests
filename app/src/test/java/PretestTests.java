@@ -23,10 +23,16 @@ public class PretestTests extends A_BaseTest {
     @AllureId("34")
 
     public void checkPretestExecutionAsNewTeacherStudent() {
-        UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+        UtilityCreateClass.createNewClassOnlyWithClassName(app);
+        UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app);
+        teacherHeaderMenu.clickOnSignOutButton();
+        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
+        UtilityStudentSignUp.signUpAsStudentAdditionalAgeStep(app);
         app.summaryPage.clickOnStartButton();
         app.pretestPage.completePassageWithRandomAnswers(8);
         app.pretestPage.assertPretestCompletedPopUpIsShown();
+
     }
 
 }
