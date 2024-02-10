@@ -7,7 +7,6 @@ public class TeacherClassTests extends A_BaseTest {
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create a class")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can create a class only with the class name")
-    @AllureId("167")
     public void checkClassCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         UtilityCreateClass.createNewClassOnlyWithClassName(app);
@@ -16,7 +15,6 @@ public class TeacherClassTests extends A_BaseTest {
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create a class and student in the class")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can create a class, then add student to this class. This student can log in to the system ")
-    @AllureId("168")
     public void checkClassAndStudentCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         UtilityCreateClass.createNewClassOnlyWithClassName(app);
