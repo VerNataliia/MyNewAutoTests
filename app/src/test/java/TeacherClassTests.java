@@ -1,9 +1,6 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-import static app.StaticTestData.STUDENT_PASSWORD;
-import static app.StaticTestData.STUDENT_USERNAME;
-
 @Epic("Class")
 @Feature("ClassCreation")
 public class TeacherClassTests extends A_BaseTest {

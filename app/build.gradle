@@ -102,3 +102,10 @@ tasks.register("pretestTests", Test) {
         includeGroups 'Pretest'
     }
 }
+
+tasks.register("classTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'Class'
+    }
+}
