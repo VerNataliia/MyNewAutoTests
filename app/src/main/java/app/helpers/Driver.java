@@ -24,7 +24,7 @@ abstract public class Driver {
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-        Configuration.headless = false;
+        Configuration.headless = true;
     }
 
         public static WebDriver currentDriver() {
