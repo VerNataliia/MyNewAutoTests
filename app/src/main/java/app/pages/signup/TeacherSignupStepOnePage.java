@@ -38,9 +38,10 @@ public class TeacherSignupStepOnePage extends BasePage {
 
     DataGenerator dataGenerator = new DataGenerator();
 
-    public void setNewTeacherUsername() {
+    public String setNewTeacherUsername() {
         String newTeacherUsername = "NewTeacherAutotest"+ dataGenerator.getRandomNumber(1000, 9999);
         TEACHER_SIGNUP_USERNAME_INPUT.sendKeys(newTeacherUsername);
+        return newTeacherUsername;
     }
     public void setNewTeacherPassword() {
         TEACHER_SIGNUP_PASSWORD_INPUT.sendKeys("12345qwert");

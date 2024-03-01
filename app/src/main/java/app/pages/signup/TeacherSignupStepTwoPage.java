@@ -24,14 +24,17 @@ public class TeacherSignupStepTwoPage extends BasePage {
     public void assertTeacherSignUpPageTitle(String header) {
         TEACHER_SIGNUP_STEP_TWO_PAGE_TITLE.shouldHave(Condition.text(header));
     }
-
-    public void setTeacherFirstName() {
-        TEACHER_SIGNUP_FIRST_NAME_INPUT.sendKeys("TeacherAutoTestFirstName");
-    }
-    public void setTeacherLastName() {
-        TEACHER_SIGNUP_LAST_NAME_INPUT.sendKeys("TeacherAutoTestLastName");
-    }
     DataGenerator dataGenerator = new DataGenerator();
+    public String setTeacherFirstName() {
+        String teacherFirstName = "TeacherAutoTestFirstName"+ dataGenerator.getRandomNumber(1000, 9999);
+        TEACHER_SIGNUP_FIRST_NAME_INPUT.sendKeys(teacherFirstName);
+        return teacherFirstName;
+    }
+    public String setTeacherLastName() {
+        String teacherLastName = "TeacherAutoTestFirstName"+ dataGenerator.getRandomNumber(1000, 9999);
+        TEACHER_SIGNUP_LAST_NAME_INPUT.sendKeys(teacherLastName);
+        return teacherLastName;
+    }
     public void setTeacherEmail() {
         String newTeacherEmail = "autoTestTeacher" + dataGenerator.getRandomNumber(1000, 9999) + "@gmail.com";
         TEACHER_SIGNUP_EMAIL_INPUT.sendKeys(newTeacherEmail);

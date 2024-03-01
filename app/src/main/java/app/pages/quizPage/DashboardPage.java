@@ -14,7 +14,7 @@ public class DashboardPage extends BasePage {
     }
 
     public final SelenideElement
-            START_PRACTICING_BUTTON = $(byXpath("//div[@class='primary-button']"));
+    START_PRACTICING_BUTTON = $(byXpath("//a[@class='btn-quiz quiz-tab-item']"));
 
     public void clickOnStartPracticingButton() {
         START_PRACTICING_BUTTON.shouldBe(Condition.visible);

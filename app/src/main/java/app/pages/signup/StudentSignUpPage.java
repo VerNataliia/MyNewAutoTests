@@ -44,9 +44,10 @@ public class StudentSignUpPage extends BasePage {
         STUDENT_SIGNUP_WITH_CLEVER_BUTTON.click();
     }
     DataGenerator dataGenerator = new DataGenerator();
-    public void setNewStudentUsername() {
+    public String setNewStudentUsername() {
         String newStudentUsername = "NewStudentAutotest"+ dataGenerator.getRandomNumber(1000, 9999);
         STUDENT_SIGNUP_USERNAME_INPUT.sendKeys(newStudentUsername);
+        return newStudentUsername;
     }
     public void setNewStudentPassword() {
         STUDENT_SIGNUP_PASSWORD_INPUT.sendKeys("12345qwert");

@@ -1,12 +1,8 @@
 
 import io.qameta.allure.*;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 import java.time.Duration;
 import static app.StaticTestData.*;
-import static app.StaticTestData.TEACHER_PASSWORD;
 import static com.codeborne.selenide.Condition.visible;
 
 
@@ -17,27 +13,45 @@ public class LoginTests extends A_BaseTest {
         @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to log in using username and password credentials")
         @AllureId("3")
         @Severity(SeverityLevel.BLOCKER)
-        @Description("Check if a student can log in (Positive case)")
+        @Description("Check if an existing student can log in (Positive case)")
         public void checkStudentLogIn() {
-            app.logInUsernamePage.open();
-            app.logInUsernamePage.logInWithUsername(STUDENT_USERNAME, STUDENT_PASSWORD);
-            app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
+            UtilityStudentLogIn.logInWithUsernameAndPasswordAsStudent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
+
+        }
+        @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to sign up and then log in using username and password credentials")
+//        @AllureId("3")
+        @Severity(SeverityLevel.BLOCKER)
+        @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
+        public void checkNewStudentLogIn() {
+            String newStudentUsername = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+            studentHeaderMenu.clickOnSignOutButton();
+            UtilityStudentLogIn.logInWithUsernameAndPasswordAsStudent(app, newStudentUsername, "12345qwert");
+
         }
 
         @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
         @AllureId("8")
         @Severity(SeverityLevel.BLOCKER)
-        @Description("Check if a teacher can log in (Positive case)")
+        @Description("Check if an existing teacher can log in (Positive case)")
         public void checkTeacherLogIn() {
-            app.logInUsernamePage.open();
-            app.logInUsernamePage.logInWithUsername(TEACHER_USERNAME, TEACHER_PASSWORD);
-            app.myClassesPage.assertMyClassesPageTitle("My Classes");
+            UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, TEACHER_USERNAME, TEACHER_PASSWORD);
         }
 
+        @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to sign up and then log in using username and password credentials")
+//        @AllureId("8")
+        @Severity(SeverityLevel.BLOCKER)
+        @Description("Check if a new user can create a teacher's account, log out and then log in (Positive case)")
+        public void checkNewTeacherLogIn() {
+            String newTeacherUsername = UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+            teacherHeaderMenu.clickOnSignOutButton();
+            UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, newTeacherUsername, "12345qwert");
+        }
+
+        //Need to change parent flow
         @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
         @AllureId("5")
         @Severity(SeverityLevel.BLOCKER)
-        @Description("Check if a parent can log in (Positive case)")
+        @Description("Check if an existing parent can log in (Positive case)")
         public void checkParentLogIn() {
             app.logInUsernamePage.open();
             app.logInUsernamePage.logInWithUsername(PARENT_USERNAME, PARENT_PASSWORD);

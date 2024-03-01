@@ -1,5 +1,6 @@
 import app.App;
 import app.helpers.Driver;
+import app.pages.headerMenu.StudentHeaderMenu;
 import app.pages.headerMenu.TeacherHeaderMenu;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -15,7 +16,8 @@ public class A_BaseTest {
         );
     }
     protected App app;
-    protected TeacherHeaderMenu teacherHeaderMenu;
+    protected static TeacherHeaderMenu teacherHeaderMenu;
+    protected static StudentHeaderMenu studentHeaderMenu;
     protected SoftAssert softAssert;
     //protected Logger logger;
 
@@ -26,6 +28,7 @@ public class A_BaseTest {
 
         app = new App();
         teacherHeaderMenu = new TeacherHeaderMenu();
+        studentHeaderMenu = new StudentHeaderMenu();
         softAssert = new SoftAssert();
 
         //logger = (Logger) LogManager.getLogger("");
