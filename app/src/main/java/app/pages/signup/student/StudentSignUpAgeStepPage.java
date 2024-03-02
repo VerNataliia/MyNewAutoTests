@@ -1,4 +1,4 @@
-package app.pages.signup;
+package app.pages.signup.student;
 
 import app.DataGenerator;
 import app.pages.base.BasePage;

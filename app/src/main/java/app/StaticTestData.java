@@ -8,14 +8,14 @@ public class StaticTestData {
         String environment = System.getProperty("environment");
 
         if ("production".equals(environment)) {
-            STUDENT_USERNAME = "StudentTest66";
+            STUDENT_USERNAME = "PRODTEST1AUTOMATIONSTUDENT";
             STUDENT_PASSWORD = "349872yd";
         } else if ("staging".equals(environment)) {
-            STUDENT_USERNAME = "TEST1AUTOMATIONSTUDENT";
+            STUDENT_USERNAME = "STAGETEST1AUTOMATIONSTUDENT";
             STUDENT_PASSWORD = "349872yd";
         }
         else {
-            STUDENT_USERNAME = "TEST1AUTOMATIONSTUDENT";
+            STUDENT_USERNAME = "STAGETEST1AUTOMATIONSTUDENT";
             STUDENT_PASSWORD = "349872yd";
         }
     }
@@ -27,14 +27,14 @@ public class StaticTestData {
         String environment = System.getProperty("environment");
 
         if ("production".equals(environment)) {
-            TEACHER_USERNAME = "TestTeacher4";
+            TEACHER_USERNAME = "PRODTEST1AUTOMATIONTEACHER";
             TEACHER_PASSWORD = "349872yd";
         } else if ("staging".equals(environment)) {
-            TEACHER_USERNAME = "Teacher8888";
+            TEACHER_USERNAME = "STAGETEST1AUTOMATIONTEACHER";
             TEACHER_PASSWORD = "349872yd";
         }
         else {
-            TEACHER_USERNAME = "Teacher8888";
+            TEACHER_USERNAME = "STAGETEST1AUTOMATIONTEACHER";
             TEACHER_PASSWORD = "349872yd";
         }
     }
@@ -46,14 +46,14 @@ public class StaticTestData {
         String environment = System.getProperty("environment");
 
         if ("production".equals(environment)) {
-            PARENT_USERNAME = "TestParent1";
+            PARENT_USERNAME = "PRODTEST1AUTOMATIONPARENT";
             PARENT_PASSWORD = "349872yd";
         } else if ("staging".equals(environment)) {
-            PARENT_USERNAME = "StudentTEACHEr54445";
+            PARENT_USERNAME = "STAGETEST1AUTOMATIONPARENT";
             PARENT_PASSWORD = "349872yd";
         }
         else {
-            PARENT_USERNAME = "StudentTEACHEr54445";
+            PARENT_USERNAME = "STAGETEST1AUTOMATIONPARENT";
             PARENT_PASSWORD = "349872yd";
         }
     }

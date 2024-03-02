@@ -8,6 +8,13 @@ import app.pages.pretest.PretestPage;
 import app.pages.pricing.PricingPage;
 import app.pages.quizPage.DashboardPage;
 import app.pages.signup.*;
+import app.pages.signup.parent.ParentSignUpPage;
+import app.pages.signup.student.StudentSignUpAgeStepPage;
+import app.pages.signup.student.StudentSignUpPage;
+import app.pages.signup.teacher.TeacherSignUpStepFourPage;
+import app.pages.signup.teacher.TeacherSignUpStepThreePage;
+import app.pages.signup.teacher.TeacherSignupStepOnePage;
+import app.pages.signup.teacher.TeacherSignupStepTwoPage;
 import app.pages.summaryPage.SummaryPage;
 
 
@@ -18,9 +25,10 @@ public class App {
     public DashboardPage dashboardPage;
     public MyClassesPage myClassesPage;
     public ClassPage classPage;
+    public SignUpSelectRolePage signUpSelectRolePage;
     public StudentSignUpPage studentSignUpPage;
     public StudentSignUpAgeStepPage studentSignUpAgeStepPage;
-    public SignUpSelectRolePage signUpSelectRolePage;
+    public ParentSignUpPage parentSignUpPage;
     public TeacherSignupStepOnePage teacherSignupStepOnePage;
     public TeacherSignupStepTwoPage teacherSignupStepTwoPage;
     public TeacherSignUpStepThreePage teacherSignUpStepThreePage;
@@ -36,9 +44,10 @@ public class App {
         dashboardPage = new DashboardPage("/app/student/dashboard");
         myClassesPage = new MyClassesPage("/app/teacher/class/list");
         classPage = new ClassPage("app/teacher/class/1340742"); // Need to think how to send dynamic class_id
+        signUpSelectRolePage = new SignUpSelectRolePage("/app/sign-up/role");
         studentSignUpPage = new StudentSignUpPage("/app/sign-up/create-account/student");
         studentSignUpAgeStepPage = new StudentSignUpAgeStepPage("/app/sign-up/more-info");
-        signUpSelectRolePage = new SignUpSelectRolePage("/app/sign-up/role");
+        parentSignUpPage = new ParentSignUpPage("/app/sign-up/create-account/parent");
         teacherSignupStepOnePage = new TeacherSignupStepOnePage("/app/sign-up/create-account/teacher");
         teacherSignupStepTwoPage = new TeacherSignupStepTwoPage("/app/sign-up/more-info");
         teacherSignUpStepThreePage = new TeacherSignUpStepThreePage("/app/sign-up/school-info");

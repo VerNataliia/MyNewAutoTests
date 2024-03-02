@@ -15,7 +15,7 @@ public class LoginTests extends A_BaseTest {
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if an existing student can log in (Positive case)")
         public void checkStudentLogIn() {
-            UtilityStudentLogIn.logInWithUsernameAndPasswordAsStudent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
 
         }
         @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to sign up and then log in using username and password credentials")
@@ -23,9 +23,11 @@ public class LoginTests extends A_BaseTest {
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
         public void checkNewStudentLogIn() {
-            String newStudentUsername = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+            String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+            String newStudentUsername = userDetails[0];
+            String newStudentPassword = userDetails[1];
             studentHeaderMenu.clickOnSignOutButton();
-            UtilityStudentLogIn.logInWithUsernameAndPasswordAsStudent(app, newStudentUsername, "12345qwert");
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
 
         }
 
@@ -42,20 +44,30 @@ public class LoginTests extends A_BaseTest {
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if a new user can create a teacher's account, log out and then log in (Positive case)")
         public void checkNewTeacherLogIn() {
-            String newTeacherUsername = UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+            String[] userDetails = UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+            String newTeacherUsername = userDetails[0];
+            String newTeacherPassword = userDetails[1];
             teacherHeaderMenu.clickOnSignOutButton();
-            UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, newTeacherUsername, "12345qwert");
+            UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, newTeacherUsername, newTeacherPassword);
         }
 
-        //Need to change parent flow
         @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
         @AllureId("5")
         @Severity(SeverityLevel.BLOCKER)
         @Description("Check if an existing parent can log in (Positive case)")
         public void checkParentLogIn() {
-            app.logInUsernamePage.open();
-            app.logInUsernamePage.logInWithUsername(PARENT_USERNAME, PARENT_PASSWORD);
-            app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, PARENT_USERNAME, PARENT_PASSWORD);
+        }
+        @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to sign up and then log in using username and password credentials")
+    //  @AllureId("8")
+        @Severity(SeverityLevel.BLOCKER)
+        @Description("Check if a new user can create a parent's account, log out and then log in (Positive case)")
+        public void checkNewParentLogIn() {
+            String[] userDetails = UtilityParentSignUp.signUpAsParentWithUsername(app);
+            String newParentUsername = userDetails[0];
+            String newParentPassword = userDetails[1];
+            studentHeaderMenu.clickOnSignOutButton();
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newParentUsername, newParentPassword);
         }
 
         @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")

@@ -2,13 +2,13 @@ import app.App;
 
 public class UtilityTeacherSignUp extends A_BaseTest {
 
-    public static String signUpAsTeacherWithUsername(App app) {
+    public static String[] signUpAsTeacherWithUsername(App app) {
         app.signUpSelectRolePage.open();
         app.signUpSelectRolePage.assertSelectRolePageTitle("Welcome to ReadTheory!");
         app.signUpSelectRolePage.selectTeacherRoleForSignUp();
         app.teacherSignupStepOnePage.assertTeacherSignUpPageTitle("Create your teacher account");
         String newTeacherUsername = app.teacherSignupStepOnePage.setNewTeacherUsername();
-        app.teacherSignupStepOnePage.setNewTeacherPassword();
+        String newTeacherPassword = app.teacherSignupStepOnePage.setNewTeacherPassword();
         app.teacherSignupStepOnePage.assertSignUpButtonIsAble();
         app.teacherSignupStepOnePage.clickOnSignUpButtonAsTeacher();
         app.teacherSignupStepTwoPage.assertTeacherSignUpPageTitle("Personal Details");
@@ -23,6 +23,6 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         app.teacherSignUpStepFourPage.clickOnSkipPricingPageButton();
         app.myClassesPage.assertMyClassesPageTitle("My Classes");
         teacherHeaderMenu.assertCurrentTeacherLastAndFirstName(newTeacherLastAndFirstName);
-        return newTeacherUsername;
+        return new String[]{newTeacherUsername, newTeacherPassword};
     }
 }

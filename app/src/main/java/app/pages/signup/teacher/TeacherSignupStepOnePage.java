@@ -1,4 +1,4 @@
-package app.pages.signup;
+package app.pages.signup.teacher;
 
 import app.DataGenerator;
 import app.pages.base.BasePage;
@@ -43,8 +43,10 @@ public class TeacherSignupStepOnePage extends BasePage {
         TEACHER_SIGNUP_USERNAME_INPUT.sendKeys(newTeacherUsername);
         return newTeacherUsername;
     }
-    public void setNewTeacherPassword() {
-        TEACHER_SIGNUP_PASSWORD_INPUT.sendKeys("12345qwert");
+    public String  setNewTeacherPassword() {
+        String newTeacherPassword = "12345qwert"+ dataGenerator.getRandomNumber(1000, 9999);
+        TEACHER_SIGNUP_PASSWORD_INPUT.sendKeys(newTeacherPassword);
+        return newTeacherPassword;
     }
     public void assertSignUpButtonIsAble() {
         TEACHER_SIGNUP_BUTTON.shouldNotBe(Condition.disabled);

@@ -1,4 +1,4 @@
-package app.pages.signup;
+package app.pages.signup.student;
 
 import app.DataGenerator;
 import app.pages.base.BasePage;
@@ -49,8 +49,10 @@ public class StudentSignUpPage extends BasePage {
         STUDENT_SIGNUP_USERNAME_INPUT.sendKeys(newStudentUsername);
         return newStudentUsername;
     }
-    public void setNewStudentPassword() {
-        STUDENT_SIGNUP_PASSWORD_INPUT.sendKeys("12345qwert");
+    public String setNewStudentPassword() {
+        String newStudentPassword = "qwert"+ dataGenerator.getRandomNumber(1000, 9999);
+        STUDENT_SIGNUP_PASSWORD_INPUT.sendKeys(newStudentPassword);
+        return newStudentPassword;
     }
 
     public void selectRandomStudentAgeOptionFromDropDown() {

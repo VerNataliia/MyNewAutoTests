@@ -1,4 +1,4 @@
-package app.pages.signup;
+package app.pages.signup.teacher;
 
 import app.pages.base.BasePage;
 import com.codeborne.selenide.SelenideElement;
