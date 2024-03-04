@@ -8,10 +8,10 @@ import java.util.Map;
 @Epic("Class")
 @Feature("ClassCreation")
 public class TeacherClassTests extends A_BaseTest {
-    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create a class")
+    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes")
     @AllureId("167")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can create a class only with the class name")
+    @Description("A teacher can create a few classes only with the name")
     public void checkClassCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         UtilityCreateClass.createNewClassOnlyWithClassName(app, 5);
