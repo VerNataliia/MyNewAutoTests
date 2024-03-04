@@ -1,6 +1,10 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 @Epic("Class")
 @Feature("ClassCreation")
 public class TeacherClassTests extends A_BaseTest {
@@ -10,7 +14,8 @@ public class TeacherClassTests extends A_BaseTest {
     @Description("A teacher can create a class only with the class name")
     public void checkClassCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassOnlyWithClassName(app);
+        UtilityCreateClass.createNewClassOnlyWithClassName(app, 5);
+
     }
 
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create a class and student in the class")
@@ -19,14 +24,33 @@ public class TeacherClassTests extends A_BaseTest {
     @Description("A teacher can create a class, then add student to this class. This student can log in to the system ")
     public void checkClassAndStudentCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassOnlyWithClassName(app);
-        UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app);
+
+        int numberOfClassesToCreate = 5;
+        int numberOfStudentsToAdd = 3;
+
+        List<String> allUsernames = new ArrayList<>();
+        List<String> allPasswords = new ArrayList<>();
+
+        for (int i = 0; i < numberOfClassesToCreate; i++) {
+            UtilityCreateClass.createNewClassOnlyWithClassName(app, 1);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app, numberOfStudentsToAdd);
+
+            for (Map<String, String> student : students) {
+                String studentUsername = student.get("username");
+                String studentPassword = student.get("password");
+                allUsernames.add(studentUsername);
+                allPasswords.add(studentPassword);
+            }
+        }
         teacherHeaderMenu.clickOnSignOutButton();
-        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
-        UtilityStudentSignUp.signUpAsStudentAdditionalAgeStep(app);
+
+        for (int i = 0; i < allUsernames.size(); i++) {
+            String studentUsername = allUsernames.get(i);
+            String studentPassword = allPasswords.get(i);
+            app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword);
+            studentHeaderMenu.clickOnSignOutButton();
+        }
 
     }
-
-
 
 }

@@ -24,10 +24,10 @@ public class PretestTests extends A_BaseTest {
 
     public void checkPretestExecutionAsNewTeacherStudent() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassOnlyWithClassName(app);
-        UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app);
+        UtilityCreateClass.createNewClassOnlyWithClassName(app, 5);
+        UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app, 1);
         teacherHeaderMenu.clickOnSignOutButton();
-        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
+//        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
         UtilityStudentSignUp.signUpAsStudentAdditionalAgeStep(app);
         app.summaryPage.clickOnStartButton();
         app.pretestPage.completePassageWithRandomAnswers(8);

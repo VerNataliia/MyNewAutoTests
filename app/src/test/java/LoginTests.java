@@ -75,9 +75,12 @@ public class LoginTests extends A_BaseTest {
         @Severity(SeverityLevel.NORMAL)
         @Description("Check if a user can't log in using not correct username (Negative case)")
         public void checkLogInWithInvalidUsername() {
-            app.logInUsernamePage.open();
-            app.logInUsernamePage.logInWithUsername(TEACHER_USERNAME + "a", TEACHER_PASSWORD);
-            app.logInUsernamePage.LOG_IN_ERROR.shouldBe(visible, Duration.ofSeconds(10));
+            String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+            String newStudentUsername = userDetails[0];
+            String newStudentPassword = userDetails[1];
+            studentHeaderMenu.clickOnSignOutButton();
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername+"56", newStudentPassword);
+            app.logInUsernamePage.assertLogInError("Error occurred while trying to authenticate.");
         }
 
         @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
@@ -85,9 +88,12 @@ public class LoginTests extends A_BaseTest {
         @Severity(SeverityLevel.NORMAL)
         @Description("Check if a user can't log in using not correct password (Negative case)")
         public void checkLogInWithInvalidPassword() {
-            app.logInUsernamePage.open();
-            app.logInUsernamePage.logInWithUsername(TEACHER_USERNAME, TEACHER_PASSWORD + "a");
-            app.logInUsernamePage.LOG_IN_ERROR.shouldBe(visible, Duration.ofSeconds(10));
+            String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+            String newStudentUsername = userDetails[0];
+            String newStudentPassword = userDetails[1];
+            studentHeaderMenu.clickOnSignOutButton();
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword+"66");
+            app.logInUsernamePage.assertLogInError("Error occurred while trying to authenticate.");
         }
 
 //    @Feature("LoginSSO")

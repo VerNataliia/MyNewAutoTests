@@ -9,6 +9,8 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         app.teacherSignupStepOnePage.assertTeacherSignUpPageTitle("Create your teacher account");
         String newTeacherUsername = app.teacherSignupStepOnePage.setNewTeacherUsername();
         String newTeacherPassword = app.teacherSignupStepOnePage.setNewTeacherPassword();
+        System.out.println("Teacher username: " + newTeacherUsername);
+        System.out.println("Teacher password: " + newTeacherPassword);
         app.teacherSignupStepOnePage.assertSignUpButtonIsAble();
         app.teacherSignupStepOnePage.clickOnSignUpButtonAsTeacher();
         app.teacherSignupStepTwoPage.assertTeacherSignUpPageTitle("Personal Details");
