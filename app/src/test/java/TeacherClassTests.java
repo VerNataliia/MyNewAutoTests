@@ -18,10 +18,10 @@ public class TeacherClassTests extends A_BaseTest {
 
     }
 
-    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create a class and student in the class")
+    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")
     @AllureId("166")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can create a class, then add student to this class. This student can log in to the system ")
+    @Description("A teacher can create classes, then add students to these classes. These students can log in to the system ")
     public void checkClassAndStudentCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
 
