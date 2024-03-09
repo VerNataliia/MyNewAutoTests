@@ -6,7 +6,7 @@ import app.pages.login.LogInGooglePage;
 import app.pages.login.LogInUsernamePage;
 import app.pages.quizPage.NextQuizPage;
 import app.pages.quizPage.ResultPage;
-import app.pages.quizPage.pretest.PretestPage;
+import app.pages.quizPage.newPretest.NewPretestPage;
 import app.pages.pricing.PricingPage;
 import app.pages.quizPage.DashboardPage;
 import app.pages.signup.*;
@@ -36,7 +36,7 @@ public class App {
     public TeacherSignUpStepThreePage teacherSignUpStepThreePage;
     public TeacherSignUpStepFourPage teacherSignUpStepFourPage;
     public SummaryPage summaryPage;
-    public PretestPage pretestPage;
+    public NewPretestPage newPretestPage;
     public NextQuizPage nextQuizPage;
     public ResultPage resultPage;
     public PricingPage pricingPage;
@@ -57,7 +57,7 @@ public class App {
         teacherSignUpStepThreePage = new TeacherSignUpStepThreePage("/app/sign-up/school-info");
         teacherSignUpStepFourPage = new TeacherSignUpStepFourPage("/app/sign-up/pricing");
         summaryPage = new SummaryPage("/app/sign-up/summary");
-        pretestPage = new PretestPage("https://staging.readtheory.org/app/v2/student/pretest");
+        newPretestPage = new NewPretestPage("https://staging.readtheory.org/app/v2/student/pretest");
         nextQuizPage = new NextQuizPage("/app/student/quiz");
         resultPage = new ResultPage("/app/student/quiz/results");
         pricingPage = new PricingPage("/app/sign-up/pricing");

@@ -3,6 +3,8 @@ package app.pages.signup;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -19,7 +21,7 @@ public class SignUpSelectRolePage extends BasePage {
     PARENT_ROLE_BUTTON = $(byXpath("//body//figure[3]"));
 
     public void assertSelectRolePageTitle(String header) {
-        SELECT_ROLE_PAGE_TITLE.shouldHave(text(header));
+        SELECT_ROLE_PAGE_TITLE.shouldHave(text(header), Duration.ofSeconds(10));
     }
     public void selectStudentRoleForSignUp() {
         STUDENT_ROLE_BUTTON.click();

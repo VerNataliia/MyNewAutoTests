@@ -17,14 +17,17 @@ public class StudentHeaderMenu {
     STUDENT_HEADER_MENU_SIGN_OUT_BUTTON = $(byXpath("//div[@id='app']//div[4]//a[1]"));
 
     public void assertCurrentStudentUsername(String studentUsername) {
-        STUDENT_HEADER_MENU_CURRENT_USER_USERNAME.shouldHave(Condition.text(studentUsername));
+        STUDENT_HEADER_MENU_CURRENT_USER_USERNAME.shouldHave(Condition.text(studentUsername), Duration.ofSeconds(10));
     }
     public void clickOnSignOutButton() {
+        STUDENT_HEADER_MENU_USERNAME_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         STUDENT_HEADER_MENU_USERNAME_BUTTON.click();
+        STUDENT_HEADER_MENU_SIGN_OUT_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         STUDENT_HEADER_MENU_SIGN_OUT_BUTTON.click();
     }
 
     public void clickOnNextQuizButton() {
+        STUDENT_HEADER_MENU_NEXT_QUIZ_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         STUDENT_HEADER_MENU_NEXT_QUIZ_BUTTON.click();
     }
 

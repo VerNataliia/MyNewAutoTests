@@ -6,6 +6,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,10 +35,11 @@ public class ClassPage extends BasePage {
 
 
     public void assertClassName(String className) {
-        MY_CLASS_PAGE_TITLE.shouldHave(Condition.text(className));
+        MY_CLASS_PAGE_TITLE.shouldHave(Condition.text(className), Duration.ofSeconds(10));
     }
 
     public void clickOnAddNewStudentsButton() {
+        MY_CLASS_ADD_NEW_STUDENTS_BUTTON.shouldBe(Condition.visible,Duration.ofSeconds(10));
         MY_CLASS_ADD_NEW_STUDENTS_BUTTON.click();
     }
 
@@ -45,11 +47,13 @@ public class ClassPage extends BasePage {
 
     public String addStudentUsername() {
         String newStudentUsername = "NewStudentAutotest" + dataGenerator.getRandomNumber(100000, 999999);
+        MY_CLASS_ADD_NEW_STUDENT_USERNAME_INPUT.shouldBe(Condition.visible,Duration.ofSeconds(10));
         MY_CLASS_ADD_NEW_STUDENT_USERNAME_INPUT.sendKeys(newStudentUsername);
         return newStudentUsername;
     }
 
     public String addStudentPassword() {
+        MY_CLASS_ADD_NEW_STUDENT_PASSWORD_INPUT.shouldBe(Condition.visible,Duration.ofSeconds(10));
         MY_CLASS_ADD_NEW_STUDENT_PASSWORD_INPUT.clear();
         String newStudentPassword = "qwert" + dataGenerator.getRandomNumber(1000, 9999);
         MY_CLASS_ADD_NEW_STUDENT_PASSWORD_INPUT.sendKeys(newStudentPassword);
@@ -64,15 +68,17 @@ public class ClassPage extends BasePage {
         studentCredentials.put("username", studentUsername);
         studentCredentials.put("password", studentPassword);
 
+        MY_CLASS_ADD_NEW_STUDENT_BUTTON.shouldBe(Condition.visible,Duration.ofSeconds(10));
         MY_CLASS_ADD_NEW_STUDENT_BUTTON.click();
         return studentCredentials;
     }
     public void saveAddedStudents() {
-       MY_CLASS_ADD_NEW_STUDENT_SAVE_AND_CONTINUE_BUTTON.click();
+        MY_CLASS_ADD_NEW_STUDENT_SAVE_AND_CONTINUE_BUTTON.shouldBe(Condition.visible,Duration.ofSeconds(10));
+        MY_CLASS_ADD_NEW_STUDENT_SAVE_AND_CONTINUE_BUTTON.click();
     }
 
     public void assertThatStudentAppearsOnClassList(List<String> newStudentsUsernames) {
-        STUDENT_LIST_IN_THE_CLASS.should(containExactTextsCaseSensitive(newStudentsUsernames));
+        STUDENT_LIST_IN_THE_CLASS.should(containExactTextsCaseSensitive(newStudentsUsernames), Duration.ofSeconds(10));
     }
 
 }

@@ -1,19 +1,21 @@
-package app.pages.quizPage.pretest;
+package app.pages.quizPage.newPretest;
 
 
 import app.DataGenerator;
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PretestPage {
+public class NewPretestPage {
 
-    public PretestPage(String pageUrl) {
+    public NewPretestPage(String pageUrl) {
     }
 
     private final SelenideElement
@@ -27,7 +29,8 @@ public class PretestPage {
     PRETEST_QUESTION_NUMBER = $(byXpath("//div[@class='rt-text rt-text--body-3 text-transform-uppercase rt-text-gray-70 rt-quiz-question__title']")),
     PRETEST_QUESTION_TEXT = $(byXpath("//div[@class='rt-text rt-text--body-1 font-weight-bold rt-quiz-question__question']")),
     PRETEST_SUBMIT_OR_NEXT_BUTTON = $(byXpath("//button[@class='rt-btn rt-btn__primary--orange rt-btn--xl']")),
-    PRETEST_COMPLETED_POP_UP = $(byXpath("//div[@class='rt-modal__content']"));
+    PRETEST_COMPLETED_POP_UP = $(byXpath("//div[@class='rt-modal__content']")),
+    PRETEST_COMPLETED_POP_UP_CLOSE_BUTTON = $(byXpath("//button[@class='rt-btn rt-btn__ghost rt-btn--md']"));
 
     private final ElementsCollection
     PRETEST_ANSWERS_OPTIONS = $$x("//section[@class='rt-quiz-item rt-bg-white']"),
@@ -35,10 +38,12 @@ public class PretestPage {
 
     DataGenerator dataGenerator = new DataGenerator();
     public void clickOnRandomAnswerOption() {
+        PRETEST_ANSWERS_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(2),Duration.ofSeconds(10));
         int numbOfOptionsInSchoolList = PRETEST_ANSWERS_OPTIONS.size();
         PRETEST_ANSWERS_OPTIONS.get(dataGenerator.getRandomNumber(0, numbOfOptionsInSchoolList - 1)).click();
     }
     public void clickOnButtonSubmitOrNext() {
+        PRETEST_SUBMIT_OR_NEXT_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         PRETEST_SUBMIT_OR_NEXT_BUTTON.click();
     }
 
@@ -58,7 +63,12 @@ public class PretestPage {
     }
 
     public void assertPretestCompletedPopUpIsShown() {
-        PRETEST_COMPLETED_POP_UP.shouldBe(visible);
+        PRETEST_COMPLETED_POP_UP.shouldBe(visible, Duration.ofSeconds(10));
+    }
+
+    public void closePretestCompletedPopUu() {
+        PRETEST_COMPLETED_POP_UP_CLOSE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
+        PRETEST_COMPLETED_POP_UP_CLOSE_BUTTON.click();
     }
 
 }

@@ -5,6 +5,9 @@ import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -25,10 +28,9 @@ public class StudentSignUpAgeStepPage extends BasePage {
     STUDENT_SIGNUP_AGE_STEP_AGE_DROP_DOWN_OPTIONS = $$(".vs__dropdown-option");
 
     public void assertStudentSignUpAgePageTitle(String headerTitle) {
-        STUDENT_SIGNUP_AGE_STEP_PAGE_TITLE.shouldHave(Condition.text(headerTitle));
+        STUDENT_SIGNUP_AGE_STEP_PAGE_TITLE.shouldHave(Condition.text(headerTitle), Duration.ofSeconds(10));
     }
-    public void setStudentFirstInitialName() {
-        STUDENT_SIGNUP_AGE_STEP_FIRST_NANE_INITIAL_INPUT.sendKeys("T");
+    public void setStudentFirstInitialName() {STUDENT_SIGNUP_AGE_STEP_FIRST_NANE_INITIAL_INPUT.sendKeys("T");
     }
     public void setStudentFirstName() {
         STUDENT_SIGNUP_AGE_STEP_FIRST_NANE_INPUT.sendKeys("AutotestStudentFirstName");

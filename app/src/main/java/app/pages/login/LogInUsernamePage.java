@@ -23,14 +23,16 @@ public class LogInUsernamePage extends BasePage {
 
 
     public void logInWithUsername(String strUserName, String strPassword) {
+        LOG_IN_USER_NAME.shouldBe(visible, Duration.ofSeconds(10));
         LOG_IN_USER_NAME.sendKeys(strUserName);
+        LOG_IN_PASSWORD.shouldBe(visible, Duration.ofSeconds(10));
         LOG_IN_PASSWORD.sendKeys(strPassword);
+        BUTTON_LOG_IN.shouldBe(visible, Duration.ofSeconds(10));
         BUTTON_LOG_IN.click();
     }
 
     public void assertLogInError(String errorText) {
-        LOG_IN_ERROR.shouldBe(visible, Duration.ofSeconds(10));
-        LOG_IN_ERROR.shouldHave(text(errorText));
+        LOG_IN_ERROR.shouldHave(text(errorText), Duration.ofSeconds(10));
     }
 
 }

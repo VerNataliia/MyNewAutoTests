@@ -12,6 +12,6 @@ public class AppConfig {
         } else if ("production".equals(environment)) {
             BASE_URL = "https://readtheory.org";
         } else {
-            BASE_URL = "https://rt-readtheory-staging.readtheory.org";}
+            BASE_URL = "https://readtheory.org";}
         }
 }

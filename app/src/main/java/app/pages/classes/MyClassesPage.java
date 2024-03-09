@@ -6,7 +6,10 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -25,9 +28,10 @@ public class MyClassesPage extends BasePage {
     MY_CLASSES_LIST = $$x("//tr/td[1]/div/a");
 
     public void assertMyClassesPageTitle(String header) {
-        MY_CLASSES_PAGE_TITLE.shouldHave(Condition.text(header));
+        MY_CLASSES_PAGE_TITLE.shouldHave(Condition.text(header), Duration.ofSeconds(10));
     }
     public void clickOnCreateNewClassButton() {
+        MY_CLASSES_ADD_NEW_CLASS_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         MY_CLASSES_ADD_NEW_CLASS_BUTTON.click();
     }
     DataGenerator dataGenerator = new DataGenerator();
@@ -35,20 +39,23 @@ public class MyClassesPage extends BasePage {
 
     public String enterClassName() {
         String className = "Class" + dataGenerator.getRandomNumber(1, 100);
+        MY_CLASSES_CLASS_CREATION_WINDOW_CLASS_NAME_INPUT.shouldBe(visible, Duration.ofSeconds(10));
         MY_CLASSES_CLASS_CREATION_WINDOW_CLASS_NAME_INPUT.sendKeys(className);
         return className;
     }
 
     public void clickOnCreateClassButton() {
+        MY_CLASSES_CLASS_CREATION_WINDOW_CREATE_CLASS_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         MY_CLASSES_CLASS_CREATION_WINDOW_CREATE_CLASS_BUTTON.click();
     }
 
     public void assertThatCreatedClassIsInList (String className) {
-        MY_CLASSES_LIST.should(containExactTextsCaseSensitive(className));
+        MY_CLASSES_LIST.should(containExactTextsCaseSensitive(className), Duration.ofSeconds(10));
     }
 
     public void clickOnClass (String className) {
         SelenideElement MY_CLASS = $(byXpath("//tr/td[1]/div/a[contains(text(), '" + className + "')]"));
+        MY_CLASS.shouldBe(visible, Duration.ofSeconds(10));
         MY_CLASS.click();
     }
 }
