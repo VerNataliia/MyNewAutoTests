@@ -1,7 +1,6 @@
 package app.pages.quizPage;
 
 import app.pages.base.BasePage;
-import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 

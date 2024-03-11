@@ -50,6 +50,11 @@ public class DemoTeacherAccount extends A_BaseTest {
     }
     @Test
     public void createDemoAccountWithOldPretest() {
+        logger.info("Sample info message");
+        logger.warn("Sample warn message");
+        logger.error("Sample error message");
+        logger.fatal("Sample fatal message");
+
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
 
         int numberOfClassesToCreate = 3;

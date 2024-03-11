@@ -25,6 +25,7 @@ public class NextQuizPage extends BasePage {
     QUIZ_QUESTION_TITLE = $(byXpath("//h3")),
     QUIZ_SUBMIT_BUTTON = $(byXpath("//div[@class='student-quiz-page__question-buttons']")),
     QUIZ_NEXT_BUTTON = $(byXpath("//div[@class='primary-button student-quiz-page__question-next next-btn quiz-tab-item focused']")),
+    QUIZ_PROGRESS_BAR = $(byXpath("//div[@class='quiz-action-panel__markers']")),
     QUIZ_RESULT_POPUP = $(byXpath("//body/div[@id='app']/div[@class='app-body']/div[@class='quiz-page-container']/div[@class='v--modal-overlay']/div[@class='v--modal-background-click']/div[@class='v--modal-box v--modal']/div[@class='VueCarousel']/div[@class='VueCarousel-wrapper']/div[@class='VueCarousel-inner']/div[1]/div[1]")),
     QUIZ_RESULT_POPUP_CONTINUE_BUTTON = $(byXpath("//div[@class='primary-button quiz-result-modal__continue quiz-tab-item']")),
     OLD_PRETEST_RESULT_POP_UP = $(byXpath("//input[@class='jquery-button jquery-button-large']"));
@@ -54,11 +55,7 @@ public class NextQuizPage extends BasePage {
     }
 
     public int getNumberNotAnsweredQuestions() {
-        try {
-            TimeUnit.SECONDS.sleep(4);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        QUIZ_PROGRESS_BAR.shouldBe(visible, Duration.ofSeconds(10));
         int numberNotAnsweredQuestions = QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2.size() + 1;
         System.out.println("Number of questions without answers: " + numberNotAnsweredQuestions);
         return numberNotAnsweredQuestions;
@@ -67,6 +64,11 @@ public class NextQuizPage extends BasePage {
     DataGenerator dataGenerator = new DataGenerator();
 
     public void selectRandomAnswer() {
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         QUIZ_QUESTION_ANSWER_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0),Duration.ofSeconds(10));
         int numberAnswersOptions = QUIZ_QUESTION_ANSWER_OPTIONS.size();
         System.out.println("Number of answers is " + numberAnswersOptions);
@@ -74,15 +76,11 @@ public class NextQuizPage extends BasePage {
     }
 
     public void clickOnSubmitButton() {
-        try {
-            TimeUnit.SECONDS.sleep(4);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        QUIZ_SUBMIT_BUTTON.shouldBe(visible,  Duration.ofSeconds(10));
         QUIZ_SUBMIT_BUTTON.click();
     }
     public void clickOnNextButton() {
-        QUIZ_NEXT_BUTTON.shouldBe(visible, Duration.ofSeconds(5));
+        QUIZ_NEXT_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         QUIZ_NEXT_BUTTON.click();
     }
 
