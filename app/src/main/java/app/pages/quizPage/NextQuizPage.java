@@ -33,6 +33,7 @@ public class NextQuizPage extends BasePage {
     private final ElementsCollection
     QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker markers-overlayed']"),
     QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2 = $$x("//div[@class='question-marker']"),
+    OLD_PRETEST_QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker pretest-marker']"),
     QUIZ_CURRENT_QUESTION_NUMBER = $$x("//div[@class='question-marker active']"),
     QUIZ_SUBMITTED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker submitted']"),
     QUIZ_QUESTION_ANSWER_OPTIONS = $$x("//div[@class='student-quiz-page__answer answer-card-wrapper animate']");
@@ -56,7 +57,7 @@ public class NextQuizPage extends BasePage {
 
     public int getNumberNotAnsweredQuestions() {
         QUIZ_PROGRESS_BAR.shouldBe(visible, Duration.ofSeconds(10));
-        int numberNotAnsweredQuestions = QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2.size() + 1;
+        int numberNotAnsweredQuestions = QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2.size() + OLD_PRETEST_QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + 1;
         System.out.println("Number of questions without answers: " + numberNotAnsweredQuestions);
         return numberNotAnsweredQuestions;
     }
@@ -65,7 +66,7 @@ public class NextQuizPage extends BasePage {
 
     public void selectRandomAnswer() {
         try {
-            TimeUnit.SECONDS.sleep(4);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -80,6 +81,11 @@ public class NextQuizPage extends BasePage {
         QUIZ_SUBMIT_BUTTON.click();
     }
     public void clickOnNextButton() {
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } // for old pretest
         QUIZ_NEXT_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         QUIZ_NEXT_BUTTON.click();
     }

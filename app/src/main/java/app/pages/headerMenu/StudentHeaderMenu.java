@@ -14,7 +14,9 @@ public class StudentHeaderMenu {
     STUDENT_HEADER_MENU_NEXT_QUIZ_BUTTON = $(byXpath("//span[contains(text(),'Next quiz')]")),
     STUDENT_HEADER_MENU_USERNAME_BUTTON = $(byXpath("//div[@class='account-button-wrapper']")),
     STUDENT_HEADER_MENU_CURRENT_USER_USERNAME = $(byXpath("//span[@class='user-name']")),
-    STUDENT_HEADER_MENU_SIGN_OUT_BUTTON = $(byXpath("//div[@id='app']//div[4]//a[1]"));
+    STUDENT_HEADER_MENU_SIGN_OUT_BUTTON = $(byXpath("//div[@id='app']//div[4]//a[1]")),
+    STUDENT_HEADER_EMAIL_ALERT = $(byXpath("//div[@id='email-alert-container']")),
+    STUDENT_HEADER_EMAIL_ALERT_CLOSE_BUTTON = $(byXpath("//a[@id='close-email-alert']"));
 
     public void assertCurrentStudentUsername(String studentUsername) {
         STUDENT_HEADER_MENU_CURRENT_USER_USERNAME.shouldHave(Condition.text(studentUsername), Duration.ofSeconds(10));
@@ -29,6 +31,11 @@ public class StudentHeaderMenu {
     public void clickOnNextQuizButton() {
         STUDENT_HEADER_MENU_NEXT_QUIZ_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         STUDENT_HEADER_MENU_NEXT_QUIZ_BUTTON.click();
+    }
+
+    public void closeEmailAlert() {
+        STUDENT_HEADER_EMAIL_ALERT.shouldBe(visible, Duration.ofSeconds(10));
+        STUDENT_HEADER_EMAIL_ALERT_CLOSE_BUTTON.click();
     }
 
 }

@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -24,12 +25,15 @@ public class SignUpSelectRolePage extends BasePage {
         SELECT_ROLE_PAGE_TITLE.shouldHave(text(header), Duration.ofSeconds(10));
     }
     public void selectStudentRoleForSignUp() {
+        STUDENT_ROLE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         STUDENT_ROLE_BUTTON.click();
     }
     public void selectTeacherRoleForSignUp() {
+        TEACHER_ROLE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         TEACHER_ROLE_BUTTON.click();
     }
     public void selectParentRoleForSignUp() {
+        PARENT_ROLE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         PARENT_ROLE_BUTTON.click();
     }
 

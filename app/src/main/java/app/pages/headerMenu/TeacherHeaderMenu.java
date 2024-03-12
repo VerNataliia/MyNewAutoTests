@@ -42,6 +42,7 @@ public class TeacherHeaderMenu {
         TEACHER_HEADER_MENU_USERNAME_BUTTON.click();
         TEACHER_HEADER_MENU_SIGN_OUT_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
         TEACHER_HEADER_MENU_SIGN_OUT_BUTTON.click();
+        System.out.println("Sign out button is selected");
     }
 
 }

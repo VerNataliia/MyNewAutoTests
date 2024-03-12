@@ -10,6 +10,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -75,9 +76,15 @@ public class ClassPage extends BasePage {
     public void saveAddedStudents() {
         MY_CLASS_ADD_NEW_STUDENT_SAVE_AND_CONTINUE_BUTTON.shouldBe(Condition.visible,Duration.ofSeconds(10));
         MY_CLASS_ADD_NEW_STUDENT_SAVE_AND_CONTINUE_BUTTON.click();
+        System.out.println("Save added students button is clicked");
     }
 
     public void assertThatStudentAppearsOnClassList(List<String> newStudentsUsernames) {
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         STUDENT_LIST_IN_THE_CLASS.should(containExactTextsCaseSensitive(newStudentsUsernames), Duration.ofSeconds(10));
     }
 

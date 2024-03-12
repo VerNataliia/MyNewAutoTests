@@ -1,9 +1,12 @@
 package app.pages.login;
 
+import app.helpers.Driver;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -23,13 +26,22 @@ public class LogInUsernamePage extends BasePage {
 
 
     public void logInWithUsername(String strUserName, String strPassword) {
-        LOG_IN_USER_NAME.shouldBe(visible, Duration.ofSeconds(10));
-        LOG_IN_USER_NAME.sendKeys(strUserName);
-        LOG_IN_PASSWORD.shouldBe(visible, Duration.ofSeconds(10));
-        LOG_IN_PASSWORD.sendKeys(strPassword);
-        BUTTON_LOG_IN.shouldBe(visible, Duration.ofSeconds(10));
-        BUTTON_LOG_IN.click();
+            System.out.println("Current url is " + WebDriverRunner.url());
+            LOG_IN_USER_NAME.shouldBe(visible, Duration.ofSeconds(10));
+            System.out.println("Student username is visible");
+            LOG_IN_USER_NAME.sendKeys(strUserName);
+            System.out.println("Student username is entered");
+            LOG_IN_PASSWORD.shouldBe(visible, Duration.ofSeconds(10));
+            System.out.println("Student password is visible");
+            LOG_IN_PASSWORD.sendKeys(strPassword);
+            System.out.println("Student password is entered");
+            BUTTON_LOG_IN.shouldBe(visible, Duration.ofSeconds(10));
+            System.out.println("Log in button is visible");
+            BUTTON_LOG_IN.click();
+            System.out.println("Log in button clicked");
+            System.out.println("Current url is " + WebDriverRunner.url());
     }
+
 
     public void assertLogInError(String errorText) {
         LOG_IN_ERROR.shouldHave(text(errorText), Duration.ofSeconds(10));
