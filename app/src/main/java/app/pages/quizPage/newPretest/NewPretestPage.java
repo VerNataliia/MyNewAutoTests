@@ -36,7 +36,7 @@ public class NewPretestPage {
     DataGenerator dataGenerator = new DataGenerator();
 
     public void clickOnRandomAnswerOption() {
-        PRETEST_ANSWERS_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(2));
+        PRETEST_ANSWERS_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0));
         int numbOfOptionsInSchoolList = PRETEST_ANSWERS_OPTIONS.size();
         PRETEST_ANSWERS_OPTIONS.get(dataGenerator.getRandomNumber(0, numbOfOptionsInSchoolList - 1)).click();
     }

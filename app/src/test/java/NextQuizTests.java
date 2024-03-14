@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import static app.StaticTestData.STUDENT_PASSWORD;
 import static app.StaticTestData.STUDENT_USERNAME;
 
-@Epic("NextQuiz")
+@Epic("StudentTask")
 @Feature("CompletingNextQuiz")
 public class NextQuizTests extends A_BaseTest {
     @Test(groups = ("NextQuiz"), priority = 1, description = "Verify if a student is able to complete a quiz")
@@ -15,16 +15,6 @@ public class NextQuizTests extends A_BaseTest {
         app.logInUsernamePage.open();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
         app.dashboardPage.clickOnStartOrContinuePracticingButton();
-        int numberOfQuizzesToComplete = 10;
-        for (int j = 0; j < numberOfQuizzesToComplete; j++) {
-            int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
-            for (int i = 0; i < numberNotAnsweredQuestions; i++) {
-                app.nextQuizPage.selectRandomAnswer();
-                app.nextQuizPage.clickOnSubmitButton();
-                app.nextQuizPage.clickOnNextButton();
-            }
-            app.nextQuizPage.clickOnContinueButtonOnResultPopUp();
-            app.resultPage.clickOnNextQuizButton();
-        }
+        UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, 10);
     }
 }

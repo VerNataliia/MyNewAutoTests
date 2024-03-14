@@ -27,7 +27,7 @@ public class ClassPage extends BasePage {
 
 
     public void checkClassName(String className) {
-        MY_CLASS_PAGE_TITLE.shouldHave(Condition.text(className));
+        MY_CLASS_PAGE_TITLE.shouldBe(Condition.visible).shouldHave(Condition.text(className));
     }
 
     public void clickOnAddNewStudentsButton() {

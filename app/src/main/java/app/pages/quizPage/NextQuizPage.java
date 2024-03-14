@@ -65,11 +65,6 @@ public class NextQuizPage extends BasePage {
     DataGenerator dataGenerator = new DataGenerator();
 
     public void selectRandomAnswer() {
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         QUIZ_QUESTION_ANSWER_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0));
         int numberAnswersOptions = QUIZ_QUESTION_ANSWER_OPTIONS.size();
         System.out.println("Number of answers is " + numberAnswersOptions);

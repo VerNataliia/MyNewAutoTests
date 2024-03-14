@@ -1,6 +1,9 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
+import java.util.List;
+import java.util.Map;
+
 @Epic("StudentTask")
 @Feature("Pretest")
 
@@ -11,6 +14,7 @@ public class NewPretestTests extends A_BaseTest {
     @AllureId("2")
 
     public void checkPretestExecutionAsNewStudent() {
+        app.signUpSelectRolePage.open();
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
         UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
     }
@@ -21,16 +25,17 @@ public class NewPretestTests extends A_BaseTest {
     @AllureId("34")
 
     public void checkPretestExecutionAsNewTeacherStudent() {
+        app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 5);
-        UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, 1);
+        UtilityCreateClass.createNewClassWithClassName(app, 1);
+        List<Map<String, String>> studentCredentials = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, 1);
+        String newStudentUsername = studentCredentials.get(0).toString();
+        String newStudentPassword = studentCredentials.get(1).toString();
         app.teacherHeaderMenu.clickOnSignOutButton();
-//        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
-        UtilityStudentSignUp.signUpAsStudentAdditionalAgeStep(app);
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
         UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
 
     }
-
 
 
 }

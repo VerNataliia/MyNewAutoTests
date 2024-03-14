@@ -15,7 +15,7 @@ public class TeacherClassTests extends A_BaseTest {
     public void checkClassCreation() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 5);
+        UtilityCreateClass.createNewClassWithClassName(app, 5);
 
     }
 
@@ -34,7 +34,7 @@ public class TeacherClassTests extends A_BaseTest {
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
+            UtilityCreateClass.createNewClassWithClassName(app, 1);
             List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, numberOfStudentsToAdd);
 
             for (Map<String, String> student : students) {

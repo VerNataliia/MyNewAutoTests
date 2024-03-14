@@ -15,7 +15,7 @@ public class StaticTestData {
             STUDENT_PASSWORD = "349872yd";
         }
         else {
-            STUDENT_USERNAME = "STAGETEST1AUTOMATIONSTUDENT";
+            STUDENT_USERNAME = "PRODTEST1AUTOMATIONSTUDENT";
             STUDENT_PASSWORD = "349872yd";
         }
     }
@@ -34,7 +34,7 @@ public class StaticTestData {
             TEACHER_PASSWORD = "349872yd";
         }
         else {
-            TEACHER_USERNAME = "STAGETEST1AUTOMATIONTEACHER";
+            TEACHER_USERNAME = "PRODTEST1AUTOMATIONTEACHER";
             TEACHER_PASSWORD = "349872yd";
         }
     }

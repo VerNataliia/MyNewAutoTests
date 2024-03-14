@@ -8,7 +8,7 @@ public class TeacherSignUpTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can sign up with username. Select school page and pricing pages are skipped")
     @AllureId("133")
-        public void checkTeacherSignUpWithUsername() {
+    public void checkTeacherSignUpWithUsername() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
     }

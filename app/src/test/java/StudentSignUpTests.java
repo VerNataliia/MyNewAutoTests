@@ -8,9 +8,9 @@ public class StudentSignUpTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("A student can sign up with username and password")
     @AllureId("100")
-        public void checkStudentSignUpWithUsername() {
+    public void checkStudentSignUpWithUsername() {
         app.signUpSelectRolePage.open();
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
-        }
+    }
 
 }
