@@ -9,17 +9,17 @@ import java.util.concurrent.TimeUnit;
 public class DemoTeacherAccount extends A_BaseTest {
     @Test
     public void createDemoAccountWithNewPretest() {
+        app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
 
         int numberOfClassesToCreate = 3;
-        int numberOfStudentsToAdd = 15;
 
         List<String> allUsernames = new ArrayList<>();
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
             UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, numberOfStudentsToAdd);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 15);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");
@@ -33,37 +33,29 @@ public class DemoTeacherAccount extends A_BaseTest {
         for (int i = 0; i < allUsernames.size(); i++) {
             String studentUsername = allUsernames.get(i);
             String studentPassword = allPasswords.get(i);
-            //app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword);
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
             UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
-            int numberOfQuizzesToComplete = 10;
-            for (int j = 0; j < numberOfQuizzesToComplete; j++) {
-                int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
-                for (int k = 0; k < numberNotAnsweredQuestions; k++) {
-                    app.nextQuizPage.selectRandomAnswer();
-                    app.nextQuizPage.clickOnSubmitButton();
-                    app.nextQuizPage.clickOnNextButton();
-                }
-                app.nextQuizPage.clickOnContinueButtonOnResultPopUp();
-                app.resultPage.clickOnNextQuizButton();
-            }
+            UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, 10);
             app.studentHeaderMenu.clickOnSignOutButton();
         }
 
     }
+
     @Test
     public void createDemoAccountWithOldPretest() {
+        app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         app.teacherProfileSettings.selectAvatar();
 
-        int numberOfClassesToCreate = 2;
-        int numberOfStudentsToAdd = 15;
+
+        int numberOfClassesToCreate = 3;
 
         List<String> allUsernames = new ArrayList<>();
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
             UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, numberOfStudentsToAdd);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 15);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");
@@ -74,31 +66,23 @@ public class DemoTeacherAccount extends A_BaseTest {
         }
         app.teacherHeaderMenu.clickOnSignOutButton();
 
+
         for (int i = 0; i < allUsernames.size(); i++) {
             String studentUsername = allUsernames.get(i);
-            System.out.println("Student username " + studentUsername);
             String studentPassword = allPasswords.get(i);
-            System.out.println("Student password " + studentPassword);
+
             do {
-                //app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword );
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
                 try {
-                TimeUnit.SECONDS.sleep(3);
+                    TimeUnit.SECONDS.sleep(3);
                 } catch (InterruptedException e) {
-                 e.printStackTrace();
+                    e.printStackTrace();
                 }
-            } while (WebDriverRunner.url().contains("/auth/login")); //added do-while because of bug
-           UtilityCompleteOldPretest.completeOldPretestWithRandomAnswers(app, 8);
-            int numberOfQuizzesToComplete = 10;
-            for (int j = 0; j < numberOfQuizzesToComplete; j++) {
-                int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
-                for (int k = 0; k < numberNotAnsweredQuestions; k++) {
-                    app.nextQuizPage.selectRandomAnswer();
-                    app.nextQuizPage.clickOnSubmitButton();
-                    app.nextQuizPage.clickOnNextButton();
-                }
-                app.nextQuizPage.clickOnContinueButtonOnResultPopUp();
-                app.resultPage.clickOnNextQuizButton();
             }
+            while (WebDriverRunner.url().contains("/auth/login")); //added because of bug with redirection
+
+            UtilityCompleteOldPretest.completeOldPretestWithRandomAnswers(app, 8);
+            UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, 10);
             app.studentHeaderMenu.clickOnSignOutButton();
         }
 

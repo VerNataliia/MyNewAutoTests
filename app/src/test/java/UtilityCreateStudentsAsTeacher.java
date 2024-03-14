@@ -36,11 +36,11 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
 
     }
 
-    public static List<Map<String, String>> createNewStudentsWithFirstAndLastName(App app, int n) {
+    public static List<Map<String, String>> createNewStudentsWithFirstAndLastName(App app, int numberStudentsToAdd) {
         app.classPage.clickOnAddNewStudentsButton();
 
         List<Map<String, String>> studentCredentialsList = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numberStudentsToAdd; i++) {
             app.addNewStudentsPage.addRandomFirstName();
             app.addNewStudentsPage.addRandomStudentPassword();
             String studentUsername = app.addNewStudentsPage.addRandomStudentUsernameFromName();
