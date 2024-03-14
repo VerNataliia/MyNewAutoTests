@@ -74,6 +74,13 @@ test {
     systemProperty 'aspectj.version', "$aspectjVersion"
 }
 
+tasks.register("everyDayTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        listeners.add('HelperSeverityLevelInterceptor')
+    }
+}
+
 
 tasks.register("loginTest", Test) {
     systemProperty 'environment', System.properties['environment']
