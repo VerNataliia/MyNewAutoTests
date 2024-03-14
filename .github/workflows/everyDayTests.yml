@@ -12,9 +12,9 @@ on:
       environment:
         description: 'Set environment: staging OR production'
         required: true
-        default: 'staging'
+        default: 'production'
     schedule:
-      - cron: '30 9 * * *'
+      - cron: '20 13 * * *'
 
 permissions:
   contents: write
