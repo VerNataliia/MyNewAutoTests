@@ -64,33 +64,8 @@ public class AddNewStudentsPage {
         return newStudentPassword;
     }
 
-    public Map<String, String> addNewStudents() {
-        String studentUsername = addRandomStudentUsername();
-        String studentPassword = addRandomStudentPassword();
-
-        Map<String, String> studentCredentials = new HashMap<>();
-        studentCredentials.put("username", studentUsername);
-        studentCredentials.put("password", studentPassword);
-
-        MY_CLASS_ADD_NEW_STUDENT_BUTTON.shouldBe(Condition.visible, Duration.ofSeconds(10));
-        MY_CLASS_ADD_NEW_STUDENT_BUTTON.click();
-        return studentCredentials;
-    }
-
-    public Map<String, String> addNewStudents2() {
-        addRandomFirstName();
-        addRandomLastName();
-
-        String studentUsername = addRandomStudentUsernameFromName();
-        String studentPassword = addRandomStudentPassword();
-
-        Map<String, String> studentCredentials = new HashMap<>();
-        studentCredentials.put("username", studentUsername);
-        studentCredentials.put("password", studentPassword);
-
-        MY_CLASS_ADD_NEW_STUDENT_BUTTON.shouldBe(Condition.visible, Duration.ofSeconds(10));
-        MY_CLASS_ADD_NEW_STUDENT_BUTTON.click();
-        return studentCredentials;
+    public void clickOnAddNewStudentButton() {
+        MY_CLASS_ADD_NEW_STUDENT_BUTTON.shouldBe(Condition.visible).click();
     }
 
     public void saveAddedStudents() {

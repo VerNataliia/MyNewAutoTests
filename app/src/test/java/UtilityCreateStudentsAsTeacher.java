@@ -1,6 +1,7 @@
 import app.App;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,11 +11,17 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
 
         List<Map<String, String>> studentCredentialsList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            Map<String, String> studentCredentials = app.classPage.addNewStudents();
-            studentCredentialsList.add(studentCredentials);
-        }
+                String studentUsername = app.addNewStudentsPage.addRandomStudentUsername();
+                String studentPassword = app.addNewStudentsPage.addRandomStudentPassword();
 
-        app.classPage.saveAddedStudents();
+                Map<String, String> studentCredentials = new HashMap<>();
+                studentCredentials.put("username", studentUsername);
+                studentCredentials.put("password", studentPassword);
+
+                app.addNewStudentsPage.clickOnAddNewStudentButton();
+            }
+
+        app.addNewStudentsPage.saveAddedStudents();
 
         List<String> usernames = new ArrayList<>();
         for (Map<String, String> studentCredentials : studentCredentialsList) {
@@ -25,21 +32,28 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
         }
 
         app.classPage.checkStudentsInClass(usernames);
-
         return studentCredentialsList;
 
     }
 
-    public static List<Map<String, String>> createNewStudentsFirstAndLastName(App app, int n) {
+    public static List<Map<String, String>> createNewStudentsWithFirstAndLastName(App app, int n) {
         app.classPage.clickOnAddNewStudentsButton();
 
         List<Map<String, String>> studentCredentialsList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            Map<String, String> studentCredentials = app.classPage.addNewStudents2();
-            studentCredentialsList.add(studentCredentials);
+            app.addNewStudentsPage.addRandomFirstName();
+            app.addNewStudentsPage.addRandomStudentPassword();
+            String studentUsername = app.addNewStudentsPage.addRandomStudentUsernameFromName();
+            String studentPassword = app.addNewStudentsPage.addRandomStudentPassword();
+
+            Map<String, String> studentCredentials = new HashMap<>();
+            studentCredentials.put("username", studentUsername);
+            studentCredentials.put("password", studentPassword);
+
+            app.addNewStudentsPage.clickOnAddNewStudentButton();
         }
 
-        app.classPage.saveAddedStudents();
+        app.addNewStudentsPage.saveAddedStudents();
 
         List<String> usernames = new ArrayList<>();
         for (Map<String, String> studentCredentials : studentCredentialsList) {
@@ -50,9 +64,7 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
         }
 
         app.classPage.checkStudentsInClass(usernames);
-
         return studentCredentialsList;
-
     }
 }
 

@@ -2,17 +2,15 @@ import app.App;
 
 public class UtilityStudentSignUp extends A_BaseTest {
     public static String[] signUpAsStudentWithUsername(App app) {
-        app.signUpSelectRolePage.open();
         app.signUpSelectRolePage.checkSelectRolePageTitle("Welcome to ReadTheory!");
         app.signUpSelectRolePage.selectStudentRoleForSignUp();
         app.studentSignUpPage.checkStudentSignUpPageTitle("Create your student account");
         String newStudentUsername = app.studentSignUpPage.setNewStudentUsername();
         String newStudentPassword = app.studentSignUpPage.setNewStudentPassword();
         app.studentSignUpPage.selectRandomStudentAgeOption();
-        app.studentSignUpPage.assertSignUpButtonIsAble();
         app.studentSignUpPage.clickOnSignUpButton();
         app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
-        studentHeaderMenu.checkStudentUsername(newStudentUsername);
+        app.studentHeaderMenu.checkStudentUsername(newStudentUsername);
         return new String[]{newStudentUsername, newStudentPassword};
     }
 

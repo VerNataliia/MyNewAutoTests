@@ -26,7 +26,7 @@ public class ClassPage extends BasePage {
         STUDENT_LIST_IN_THE_CLASS = $$x("//tr/td[2]/a/span");
 
 
-    public void getClassName(String className) {
+    public void checkClassName(String className) {
         MY_CLASS_PAGE_TITLE.shouldHave(Condition.text(className));
     }
 

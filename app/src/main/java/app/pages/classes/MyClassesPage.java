@@ -13,7 +13,10 @@ import static com.codeborne.selenide.Selenide.$$x;
 
 public class MyClassesPage extends BasePage {
 
-    private final SelenideElement MY_CLASSES_PAGE_TITLE = $(byXpath("//h1")), MY_CLASSES_ADD_NEW_CLASS_BUTTON = $(byXpath("//div[@class='primary-button btn-class-action']"));
+    private final SelenideElement
+        MY_CLASSES_PAGE_TITLE = $(byXpath("//h1")),
+        MY_CLASSES_ADD_NEW_CLASS_BUTTON = $(byXpath("//div[@class='primary-button btn-class-action']"));
+
     private final ElementsCollection MY_CLASSES_LIST = $$x("//tr/td[1]/div/a");
 
     public MyClassesPage(String pageUrl) {

@@ -28,13 +28,13 @@ public class DemoTeacherAccount extends A_BaseTest {
                 allPasswords.add(studentPassword);
             }
         }
-        teacherHeaderMenu.clickOnSignOutButton();
+        app.teacherHeaderMenu.clickOnSignOutButton();
 
         for (int i = 0; i < allUsernames.size(); i++) {
             String studentUsername = allUsernames.get(i);
             String studentPassword = allPasswords.get(i);
-            app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword);
-            UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app);
+            //app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword);
+            UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
             int numberOfQuizzesToComplete = 10;
             for (int j = 0; j < numberOfQuizzesToComplete; j++) {
                 int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
@@ -46,14 +46,14 @@ public class DemoTeacherAccount extends A_BaseTest {
                 app.nextQuizPage.clickOnContinueButtonOnResultPopUp();
                 app.resultPage.clickOnNextQuizButton();
             }
-            studentHeaderMenu.clickOnSignOutButton();
+            app.studentHeaderMenu.clickOnSignOutButton();
         }
 
     }
     @Test
     public void createDemoAccountWithOldPretest() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        teacherHeaderMenu.selectAvatar();
+        app.teacherProfileSettings.selectAvatar();
 
         int numberOfClassesToCreate = 2;
         int numberOfStudentsToAdd = 15;
@@ -63,7 +63,7 @@ public class DemoTeacherAccount extends A_BaseTest {
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
             UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsFirstAndLastName(app, numberOfStudentsToAdd);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, numberOfStudentsToAdd);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");
@@ -72,7 +72,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                 allPasswords.add(studentPassword);
             }
         }
-        teacherHeaderMenu.clickOnSignOutButton();
+        app.teacherHeaderMenu.clickOnSignOutButton();
 
         for (int i = 0; i < allUsernames.size(); i++) {
             String studentUsername = allUsernames.get(i);
@@ -80,14 +80,14 @@ public class DemoTeacherAccount extends A_BaseTest {
             String studentPassword = allPasswords.get(i);
             System.out.println("Student password " + studentPassword);
             do {
-                app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword );
+                //app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword );
                 try {
                 TimeUnit.SECONDS.sleep(3);
                 } catch (InterruptedException e) {
                  e.printStackTrace();
                 }
             } while (WebDriverRunner.url().contains("/auth/login")); //added do-while because of bug
-           UtilityCompleteOldPretest.completeOldPretestWithRandomAnswers(app);
+           UtilityCompleteOldPretest.completeOldPretestWithRandomAnswers(app, 8);
             int numberOfQuizzesToComplete = 10;
             for (int j = 0; j < numberOfQuizzesToComplete; j++) {
                 int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
@@ -99,7 +99,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                 app.nextQuizPage.clickOnContinueButtonOnResultPopUp();
                 app.resultPage.clickOnNextQuizButton();
             }
-            studentHeaderMenu.clickOnSignOutButton();
+            app.studentHeaderMenu.clickOnSignOutButton();
         }
 
     }

@@ -3,9 +3,9 @@ import app.App;
 import java.util.concurrent.TimeUnit;
 
 public class UtilityCompleteNewPretest extends A_BaseTest{
-    public static void completeNewPretestWithRandomAnswers(App app, int numberOfTimes) {
+    public static void completeNewPretestWithRandomAnswers(App app, int numberOfQuizzesInPretest) {
         app.summaryPage.clickOnStartButton();
-            for (int i = 0; i < numberOfTimes; i++) {
+            for (int i = 0; i < numberOfQuizzesInPretest; i++) {
 
                 try {
                     TimeUnit.SECONDS.sleep(7); // Wait for 5 seconds

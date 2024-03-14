@@ -13,6 +13,7 @@ public class TeacherClassTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can create a few classes only with the name")
     public void checkClassCreation() {
+        app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 5);
 
@@ -23,6 +24,7 @@ public class TeacherClassTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can create classes, then add students to these classes. These students can log in to the system ")
     public void checkClassAndStudentCreation() {
+        app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
 
         int numberOfClassesToCreate = 5;
@@ -42,13 +44,13 @@ public class TeacherClassTests extends A_BaseTest {
                 allPasswords.add(studentPassword);
             }
         }
-        teacherHeaderMenu.clickOnSignOutButton();
+        app.teacherHeaderMenu.clickOnSignOutButton();
 
         for (int i = 0; i < allUsernames.size(); i++) {
             String studentUsername = allUsernames.get(i);
             String studentPassword = allPasswords.get(i);
-            app.logInUsernamePage.logInWithUsername(studentUsername, studentPassword);
-            studentHeaderMenu.clickOnSignOutButton();
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+            app.studentHeaderMenu.clickOnSignOutButton();
         }
 
     }

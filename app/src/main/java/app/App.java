@@ -1,7 +1,10 @@
 package app;
 
 import app.pages.classes.ClassPage;
+import app.pages.classes.CreateEditClassDrawer;
 import app.pages.classes.MyClassesPage;
+import app.pages.headerMenu.StudentHeaderMenu;
+import app.pages.headerMenu.TeacherHeaderMenu;
 import app.pages.login.LogInGooglePage;
 import app.pages.login.LogInUsernamePage;
 import app.pages.quizPage.NextQuizPage;
@@ -17,7 +20,10 @@ import app.pages.signup.teacher.TeacherSignUpStepFourPage;
 import app.pages.signup.teacher.TeacherSignUpStepThreePage;
 import app.pages.signup.teacher.TeacherSignupStepOnePage;
 import app.pages.signup.teacher.TeacherSignupStepTwoPage;
+import app.pages.students.AddNewStudentsPage;
 import app.pages.summaryPage.SummaryPage;
+import app.pages.userSettings.StudentProfileSettings;
+import app.pages.userSettings.TeacherProfileSettings;
 
 
 public class App {
@@ -40,6 +46,12 @@ public class App {
     public NextQuizPage nextQuizPage;
     public ResultPage resultPage;
     public PricingPage pricingPage;
+    public TeacherHeaderMenu teacherHeaderMenu;
+    public StudentHeaderMenu studentHeaderMenu;
+    public CreateEditClassDrawer createEditClassDrawer;
+    public TeacherProfileSettings teacherProfileSettings;
+    public StudentProfileSettings studentProfileSettings;
+    public AddNewStudentsPage addNewStudentsPage;
 
 
     public App() {
@@ -61,6 +73,12 @@ public class App {
         nextQuizPage = new NextQuizPage("/app/student/quiz");
         resultPage = new ResultPage("/app/student/quiz/results");
         pricingPage = new PricingPage("/app/sign-up/pricing");
+        teacherHeaderMenu = new TeacherHeaderMenu();
+        studentHeaderMenu = new StudentHeaderMenu();
+        createEditClassDrawer = new CreateEditClassDrawer();
+        teacherProfileSettings = new TeacherProfileSettings();
+        studentProfileSettings = new StudentProfileSettings();
+        addNewStudentsPage = new AddNewStudentsPage();
 
     }
 }

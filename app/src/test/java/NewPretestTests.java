@@ -12,7 +12,7 @@ public class NewPretestTests extends A_BaseTest {
 
     public void checkPretestExecutionAsNewStudent() {
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
-        UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app);
+        UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
     }
 
     @Test(groups = ("Pretest"), priority = 1, description = "Verify if a new student who was created by a teacher can get a pretest and complete it")
@@ -24,10 +24,10 @@ public class NewPretestTests extends A_BaseTest {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 5);
         UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, 1);
-        teacherHeaderMenu.clickOnSignOutButton();
+        app.teacherHeaderMenu.clickOnSignOutButton();
 //        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
         UtilityStudentSignUp.signUpAsStudentAdditionalAgeStep(app);
-        UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app);
+        UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
 
     }
 

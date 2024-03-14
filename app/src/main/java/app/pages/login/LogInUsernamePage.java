@@ -3,8 +3,7 @@ package app.pages.login;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -28,7 +27,7 @@ public class LogInUsernamePage extends BasePage {
         LOG_IN_PASSWORD.shouldBe(visible).sendKeys(userPassword);
     }
     public void clickOnLogInButton() {
-        BUTTON_LOG_IN.shouldBe(visible).click();
+        BUTTON_LOG_IN.shouldBe(enabled).click();
     }
 
     public void checkLogInError(String errorText) {

@@ -12,6 +12,7 @@ public class NextQuizTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing student can log in and complete next quiz")
     public void checkNextQuizCompleting() {
+        app.logInUsernamePage.open();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
         app.dashboardPage.clickOnStartOrContinuePracticingButton();
         int numberOfQuizzesToComplete = 10;

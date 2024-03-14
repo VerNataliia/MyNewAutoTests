@@ -9,6 +9,7 @@ public class StudentSignUpTests extends A_BaseTest {
     @Description("A student can sign up with username and password")
     @AllureId("100")
         public void checkStudentSignUpWithUsername() {
+        app.signUpSelectRolePage.open();
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
         }
 
