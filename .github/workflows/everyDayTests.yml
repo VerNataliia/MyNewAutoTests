@@ -14,7 +14,7 @@ on:
         required: true
         default: 'production'
     schedule:
-      - cron: '20 13 * * *'
+      - cron: '30 13 * * *'
 
 permissions:
   contents: write
