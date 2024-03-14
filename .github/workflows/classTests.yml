@@ -13,6 +13,8 @@ on:
         description: 'Set environment: staging OR production'
         required: true
         default: 'staging'
+    schedule:
+      - cron: '33 13 * * *'
 
 permissions:
   contents: write
