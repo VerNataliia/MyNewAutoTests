@@ -1,4 +1,4 @@
-name: Pretest tests
+name: Next Quiz tests
 
 on:
   workflow_dispatch:
