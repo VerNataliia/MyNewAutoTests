@@ -108,7 +108,7 @@ public class LoginTests extends A_BaseTest {
 //            if ("production".equals(environment)) {
 //                app.logInGooglePage.open();
 //                app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
-//                app.myClassesPage.assertMyClassesPageTitle("My Classes");
+//                app.myClassesPage.getMyClassesPageTitle("My Classes");
 //            } else {
 //                // Mark the test as skipped for staging
 //                ITestResult result = Reporter.getCurrentTestResult();

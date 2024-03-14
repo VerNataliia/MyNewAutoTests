@@ -6,8 +6,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverConditions.urlContaining;
-
 
 //Pricing page
 public class TeacherSignUpStepFourPage extends BasePage{
@@ -16,8 +14,8 @@ public class TeacherSignUpStepFourPage extends BasePage{
     }
 
     private final SelenideElement
-    TEACHER_SIGNUP_STEP_FOUR_SKIP_BUTTON = $(byXpath("//div[@id='skip-signup-step']")),
-    TEACHER_SIGNUP_STEP_FOUR_PAGE_TITLE = $(byXpath("//b[contains(text(),'Choose the plan')]"));
+        TEACHER_SIGNUP_STEP_FOUR_SKIP_BUTTON = $(byXpath("//div[@id='skip-signup-step']")),
+        TEACHER_SIGNUP_STEP_FOUR_PAGE_TITLE = $(byXpath("//b[contains(text(),'Choose the plan')]"));
 
 
     private boolean isTeacherSignUpFourthStepShown() {

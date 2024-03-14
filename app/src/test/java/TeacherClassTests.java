@@ -14,7 +14,7 @@ public class TeacherClassTests extends A_BaseTest {
     @Description("A teacher can create a few classes only with the name")
     public void checkClassCreation() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassOnlyWithClassName(app, 5);
+        UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 5);
 
     }
 
@@ -32,8 +32,8 @@ public class TeacherClassTests extends A_BaseTest {
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassOnlyWithClassName(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app, numberOfStudentsToAdd);
+            UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, numberOfStudentsToAdd);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");

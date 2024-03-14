@@ -4,6 +4,7 @@ import app.DataGenerator;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -14,40 +15,42 @@ public class TeacherSignupStepTwoPage extends BasePage {
     }
 
     private final SelenideElement
-    TEACHER_SIGNUP_STEP_TWO_PAGE_TITLE = $(byTagName("h1")),
-    TEACHER_SIGNUP_FIRST_NAME_INPUT = $(byXpath("//input[contains(@placeholder,'First Name')]")),
-    TEACHER_SIGNUP_LAST_NAME_INPUT = $(byXpath("//input[contains(@placeholder,'Last Name')]")),
-    TEACHER_SIGNUP_EMAIL_INPUT = $(byXpath("//input[contains(@placeholder,'Email')]")),
-    TEACHER_SIGNUP_JOB_TITLE_INPUT = $(byXpath("//input[contains(@placeholder,'Job Title (Optional)')]")),
-    TEACHER_SIGNUP_STEP_TWO_NEXT_BUTTON = $(byXpath("//div[@class='primary-button']"));
+        TEACHER_SIGNUP_STEP_TWO_PAGE_TITLE = $(byTagName("h1")),
+        TEACHER_SIGNUP_FIRST_NAME_INPUT = $(byXpath("//input[contains(@placeholder,'First Name')]")),
+        TEACHER_SIGNUP_LAST_NAME_INPUT = $(byXpath("//input[contains(@placeholder,'Last Name')]")),
+        TEACHER_SIGNUP_EMAIL_INPUT = $(byXpath("//input[contains(@placeholder,'Email')]")),
+        TEACHER_SIGNUP_JOB_TITLE_INPUT = $(byXpath("//input[contains(@placeholder,'Job Title (Optional)')]")),
+        TEACHER_SIGNUP_STEP_TWO_NEXT_BUTTON = $(byXpath("//div[@class='primary-button']"));
 
-    public void assertTeacherSignUpPageTitle(String header) {
+    public void checkTeacherSignUpPageTitle(String header) {
         TEACHER_SIGNUP_STEP_TWO_PAGE_TITLE.shouldHave(Condition.text(header));
     }
+
     DataGenerator dataGenerator = new DataGenerator();
+
     public String setTeacherFirstName() {
-        String teacherFirstName = "TeacherAutoTestFirstName"+ dataGenerator.getRandomNumber(1000, 9999);
-        TEACHER_SIGNUP_FIRST_NAME_INPUT.sendKeys(teacherFirstName);
+        String teacherFirstName = dataGenerator.getRandomFirstName();
+        TEACHER_SIGNUP_FIRST_NAME_INPUT.shouldBe(Condition.visible).sendKeys(teacherFirstName);
         return teacherFirstName;
     }
+
     public String setTeacherLastName() {
-        String teacherLastName = "TeacherAutoTestFirstName"+ dataGenerator.getRandomNumber(1000, 9999);
-        TEACHER_SIGNUP_LAST_NAME_INPUT.sendKeys(teacherLastName);
+        String teacherLastName = dataGenerator.getRandomLastName();
+        TEACHER_SIGNUP_LAST_NAME_INPUT.shouldBe(Condition.visible).sendKeys(teacherLastName);
         return teacherLastName;
     }
+
     public void setTeacherEmail() {
         String newTeacherEmail = "autoTestTeacher" + dataGenerator.getRandomNumber(1000, 9999) + "@gmail.com";
-        TEACHER_SIGNUP_EMAIL_INPUT.sendKeys(newTeacherEmail);
+        TEACHER_SIGNUP_EMAIL_INPUT.shouldBe(Condition.visible).sendKeys(newTeacherEmail);
     }
+
     public void setTeacherJobTitle() {
-        TEACHER_SIGNUP_JOB_TITLE_INPUT.sendKeys("TeacherAutoTestJobTitle");
-    }
-    public void assertNextButtonIsAble() {
-        TEACHER_SIGNUP_STEP_TWO_NEXT_BUTTON.shouldNotBe(Condition.disabled);
+        TEACHER_SIGNUP_JOB_TITLE_INPUT.shouldBe(Condition.visible).sendKeys("TeacherAutoTestJobTitle");
     }
 
     public void clickOnNextButtonSecondStep() {
-        TEACHER_SIGNUP_STEP_TWO_NEXT_BUTTON.click();
+        TEACHER_SIGNUP_STEP_TWO_NEXT_BUTTON.shouldBe(Condition.visible).click();
     }
 
 }

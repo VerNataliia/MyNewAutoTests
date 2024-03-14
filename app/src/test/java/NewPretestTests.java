@@ -22,13 +22,15 @@ public class NewPretestTests extends A_BaseTest {
 
     public void checkPretestExecutionAsNewTeacherStudent() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassOnlyWithClassName(app, 5);
-        UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app, 1);
+        UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 5);
+        UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, 1);
         teacherHeaderMenu.clickOnSignOutButton();
 //        app.logInUsernamePage.logInWithUsername(app.classPage.getNewStudentUsername(), "12345qwert");
         UtilityStudentSignUp.signUpAsStudentAdditionalAgeStep(app);
         UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app);
 
     }
+
+
 
 }

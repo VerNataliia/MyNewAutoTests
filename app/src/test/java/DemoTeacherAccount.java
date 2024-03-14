@@ -1,11 +1,9 @@
-import app.helpers.Driver;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class DemoTeacherAccount extends A_BaseTest {
@@ -20,8 +18,8 @@ public class DemoTeacherAccount extends A_BaseTest {
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassOnlyWithClassName(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app, numberOfStudentsToAdd);
+            UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, numberOfStudentsToAdd);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");
@@ -55,16 +53,17 @@ public class DemoTeacherAccount extends A_BaseTest {
     @Test
     public void createDemoAccountWithOldPretest() {
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+        teacherHeaderMenu.selectAvatar();
 
         int numberOfClassesToCreate = 2;
-        int numberOfStudentsToAdd = 10;
+        int numberOfStudentsToAdd = 15;
 
         List<String> allUsernames = new ArrayList<>();
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassOnlyWithClassName(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsAsTeacher(app, numberOfStudentsToAdd);
+            UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsFirstAndLastName(app, numberOfStudentsToAdd);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");

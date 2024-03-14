@@ -7,7 +7,6 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.NoSuchElementException;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Condition.*;
@@ -21,30 +20,31 @@ public class NextQuizPage extends BasePage {
     }
 
     private final SelenideElement
-    QUIZ_TITLE = $(byXpath("//h2")),
-    QUIZ_QUESTION_TITLE = $(byXpath("//h3")),
-    QUIZ_SUBMIT_BUTTON = $(byXpath("//div[@class='student-quiz-page__question-buttons']")),
-    QUIZ_NEXT_BUTTON = $(byXpath("//div[@class='primary-button student-quiz-page__question-next next-btn quiz-tab-item focused']")),
-    QUIZ_PROGRESS_BAR = $(byXpath("//div[@class='quiz-action-panel__markers']")),
-    QUIZ_RESULT_POPUP = $(byXpath("//body/div[@id='app']/div[@class='app-body']/div[@class='quiz-page-container']/div[@class='v--modal-overlay']/div[@class='v--modal-background-click']/div[@class='v--modal-box v--modal']/div[@class='VueCarousel']/div[@class='VueCarousel-wrapper']/div[@class='VueCarousel-inner']/div[1]/div[1]")),
-    QUIZ_RESULT_POPUP_CONTINUE_BUTTON = $(byXpath("//div[@class='primary-button quiz-result-modal__continue quiz-tab-item']")),
-    OLD_PRETEST_RESULT_POP_UP = $(byXpath("//input[@class='jquery-button jquery-button-large']"));
+        QUIZ_TITLE = $(byXpath("//h2")),
+        QUIZ_QUESTION_TITLE = $(byXpath("//h3")),
+        QUIZ_SUBMIT_BUTTON = $(byXpath("//div[@class='student-quiz-page__question-buttons']")),
+        QUIZ_NEXT_BUTTON = $(byXpath("//div[@class='primary-button student-quiz-page__question-next next-btn quiz-tab-item focused']")),
+        QUIZ_PROGRESS_BAR = $(byXpath("//div[@class='quiz-action-panel__markers']")),
+        QUIZ_RESULT_POPUP = $(byXpath("//body/div[@id='app']/div[@class='app-body']/div[@class='quiz-page-container']/div[@class='v--modal-overlay']/div[@class='v--modal-background-click']/div[@class='v--modal-box v--modal']/div[@class='VueCarousel']/div[@class='VueCarousel-wrapper']/div[@class='VueCarousel-inner']/div[1]/div[1]")),
+        QUIZ_RESULT_POPUP_CONTINUE_BUTTON = $(byXpath("//div[@class='primary-button quiz-result-modal__continue quiz-tab-item']")),
+        OLD_PRETEST_RESULT_POP_UP = $(byXpath("//input[@class='jquery-button jquery-button-large']"));
 
     private final ElementsCollection
-    QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker markers-overlayed']"),
-    QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2 = $$x("//div[@class='question-marker']"),
-    OLD_PRETEST_QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker pretest-marker']"),
-    QUIZ_CURRENT_QUESTION_NUMBER = $$x("//div[@class='question-marker active']"),
-    QUIZ_SUBMITTED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker submitted']"),
-    QUIZ_QUESTION_ANSWER_OPTIONS = $$x("//div[@class='student-quiz-page__answer answer-card-wrapper animate']");
+        QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker markers-overlayed']"),
+        QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2 = $$x("//div[@class='question-marker']"),
+        OLD_PRETEST_QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker pretest-marker']"),
+        QUIZ_CURRENT_QUESTION_NUMBER = $$x("//div[@class='question-marker active']"),
+        QUIZ_SUBMITTED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker submitted']"),
+        QUIZ_QUESTION_ANSWER_OPTIONS = $$x("//div[@class='student-quiz-page__answer answer-card-wrapper animate']");
 
     public String getCurrentQuizTitle() {
-        QUIZ_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+        QUIZ_TITLE.shouldBe(visible);
         String currentQuizTitle = QUIZ_TITLE.getText();
         return currentQuizTitle;
     }
+
     public String getCurrentQuestionTitle() {
-        QUIZ_QUESTION_TITLE.shouldBe(visible, Duration.ofSeconds(10));
+        QUIZ_QUESTION_TITLE.shouldBe(visible);
         String currentQuestionTitle = QUIZ_QUESTION_TITLE.getText();
 
         // Split the text into lines and select the first line
@@ -56,7 +56,7 @@ public class NextQuizPage extends BasePage {
     }
 
     public int getNumberNotAnsweredQuestions() {
-        QUIZ_PROGRESS_BAR.shouldBe(visible, Duration.ofSeconds(10));
+        QUIZ_PROGRESS_BAR.shouldBe(visible);
         int numberNotAnsweredQuestions = QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2.size() + OLD_PRETEST_QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + 1;
         System.out.println("Number of questions without answers: " + numberNotAnsweredQuestions);
         return numberNotAnsweredQuestions;
@@ -70,24 +70,23 @@ public class NextQuizPage extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        QUIZ_QUESTION_ANSWER_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0),Duration.ofSeconds(10));
+        QUIZ_QUESTION_ANSWER_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0));
         int numberAnswersOptions = QUIZ_QUESTION_ANSWER_OPTIONS.size();
         System.out.println("Number of answers is " + numberAnswersOptions);
         QUIZ_QUESTION_ANSWER_OPTIONS.get(dataGenerator.getRandomNumber(1, numberAnswersOptions - 1)).click();
     }
 
     public void clickOnSubmitButton() {
-        QUIZ_SUBMIT_BUTTON.shouldBe(visible,  Duration.ofSeconds(10));
-        QUIZ_SUBMIT_BUTTON.click();
+        QUIZ_SUBMIT_BUTTON.shouldBe(visible).click();
     }
+
     public void clickOnNextButton() {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } // for old pretest
-        QUIZ_NEXT_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
-        QUIZ_NEXT_BUTTON.click();
+        QUIZ_NEXT_BUTTON.shouldBe(visible).click();
     }
 
     public void clickOnContinueButtonOnResultPopUp() {
@@ -111,9 +110,8 @@ public class NextQuizPage extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } // try-catch because test failed without it => shows Loading
-        OLD_PRETEST_RESULT_POP_UP.click();
+        OLD_PRETEST_RESULT_POP_UP.shouldBe(visible).click();
     }
-
 
 
 //

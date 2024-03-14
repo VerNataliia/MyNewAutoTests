@@ -3,8 +3,6 @@ package app.pages.signup;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.SelenideElement;
 
-import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
@@ -16,25 +14,22 @@ public class SignUpSelectRolePage extends BasePage {
     }
 
     private final SelenideElement
-    SELECT_ROLE_PAGE_TITLE = $(byTagName("h1")),
-    STUDENT_ROLE_BUTTON = $(byXpath("//body//figure[1]")),
-    TEACHER_ROLE_BUTTON = $(byXpath("//body//figure[2]")),
-    PARENT_ROLE_BUTTON = $(byXpath("//body//figure[3]"));
+        SELECT_ROLE_PAGE_TITLE = $(byTagName("h1")),
+        STUDENT_ROLE_BUTTON = $(byXpath("//body//figure[1]")),
+        TEACHER_ROLE_BUTTON = $(byXpath("//body//figure[2]")),
+        PARENT_ROLE_BUTTON = $(byXpath("//body//figure[3]"));
 
-    public void assertSelectRolePageTitle(String header) {
-        SELECT_ROLE_PAGE_TITLE.shouldHave(text(header), Duration.ofSeconds(10));
+    public void checkSelectRolePageTitle(String header) {
+        SELECT_ROLE_PAGE_TITLE.shouldHave(text(header));
     }
     public void selectStudentRoleForSignUp() {
-        STUDENT_ROLE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
-        STUDENT_ROLE_BUTTON.click();
+        STUDENT_ROLE_BUTTON.shouldBe(visible).click();
     }
     public void selectTeacherRoleForSignUp() {
-        TEACHER_ROLE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
-        TEACHER_ROLE_BUTTON.click();
+        TEACHER_ROLE_BUTTON.shouldBe(visible).click();
     }
     public void selectParentRoleForSignUp() {
-        PARENT_ROLE_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
-        PARENT_ROLE_BUTTON.click();
+        PARENT_ROLE_BUTTON.shouldBe(visible).click();
     }
 
 
