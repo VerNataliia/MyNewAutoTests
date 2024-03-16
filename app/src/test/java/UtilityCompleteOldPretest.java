@@ -1,23 +1,26 @@
 import app.App;
 import app.helpers.Driver;
-
-import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class UtilityCompleteOldPretest extends A_BaseTest {
+    private static final Logger logger = LogManager.getLogger(UtilityCompleteOldPretest.class);
 
     public static void completeOldPretestWithRandomAnswers(App app, int numberOfQuizzesInPretest) {
+        logger.info("Starting old pretest with random answers");
         app.summaryPage.clickOnStartButton();
         for (int i = 0; i < numberOfQuizzesInPretest; i++) {
 
             Driver.wait(5);
 
             app.nextQuizPage.selectRandomAnswer();
-            System.out.println("Selected answer");
+            logger.debug("Selected random answer for question {}", i + 1);
             app.nextQuizPage.clickOnSubmitButton();
-            System.out.println("Clicked on Submit button");
+            logger.debug("Clicked on Submit button for question {}", i + 1);
             app.nextQuizPage.clickOnNextButton();
-            System.out.println("Clicked on Next button");
+            logger.debug("Clicked on Next button for question {}", i + 1);
         }
         app.nextQuizPage.clickOnResultPopUpForOldPretest();
+        logger.info("Completed old pretest with random answers");
     }
 }

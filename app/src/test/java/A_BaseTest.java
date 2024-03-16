@@ -27,8 +27,8 @@ public class A_BaseTest {
         app = new App();
         softAssert = new SoftAssert();
 
-        logger = (Logger) LogManager.getLogger("");
-        //DOMConfigurator.configure("src/main/resources/log4j2.xml");
+        logger = LogManager.getLogger(A_BaseTest.class);
+
     }
 
     @AfterMethod(alwaysRun = true)

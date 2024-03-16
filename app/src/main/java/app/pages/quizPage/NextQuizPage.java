@@ -60,7 +60,6 @@ public class NextQuizPage extends BasePage {
     public int getNumberNotAnsweredQuestions() {
         QUIZ_PROGRESS_BAR.shouldBe(visible);
         int numberNotAnsweredQuestions = QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER2.size() + OLD_PRETEST_QUIZ_NOT_ANSWERED_QUESTIONS_NUMBER.size() + 1;
-        System.out.println("Number of questions without answers: " + numberNotAnsweredQuestions);
         return numberNotAnsweredQuestions;
     }
 
@@ -69,7 +68,6 @@ public class NextQuizPage extends BasePage {
     public void selectRandomAnswer() {
         QUIZ_QUESTION_ANSWER_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0));
         int numberAnswersOptions = QUIZ_QUESTION_ANSWER_OPTIONS.size();
-        System.out.println("Number of answers is " + numberAnswersOptions);
         QUIZ_QUESTION_ANSWER_OPTIONS.get(dataGenerator.getRandomNumber(1, numberAnswersOptions - 1)).click();
     }
 

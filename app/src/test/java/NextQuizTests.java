@@ -15,6 +15,6 @@ public class NextQuizTests extends A_BaseTest {
         app.logInUsernamePage.open();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
         app.dashboardPage.clickOnStartOrContinuePracticingButton();
-        UtilityCompleteNextQuiz.completeNextQuizWithCorrectAnswers(app, 10);
+        UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, 10);
     }
 }

@@ -55,7 +55,7 @@ public final class Driver {
 
     public static void wait(int seconds) {
         try {
-            sleep(seconds * 10L);
+            sleep(seconds * 1000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -11,6 +11,8 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class NewPretestPage {
+    public NewPretestPage(String pageUrl) {
+    }
 
     private final SelenideElement
         PRETEST_PASSAGE_TITLE = $(byXpath("//h2")),
