@@ -1,19 +1,16 @@
 package app.pages.quizPage.newPretest;
 
-
 import app.DataGenerator;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import common.QuizDataExtractorEXCEL;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class NewPretestPage {
-
-    public NewPretestPage(String pageUrl) {
-    }
 
     private final SelenideElement
         PRETEST_PASSAGE_TITLE = $(byXpath("//h2")),
@@ -35,10 +32,39 @@ public class NewPretestPage {
 
     DataGenerator dataGenerator = new DataGenerator();
 
-    public void clickOnRandomAnswerOption() {
+    public String getPassageTitle() {
+        String quizTitle = PRETEST_PASSAGE_TITLE.shouldBe(visible).getText();
+        return quizTitle;
+    }
+
+    public String getPassageQuestionTitle() {
+        PRETEST_QUESTION_TEXT.shouldBe(visible);
+        String currentQuestionTitle = PRETEST_QUESTION_TEXT.getText();
+
+        // Split the text into lines and select the first line
+        String[] lines = currentQuestionTitle.split("\n");
+        String firstQuestionLine = lines[0];
+
+        System.out.println("Name of the current question is " + firstQuestionLine);
+        return firstQuestionLine;
+    }
+
+    public void selectRandomAnswerOption() {
         PRETEST_ANSWERS_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0));
         int numbOfOptionsInSchoolList = PRETEST_ANSWERS_OPTIONS.size();
         PRETEST_ANSWERS_OPTIONS.get(dataGenerator.getRandomNumber(0, numbOfOptionsInSchoolList - 1)).click();
+    }
+
+    QuizDataExtractorEXCEL quizDataExtractorEXCEL = new QuizDataExtractorEXCEL();
+    public void selectCorrectAnswer() {
+        String currentQuizTitle = getPassageTitle();
+        String currentQuestionTitle = getPassageQuestionTitle();
+        System.out.println("Current quiz title is " + currentQuizTitle);
+        System.out.println("Current questions title is " + currentQuestionTitle);
+        String answer = quizDataExtractorEXCEL.extractAnswer(currentQuizTitle, currentQuestionTitle);
+        System.out.println("Correct answer is " +answer);
+        SelenideElement CORRECT_ANSWER = $(byXpath("//div[@class='flex-row p-relative']/div/div[contains(text(), \"" + answer + "\")]"));
+        CORRECT_ANSWER.shouldBe(visible).click();
     }
 
     public void clickOnButtonSubmitOrNext() {

@@ -1,7 +1,5 @@
 import app.App;
 import app.helpers.Driver;
-import app.pages.headerMenu.StudentHeaderMenu;
-import app.pages.headerMenu.TeacherHeaderMenu;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.logging.log4j.*;

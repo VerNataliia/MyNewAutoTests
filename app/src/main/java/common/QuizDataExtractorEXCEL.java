@@ -16,10 +16,9 @@ public class QuizDataExtractorEXCEL {
     public String getCorrectAnswer() {
         return correctAnswer;
     }
-    private final Set<String> distinctTrios;
 
     public QuizDataExtractorEXCEL() {
-        distinctTrios = new LinkedHashSet<>();
+        Set<String> distinctTrios = new LinkedHashSet<>();
     }
 
     public String extractAnswer(String titleQuiz, String titleQuestion) {

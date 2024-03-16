@@ -42,13 +42,14 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
         List<Map<String, String>> studentCredentialsList = new ArrayList<>();
         for (int i = 0; i < numberStudentsToAdd; i++) {
             app.addNewStudentsPage.addRandomFirstName();
-            app.addNewStudentsPage.addRandomStudentPassword();
+            app.addNewStudentsPage.addRandomLastName();
             String studentUsername = app.addNewStudentsPage.addRandomStudentUsernameFromName();
             String studentPassword = app.addNewStudentsPage.addRandomStudentPassword();
 
             Map<String, String> studentCredentials = new HashMap<>();
             studentCredentials.put("username", studentUsername);
             studentCredentials.put("password", studentPassword);
+            studentCredentialsList.add(studentCredentials);
 
             app.addNewStudentsPage.clickOnAddNewStudentButton();
         }

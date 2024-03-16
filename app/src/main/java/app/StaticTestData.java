@@ -15,7 +15,7 @@ public class StaticTestData {
             STUDENT_PASSWORD = "349872yd";
         }
         else {
-            STUDENT_USERNAME = "PRODTEST1AUTOMATIONSTUDENT";
+            STUDENT_USERNAME = "TEST1STUDENT150324";
             STUDENT_PASSWORD = "349872yd";
         }
     }

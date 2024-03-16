@@ -1,4 +1,5 @@
 import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -7,10 +8,13 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class DemoTeacherAccount extends A_BaseTest {
-    @Test
+
+    @Test(groups = ("Demo account NewP"))
+    @Description("Creating demo account with New Pretest")
     public void createDemoAccountWithNewPretest() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+        UtilityTeacherSettings.addAvatar(app);
 
         int numberOfClassesToCreate = 3;
 
@@ -41,12 +45,12 @@ public class DemoTeacherAccount extends A_BaseTest {
 
     }
 
-    @Test
+    @Test(groups = ("Demo account OldP"))
+    @Description("Creating demo account with Old Pretest")
     public void createDemoAccountWithOldPretest() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        app.teacherProfileSettings.selectAvatar();
-
+        UtilityTeacherSettings.addAvatar(app);
 
         int numberOfClassesToCreate = 3;
 
@@ -55,7 +59,7 @@ public class DemoTeacherAccount extends A_BaseTest {
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
             UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 15);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 10);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");

@@ -1,10 +1,12 @@
 package app.pages.quizPage;
 
 import app.DataGenerator;
+import app.helpers.Driver;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import common.QuizDataExtractorEXCEL;
 import org.openqa.selenium.NoSuchElementException;
 
 import java.util.concurrent.TimeUnit;
@@ -37,6 +39,7 @@ public class NextQuizPage extends BasePage {
         QUIZ_SUBMITTED_QUESTIONS_NUMBER = $$x("//div[@class='question-marker submitted']"),
         QUIZ_QUESTION_ANSWER_OPTIONS = $$x("//div[@class='student-quiz-page__answer answer-card-wrapper animate']");
 
+
     public String getCurrentQuizTitle() {
         QUIZ_TITLE.shouldBe(visible);
         String currentQuizTitle = QUIZ_TITLE.getText();
@@ -51,7 +54,6 @@ public class NextQuizPage extends BasePage {
         String[] lines = currentQuestionTitle.split("\n");
         String firstQuestionLine = lines[0];
 
-        System.out.println("Name of the current question is " + firstQuestionLine);
         return firstQuestionLine;
     }
 
@@ -71,25 +73,30 @@ public class NextQuizPage extends BasePage {
         QUIZ_QUESTION_ANSWER_OPTIONS.get(dataGenerator.getRandomNumber(1, numberAnswersOptions - 1)).click();
     }
 
+    QuizDataExtractorEXCEL quizDataExtractorEXCEL = new QuizDataExtractorEXCEL();
+    public void selectCorrectAnswer() {
+        String currentQuizTitle = getCurrentQuizTitle();
+        String currentQuestionTitle = getCurrentQuestionTitle();
+        System.out.println("Current quiz title is " + currentQuizTitle);
+        System.out.println("Current questions title is " + currentQuestionTitle);
+        String answer = quizDataExtractorEXCEL.extractAnswer(currentQuizTitle, currentQuestionTitle);
+        System.out.println("Correct answer is " +answer);
+        SelenideElement CORRECT_ANSWER = $(byXpath("//p[@class='answer-card__body'][contains(text(), \"" + answer + "\")]"));
+        CORRECT_ANSWER.shouldBe(visible).click();
+    }
+
+
     public void clickOnSubmitButton() {
         QUIZ_SUBMIT_BUTTON.shouldBe(visible).click();
     }
 
     public void clickOnNextButton() {
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } // for old pretest
+        Driver.wait(2); // for old pretest
         QUIZ_NEXT_BUTTON.shouldBe(visible).click();
     }
 
     public void clickOnContinueButtonOnResultPopUp() {
-        try {
-            TimeUnit.SECONDS.sleep(4);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Driver.wait(3);
         try {
             while (QUIZ_RESULT_POPUP.isDisplayed()) {
                 QUIZ_RESULT_POPUP.click();
@@ -100,11 +107,7 @@ public class NextQuizPage extends BasePage {
     }
 
     public void clickOnResultPopUpForOldPretest() {
-        try {
-            TimeUnit.SECONDS.sleep(4);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } // try-catch because test failed without it => shows Loading
+        Driver.wait(4); // wait because test failed without it => shows Loading
         OLD_PRETEST_RESULT_POP_UP.shouldBe(visible).click();
     }
 
@@ -125,14 +128,7 @@ public class NextQuizPage extends BasePage {
 //firstAnswerXPath
 //        return answerOnCurrentQuestion;
 //    }
-//
-//
-//    public SelenideElement resultPopUp = $(byXpath("//body/div[@id='app']/div[@class='app-body']/div[@class='quiz-page-container']/div[@class='v--modal-overlay']/div[@class='v--modal-background-click']/div[@class='v--modal-box v--modal']/div[@class='VueCarousel']/div[@class='VueCarousel-wrapper']/div[@class='VueCarousel-inner']/div[1]/div[1]"));
-//
-//    public SelenideElement continueOnResultPopUpButton = $(byXpath("//div[@class='primary-button student-quiz-page__question-continue continue-btn quiz-tab-item focused']"));
-//
-//
-//
+
 //
 //    public void selectCorrectAnswer() {
 //        scrollToElement(answerOnCurrentQuestion);

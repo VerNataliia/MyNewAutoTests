@@ -115,4 +115,11 @@ tasks.register("classTests", Test) {
             includeGroups 'NextQuiz'
         }
     }
+
+    tasks.register("demoAccount", Test) {
+        systemProperty 'environment', System.properties['environment']
+        useTestNG {
+            includeGroups 'Demo account OldP'
+        }
+    }
 }
