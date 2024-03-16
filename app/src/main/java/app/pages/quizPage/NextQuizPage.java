@@ -79,7 +79,7 @@ public class NextQuizPage extends BasePage {
         System.out.println("Current questions title is " + currentQuestionTitle);
         String answer = quizDataExtractorEXCEL.extractAnswer(currentQuizTitle, currentQuestionTitle);
         System.out.println("Correct answer is " +answer);
-        SelenideElement CORRECT_ANSWER = $(byXpath("//p[@class='answer-card__body'][contains(text(), \"" + answer + "\")]"));
+        SelenideElement CORRECT_ANSWER = $(byXpath("//p[@class='answer-card__body'][contains(., \"" + answer + "\")]"));
         CORRECT_ANSWER.shouldBe(visible).click();
     }
 

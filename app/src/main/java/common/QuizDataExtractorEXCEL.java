@@ -7,8 +7,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 public class QuizDataExtractorEXCEL {
     private String correctAnswer;
@@ -18,7 +16,7 @@ public class QuizDataExtractorEXCEL {
     }
 
     public QuizDataExtractorEXCEL() {
-        Set<String> distinctTrios = new LinkedHashSet<>();
+        // Constructor logic if needed
     }
 
     public String extractAnswer(String titleQuiz, String titleQuestion) {
@@ -27,24 +25,26 @@ public class QuizDataExtractorEXCEL {
 
             Sheet sheet = workbook.getSheetAt(0); // The first sheet contains the quiz data
             for (Row row : sheet) {
-                Cell titleCell = row.getCell(0); // The "reading_comprehension_quiz_title" column has an index 1
-                Cell questionCell = row.getCell(1); // The "question" column has an index 2
-                Cell answerCell = row.getCell(2); // The "answer" column has an index 3
+                Cell titleCell = row.getCell(0); // Corrected index for "quiz_title"
+                Cell questionCell = row.getCell(1); // Corrected index for "question"
+                Cell answerCell = row.getCell(2); // Corrected index for "answer"
 
-                String titleCellValue = titleCell.getStringCellValue().trim();
-                String questionCellValue = questionCell.getStringCellValue().trim();
-                String answerCellValue = answerCell.getStringCellValue().trim();
+                if (titleCell != null && questionCell != null && answerCell != null) {
+                    String titleCellValue = titleCell.getStringCellValue().trim();
+                    String questionCellValue = questionCell.getStringCellValue().trim();
+                    String answerCellValue = answerCell.getStringCellValue().trim();
 
-                if (titleCellValue.equals(titleQuiz) && questionCellValue.contains(titleQuestion)) {
-                    correctAnswer = answerCell.getStringCellValue();
+                    if (titleCellValue.equals(titleQuiz) && questionCellValue.contains(titleQuestion)) {
+                        correctAnswer = answerCellValue;
 
-                    if (correctAnswer.startsWith("\"") && correctAnswer.endsWith("\"")) {
-                        // Remove the double quotes
-                        correctAnswer = correctAnswer.substring(1, correctAnswer.length() - 1);
+                        if (correctAnswer.startsWith("\"") && correctAnswer.endsWith("\"")) {
+                            // Remove the double quotes
+                            correctAnswer = correctAnswer.substring(1, correctAnswer.length() - 1);
+                        }
+
+                        System.out.println("Correct answer for " + questionCellValue + " is " + correctAnswer);
+                        return correctAnswer;
                     }
-
-                    System.out.println("Correct answer for " + questionCellValue + " is " + correctAnswer);
-                    return correctAnswer;
                 }
             }
 
@@ -55,6 +55,3 @@ public class QuizDataExtractorEXCEL {
         return null; // Return null if no matching quiz and titleQuestion combination is found
     }
 }
-
-
-
