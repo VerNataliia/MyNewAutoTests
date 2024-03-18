@@ -1,3 +1,4 @@
+import app.DataGenerator;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
@@ -21,9 +22,11 @@ public class DemoTeacherAccount extends A_BaseTest {
         List<String> allUsernames = new ArrayList<>();
         List<String> allPasswords = new ArrayList<>();
 
+        DataGenerator dataGenerator = new DataGenerator();
+
         for (int i = 0; i < numberOfClassesToCreate; i++) {
             UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 15);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, dataGenerator.getRandomNumber(10, 20));
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");
@@ -39,7 +42,7 @@ public class DemoTeacherAccount extends A_BaseTest {
             String studentPassword = allPasswords.get(i);
             UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
             UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
-            UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, 10);
+            UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, dataGenerator.getRandomNumber(5, 20));
             app.studentHeaderMenu.clickOnSignOutButton();
         }
 
@@ -57,9 +60,11 @@ public class DemoTeacherAccount extends A_BaseTest {
         List<String> allUsernames = new ArrayList<>();
         List<String> allPasswords = new ArrayList<>();
 
+        DataGenerator dataGenerator = new DataGenerator();
+
         for (int i = 0; i < numberOfClassesToCreate; i++) {
             UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 10);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, dataGenerator.getRandomNumber(10, 20));
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");
@@ -86,7 +91,7 @@ public class DemoTeacherAccount extends A_BaseTest {
             while (WebDriverRunner.url().contains("/auth/login")); //added because of bug with redirection
 
             UtilityCompleteOldPretest.completeOldPretestWithRandomAnswers(app, 8);
-            UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, 10);
+            UtilityCompleteNextQuiz.completeNextQuizWithRandomAnswers(app, dataGenerator.getRandomNumber(5, 20));
             app.studentHeaderMenu.clickOnSignOutButton();
         }
 
