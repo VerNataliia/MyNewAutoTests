@@ -26,7 +26,7 @@ public class TeacherClassTests extends A_BaseTest {
     public void checkClassCreationWithAdditionalInfoAsNonPremiumTeacher() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 5);
+        UtilityCreateClass.createNewClassWithAdditionalOptions(app, 5);
     }
 
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")

@@ -25,7 +25,7 @@ public class DemoTeacherAccount extends A_BaseTest {
         DataGenerator dataGenerator = new DataGenerator();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 1);
+            UtilityCreateClass.createNewClassWithAdditionalOptions(app, 1);
             List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, dataGenerator.getRandomNumber(10, 20));
 
             for (Map<String, String> student : students) {
@@ -63,7 +63,7 @@ public class DemoTeacherAccount extends A_BaseTest {
         DataGenerator dataGenerator = new DataGenerator();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 1);
+            UtilityCreateClass.createNewClassWithAdditionalOptions(app, 1);
             List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, dataGenerator.getRandomNumber(10, 20));
 
             for (Map<String, String> student : students) {

@@ -24,7 +24,7 @@ public class UtilityCreateClass extends A_BaseTest {
         }
     }
 
-    public static void createNewClassAdditionalOptionsAsNonPremTeacher(App app, int classNumber) {
+    public static void createNewClassWithAdditionalOptions(App app, int classNumber) {
         logger.info("Creating {} new classes with class names and avatars", classNumber);
         for (int i = 0; i < classNumber; i++) {
             logger.debug("Opening My Classes page");
