@@ -19,9 +19,9 @@ public class NewPretestTests extends A_BaseTest {
         UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
     }
 
-    @Test(groups = ("NewPretest"), priority = 1, description = "Verify if a new student can complete a pretest")
+    @Test(groups = ("NewPretest"), priority = 1, description = "Verify if a new student can complete a pretest with correct answers")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A student who was created with username+password can complete a pretest with random answers")
+    @Description("A student who was created with username+password can complete a pretest with correct answers")
     //@AllureId("2")
 
     public void checkPretestExecutionAsNewStudentWithCorrectAnswers() {

@@ -16,8 +16,8 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
                 logger.debug("Encountered login redirection issue, attempting to log in again");
             }
         } while (WebDriverRunner.url().contains("/auth/login"));
+        app.studentHeaderMenu.checkStudentUsername(username); // It will fail if a student has first and last name
 
         logger.info("Logged in successfully as user: {}", username);
-        //app.dashboardPage.DASHBOARD_START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
     }
 }
