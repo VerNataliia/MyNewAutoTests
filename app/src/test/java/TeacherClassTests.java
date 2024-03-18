@@ -11,12 +11,22 @@ public class TeacherClassTests extends A_BaseTest {
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes")
     @AllureId("167")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can create a few classes only with the name")
+    @Description("A teacher can create a few classes only with the class name")
     public void checkClassCreation() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
         UtilityCreateClass.createNewClassWithClassName(app, 5);
 
+    }
+
+    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")
+    @AllureId("166")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("A teacher can create classes, then add students to these classes. These students can log in to the system ")
+    public void checkClassCreationWithAdditionalInfoAsNonPremiumTeacher() {
+        app.signUpSelectRolePage.open();
+        UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+        UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 5);
     }
 
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")

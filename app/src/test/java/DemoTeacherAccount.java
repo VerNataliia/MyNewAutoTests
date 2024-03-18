@@ -22,7 +22,7 @@ public class DemoTeacherAccount extends A_BaseTest {
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
+            UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 1);
             List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 15);
 
             for (Map<String, String> student : students) {
@@ -58,7 +58,7 @@ public class DemoTeacherAccount extends A_BaseTest {
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassWithClassNameAndAvatar(app, 1);
+            UtilityCreateClass.createNewClassAdditionalOptionsAsNonPremTeacher(app, 1);
             List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithFirstAndLastName(app, 10);
 
             for (Map<String, String> student : students) {
