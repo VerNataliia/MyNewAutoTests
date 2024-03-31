@@ -13,6 +13,7 @@ public class TeacherHeaderMenu {
         TEACHER_HEADER_MENU_PROGRESS_REPORTS_BUTTON = $(byXpath("//span[contains(text(),'Progress reports')]")),
         TEACHER_HEADER_MENU_MY_STUDENTS_BUTTON = $(byXpath("//span[contains(text(),'My students')]")),
         TEACHER_HEADER_MENU_WRITTEN_RESPONSES_BUTTON = $(byXpath("//span[contains(text(),'Written responses')]")),
+        TEACHER_HEADER_MENU_ACTIVITIES_BUTTON = $(byXpath("//span[contains(text(),'Activities')]")),
         TEACHER_HEADER_MENU_USERNAME_BUTTON = $(byXpath("//div[@class='account-button-wrapper']")),
         TEACHER_HEADER_MENU_SIGN_OUT_BUTTON = $(byXpath("//div[@class='account-menu-wrapper']//div[5]//a[1]")),
         TEACHER_HEADER_MENU_EDIT_PROFILE_BUTTON = $(byXpath("//div[@class='account-wrapper']//div[1]//a[1]")),
@@ -36,6 +37,9 @@ public class TeacherHeaderMenu {
 
     public void clickOnWrittenResponsesButton() {
         TEACHER_HEADER_MENU_WRITTEN_RESPONSES_BUTTON.shouldBe(visible).click();
+    }
+    public void clickOnActivitiesButton() {
+        TEACHER_HEADER_MENU_ACTIVITIES_BUTTON.shouldBe(visible).click();
     }
 
     public void clickOnSignOutButton() {

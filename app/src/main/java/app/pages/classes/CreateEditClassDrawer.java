@@ -1,9 +1,11 @@
 package app.pages.classes;
 
 import app.DataGenerator;
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -30,9 +32,10 @@ public class CreateEditClassDrawer {
     // //div[@class='invite-list-wrapper']/div[1]/div/div[@class='invite-status-wrapper flex-wrapper pending']/span - status
     // //div[@class='invite-list-wrapper']/div[1]/div[@class='invite-remove'] - deleteInviteButton
     DataGenerator dataGenerator = new DataGenerator();
+    DataGenerator.ClassNameGenerator classNameGenerator = new DataGenerator.ClassNameGenerator();
 
     public String enterClassName() {
-        String className = dataGenerator.getRandomClassName();
+        String className = classNameGenerator.getRandomClassName();
         CLASS_NAME_INPUT.shouldBe(visible).sendKeys(className);
         return className;
     }
@@ -40,13 +43,14 @@ public class CreateEditClassDrawer {
     public void selectClassAvatar() {
         CREATE_AVATAR_BUTTON.shouldBe(visible).click();
         CREATE_AVATAR_HEADER_TITLE.shouldBe(visible);
+        AVATAR_OPTIONS.shouldHave(CollectionCondition.sizeGreaterThan(1));
         int numberAvatarOptions = AVATAR_OPTIONS.size();
         System.out.println("Number of avatar options for class " + numberAvatarOptions);
         AVATAR_OPTIONS.get(dataGenerator.getRandomNumber(1, numberAvatarOptions - 1)).click();
     }
 
     public String selectClassGrade() {
-        int index = dataGenerator.getRandomNumber(1, 17);
+        int index = dataGenerator.getRandomNumber(1, 16);
         SelenideElement selectedElement = GRADE_OPTIONS.get(index);
         selectedElement.click();
         return selectedElement.getText();
@@ -73,7 +77,7 @@ public class CreateEditClassDrawer {
     }
 
     public void clickOnCreateClassButton() {
-        CREATE_CLASS_BUTTON.shouldBe(visible).click();
+        CREATE_CLASS_BUTTON.shouldBe(enabled).click();
     }
 
 }

@@ -1,6 +1,8 @@
 package app;
 
 public class StaticTestData {
+    public static String BO_USERNAME = "nataliia@readtheory.org";
+    public static String BO_PASSWORD = "349872yD!";
     public static String STUDENT_USERNAME;
     public static String STUDENT_PASSWORD;
 

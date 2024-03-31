@@ -18,4 +18,22 @@ public class Trim {
         trimSymbol = Pattern.quote(trimSymbol);
         return string.replaceAll(trimSymbol + "+$", "");
     }
+
+
+    public static String getQuizNameFromActivityTitle(String activityTitle) {
+
+        int startIndex = activityTitle.indexOf(" - ");
+        String quizTitle = null;
+        if (startIndex != -1) {
+
+            quizTitle = activityTitle.substring(startIndex + 3);
+            if (quizTitle.startsWith("\"")) {
+                quizTitle = quizTitle.substring(1);
+            }
+            if (quizTitle.endsWith("\"")) {
+                quizTitle = quizTitle.substring(0, quizTitle.length() - 1);
+            }
+        }
+        return quizTitle;
+    }
 }

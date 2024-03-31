@@ -14,19 +14,35 @@ public class TeacherClassTests extends A_BaseTest {
     @Description("A teacher can create a few classes only with the class name")
     public void checkClassCreation() {
         app.signUpSelectRolePage.open();
-        UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassWithClassName(app, 5);
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+
+        UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
+        classOptions.classNumber = 5;
+
+        UtilityCreateClass.createClass(app, classOptions);
 
     }
 
-    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")
+    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes with additional options")
     @AllureId("166")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can create classes, then add students to these classes. These students can log in to the system ")
+    @Description("A non prem teacher can create classes with all additional settings")
     public void checkClassCreationWithAdditionalInfoAsNonPremiumTeacher() {
         app.signUpSelectRolePage.open();
-        UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassWithAdditionalOptions(app, 5);
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+
+        UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
+        classOptions.selectAvatar = true;
+        classOptions.selectAge13Checkbox = true;
+        classOptions.selectGrade = true;
+        classOptions.selectQuizGradeSwitcher = true;
+        classOptions.classNumber = 1;
+
+        UtilityCreateClass.createClass(app, classOptions);
     }
 
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")
@@ -35,17 +51,24 @@ public class TeacherClassTests extends A_BaseTest {
     @Description("A teacher can create classes, then add students to these classes. These students can log in to the system ")
     public void checkClassAndStudentCreation() {
         app.signUpSelectRolePage.open();
-        UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
 
-        int numberOfClassesToCreate = 5;
+        int numberOfClassesToCreate = 10;
         int numberOfStudentsToAdd = 3;
 
         List<String> allUsernames = new ArrayList<>();
         List<String> allPasswords = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.createNewClassWithClassName(app, 1);
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, numberOfStudentsToAdd);
+
+        UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
+        classOptions.classNumber = 1;
+
+        UtilityCreateClass.createClass(app, classOptions);
+
+        List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, false);
 
             for (Map<String, String> student : students) {
                 String studentUsername = student.get("username");

@@ -15,7 +15,7 @@ public class A_BaseTest {
                 .screenshots(true)
         );
     }
-    protected App app;
+    protected static App app;
     protected SoftAssert softAssert;
     protected Logger logger;
 

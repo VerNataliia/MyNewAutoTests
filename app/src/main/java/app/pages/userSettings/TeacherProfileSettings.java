@@ -22,7 +22,7 @@ public class TeacherProfileSettings {
 
     DataGenerator dataGenerator = new DataGenerator();
 
-    public void selectAvatar() {
+    public void selectRandomAvatar() {
         TEACHER_MY_PROFILE_SETTINGS_WINDOW_CREATE_AVATAR_BUTTON.shouldBe(visible).click();
         TEACHER_MY_PROFILE_SETTINGS_WINDOW_CREATE_AVATAR_HEADER_TITLE.shouldBe(visible);
         TEACHER_MY_PROFILE_SETTINGS_WINDOW_CREATE_AVATAR_ICONS.shouldBe(CollectionCondition.sizeGreaterThan(0));

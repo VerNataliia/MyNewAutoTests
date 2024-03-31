@@ -1,6 +1,14 @@
 package app;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.List;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class DataGenerator {
     private final Random random = new Random();
@@ -40,14 +48,38 @@ public class DataGenerator {
         return LAST_NAMES[random.nextInt(LAST_NAMES.length)];
     }
 
-// Create a random class name
-private static final String[] CLASSES_NAME = {
-        "Elementary Students", "Middle School", "High School", "Part-time students", "Grade 10",
-        "Fourth Grade AG", "WRITING AND READING WORKSHOP", "Reading Lab", "English Tutoring", "2nd Period 2024",
-        "3rd Grade Reading", "Practice class", "Language Lab", "Homeschool 2024", "Advanced Honors English", "Group B"
-    };
+    // Create a random unique for test class name
+    public static class ClassNameGenerator {
+        private final List<String> availableClassNames;
 
-    public String getRandomClassName() {
-        return CLASSES_NAME[random.nextInt(CLASSES_NAME.length)];
+        public ClassNameGenerator() {
+            // Initialize the list with your class names, then shuffle them to randomize the order
+            availableClassNames = new ArrayList<>(Arrays.asList("Elementary Students", "Middle School", "High School",
+                "Part-time students", "Grade 10", "Fourth Grade AG", "WRITING AND READING WORKSHOP", "Reading Lab", "English Tutoring",
+                "2nd Period 2024", "3rd Grade Reading", "Practice class", "Language Lab", "Homeschool 2024", "Advanced Honors English", "Group B"));
+            Collections.shuffle(availableClassNames);
+        }
+
+        public String getRandomClassName() {
+            if (availableClassNames.isEmpty()) {
+                throw new IllegalStateException("No more class names available");
+            }
+            // Remove and return the first element of the list, ensuring it's not repeated
+            return availableClassNames.remove(0);
+        }
+    }
+
+    //Get next day of week (for recurring weekly activities)
+    public static String getDayOfWeek(int numberOfPlusDays) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, numberOfPlusDays);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
+        return simpleDateFormat.format(calendar.getTime());
+    }
+    //Get calendar day
+    public static String getDatePlusDays(int days) {
+        LocalDate futureDate = LocalDate.now().plusDays(days);
+        return futureDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 }

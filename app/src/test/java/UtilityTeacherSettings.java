@@ -10,7 +10,7 @@ public class UtilityTeacherSettings extends A_BaseTest {
         app.teacherHeaderMenu.clickOnEditProfileButton();
         logger.debug("Clicked on Edit Profile button");
 
-        app.teacherProfileSettings.selectAvatar();
+        app.teacherProfileSettings.selectRandomAvatar();
         logger.info("Avatar selected successfully");
     }
 }

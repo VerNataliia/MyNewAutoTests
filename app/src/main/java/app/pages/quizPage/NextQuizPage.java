@@ -9,8 +9,6 @@ import com.codeborne.selenide.SelenideElement;
 import common.QuizDataExtractorEXCEL;
 import org.openqa.selenium.NoSuchElementException;
 
-import java.util.concurrent.TimeUnit;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -46,6 +44,10 @@ public class NextQuizPage extends BasePage {
         return currentQuizTitle;
     }
 
+    public void checkCurrentQuizTitle(String quizTitle) {
+        QUIZ_TITLE.shouldBe(visible).shouldHave(text(quizTitle));
+    }
+
     public String getCurrentQuestionTitle() {
         QUIZ_QUESTION_TITLE.shouldBe(visible);
         String currentQuestionTitle = QUIZ_QUESTION_TITLE.getText();
@@ -66,6 +68,7 @@ public class NextQuizPage extends BasePage {
     DataGenerator dataGenerator = new DataGenerator();
 
     public void selectRandomAnswer() {
+        checkNoLoader();
         QUIZ_QUESTION_ANSWER_OPTIONS.shouldBe(CollectionCondition.sizeGreaterThan(0));
         int numberAnswersOptions = QUIZ_QUESTION_ANSWER_OPTIONS.size();
         QUIZ_QUESTION_ANSWER_OPTIONS.get(dataGenerator.getRandomNumber(1, numberAnswersOptions - 1)).click();
@@ -73,6 +76,7 @@ public class NextQuizPage extends BasePage {
 
     QuizDataExtractorEXCEL quizDataExtractorEXCEL = new QuizDataExtractorEXCEL();
     public void selectCorrectAnswer() {
+        checkNoLoader();
         String currentQuizTitle = getCurrentQuizTitle();
         String currentQuestionTitle = getCurrentQuestionTitle();
         System.out.println("Current quiz title is " + currentQuizTitle);

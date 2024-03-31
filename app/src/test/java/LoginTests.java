@@ -3,8 +3,6 @@ import org.testng.annotations.Test;
 
 import static app.StaticTestData.*;
 
-
-
 @Epic("Login")
 @Feature("LoginUsername")
 public class LoginTests extends A_BaseTest {
@@ -25,10 +23,12 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
     public void checkNewStudentLogIn() {
         app.signUpSelectRolePage.open();
+
         String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
         String newStudentUsername = userDetails[0];
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
+
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
 
     }
@@ -48,10 +48,14 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a teacher's account, log out and then log in (Positive case)")
     public void checkNewTeacherLogIn() {
         app.signUpSelectRolePage.open();
-        String[] userDetails = UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
+
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+        String[] userDetails = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String newTeacherUsername = userDetails[0];
         String newTeacherPassword = userDetails[1];
         app.teacherHeaderMenu.clickOnSignOutButton();
+
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, newTeacherUsername, newTeacherPassword);
     }
 
@@ -70,10 +74,12 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a parent's account, log out and then log in (Positive case)")
     public void checkNewParentLogIn() {
         app.signUpSelectRolePage.open();
+
         String[] userDetails = UtilityParentSignUp.signUpAsParentWithUsername(app);
         String newParentUsername = userDetails[0];
         String newParentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
+
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newParentUsername, newParentPassword);
     }
 
@@ -83,10 +89,12 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a user can't log in using not correct username (Negative case)")
     public void checkLogInWithInvalidUsername() {
         app.signUpSelectRolePage.open();
+
         String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
         String newStudentUsername = userDetails[0];
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
+
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername + "56", newStudentPassword);
         app.logInUsernamePage.checkLogInError("Error occurred while trying to authenticate.");
     }
@@ -97,10 +105,12 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a user can't log in using not correct password (Negative case)")
     public void checkLogInWithInvalidPassword() {
         app.signUpSelectRolePage.open();
+
         String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
         String newStudentUsername = userDetails[0];
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
+
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword + "66");
         app.logInUsernamePage.checkLogInError("Error occurred while trying to authenticate.");
     }

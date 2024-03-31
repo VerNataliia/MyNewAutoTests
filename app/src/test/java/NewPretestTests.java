@@ -16,7 +16,7 @@ public class NewPretestTests extends A_BaseTest {
     public void checkPretestExecutionAsNewStudentWithRandomAnswers() {
         app.signUpSelectRolePage.open();
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
-        UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
+        UtilityCompleteNewPretest.completeNewPretest(app, 8, 8);
     }
 
     @Test(groups = ("NewPretest"), priority = 1, description = "Verify if a new student can complete a pretest with correct answers")
@@ -27,7 +27,7 @@ public class NewPretestTests extends A_BaseTest {
     public void checkPretestExecutionAsNewStudentWithCorrectAnswers() {
         app.signUpSelectRolePage.open();
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
-        UtilityCompleteNewPretest.completeNewPretestWithCorrectAnswers(app, 8);
+        UtilityCompleteNewPretest.completeNewPretest(app, 8, 0);
     }
 
     @Test(groups = ("NewPretest"), priority = 1, description = "Verify if a new student who was created by a teacher can get a pretest and complete it")
@@ -37,14 +37,20 @@ public class NewPretestTests extends A_BaseTest {
 
     public void checkPretestExecutionAsNewTeacherStudent() {
         app.signUpSelectRolePage.open();
-        UtilityTeacherSignUp.signUpAsTeacherWithUsername(app);
-        UtilityCreateClass.createNewClassWithClassName(app, 1);
-        List<Map<String, String>> studentCredentials = UtilityCreateStudentsAsTeacher.createNewStudentsWithUsernameAndPassword(app, 1);
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+
+        UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
+        classOptions.classNumber = 5;
+        UtilityCreateClass.createClass(app, classOptions);
+
+        List<Map<String, String>> studentCredentials = UtilityCreateStudentsAsTeacher.createNewStudents(app, 1, false);
         String newStudentUsername = studentCredentials.get(0).toString();
         String newStudentPassword = studentCredentials.get(1).toString();
         app.teacherHeaderMenu.clickOnSignOutButton();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
-        UtilityCompleteNewPretest.completeNewPretestWithRandomAnswers(app, 8);
+        UtilityCompleteNewPretest.completeNewPretest(app, 8, 8);
 
     }
 

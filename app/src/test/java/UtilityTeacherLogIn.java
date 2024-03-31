@@ -6,11 +6,9 @@ public class UtilityTeacherLogIn extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityTeacherLogIn.class);
 
     public static void logInWithUsernameAndPasswordAsTeacher(App app, String username, String password) {
-        logger.info("Starting teacher login process with username: {}", username);
+        logger.info("Starting teacher login process with username: {} and password: {}", username, password);
         app.logInUsernamePage.enterUserName(username);
-        logger.debug("Entered username: {}", username);
         app.logInUsernamePage.enterPassword(password);
-        logger.debug("Entered password");
         app.logInUsernamePage.clickOnLogInButton();
         logger.debug("Clicked on login button");
 

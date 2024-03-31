@@ -22,11 +22,12 @@ public class UtilityStudentSignUp extends A_BaseTest {
         logger.debug("Selected random student age option");
         app.studentSignUpPage.clickOnSignUpButton();
         logger.debug("Clicked on sign-up button");
+
         app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
         logger.debug("Checked summary page title");
 
         app.studentHeaderMenu.checkStudentUsername(newStudentUsername);
-        logger.info("Student sign-up completed successfully with username: {}", newStudentUsername);
+        logger.info("Student sign-up completed successfully with username: {} and password: {}", newStudentUsername, newStudentPassword);
 
         return new String[]{newStudentUsername, newStudentPassword};
     }
@@ -47,5 +48,5 @@ public class UtilityStudentSignUp extends A_BaseTest {
 
         app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
         logger.info("Student additional age step in sign-up process completed");
-    }
+    } // it doesn't use because no tests for signing up with SSO
 }

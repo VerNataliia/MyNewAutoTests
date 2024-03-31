@@ -1,5 +1,8 @@
 package app;
 
+import app.pages.BO.BO;
+import app.pages.activities.ActivityCreation;
+import app.pages.activities.ActivityHomePage;
 import app.pages.classes.ClassPage;
 import app.pages.classes.CreateEditClassDrawer;
 import app.pages.classes.MyClassesPage;
@@ -7,6 +10,7 @@ import app.pages.headerMenu.StudentHeaderMenu;
 import app.pages.headerMenu.TeacherHeaderMenu;
 import app.pages.login.LogInGooglePage;
 import app.pages.login.LogInUsernamePage;
+import app.pages.myProgress.MyProgressPage;
 import app.pages.quizPage.NextQuizPage;
 import app.pages.quizPage.ResultPage;
 import app.pages.quizPage.newPretest.NewPretestPage;
@@ -33,6 +37,7 @@ public class App {
     public DashboardPage dashboardPage;
     public MyClassesPage myClassesPage;
     public ClassPage classPage;
+
     public SignUpSelectRolePage signUpSelectRolePage;
     public StudentSignUpPage studentSignUpPage;
     public StudentSignUpAgeStepPage studentSignUpAgeStepPage;
@@ -46,12 +51,17 @@ public class App {
     public NextQuizPage nextQuizPage;
     public ResultPage resultPage;
     public PricingPage pricingPage;
+
     public TeacherHeaderMenu teacherHeaderMenu;
     public StudentHeaderMenu studentHeaderMenu;
     public CreateEditClassDrawer createEditClassDrawer;
     public TeacherProfileSettings teacherProfileSettings;
     public StudentProfileSettings studentProfileSettings;
     public AddNewStudentsPage addNewStudentsPage;
+    public ActivityHomePage activityHomePage;
+    public ActivityCreation activityCreation;
+    public MyProgressPage myProgressPage;
+    public BO backOffice;
 
 
     public App() {
@@ -79,6 +89,10 @@ public class App {
         teacherProfileSettings = new TeacherProfileSettings();
         studentProfileSettings = new StudentProfileSettings();
         addNewStudentsPage = new AddNewStudentsPage();
+        activityCreation = new ActivityCreation();
+        activityHomePage = new ActivityHomePage("/app/teacher/activities");
+        backOffice = new BO("https://bo2.readtheory.org/users");
+        myProgressPage = new MyProgressPage("/app/student/report");
 
     }
 }
