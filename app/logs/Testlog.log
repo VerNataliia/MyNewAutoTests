@@ -13252,3 +13252,615 @@
 22:42:26.248 [main] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
 22:42:31.252 [main] DEBUG UtilityBOActions - Waited 5 seconds after logging in
 22:42:31.263 [main] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test2134
+23:05:36.974 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:05:39.681 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:05:40.617 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest8016 and password: 12345qwert4258
+23:05:42.720 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: White, Steven
+23:05:42.944 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:05:43.961 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:05:44.239 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:05:44.666 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:05:44.668 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:05:44.668 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:05:44.676 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:05:46.320 [main] DEBUG UtilityCreateClass - Entered class name: Homeschool 2024
+23:05:46.320 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:05:46.439 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:05:47.346 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:05:48.386 [main] DEBUG UtilityCreateClass - Class Homeschool 2024 was found in a Classes list
+23:05:48.471 [main] DEBUG UtilityCreateClass - Class Homeschool 2024 was selected
+23:05:49.907 [main] DEBUG UtilityCreateClass - Class Homeschool 2024 was checked on the class page
+23:05:49.907 [main] INFO  UtilityCreateClass - Class Homeschool 2024 created successfully
+23:05:49.909 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+23:05:50.960 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest506571 and password: qwert4298
+23:05:51.452 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest862186 and password: qwert5627
+23:05:51.935 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest981700 and password: qwert1816
+23:05:52.100 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+23:05:54.264 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:05:54.265 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:05:54.265 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:05:54.271 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:05:56.223 [main] DEBUG UtilityCreateClass - Entered class name: Grade 10
+23:05:56.223 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:05:56.299 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:05:57.243 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:05:58.461 [main] DEBUG UtilityCreateClass - Class Grade 10 was found in a Classes list
+23:05:58.583 [main] DEBUG UtilityCreateClass - Class Grade 10 was selected
+23:06:00.000 [main] DEBUG UtilityCreateClass - Class Grade 10 was checked on the class page
+23:06:00.000 [main] INFO  UtilityCreateClass - Class Grade 10 created successfully
+23:06:00.000 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+23:06:01.030 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest609853 and password: qwert5792
+23:06:01.521 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest600615 and password: qwert8547
+23:06:01.974 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest681999 and password: qwert5868
+23:06:02.139 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+23:06:04.435 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:06:04.436 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:06:04.436 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:06:04.441 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:06:06.651 [main] DEBUG UtilityCreateClass - Entered class name: Middle School
+23:06:06.660 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:06:06.810 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:06:07.645 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:06:08.776 [main] DEBUG UtilityCreateClass - Class Middle School was found in a Classes list
+23:06:08.850 [main] DEBUG UtilityCreateClass - Class Middle School was selected
+23:06:10.009 [main] DEBUG UtilityCreateClass - Class Middle School was checked on the class page
+23:06:10.009 [main] INFO  UtilityCreateClass - Class Middle School created successfully
+23:06:10.009 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+23:07:06.422 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:07:12.729 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:07:14.195 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9289 and password: 12345qwert5778
+23:07:15.826 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Robinson, Brian
+23:07:16.012 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:07:17.007 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:07:17.278 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:07:17.807 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:07:17.808 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:07:17.808 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:07:17.813 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:07:44.456 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:07:48.684 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:07:49.372 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest5243 and password: 12345qwert7280
+23:07:50.697 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Thomas, Patricia
+23:07:50.910 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:07:51.848 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:07:52.102 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:07:52.630 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:07:52.631 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:07:52.631 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:07:52.636 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:07:54.194 [main] DEBUG UtilityCreateClass - Entered class name: Fourth Grade AG
+23:07:54.195 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:07:54.332 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:07:55.233 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:07:56.254 [main] DEBUG UtilityCreateClass - Class Fourth Grade AG was found in a Classes list
+23:07:56.344 [main] DEBUG UtilityCreateClass - Class Fourth Grade AG was selected
+23:07:57.716 [main] DEBUG UtilityCreateClass - Class Fourth Grade AG was checked on the class page
+23:07:57.716 [main] INFO  UtilityCreateClass - Class Fourth Grade AG created successfully
+23:07:57.717 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 10 new students
+23:07:58.981 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest186229 and password: qwert6654
+23:07:59.451 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest110073 and password: qwert9956
+23:07:59.892 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest120157 and password: qwert3986
+23:08:00.323 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest219929 and password: qwert4390
+23:08:00.754 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest599216 and password: qwert1979
+23:08:01.182 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest355574 and password: qwert2367
+23:08:01.615 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest268648 and password: qwert8552
+23:08:02.037 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest106318 and password: qwert7334
+23:08:02.465 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest328161 and password: qwert8664
+23:08:02.886 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest891808 and password: qwert5654
+23:08:03.037 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 10 new students
+23:08:05.848 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:08:06.053 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:08:06.056 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:08:06.056 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:08:06.056 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:08:06.057 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:08:06.057 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:08:06.069 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:08:06.070 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:08:06.074 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:08:06.074 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:08:06.075 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:08:06.076 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:08:06.077 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:08:06.077 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+23:08:06.121 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:08:06.122 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+23:08:06.158 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+23:08:06.166 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+23:08:06.168 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+23:08:06.171 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+23:08:06.175 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+23:08:06.177 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+23:08:06.181 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+23:08:06.182 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+23:08:06.185 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+23:08:06.187 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+23:08:06.191 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+23:08:06.192 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+23:08:06.195 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+23:08:06.198 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+23:08:06.201 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+23:08:06.202 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+23:08:06.204 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+23:08:06.205 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+23:08:06.207 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+23:08:06.208 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+23:08:06.210 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+23:08:06.212 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+23:08:06.213 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+23:08:06.215 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+23:08:06.217 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+23:08:06.219 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+23:08:06.222 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+23:08:06.224 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+23:08:06.224 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+23:08:06.225 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+23:08:06.226 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+23:08:06.227 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+23:08:06.232 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+23:08:06.236 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+23:08:06.239 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+23:08:06.243 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+23:08:06.244 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+23:08:06.247 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+23:08:06.248 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+23:08:06.249 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+23:08:06.250 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+23:08:06.254 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+23:08:06.256 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+23:08:06.257 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+23:08:06.261 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+23:08:06.267 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+23:08:06.269 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+23:08:06.272 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+23:08:08.307 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+23:08:08.360 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctnumfmtsb58btype
+23:08:08.375 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfonts6623type
+23:08:08.399 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfills2c6ftype
+23:08:08.421 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborders0d66type
+23:08:08.439 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcellxfs1322type
+23:08:08.461 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcellstylexfsa81ftype
+23:08:08.501 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save core properties part
+23:08:08.521 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save content types part
+23:08:08.628 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save package relationships
+23:08:08.673 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/app.xml'
+23:08:08.716 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/core.xml'
+23:08:08.758 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
+23:08:08.779 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
+23:08:08.797 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
+23:08:08.859 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
+23:08:09.078 [main] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest186229 and password: qwert6654 as student or parent
+23:08:09.949 [main] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest186229
+23:08:10.088 [main] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert6654
+23:08:10.184 [main] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+23:08:14.092 [main] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+23:08:14.118 [main] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+23:08:14.250 [main] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+23:08:14.706 [main] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+23:08:14.814 [main] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+23:08:14.815 [main] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest186229
+23:08:15.171 [main] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest110073 and password: qwert9956 as student or parent
+23:08:16.061 [main] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest110073
+23:08:16.150 [main] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9956
+23:08:16.232 [main] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+23:13:25.467 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:13:28.377 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:13:29.204 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9771 and password: 12345qwert1477
+23:13:30.824 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Roberts, Michael
+23:13:31.024 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:13:31.985 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:13:32.460 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:13:32.815 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:13:32.816 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:13:32.816 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:13:32.822 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:13:55.872 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:13:58.307 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:13:59.245 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest1465 and password: 12345qwert8165
+23:14:01.194 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Gonzalez, Kevin
+23:14:01.385 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:14:02.415 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:14:02.725 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:14:03.102 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:14:03.103 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:14:03.103 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:14:03.110 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:14:04.687 [main] DEBUG UtilityCreateClass - Entered class name: Advanced Honors English
+23:14:04.688 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:14:04.886 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:14:05.692 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:14:06.924 [main] DEBUG UtilityCreateClass - Class Advanced Honors English was found in a Classes list
+23:14:07.010 [main] DEBUG UtilityCreateClass - Class Advanced Honors English was selected
+23:14:08.364 [main] DEBUG UtilityCreateClass - Class Advanced Honors English was checked on the class page
+23:14:08.364 [main] INFO  UtilityCreateClass - Class Advanced Honors English created successfully
+23:14:08.365 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 10 new students
+23:14:09.484 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest974495 and password: qwert6069
+23:14:09.986 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest732306 and password: qwert1731
+23:14:10.467 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest131653 and password: qwert9118
+23:14:10.914 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest144995 and password: qwert9791
+23:14:11.364 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest804357 and password: qwert7748
+23:14:11.809 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest201379 and password: qwert2290
+23:14:12.260 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest721157 and password: qwert1877
+23:14:12.744 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest142048 and password: qwert7492
+23:14:13.161 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest120726 and password: qwert6630
+23:14:13.606 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest995354 and password: qwert8094
+23:14:13.758 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 10 new students
+23:14:17.075 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:14:17.234 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:14:17.237 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:14:17.237 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:14:17.238 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:14:17.238 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:14:17.239 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:14:17.250 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:14:17.251 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:14:17.254 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:14:17.255 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:14:17.255 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:14:17.256 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:14:17.257 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:14:17.257 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+23:14:17.309 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:14:17.310 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+23:14:17.357 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+23:14:17.370 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+23:14:17.373 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+23:14:17.378 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+23:14:17.382 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+23:14:17.385 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+23:14:17.391 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+23:14:17.393 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+23:14:17.397 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+23:14:17.399 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+23:14:17.404 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+23:14:17.406 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+23:14:17.410 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+23:14:17.416 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+23:14:17.420 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+23:14:17.422 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+23:14:17.424 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+23:14:17.426 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+23:14:17.428 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+23:14:17.431 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+23:14:17.435 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+23:14:17.437 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+23:14:17.438 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+23:14:17.441 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+23:14:17.443 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+23:14:17.446 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+23:14:17.451 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+23:14:17.454 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+23:14:17.462 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+23:14:17.463 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+23:14:17.464 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+23:14:17.466 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+23:14:17.474 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+23:14:17.478 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+23:14:17.482 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+23:14:17.494 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+23:14:17.496 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+23:14:17.500 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+23:14:17.501 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+23:14:17.502 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+23:14:17.504 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+23:14:17.508 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+23:14:17.509 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+23:14:17.511 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+23:14:17.515 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+23:14:17.522 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+23:14:17.525 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+23:14:17.529 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+23:14:18.494 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+23:14:18.710 [main] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest974495 and password: qwert6069 as student or parent
+23:14:19.535 [main] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest974495
+23:14:19.644 [main] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert6069
+23:14:19.721 [main] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+23:14:24.024 [main] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+23:14:24.745 [main] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+23:14:24.863 [main] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+23:14:25.346 [main] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+23:14:25.526 [main] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+23:14:25.527 [main] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest974495
+23:14:25.843 [main] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest732306 and password: qwert1731 as student or parent
+23:14:26.506 [main] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest732306
+23:14:26.700 [main] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert1731
+23:14:26.849 [main] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+23:14:30.444 [main] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+23:14:30.692 [main] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+23:14:30.870 [main] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+23:14:31.211 [main] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+23:14:31.373 [main] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+23:14:31.373 [main] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest732306
+23:14:31.826 [main] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest131653 and password: qwert9118 as student or parent
+23:14:32.598 [main] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest131653
+23:14:32.860 [main] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9118
+23:14:32.990 [main] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+23:14:36.682 [main] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+23:14:36.974 [main] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+23:14:37.125 [main] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+23:14:37.551 [main] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+23:14:37.775 [main] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+23:14:37.775 [main] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest131653
+23:14:38.018 [main] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest144995 and password: qwert9791 as student or parent
+23:14:38.898 [main] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest144995
+23:14:39.036 [main] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9791
+23:14:39.106 [main] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+23:15:20.870 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:15:23.724 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:15:24.667 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9367 and password: 12345qwert3954
+23:15:26.100 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Lewis, Mary
+23:15:26.325 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:15:27.332 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:15:27.607 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:15:28.400 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:15:28.402 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:15:28.402 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:15:28.412 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:15:30.291 [main] DEBUG UtilityCreateClass - Entered class name: Advanced Honors English
+23:15:30.292 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:15:30.413 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:15:31.399 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:15:32.421 [main] DEBUG UtilityCreateClass - Class Advanced Honors English was found in a Classes list
+23:15:32.522 [main] DEBUG UtilityCreateClass - Class Advanced Honors English was selected
+23:15:33.932 [main] DEBUG UtilityCreateClass - Class Advanced Honors English was checked on the class page
+23:15:33.932 [main] INFO  UtilityCreateClass - Class Advanced Honors English created successfully
+23:15:33.934 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 1 new students
+23:15:35.009 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest394039 and password: qwert8467
+23:15:35.201 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 1 new students
+23:15:37.120 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:15:37.290 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:15:37.291 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:15:37.292 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:15:37.292 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:15:37.292 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:15:37.293 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:15:37.304 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:15:37.305 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:15:37.309 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:15:37.310 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:15:37.310 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:15:37.311 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:15:37.311 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:15:37.312 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+23:15:37.372 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:15:37.374 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+23:15:37.420 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+23:15:37.429 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+23:15:37.432 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+23:15:37.437 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+23:15:37.441 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+23:15:37.442 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+23:15:37.450 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+23:15:37.452 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+23:15:37.456 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+23:15:37.459 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+23:15:37.463 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+23:15:37.467 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+23:15:37.471 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+23:15:37.476 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+23:15:37.479 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+23:15:37.483 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+23:15:37.485 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+23:15:37.487 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+23:15:37.489 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+23:15:37.491 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+23:15:37.493 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+23:15:37.495 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+23:15:37.496 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+23:15:37.500 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+23:15:37.503 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+23:15:37.505 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+23:15:37.509 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+23:15:37.511 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+23:15:37.512 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+23:15:37.513 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+23:15:37.514 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+23:15:37.515 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+23:15:37.521 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+23:15:37.525 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+23:15:37.530 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+23:15:37.534 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+23:15:37.536 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+23:15:37.540 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+23:15:37.541 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+23:15:37.542 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+23:15:37.543 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+23:15:37.547 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+23:15:37.550 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+23:15:37.552 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+23:15:37.555 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+23:15:37.561 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+23:15:37.563 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+23:15:37.567 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+23:15:38.503 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+23:16:58.384 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:17:01.839 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:17:02.736 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9515 and password: 12345qwert1395
+23:17:04.331 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Baker, Margaret
+23:17:04.539 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:17:05.473 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:17:05.729 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:17:06.172 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:17:06.174 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:17:06.174 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:17:06.181 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:17:07.963 [main] DEBUG UtilityCreateClass - Entered class name: Homeschool 2024
+23:17:07.963 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:17:08.056 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:17:08.896 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:17:09.911 [main] DEBUG UtilityCreateClass - Class Homeschool 2024 was found in a Classes list
+23:17:10.006 [main] DEBUG UtilityCreateClass - Class Homeschool 2024 was selected
+23:17:11.322 [main] DEBUG UtilityCreateClass - Class Homeschool 2024 was checked on the class page
+23:17:11.322 [main] INFO  UtilityCreateClass - Class Homeschool 2024 created successfully
+23:17:11.324 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 1 new students
+23:17:12.450 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest474621 and password: qwert6326
+23:17:12.626 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 1 new students
+23:17:14.623 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:17:14.799 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:17:14.801 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:17:14.801 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:17:14.801 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:17:14.802 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:17:14.802 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:17:14.812 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:17:14.812 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:17:14.816 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:17:14.816 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:17:14.817 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:17:14.819 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:17:14.820 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:17:14.821 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+23:17:14.879 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:17:14.881 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+23:17:14.927 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+23:17:14.938 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+23:17:14.941 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+23:17:14.946 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+23:17:14.952 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+23:17:14.954 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+23:17:14.960 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+23:17:14.961 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+23:17:14.966 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+23:17:14.969 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+23:17:14.974 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+23:17:14.975 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+23:17:14.979 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+23:17:14.986 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+23:17:14.989 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+23:17:14.992 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+23:17:14.994 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+23:17:14.996 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+23:17:14.998 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+23:17:15.002 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+23:17:15.004 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+23:17:15.007 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+23:17:15.008 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+23:17:15.011 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+23:17:15.013 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+23:17:15.015 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+23:17:15.021 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+23:17:15.024 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+23:17:15.025 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+23:17:15.027 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+23:17:15.028 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+23:17:15.029 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+23:17:15.035 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+23:17:15.039 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+23:17:15.044 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+23:17:15.049 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+23:17:15.051 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+23:17:15.055 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+23:17:15.057 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+23:17:15.058 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+23:17:15.060 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+23:17:15.064 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+23:17:15.066 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+23:17:15.067 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+23:17:15.072 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+23:17:15.078 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+23:17:15.080 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+23:17:15.083 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+23:17:16.212 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+23:19:40.819 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:19:43.291 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:19:44.177 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest4422 and password: 12345qwert8186
+23:19:46.694 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Clark, Charles
+23:19:46.920 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+23:19:47.854 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+23:19:48.165 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:19:48.985 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:19:48.986 [main] INFO  UtilityCreateClass - Creating 1 new classes
+23:19:48.986 [main] DEBUG UtilityCreateClass - Opening My Classes page
+23:19:48.994 [main] DEBUG UtilityCreateClass - Clicking on Create New Class button
+23:19:50.708 [main] DEBUG UtilityCreateClass - Entered class name: Grade 10
+23:19:50.709 [main] DEBUG UtilityCreateClass - Selecting additional options for class creation
+23:19:50.876 [main] DEBUG UtilityCreateClass - Clicked on Create Class button
+23:19:51.790 [main] DEBUG UtilityCreateClass - Clicked on My classes button
+23:19:52.805 [main] DEBUG UtilityCreateClass - Class Grade 10 was found in a Classes list
+23:19:52.896 [main] DEBUG UtilityCreateClass - Class Grade 10 was selected
+23:19:54.309 [main] DEBUG UtilityCreateClass - Class Grade 10 was checked on the class page
+23:19:54.309 [main] INFO  UtilityCreateClass - Class Grade 10 created successfully
+23:19:54.310 [main] INFO  UtilityCreateStudentsAsTeacher - Starting to create 1 new students
+23:19:55.535 [main] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest209977 and password: qwert3626
+23:19:55.731 [main] INFO  UtilityCreateStudentsAsTeacher - Saved 1 new students
+23:19:57.839 [main] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+23:19:58.016 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:19:58.018 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:19:58.019 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:19:58.019 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:19:58.019 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:19:58.020 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:19:58.031 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+23:19:58.032 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:19:58.037 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+23:19:58.038 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:19:58.039 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+23:19:58.039 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:19:58.040 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+23:19:58.041 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+23:19:58.115 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+23:19:58.116 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+23:19:58.160 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+23:19:58.169 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+23:19:58.174 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+23:19:58.179 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+23:19:58.183 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+23:19:58.185 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+23:19:58.192 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+23:19:58.194 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+23:19:58.199 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+23:19:58.200 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+23:19:58.206 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+23:19:58.209 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+23:19:58.212 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+23:19:58.218 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+23:19:58.221 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+23:19:58.225 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+23:19:58.227 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+23:19:58.230 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+23:19:58.232 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+23:19:58.234 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+23:19:58.237 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+23:19:58.242 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+23:19:58.243 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+23:19:58.247 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+23:19:58.250 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+23:19:58.254 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+23:19:58.261 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+23:19:58.266 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+23:19:58.268 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+23:19:58.269 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+23:19:58.272 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+23:19:58.274 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+23:19:58.284 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+23:19:58.289 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+23:19:58.307 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+23:19:58.315 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+23:19:58.318 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+23:19:58.325 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+23:19:58.327 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+23:19:58.330 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+23:19:58.332 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+23:19:58.339 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+23:19:58.352 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+23:19:58.354 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+23:19:58.362 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+23:19:58.370 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+23:19:58.374 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+23:19:58.377 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+23:19:59.269 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+23:19:59.282 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctnumfmtsb58btype
+23:19:59.284 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfonts6623type
+23:19:59.287 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfills2c6ftype
+23:19:59.288 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborders0d66type
+23:19:59.290 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcellxfs1322type
+23:19:59.292 [main] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcellstylexfsa81ftype
+23:19:59.305 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save core properties part
+23:19:59.305 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save content types part
+23:19:59.365 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save package relationships
+23:19:59.370 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/app.xml'
+23:19:59.375 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/core.xml'
+23:19:59.382 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
+23:19:59.383 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
+23:19:59.383 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
+23:19:59.385 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'

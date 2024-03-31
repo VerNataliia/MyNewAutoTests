@@ -1,7 +1,11 @@
 import app.App;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,5 +48,44 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
         app.classPage.checkStudentsInClass(usernames);
         logger.info("Checked new students in class");
         return studentCredentialsList;
+    }
+
+    public static void saveCredentialsToExcel(List<Map<String, String>> credentialsList) {
+        String[] columns = {"Username", "Password"};
+        Workbook workbook = new XSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+        Sheet sheet = workbook.createSheet("Student Credentials");
+
+        // Creating header row
+        Row headerRow = sheet.createRow(0);
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+        }
+
+        // Filling data
+        int rowNum = 1;
+        for (Map<String, String> credentials : credentialsList) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0).setCellValue(credentials.get("username"));
+            row.createCell(1).setCellValue(credentials.get("password"));
+        }
+
+        // Resize all columns to fit the content size
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Write the output to a file
+        String filePath = "/Users/nataliiaverba/readtheoty/app/src/main/resources/files/StudentCredentials.xlsx";
+
+        // Write the output to a file
+        try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+            workbook.write(fileOut);
+            System.out.println("Saved Excel file to: " + filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
