@@ -11,19 +11,28 @@ public class UtilityTeacherSignUp extends A_BaseTest {
 
         selectRole(app);
         String[] credentials = createAccount(app);
-        String firstAndLastName = enterPersonalDetails(app);
+        String[] personalDetails = enterPersonalDetails(app);
+        String selectedSchool = "";
 
         switch (options.schoolSelectionOption) {
             case SKIP -> skipSchoolSelection(app);
-            case SELECT -> selectSchool(app, options.schoolName);
+            case SELECT -> selectedSchool = selectSchool(app, options.schoolName);
             case CUSTOM -> addCustomSchool(app, options.customSchool);
             default -> throw new IllegalArgumentException("Unknown school selection option");
         }
 
         skipPricing(app);
-        verifySignUp(app, firstAndLastName);
+        verifySignUp(app, personalDetails[2]);
         logger.info("Teacher sign-up completed successfully");
-        return credentials;
+        return new String[]{
+            credentials[0], // username
+            credentials[1], // password
+            personalDetails[1], // firstName
+            personalDetails[0], // lastName
+            personalDetails[2], // teacherLastAndFirstName
+            personalDetails[3], // email
+            selectedSchool // selectedSchool
+        };
     }
 
     private static void selectRole(App app) {
@@ -41,16 +50,16 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         return new String[]{username, password};
     }
 
-    private static String enterPersonalDetails(App app) {
+    private static String[] enterPersonalDetails(App app) {
         app.teacherSignupStepTwoPage.checkTeacherSignUpPageTitle("Personal Details");
         String firstName = app.teacherSignupStepTwoPage.setTeacherFirstName();
         String lastName = app.teacherSignupStepTwoPage.setTeacherLastName();
         String teacherLastAndFirstName = lastName + ", " + firstName;
         logger.debug("Teacher's name set: {}", teacherLastAndFirstName);
-        app.teacherSignupStepTwoPage.setTeacherEmail();
+        String email = app.teacherSignupStepTwoPage.setTeacherEmail();
         app.teacherSignupStepTwoPage.clickOnNextButtonSecondStep();
         logger.debug("Entered personal details");
-        return teacherLastAndFirstName;
+        return new String[]{firstName, lastName, teacherLastAndFirstName, email};
     }
 
     private static void skipSchoolSelection(App app) {
@@ -58,10 +67,11 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         logger.debug("Skipped 'Select School' page");
     }
 
-    private static void selectSchool(App app, String schoolName) {
-        app.teacherSignUpStepThreePage.selectSchoolFromTheList(schoolName);
+    private static String selectSchool(App app, String schoolName) {
+        String selectedSchool = app.teacherSignUpStepThreePage.selectSchoolFromTheList(schoolName);
         app.teacherSignUpStepThreePage.clickOnConfirmAndContinueButton();
         logger.debug("School selected: {}", schoolName);
+        return selectedSchool;
     }
 
     private static void addCustomSchool(App app, SchoolDetails customSchool) {

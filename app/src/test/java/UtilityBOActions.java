@@ -19,7 +19,6 @@ public class UtilityBOActions extends A_BaseTest {
         logger.info("Logged into back office as user: {}", BO_USERNAME);
         Driver.wait(5); // doesn't work without wait
         logger.debug("Waited 5 seconds after logging in");
-
     }
 
     public static void makeTeacherPremium(App app, String teacherUsername) {
@@ -35,7 +34,7 @@ public class UtilityBOActions extends A_BaseTest {
     public static void checkCustomSchool(App app, String customSchoolName) {
         logger.info("Starting process to check custom school: {}", customSchoolName);
         app.backOffice.clickOnCustomSchoolButton();
-        app.backOffice.searchCustomSchool(customSchoolName);
-        //need to add checking
+        app.backOffice.findCustomSchool(customSchoolName);
+        //need to add checking each field in added custom school
     }
 }

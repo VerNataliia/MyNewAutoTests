@@ -6,8 +6,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.enabled;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -60,23 +59,24 @@ public class BO {
         USERS_SEARCH = $(byXpath("//input[@id='input-27']")),
         CREATE_SUBSCRIPTION_BUTTON = $(byXpath("//div[@class='v-list mb-2 v-sheet theme--light v-list--subheader v-list--three-line']//button[@class='v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default']\n")),
         SUBSCRIPTION_ENABLED_CHECKBOX = $(byXpath("//form[@class='v-form pa-5']//div[@class='v-input--selection-controls__ripple']")),
-        SUBSCRIPTION_SAVE_BUTTON = $(byXpath("//span[contains(text(),'Save and Activate')]"));
-
+        SUBSCRIPTION_SAVE_BUTTON = $(byXpath("//span[contains(text(),'Save and Activate')]")),
+        TEACHER_CARD_PREMIUM_BADGE = $(byXpath("//span[@class='v-chip v-chip--clickable v-chip--label theme--light v-size--default green']")),
+        TEACHER_CARD_SCHOOL_NAME = $(byXpath("//span[@class='v-chip--select v-chip v-chip--clickable v-chip--no-color v-chip--removable theme--light v-size--default']/span"));
 
     private final ElementsCollection
-        MY_PROGRESS_ACTIVITIES_LIST = $$x("//div[@class='v-data-table__wrapper']//table//tbody/tr");
+        TEACHERS_LIST = $$x("//div[@class='v-data-table__wrapper']//table//tbody/tr");
 
     public void clickOnCustomSchoolButton() {
         CUSTOM_SCHOOL_MENU_BUTTON.shouldBe(enabled).click();
     }
 
-    public void searchCustomSchool(String customSchoolName) {
+    public void findCustomSchool(String customSchoolName) {
         CUSTOM_SCHOOL_SEARCH.sendKeys(customSchoolName);
     }
 
     public void selectUser(String username) {
         USERS_SEARCH.shouldBe(visible).sendKeys(username);
-        MY_PROGRESS_ACTIVITIES_LIST.find(Condition.text(username)).click();
+        TEACHERS_LIST.find(Condition.text(username)).click();
     }
 
     public void enableSubscriptionForUser() {
@@ -85,5 +85,15 @@ public class BO {
         Driver.wait(2);
         SUBSCRIPTION_SAVE_BUTTON.shouldBe(visible).click();
         Driver.wait(2);
+        TEACHER_CARD_PREMIUM_BADGE.shouldBe(visible);
     }
+
+    public void checkTeacherSchool(String schoolName) {
+        TEACHER_CARD_SCHOOL_NAME.shouldBe(visible).shouldHave(text(schoolName));
+    }
+
+    public void checkTeacherWithoutSchool() {
+        TEACHER_CARD_SCHOOL_NAME.shouldNotBe(visible);
+    }
+
 }

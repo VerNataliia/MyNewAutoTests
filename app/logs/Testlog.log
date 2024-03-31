@@ -13150,3 +13150,105 @@
 18:30:58.029 [main] INFO  UtilityActivityCreation - SPECIFIC_PASSAGE was created. Activity title is : Assign Passage - "Karen's Garden"
 18:31:04.529 [main] INFO  UtilityActivityCreation - Checking activity status for Assign Passage - "Karen's Garden"
 18:31:04.623 [main] DEBUG UtilityActivityCreation - Activity status for Assign Passage - "Karen's Garden": PENDING
+19:50:26.227 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:50:29.163 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:50:30.098 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest7602 and password: 12345qwert8763
+19:50:31.673 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Miller, John
+19:50:31.897 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+19:50:32.837 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:50:33.150 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:50:33.726 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:50:33.733 [main] DEBUG UtilityBOActions - Back office opened
+19:50:36.737 [main] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:50:37.577 [main] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:50:42.580 [main] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+19:50:42.585 [main] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest7602
+19:50:45.047 [main] INFO  UtilityBOActions - Selected user: NewTeacherAutotest7602
+19:50:47.069 [main] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+19:50:51.697 [main] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest7602
+19:54:36.105 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:54:38.671 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:54:39.532 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest6357 and password: 12345qwert7975
+19:54:41.044 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: White, Richard
+19:54:41.236 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+19:54:42.174 [main] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:54:42.507 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:54:42.859 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:54:42.866 [main] DEBUG UtilityBOActions - Back office opened
+19:54:45.870 [main] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:54:45.902 [main] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:54:50.903 [main] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:12:31.731 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:12:34.433 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:12:35.314 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest1168 and password: 12345qwert8919
+22:12:36.759 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Wilson, Margaret
+22:12:36.946 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:12:56.786 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:13:00.493 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:13:01.202 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest8195 and password: 12345qwert7175
+22:13:02.737 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Roberts, Steven
+22:13:02.924 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:34:14.130 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:34:17.293 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:34:18.115 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9694 and password: 12345qwert3250
+22:34:28.108 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:34:32.093 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:34:32.879 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest4952 and password: 12345qwert1094
+22:34:34.242 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Smith, Betty
+22:34:34.447 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:34:37.046 [main] DEBUG UtilityTeacherSignUp - School selected: School
+22:34:37.050 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:34:38.171 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:35:04.074 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:35:07.738 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:35:08.585 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest3339 and password: 12345qwert6268
+22:35:09.857 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Wright, Mary
+22:35:10.074 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:35:19.953 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:35:23.624 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:35:24.314 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest7227 and password: 12345qwert2221
+22:35:25.566 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Gonzalez, Kevin
+22:35:25.805 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:35:28.268 [main] DEBUG UtilityTeacherSignUp - School selected: School
+22:35:28.273 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:35:29.380 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:35:29.386 [main] DEBUG UtilityBOActions - Back office opened
+22:35:32.388 [main] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:35:32.416 [main] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:35:37.421 [main] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:37:44.449 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:37:48.150 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:37:48.916 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest3588 and password: 12345qwert3833
+22:37:50.329 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Hill, Mark
+22:37:50.542 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:38:15.298 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:38:17.950 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:38:18.725 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9843 and password: 12345qwert1120
+22:38:20.194 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Walker, Margaret
+22:38:20.395 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:40:41.376 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:40:44.763 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:40:45.575 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest4479 and password: 12345qwert9738
+22:40:46.974 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Lee, Jennifer
+22:40:47.143 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:40:50.144 [main] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test2003
+22:40:50.163 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:40:51.501 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:40:51.509 [main] DEBUG UtilityBOActions - Back office opened
+22:40:54.512 [main] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:40:55.179 [main] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:41:00.185 [main] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:41:00.190 [main] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test2003
+22:42:12.818 [main] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:42:15.630 [main] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:42:16.467 [main] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest5990 and password: 12345qwert4456
+22:42:18.104 [main] DEBUG UtilityTeacherSignUp - Teacher's name set: Hill, Michelle
+22:42:18.302 [main] DEBUG UtilityTeacherSignUp - Entered personal details
+22:42:21.547 [main] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test2134
+22:42:21.553 [main] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:42:23.204 [main] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:42:23.212 [main] DEBUG UtilityBOActions - Back office opened
+22:42:26.216 [main] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:42:26.248 [main] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:42:31.252 [main] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:42:31.263 [main] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test2134

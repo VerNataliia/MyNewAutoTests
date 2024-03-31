@@ -22,6 +22,7 @@ public class TeacherSignUpStepThreePage extends BasePage {
         TEACHER_SIGNUP_STEP_THREE_SKIP_BUTTON = $(byId("skip-signup-step")),
         TEACHER_SIGNUP_STEP_THREE_BACK_BUTTON = $(byXpath("//div[contains(text(),'Back')]")),
         TEACHER_SIGNUP_SELECT_SCHOOL_INPUT = $(byXpath("//input[@placeholder='Search for your school']")),
+        TEACHER_SIGNUP_SELECTED_SCHOOL_NAME = $(byXpath("//h4")),
         TEACHER_SIGNUP_ADD_SCHOOL_MANUALLY_BUTTON = $(byXpath("//a[@class='manual-add']")),
         TEACHER_SIGNUP_CONFIRM_AND_CONTINUE_BUTTON = $(byXpath("//div[@class='primary-button btn-continue']")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_NAME_INPUT = $(byXpath("//input[@placeholder='School Name*']")),
@@ -48,11 +49,12 @@ public class TeacherSignUpStepThreePage extends BasePage {
         TEACHER_SIGNUP_STEP_THREE_SKIP_BUTTON.shouldBe(Condition.visible).click();
     }
     DataGenerator dataGenerator = new DataGenerator();
-    public void selectSchoolFromTheList(String schoolNameForSearch) {
+    public String selectSchoolFromTheList(String schoolNameForSearch) {
         TEACHER_SIGNUP_SELECT_SCHOOL_INPUT.shouldBe(Condition.visible).sendKeys(schoolNameForSearch);
         TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.shouldHave(CollectionCondition.sizeGreaterThan(1));
         int numbOfOptionsInSchoolList = TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.size();
         TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.get(dataGenerator.getRandomNumber(1, numbOfOptionsInSchoolList)).click();
+        return TEACHER_SIGNUP_SELECTED_SCHOOL_NAME.shouldBe(Condition.visible).getText();
     }
 
     public void clickOnAddSchoolManuallyButton() {

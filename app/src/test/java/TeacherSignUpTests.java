@@ -7,19 +7,28 @@ import org.testng.annotations.Test;
 public class TeacherSignUpTests extends A_BaseTest {
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with username and password")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can sign up with username. Select school page and pricing page are skipped")
+    @Description("A teacher can sign up with username. Select school page and pricing page are skipped. No linked school for this teacher in BO. Teacher can log in to the system")
     @AllureId("133")
     public void checkTeacherSignUpWithUsername() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
 
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherCredentials[0];
+        String teacherPassword  = teacherCredentials[1];
+
+        UtilityBOActions.logIn(app);
+        app.backOffice.selectUser(teacherUsername);
+        app.backOffice.checkTeacherWithoutSchool();
+
+        app.logInUsernamePage.open();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
     }
 
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can select a school from the list during signing up")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can sign up with username and password. Select school in the schools list on a third step. Pricing page is skipped")
+    @Description("A teacher can sign up with username and password. Select school in the schools list on a third step. Pricing page is skipped. Selected school is linked to the teacher. The teacher can login.")
     @AllureId("133")
     public void checkTeacherSignUpWithUsernameAndSchool() {
         app.signUpSelectRolePage.open();
@@ -28,21 +37,30 @@ public class TeacherSignUpTests extends A_BaseTest {
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
         options.schoolName = "School";
 
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherData[0];
+        String teacherPassword  = teacherData[1];
+        String selectedSchool = teacherData[6];
 
-        //need to add verification in BO that teacher has selected school
+        UtilityBOActions.logIn(app);
+        app.backOffice.selectUser(teacherUsername);
+        app.backOffice.checkTeacherSchool(selectedSchool);
+
+        app.logInUsernamePage.open();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
     }
 
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can create a custom school during signing up")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can sign up with username and password. Create a custom school on a third step. Pricing page is skipped")
+    @Description("A teacher can sign up with username and password. Create a custom school on a third step. Pricing page is skipped. Created custom school appeared in BO. The teacher can login.")
     @AllureId("133")
     public void checkTeacherSignUpWithCustomSchool() {
         app.signUpSelectRolePage.open();
         DataGenerator dataGenerator = new DataGenerator();
 
         UtilityTeacherSignUp.SchoolDetails customSchoolDetails = new UtilityTeacherSignUp.SchoolDetails();
-        customSchoolDetails.name = "School AUTO Test" + dataGenerator.getRandomNumber(100, 10000);
+        String customSchoolName = "School AUTO Test" + dataGenerator.getRandomNumber(100, 10000);
+        customSchoolDetails.name = customSchoolName;
         customSchoolDetails.city = "Kyiv" + dataGenerator.getRandomNumber(100, 10000);
         customSchoolDetails.state = "KA" + dataGenerator.getRandomNumber(100, 10000);
         customSchoolDetails.phoneNumber = "+380990963572" + dataGenerator.getRandomNumber(100, 10000);
@@ -54,8 +72,15 @@ public class TeacherSignUpTests extends A_BaseTest {
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.CUSTOM;
         options.customSchool = customSchoolDetails;
 
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
-        //need to add checking custom school in BO
+        String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherData[0];
+        String teacherPassword  = teacherData[1];
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.checkCustomSchool(app, customSchoolName);
+
+        app.logInUsernamePage.open();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
     }
 
 }

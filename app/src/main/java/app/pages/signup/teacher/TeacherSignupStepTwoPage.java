@@ -40,9 +40,10 @@ public class TeacherSignupStepTwoPage extends BasePage {
         return teacherLastName;
     }
 
-    public void setTeacherEmail() {
+    public String setTeacherEmail() {
         String newTeacherEmail = "autoTestTeacher" + dataGenerator.getRandomNumber(1000, 9999) + "@gmail.com";
         TEACHER_SIGNUP_EMAIL_INPUT.shouldBe(Condition.visible).sendKeys(newTeacherEmail);
+        return newTeacherEmail;
     }
 
     public void setTeacherJobTitle() {
