@@ -34,8 +34,8 @@ jobs:
       - run: ./gradlew classTests -Denvironment=$ENVIRONMENT --stacktrace
 
         # Upload the generated Excel file as an artifact
-     # - name: Upload Excel file
-     #   uses: actions/upload-artifact@v4
-     #   with:
-     #     name: student-credentials
-     #     path: app/src/main/resources/files/StudentCredentials.xlsx
+      - name: Upload Excel file
+        uses: actions/upload-artifact@v4
+        with:
+          name: student-credentials
+          path: app/src/main/resources/files/StudentCredentials.xlsx
