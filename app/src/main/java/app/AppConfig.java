@@ -7,11 +7,22 @@ public class AppConfig {
     static {
         String environment = System.getProperty("environment");
 
-        if ("staging".equals(environment)) {
-            BASE_URL = "https://rt-readtheory-staging.readtheory.org";
-        } else if ("production".equals(environment)) {
+        if ("production.org".equals(environment)) {
             BASE_URL = "https://readtheory.org";
-        } else {
+        } else if ("production.ai".equals(environment)) {
+            BASE_URL = "https://readtheory.ai";
+        } else if ("production.com".equals(environment)) {
+            BASE_URL = "https://readtheory.com";
+        } else if ("staging".equals(environment)) {
+            BASE_URL = "https://rt-readtheory-staging.readtheory.org";
+        } else if ("testing.org".equals(environment)) {
+            BASE_URL = "https://test-readtheory-org.readtheory.org";
+        } else if ("testing.com".equals(environment)) {
+            BASE_URL = "https://test-readtheory-com.readtheory.org";
+        } else if ("testing.app.com".equals(environment)) {
+            BASE_URL = "https://test-readtheoryapp-com.readtheory.org";
+        }
+        else {
             BASE_URL = "https://readtheory.org";}
         }
 }

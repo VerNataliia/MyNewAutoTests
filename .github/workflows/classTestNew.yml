@@ -7,11 +7,16 @@ on:
       environment:
         description: 'Set environment'
         required: true
-        default: 'staging'
+        default: 'production.org'
         type: choice
         options:
+          - production.org
+          - production.com
+          - production.ai
           - staging
-          - production
+          - testing.org
+          - testing.com
+          - testing.app.com
 
 permissions:
   contents: write
