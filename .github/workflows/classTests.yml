@@ -10,9 +10,18 @@ on:
         description: "ALLURE_USERNAME service parameter. Leave blank"
         required: false
       environment:
-        description: 'Set environment: staging OR production'
+        description: 'Set environment'
         required: true
-        default: 'staging'
+        default: 'production.org'
+        type: choice
+        options:
+          - production.org
+          - production.com
+          - production.ai
+          - staging
+          - testing.org
+          - testing.com
+          - testing.app.com
 
 permissions:
   contents: write
