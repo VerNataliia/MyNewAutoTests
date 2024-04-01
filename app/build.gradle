@@ -108,13 +108,14 @@ tasks.register("classTests", Test) {
     useTestNG {
         includeGroups 'Class'
     }
+}
 
-    tasks.register("nextQuizTests", Test) {
-        systemProperty 'environment', System.properties['environment']
-        useTestNG {
-            includeGroups 'NextQuiz'
-        }
+tasks.register("nextQuizTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'NextQuiz'
     }
+}
 
     tasks.register("demoAccount", Test) {
         systemProperty 'environment', System.properties['environment']
@@ -122,4 +123,3 @@ tasks.register("classTests", Test) {
             includeGroups 'Demo account OldP'
         }
     }
-}
