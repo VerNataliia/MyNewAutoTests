@@ -1,4 +1,4 @@
-name: Class tests
+name: classTestNew
 
 on:
   workflow_dispatch:
