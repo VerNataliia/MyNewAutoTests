@@ -99,7 +99,7 @@ public class TeacherClassTests extends A_BaseTest {
         UtilityTeacherSignUp.signUpAsTeacher(app, options);
 
         int numberOfClassesToCreate = 1;
-        int numberOfStudentsToAdd = 1;
+        int numberOfStudentsToAdd = 2;
 
         List<Map<String, String>> allStudentCredentials = new ArrayList<>();
 

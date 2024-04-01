@@ -53,7 +53,7 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
     public static void saveCredentialsToExcel(List<Map<String, String>> credentialsList) {
         String[] columns = {"Username", "Password"};
         Workbook workbook = new XSSFWorkbook();
-        CreationHelper createHelper = workbook.getCreationHelper();
+
         Sheet sheet = workbook.createSheet("Student Credentials");
 
         // Creating header row
@@ -77,8 +77,8 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
             sheet.autoSizeColumn(i);
         }
 
-        // Write the output to a file
-        String filePath = "/Users/nataliiaverba/readtheoty/app/src/main/resources/files/StudentCredentials.xlsx";
+        // Specify the relative file path
+        String filePath = "app/src/main/resources/files/StudentCredentials.xlsx";
 
         // Write the output to a file
         try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
@@ -88,4 +88,5 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
             e.printStackTrace();
         }
     }
+
 }
