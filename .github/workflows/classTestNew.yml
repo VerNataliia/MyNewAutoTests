@@ -26,7 +26,8 @@ jobs:
           distribution: 'zulu'
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
-      - run: ./gradlew classTests -Denvironment=$ENVIRONMENT
+      - run: ./gradlew classTests -Denvironment=$ENVIRONMENT --warning-mode all
+
         # Upload the generated Excel file as an artifact
      # - name: Upload Excel file
      #   uses: actions/upload-artifact@v4
