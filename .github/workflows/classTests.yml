@@ -38,13 +38,7 @@ jobs:
           allure-token: ${{ secrets.ALLURE_TOKEN }}
           allure-project-id: 1
       - uses: browser-actions/setup-chrome@v1
-            - run: chrome --version
-            - run: allurectl watch -- ./gradlew classTests -Denvironment=$ENVIRONMENT
-              env:
-                ALLURE_RESULTS: app/build/allure-results
-    # Upload the generated Excel file as an artifact
-            - name: Upload Excel file
-              uses: actions/upload-artifact@v4
-              with:
-                name: student-credentials
-                path: app/src/main/resources/files/StudentCredentials.xlsx
+      - run: chrome --version
+      - run: allurectl watch -- ./gradlew classTests -Denvironment=$ENVIRONMENT
+        env:
+          ALLURE_RESULTS: app/build/allure-results
