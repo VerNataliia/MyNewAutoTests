@@ -78,8 +78,8 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
         }
 
         // Specify the relative file path
-        String filePath = "app/src/main/resources/files/StudentCredentials.xlsx";
-
+        String filePath = "src/main/resources/files/StudentCredentials.xlsx";
+        System.out.println("Current working directory: " + System.getProperty("user.dir"));
         // Write the output to a file
         try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
             workbook.write(fileOut);

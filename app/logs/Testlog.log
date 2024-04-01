@@ -13864,3 +13864,285 @@
 23:19:59.383 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
 23:19:59.383 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
 23:19:59.385 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
+08:53:46.090 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+08:53:48.475 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+08:53:49.366 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9021 and password: 12345qwert3913
+08:53:50.714 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Perez, Betty
+08:53:50.930 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+08:53:51.969 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+08:53:52.261 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+08:53:52.835 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+08:53:52.836 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+08:53:52.837 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+08:53:52.843 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+08:53:54.481 [Test worker] DEBUG UtilityCreateClass - Entered class name: 3rd Grade Reading
+08:53:54.483 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+08:53:54.601 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+08:53:55.478 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+08:53:56.648 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was found in a Classes list
+08:53:56.723 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was selected
+08:53:58.087 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was checked on the class page
+08:53:58.088 [Test worker] INFO  UtilityCreateClass - Class 3rd Grade Reading created successfully
+08:53:58.089 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 2 new students
+08:53:59.218 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest658327 and password: qwert8882
+08:53:59.676 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest294122 and password: qwert6847
+08:53:59.830 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 2 new students
+08:54:01.974 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+08:54:02.357 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+08:54:02.361 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+08:54:02.362 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+08:54:02.362 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+08:54:02.363 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+08:54:02.364 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+08:54:02.380 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+08:54:02.381 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+08:54:02.385 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+08:54:02.386 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+08:54:02.387 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+08:54:02.387 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+08:54:02.388 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+08:54:02.389 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+08:54:02.435 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+08:54:02.436 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+08:54:02.528 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+08:54:02.545 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+08:54:02.548 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+08:54:02.563 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+08:54:02.568 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+08:54:02.573 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+08:54:02.590 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+08:54:02.592 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+08:54:02.598 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+08:54:02.603 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+08:54:02.610 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+08:54:02.612 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+08:54:02.623 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+08:54:02.646 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+08:54:02.651 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+08:54:02.656 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+08:54:02.660 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+08:54:02.664 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+08:54:02.667 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+08:54:02.673 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+08:54:02.676 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+08:54:02.683 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+08:54:02.703 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+08:54:02.709 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+08:54:02.712 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+08:54:02.719 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+08:54:02.726 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+08:54:02.737 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+08:54:02.738 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+08:54:02.741 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+08:54:02.743 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+08:54:02.745 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+08:54:02.754 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+08:54:02.762 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+08:54:02.794 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+08:54:02.803 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+08:54:02.807 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+08:54:02.825 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+08:54:02.829 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+08:54:02.832 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+08:54:02.835 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+08:54:02.845 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+08:54:02.850 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+08:54:02.852 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+08:54:02.869 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+08:54:02.895 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+08:54:02.899 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+08:54:02.908 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+08:54:04.521 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+08:59:20.137 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+08:59:22.756 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+08:59:23.661 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest6415 and password: 12345qwert5126
+08:59:25.239 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Hill, Lisa
+08:59:25.462 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+08:59:26.456 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+08:59:26.742 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+08:59:27.155 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+08:59:27.157 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+08:59:27.158 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+08:59:27.165 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+08:59:28.939 [Test worker] DEBUG UtilityCreateClass - Entered class name: Fourth Grade AG
+08:59:28.954 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+08:59:29.057 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+08:59:29.924 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+08:59:30.997 [Test worker] DEBUG UtilityCreateClass - Class Fourth Grade AG was found in a Classes list
+08:59:31.091 [Test worker] DEBUG UtilityCreateClass - Class Fourth Grade AG was selected
+08:59:32.531 [Test worker] DEBUG UtilityCreateClass - Class Fourth Grade AG was checked on the class page
+08:59:32.531 [Test worker] INFO  UtilityCreateClass - Class Fourth Grade AG created successfully
+08:59:32.534 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 2 new students
+08:59:33.702 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest282648 and password: qwert8623
+08:59:34.186 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest559848 and password: qwert7134
+08:59:34.343 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 2 new students
+08:59:36.763 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+08:59:37.211 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+08:59:37.216 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+08:59:37.217 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+08:59:37.217 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+08:59:37.218 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+08:59:37.219 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+08:59:37.235 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+08:59:37.236 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+08:59:37.240 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+08:59:37.241 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+08:59:37.241 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+08:59:37.242 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+08:59:37.243 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+08:59:37.243 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+08:59:37.287 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+08:59:37.289 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+08:59:37.392 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+08:59:37.409 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+08:59:37.413 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+08:59:37.428 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+08:59:37.434 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+08:59:37.436 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+08:59:37.454 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+08:59:37.456 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+08:59:37.463 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+08:59:37.465 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+08:59:37.472 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+08:59:37.474 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+08:59:37.485 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+08:59:37.506 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+08:59:37.511 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+08:59:37.517 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+08:59:37.520 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+08:59:37.524 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+08:59:37.526 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+08:59:37.532 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+08:59:37.536 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+08:59:37.540 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+08:59:37.543 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+08:59:37.550 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+08:59:37.553 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+08:59:37.561 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+08:59:37.569 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+08:59:37.580 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+08:59:37.583 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+08:59:37.584 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+08:59:37.587 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+08:59:37.589 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+08:59:37.602 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+08:59:37.609 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+08:59:37.638 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+08:59:37.647 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+08:59:37.651 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+08:59:37.674 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+08:59:37.676 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+08:59:37.677 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+08:59:37.680 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+08:59:37.688 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+08:59:37.691 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+08:59:37.692 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+08:59:37.707 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+08:59:37.729 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+08:59:37.734 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+08:59:37.740 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+08:59:38.706 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+09:01:03.811 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+09:01:06.610 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+09:01:07.396 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest1856 and password: 12345qwert7345
+09:01:08.901 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Gonzalez, Donald
+09:01:09.092 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+09:01:10.021 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+09:01:10.332 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+09:01:10.716 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+09:01:10.717 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+09:01:10.718 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+09:01:10.724 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+09:01:12.355 [Test worker] DEBUG UtilityCreateClass - Entered class name: Elementary Students
+09:01:12.355 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+09:01:12.511 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+09:01:13.435 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+09:01:14.476 [Test worker] DEBUG UtilityCreateClass - Class Elementary Students was found in a Classes list
+09:01:14.551 [Test worker] DEBUG UtilityCreateClass - Class Elementary Students was selected
+09:01:16.118 [Test worker] DEBUG UtilityCreateClass - Class Elementary Students was checked on the class page
+09:01:16.118 [Test worker] INFO  UtilityCreateClass - Class Elementary Students created successfully
+09:01:16.119 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 2 new students
+09:01:17.267 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest741745 and password: qwert2475
+09:01:17.737 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest811825 and password: qwert7907
+09:01:17.889 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 2 new students
+09:01:20.061 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+09:01:20.433 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.poi.schemas.ooxml.system.ooxml
+09:01:20.437 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+09:01:20.437 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+09:01:20.438 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+09:01:20.439 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+09:01:20.440 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+09:01:20.456 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLTOOLS
+09:01:20.457 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+09:01:20.462 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLSCHEMA
+09:01:20.463 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLLANG
+09:01:20.463 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLLANG
+09:01:20.464 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+09:01:20.465 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.xmlbeans.metadata.system.sXMLCONFIG
+09:01:20.465 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Reading unresolved handles for type system org.apache.poi.schemas.ooxml.system.ooxml
+09:01:20.505 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Finished loading type system org.apache.poi.schemas.ooxml.system.ooxml
+09:01:20.506 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbook83c3type
+09:01:20.590 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworkbookpr03a5type
+09:01:20.611 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewsb864type
+09:01:20.615 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctbookviewf677type
+09:01:20.632 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheets49fdtype
+09:01:20.637 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle propertiesee84doctype
+09:01:20.639 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties3f10type
+09:01:20.655 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle properties288cdoctype
+09:01:20.657 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctproperties2c18type
+09:01:20.663 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle sstf81fdoctype
+09:01:20.665 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsst44f3type
+09:01:20.671 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stylesheet5d8bdoctype
+09:01:20.674 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctstylesheet4257type
+09:01:20.684 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfont14d8type
+09:01:20.702 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontsizeb3b9type
+09:01:20.706 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcolord2c2type
+09:01:20.711 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontname2dc3type
+09:01:20.713 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stxstringf179type
+09:01:20.716 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontfamily685ctype
+09:01:20.718 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontfamily9c6ctype
+09:01:20.722 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfontschemebf5dtype
+09:01:20.726 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontschemef36dtype
+09:01:20.729 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfill550ctype
+09:01:20.733 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpatternfill7452type
+09:01:20.738 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stpatterntype7939type
+09:01:20.741 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderf935type
+09:01:20.749 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborderpre497type
+09:01:20.756 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctxf97f7type
+09:01:20.771 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stnumfmtid76fbtype
+09:01:20.773 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfontid9d63type
+09:01:20.775 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stfillida097type
+09:01:20.777 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stborderid1a80type
+09:01:20.779 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellstylexfid70c7type
+09:01:20.791 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheet4dbetype
+09:01:20.801 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctworksheet530dtype
+09:01:20.831 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetformatprdef7type
+09:01:20.841 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetviewsb918type
+09:01:20.844 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetview0f43type
+09:01:20.862 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdimensiond310type
+09:01:20.865 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stref90a2type
+09:01:20.867 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctsheetdata8408type
+09:01:20.870 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctpagemargins5455type
+09:01:20.877 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcols627ctype
+09:01:20.882 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle strelationshipid1e94type
+09:01:20.883 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrowdd39type
+09:01:20.899 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcell842btype
+09:01:20.923 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcellrefe4e0type
+09:01:20.927 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctrsta472type
+09:01:20.933 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle stcelltypebf95type
+09:01:21.750 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcola95ftype
+09:01:21.800 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctnumfmtsb58btype
+09:01:21.811 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfonts6623type
+09:01:21.832 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctfills2c6ftype
+09:01:21.851 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctborders0d66type
+09:01:21.871 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcellxfs1322type
+09:01:21.890 [Test worker] TRACE org.apache.xmlbeans.impl.common.XBeanDebug - Resolving type for handle ctcellstylexfsa81ftype
+09:01:21.932 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save core properties part
+09:01:21.944 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save content types part
+09:01:22.061 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save package relationships
+09:01:22.119 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/app.xml'
+09:01:22.177 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/core.xml'
+09:01:22.218 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
+09:01:22.237 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
+09:01:22.256 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
+09:01:22.294 [Test worker] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
