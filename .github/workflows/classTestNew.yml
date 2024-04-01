@@ -1,12 +1,17 @@
 name: classTestNew
 
+
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Set environment: staging OR production'
+        description: 'Set environment'
         required: true
         default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
 
 permissions:
   contents: write
@@ -26,7 +31,7 @@ jobs:
           distribution: 'zulu'
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
-      - run: ./gradlew classTests -Denvironment=$ENVIRONMENT --warning-mode all
+      - run: ./gradlew classTests -Denvironment=$ENVIRONMENT --stacktrace
 
         # Upload the generated Excel file as an artifact
      # - name: Upload Excel file
