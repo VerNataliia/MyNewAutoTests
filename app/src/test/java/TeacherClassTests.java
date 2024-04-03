@@ -88,42 +88,4 @@ public class TeacherClassTests extends A_BaseTest {
 
     }
 
-    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes and add students to these classes")
-    @AllureId("166")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("A teacher can create classes, then add students to these classes. These students can log in to the system ")
-    public void checkClassgghAndStudentCreation() {
-        app.signUpSelectRolePage.open();
-        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
-        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
-
-        int numberOfClassesToCreate = 1;
-        int numberOfStudentsToAdd = 2;
-
-        List<Map<String, String>> allStudentCredentials = new ArrayList<>();
-
-        for (int i = 0; i < numberOfClassesToCreate; i++) {
-            UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
-            classOptions.classNumber = 1;
-
-            UtilityCreateClass.createClass(app, classOptions);
-
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, false);
-            allStudentCredentials.addAll(students);
-        }
-
-        // Save credentials to Excel file
-        UtilityCreateStudentsAsTeacher.saveCredentialsToExcel(allStudentCredentials);
-
-        app.teacherHeaderMenu.clickOnSignOutButton();
-//
-//        for (Map<String, String> student : allStudentCredentials) {
-//            String studentUsername = student.get("username");
-//            String studentPassword = student.get("password");
-//            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
-//            app.studentHeaderMenu.clickOnSignOutButton();
-//        }
-    }
-
 }

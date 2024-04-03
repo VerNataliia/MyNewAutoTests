@@ -4,8 +4,11 @@ import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,12 +53,32 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
         return studentCredentialsList;
     }
 
-    public static void saveCredentialsToExcel(List<Map<String, String>> credentialsList) {
+    public static void saveCredentialsToExcel(List<Map<String, String>> studentCredential, String[] teacherCredential) {
         String[] columns = {"Username", "Password"};
         Workbook workbook = new XSSFWorkbook();
 
-        Sheet sheet = workbook.createSheet("Student Credentials");
+        // Create and fill Student Credentials sheet
+        Sheet studentSheet = workbook.createSheet("Student Credentials");
+        fillSheet(studentSheet, columns, studentCredential, null);
 
+        // Create and fill Teacher Credentials sheet
+        Sheet teacherSheet = workbook.createSheet("Teacher Credentials");
+        fillSheet(teacherSheet, columns, null, teacherCredential);
+
+        // Write the workbook to a file
+        LocalDate currentDate = LocalDate.now();
+        String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String filePath = "src/main/resources/files/Credentials_" + formattedDate + ".xlsx";
+
+        try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+            workbook.write(fileOut);
+            System.out.println("Saved Excel file to: " + filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void fillSheet(Sheet sheet, String[] columns, List<Map<String, String>> studentCredential, String[] teacherCredential) {
         // Creating header row
         Row headerRow = sheet.createRow(0);
         for (int i = 0; i < columns.length; i++) {
@@ -63,30 +86,55 @@ public class UtilityCreateStudentsAsTeacher extends A_BaseTest {
             cell.setCellValue(columns[i]);
         }
 
-        // Filling data
-        int rowNum = 1;
-        for (Map<String, String> credentials : credentialsList) {
-            Row row = sheet.createRow(rowNum++);
+        if (studentCredential != null) {
+            // Filling student data
+            int rowNum = 1;
+            for (Map<String, String> credentials : studentCredential) {
+                Row row = sheet.createRow(rowNum++);
 
-            row.createCell(0).setCellValue(credentials.get("username"));
-            row.createCell(1).setCellValue(credentials.get("password"));
+                row.createCell(0).setCellValue(credentials.get("username"));
+                row.createCell(1).setCellValue(credentials.get("password"));
+            }
+        } else if (teacherCredential != null) {
+            // Filling teacher data
+            Row row = sheet.createRow(1); // Assuming only one row for teacher credentials
+            row.createCell(0).setCellValue(teacherCredential[0]); // Username
+            row.createCell(1).setCellValue(teacherCredential[1]); // Password
         }
 
-        // Resize all columns to fit the content size
+        // Resize columns to fit the content size
         for (int i = 0; i < columns.length; i++) {
             sheet.autoSizeColumn(i);
         }
+    }
 
-        // Specify the relative file path
-        String filePath = "src/main/resources/files/StudentCredentials.xlsx";
-        System.out.println("Current working directory: " + System.getProperty("user.dir"));
-        // Write the output to a file
-        try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
-            workbook.write(fileOut);
-            System.out.println("Saved Excel file to: " + filePath);
+
+    public static List<Map<String, String>> readCredentialsFromExcel(String filePath, String sheetName) {
+        List<Map<String, String>> credentialsList = new ArrayList<>();
+
+        try (FileInputStream fileIn = new FileInputStream(filePath);
+             Workbook workbook = new XSSFWorkbook(fileIn)) {
+
+            Sheet sheet = workbook.getSheet(sheetName);
+            if (sheet == null) {
+                System.out.println("Sheet not found: " + sheetName);
+                return credentialsList; // Return empty list if sheet does not exist
+            }
+
+            for (Row row : sheet) {
+                if (row.getRowNum() == 0) continue;  // Skip header row
+
+                Map<String, String> credentials = new HashMap<>();
+                credentials.put("username", row.getCell(0).getStringCellValue());
+                credentials.put("password", row.getCell(1).getStringCellValue());
+
+                credentialsList.add(credentials);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return credentialsList;
     }
 
 }

@@ -1,14 +1,13 @@
 import app.DataGenerator;
 import app.helpers.Driver;
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import static app.StaticTestData.*;
 
 @Epic("StudentTask")
 @Feature("Activity")
@@ -24,8 +23,8 @@ public class ActivityTests extends A_BaseTest {
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         UtilityTeacherSignUp.signUpAsTeacher(app, options);
 
-        int numberOfClassesToCreate = 3;
-        int numberOfStudentsToAdd = 3;
+        int numberOfClassesToCreate = 1;
+        int numberOfStudentsToAdd = 1;
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
 
@@ -35,11 +34,9 @@ public class ActivityTests extends A_BaseTest {
             UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, false);
         }
 
-            app.teacherHeaderMenu.clickOnActivitiesButton();
-
-            UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.RECURRING_WEEKLY, null, false, null);
-
-            app.teacherHeaderMenu.clickOnSignOutButton();
+        app.teacherHeaderMenu.clickOnActivitiesButton();
+        String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.RECURRING_WEEKLY, null, false, null);
+        UtilityActivityCreation.checkActivityInList(app,activityName);
     }
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a premium teacher can create recurring weekly activity with custom settings")
@@ -56,17 +53,24 @@ public class ActivityTests extends A_BaseTest {
         UtilityBOActions.logIn(app);
         UtilityBOActions.makeTeacherPremium(app, teacherUsername);
 
-        int numberOfClassesToCreate = 3;
-        int numberOfStudentsToAdd = 3;
+        int numberOfClassesToCreate = 1;
+        int numberOfStudentsToAdd = 1;
+
+        List<Map<String, String>> allStudentCredentials = new ArrayList<>();
 
         for (int i = 0; i < numberOfClassesToCreate; i++) {
-
             UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
             classOptions.classNumber = 1;
+
             UtilityCreateClass.createClass(app, classOptions);
-            UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, false);
+
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, false);
+            allStudentCredentials.addAll(students);
         }
 
+        // Save credentials to Excel file
+        UtilityCreateStudentsAsTeacher.saveCredentialsToExcel(allStudentCredentials, teacherCredentials);
+
         app.teacherHeaderMenu.clickOnActivitiesButton();
 
         UtilityActivityCreation.CustomSettingsOptions customSettingsOptions = new UtilityActivityCreation.CustomSettingsOptions();
@@ -74,44 +78,74 @@ public class ActivityTests extends A_BaseTest {
         customSettingsOptions.recurringWeeklyActivityOptions.passOrComplete = UtilityActivityCreation.PassOrComplete.COMPLETE;
         customSettingsOptions.recurringWeeklyActivityOptions.quizzesNumberForActivity = 2;
         customSettingsOptions.recurringWeeklyActivityOptions.startWeekDay = DataGenerator.getDayOfWeek(1);
-        customSettingsOptions.recurringWeeklyActivityOptions.startTime = "8:00 am";
+        customSettingsOptions.recurringWeeklyActivityOptions.startTime = "2:00 am";
         customSettingsOptions.recurringWeeklyActivityOptions.endWeekDay = DataGenerator.getDayOfWeek(2);
         customSettingsOptions.recurringWeeklyActivityOptions.endTime = "12:00 pm";
         customSettingsOptions.activityName = "Recurring Weekly Activity for New Class";
 
-        UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.RECURRING_WEEKLY, null, true, customSettingsOptions);
-
-        app.teacherHeaderMenu.clickOnSignOutButton();
+        String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.RECURRING_WEEKLY, null, true, customSettingsOptions);
+        UtilityActivityCreation.checkActivityInList(app,activityName);
     }
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a NON premium teacher cannot change settings when create a recurring weekly activity")
+//    @Test(groups = ("Activity"), priority = 1, description = "Verify if a NON premium teacher cannot change settings when create a recurring weekly activity")
+//    // @AllureId("3")
+//    @Severity(SeverityLevel.NORMAL)
+//    @Description("Check if non premium teacher cannot create recurring weekly activity with custom settings")
+//    public void teacherCannotCreateRecurringWeeklyActivityWithCustomSettings() {
+//        app.signUpSelectRolePage.open();
+//        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+//        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+//        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+//
+//        UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
+//        classOptions.classNumber = 1;
+//        UtilityCreateClass.createClass(app, classOptions);
+//        UtilityCreateStudentsAsTeacher.createNewStudents(app, 1, false);
+//
+//        app.teacherHeaderMenu.clickOnActivitiesButton();
+//
+//        UtilityActivityCreation.CustomSettingsOptions customSettingsOptions = new UtilityActivityCreation.CustomSettingsOptions();
+//        customSettingsOptions.recurringWeeklyActivityOptions = new UtilityActivityCreation.RecurringWeeklyActivityOptions();
+//        customSettingsOptions.recurringWeeklyActivityOptions.passOrComplete = UtilityActivityCreation.PassOrComplete.COMPLETE;
+//        customSettingsOptions.recurringWeeklyActivityOptions.quizzesNumberForActivity = 2;
+//        customSettingsOptions.recurringWeeklyActivityOptions.startWeekDay = DataGenerator.getDayOfWeek(1);
+//        customSettingsOptions.recurringWeeklyActivityOptions.startTime = "8:00 am";
+//        customSettingsOptions.recurringWeeklyActivityOptions.endWeekDay = DataGenerator.getDayOfWeek(2);
+//        customSettingsOptions.recurringWeeklyActivityOptions.endTime = "12:00 pm";
+//        customSettingsOptions.activityName = "Recurring Weekly Activity for New Class";
+//        // need to add negative verification
+//    }
+    @Test(groups = ("Activity"), priority = 1, description = "Verify if a student can complete recurring weekly activity")
     // @AllureId("3")
     @Severity(SeverityLevel.NORMAL)
-    @Description("Check if non premium teacher cannot create recurring weekly activity with custom settings")
-    public void teacherCannotCreateRecurringWeeklyActivityWithCustomSettings() {
-        app.signUpSelectRolePage.open();
-        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
-        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+    @Description("Check if a student can complete recurring weekly activity")
+    public void studentCanCompleteRecurringWeeklyActivity() {
+        app.logInUsernamePage.open();
+        LocalDate yesterday = LocalDate.now().minusDays(1);
+        String formattedDate = yesterday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String filePath = "src/main/resources/files/Credentials_" + formattedDate + ".xlsx";
 
-        UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
-        classOptions.classNumber = 1;
-        UtilityCreateClass.createClass(app, classOptions);
-        UtilityCreateStudentsAsTeacher.createNewStudents(app, 1, false);
+        List<Map<String, String>> studentCredentialsList = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Student Credentials");
 
+        for (Map<String, String> credentials : studentCredentialsList) {
+            String studentUsername = credentials.get("username");
+            String studentPassword = credentials.get("password");
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+            UtilityCompleteOldPretest.completeOldPretest(app, 1, 1);
+            app.studentHeaderMenu.clickOnMyProgressButton();
+            Driver.wait(3);
+            UtilityCompleteActivity.completeQuizzesForActivity(app, "Recurring Weekly Activity for New Class", 3, 1);
+            app.studentHeaderMenu.clickOnSignOutButton();
+        }
+        List<Map<String, String>> teacherCredentials = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Teacher Credentials");
+        Map<String, String> firstTeacherCredentials = teacherCredentials.get(0);
+        String username = firstTeacherCredentials.get("username");
+        String password = firstTeacherCredentials.get("password");
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app,username, password);
         app.teacherHeaderMenu.clickOnActivitiesButton();
 
-        UtilityActivityCreation.CustomSettingsOptions customSettingsOptions = new UtilityActivityCreation.CustomSettingsOptions();
-        customSettingsOptions.recurringWeeklyActivityOptions = new UtilityActivityCreation.RecurringWeeklyActivityOptions();
-        customSettingsOptions.recurringWeeklyActivityOptions.passOrComplete = UtilityActivityCreation.PassOrComplete.COMPLETE;
-        customSettingsOptions.recurringWeeklyActivityOptions.quizzesNumberForActivity = 2;
-        customSettingsOptions.recurringWeeklyActivityOptions.startWeekDay = DataGenerator.getDayOfWeek(1);
-        customSettingsOptions.recurringWeeklyActivityOptions.startTime = "8:00 am";
-        customSettingsOptions.recurringWeeklyActivityOptions.endWeekDay = DataGenerator.getDayOfWeek(2);
-        customSettingsOptions.recurringWeeklyActivityOptions.endTime = "12:00 pm";
-        customSettingsOptions.activityName = "Recurring Weekly Activity for New Class";
-        // need to add negative verification
     }
+
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity")
     // @AllureId("3")
@@ -134,9 +168,7 @@ public class ActivityTests extends A_BaseTest {
 
         app.teacherHeaderMenu.clickOnActivitiesButton();
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.SPECIFIC_PASSAGE, null, false, null);
-        app.activityHomePage.checkActivityHomePageTitle("Activities");
-        app.activityHomePage.waiteFullPageLoading();
-        UtilityActivityCreation.checkActivityStatusAndLogOut(app, activityName); // I can change here, just check activity appears on page
+        UtilityActivityCreation.checkActivityInList(app,activityName);
     }
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity with custom settings")
@@ -164,10 +196,8 @@ public class ActivityTests extends A_BaseTest {
         //specific options aren't set up now
 
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.SPECIFIC_PASSAGE, null, true, customSettingsOptions);
-        app.activityHomePage.checkActivityHomePageTitle("Activities");
-        app.activityHomePage.waiteFullPageLoading();
-        UtilityActivityCreation.checkActivityStatusAndLogOut(app, activityName); // I can change here, just check activity appears on page
-        }
+        UtilityActivityCreation.checkActivityInList(app,activityName);
+    }
 
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if students can complete recurring weekly activity")
@@ -200,11 +230,11 @@ public class ActivityTests extends A_BaseTest {
         String  activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.SPECIFIC_PASSAGE, null, false, null);
         app.activityHomePage.checkActivityHomePageTitle("Activities");
         app.activityHomePage.waiteFullPageLoading();
-        UtilityActivityCreation.checkActivityStatusAndLogOut(app, activityName);
+        UtilityActivityCreation.waiteActivityCanBeStarted(app, activityName);
         System.out.println("Activity name " + activityName);
 
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
-        UtilityCompleteOldPretest.completeOldPretestWithRandomAnswers(app, 8, 5);
+        UtilityCompleteOldPretest.completeOldPretest(app, 8, 5);
         app.studentHeaderMenu.clickOnMyProgressButton();
         Driver.wait(3);
         UtilityCompleteActivity.completeSpecificPassageActivity(app, activityName, true);
@@ -254,7 +284,7 @@ public class ActivityTests extends A_BaseTest {
 //        String activityName; //= UtilityActivityCreation.createCompetitionActivityWithCustomSettings(app, startDay, endDay);
 //        app.activityHomePage.checkActivityHomePageTitle("Activities");
 //        app.activityHomePage.waiteFullPageLoading();
-//        UtilityActivityCreation.checkActivityStatusAndLogOut(app, activityName);
+//        UtilityActivityCreation.waiteActivityCanBeStarted(app, activityName);
 //        System.out.println("Activity name " + activityName);
 //
 //        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);

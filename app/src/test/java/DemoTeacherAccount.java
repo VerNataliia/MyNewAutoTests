@@ -114,7 +114,7 @@
 //        String specificPassageActivityName = UtilityActivityCreation.createSpecificPassageActivityWithDefaultSettingsForClass(app, classNames.get(1));
 //        app.activityHomePage.checkActivityHomePageTitle("Activities");
 //        app.activityHomePage.waiteFullPageLoading();
-//        UtilityActivityCreation.checkActivityStatusAndLogOut(app, specificPassageActivityName);
+//        UtilityActivityCreation.waiteActivityCanBeStarted(app, specificPassageActivityName);
 //
 //        for (Map<Integer, List<Map<String, String>>> classDetail : classStudentDetails) {
 //            for (Map.Entry<Integer, List<Map<String, String>>> entry : classDetail.entrySet()) {

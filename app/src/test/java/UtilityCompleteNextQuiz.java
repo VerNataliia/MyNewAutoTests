@@ -25,18 +25,24 @@ public class UtilityCompleteNextQuiz extends A_BaseTest {
                 Driver.wait(5);
                 logger.debug("Answering question {} of quiz {}", i + 1, j + 1);
                 app.nextQuizPage.clickOnSubmitButton();
+                logger.debug("Submitted button is selected");
                 app.nextQuizPage.clickOnNextButton();
+                logger.debug("Next button is selected");
             }
 
             app.nextQuizPage.clickOnContinueButtonOnResultPopUp();
-            app.resultPage.clickOnNextQuizButton();
             app.studentHeaderMenu.clickOnMyProgressButton();
+            logger.debug("My progress page is open");
             app.myProgressPage.clickOnQuizHistoryTab();
+            logger.debug("Quiz history tab is selected");
             app.myProgressPage.checkLastQuizTitleInQuizHistory(currentQuizTitle);
+            logger.debug("{} is found in Quiz History", currentQuizTitle);
             if (j >= quizzesWithRandomAnswers) {
                 app.myProgressPage.checkLastQuizResultInQuizHistory("100%");
+                logger.debug("Quiz {} result is 100%", currentQuizTitle);
             }
             app.studentHeaderMenu.clickOnNextQuizButton();
+            logger.debug("Next quiz page is open");
         }
         logger.info("Completed {} quizzes, with {} random and {} correct answers", totalQuizzes, quizzesWithRandomAnswers, quizzesWithCorrectAnswers);
     }

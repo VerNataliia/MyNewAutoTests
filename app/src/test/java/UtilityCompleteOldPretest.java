@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 public class UtilityCompleteOldPretest extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityCompleteOldPretest.class);
 
-    public static void completeOldPretestWithRandomAnswers(App app, int totalQuizzesInPretest, int quizzesWithRandomAnswers) {
+    public static void completeOldPretest(App app, int totalQuizzesInPretest, int quizzesWithRandomAnswers) {
         int quizzesWithCorrectAnswers = totalQuizzesInPretest - quizzesWithRandomAnswers;
         logger.info("Starting old pretest, {} with random answers and {} with correct answers", quizzesWithRandomAnswers, quizzesWithCorrectAnswers);
 
@@ -19,13 +19,13 @@ public class UtilityCompleteOldPretest extends A_BaseTest {
                 Driver.wait(5);
             } else {
                 logger.debug("Selecting correct answer for question {}", i + 1);
-                app.newPretestPage.selectCorrectAnswer();
+                app.nextQuizPage.selectCorrectAnswer();
                 Driver.wait(5);
             }
-            app.newPretestPage.clickOnButtonSubmitOrNext();
-            app.newPretestPage.clickOnButtonSubmitOrNext();
-            app.nextQuizPage.clickOnResultPopUpForOldPretest();
-            logger.info("Completed old pretest with random answers");
+            app.nextQuizPage.clickOnSubmitButton();
+            app.nextQuizPage.clickOnNextButton();
         }
+        app.nextQuizPage.clickOnResultPopUpForOldPretest();
+        logger.info("Completed old pretest with random answers");
     }
 }

@@ -33,12 +33,23 @@ public class ActivityHomePage extends BasePage {
         ACTIVITY_HOME_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(20)).shouldHave(text(pageTitle));
     }
 
-    public String checkActivityStatus(String activityName) {
+    public String getActivityStatus(String activityName) {
         SelenideElement activity = ACTIVITIES_LIST.findBy(Condition.text(activityName));
         SelenideElement activityStatus = activity.$x(".//div[@class='status-container']/div/span");
         String status = activityStatus.getText();
         System.out.println("Activity status is " + status);
         return status;
+    }
+
+    public void checkActivityInList(String activityName) {
+        SelenideElement activity = ACTIVITIES_LIST.findBy(Condition.text(activityName));
+        activity.shouldBe(visible);
+    }
+
+    public void checkActivityStatus(String activityName, String activityStatus){
+        SelenideElement activity = ACTIVITIES_LIST.findBy(Condition.text(activityName));
+        SelenideElement status = activity.$x(".//div[@class='status-container']/div/span");
+        status.shouldHave(text(activityStatus));
     }
 
     public void checkStudentCompetitionOfActivity(String activityName, String studentUsername, String studentActivityCompetitionStatus) {

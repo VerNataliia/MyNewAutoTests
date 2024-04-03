@@ -37,7 +37,7 @@ public class UtilityCompleteActivity extends A_BaseTest {
         app.myProgressPage.checkActivityStatus("Completed", activityName);
     }
 
-    public static void completeQuizzesForCompetitionActivity(App app, String activityName, int quizzesWithRandomAnswers, int quizzesWithCorrectAnswers) {
+    public static void completeQuizzesForActivity(App app, String activityName, int quizzesWithRandomAnswers, int quizzesWithCorrectAnswers) {
         logger.info("Starting activity: {} with {} random and {} correct answers", activityName, quizzesWithRandomAnswers, quizzesWithCorrectAnswers);
 
         app.myProgressPage.startActivity(activityName);

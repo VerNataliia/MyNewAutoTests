@@ -138,13 +138,13 @@ public class UtilityActivityCreation extends A_BaseTest {
     }
 
 
-    public static void checkActivityStatusAndLogOut(App app, String activityName) {
+    public static void waiteActivityCanBeStarted(App app, String activityName) {
         logger.info("Checking activity status for {}", activityName);
         int maxChecks = 60;
         int checkCount = 0;
 
         while (checkCount < maxChecks) {
-            String activityStatus = app.activityHomePage.checkActivityStatus(activityName);
+            String activityStatus = app.activityHomePage.getActivityStatus(activityName);
             logger.debug("Activity status for {}: {}", activityName, activityStatus);
 
             if (activityStatus.equals("IN PROGRESS")) {
@@ -163,6 +163,17 @@ public class UtilityActivityCreation extends A_BaseTest {
             logger.warn("Max checks reached for activity status of {}. Logging out without confirmation of completion.", activityName);
             app.teacherHeaderMenu.clickOnSignOutButton();
         }
+    }
+
+    public static void checkActivityInList(App app, String activityName) {
+        logger.info("Checking if activity with the name {} exists in a list on Activity home page", activityName);
+        app.activityHomePage.waiteFullPageLoading();
+        app.activityHomePage.checkActivityInList(activityName);
+    }
+    public static void checkActivityStatus(App app, String activityName, String activityStatus) {
+        logger.info("Checking activity status for {}", activityName);
+        app.activityHomePage.waiteFullPageLoading();
+        app.activityHomePage.checkActivityStatus(activityName, activityStatus);
     }
 }
 
