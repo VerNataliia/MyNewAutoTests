@@ -41,7 +41,7 @@ public class TeacherSignupStepTwoPage extends BasePage {
     }
 
     public String setTeacherEmail() {
-        String newTeacherEmail = "autoTestTeacher" + dataGenerator.getRandomNumber(1000, 9999) + "@gmail.com";
+        String newTeacherEmail = "autoTestTeacher" + dataGenerator.getRandomNumber(1000, 9999999) + "@gmail.com";
         TEACHER_SIGNUP_EMAIL_INPUT.shouldBe(Condition.visible).sendKeys(newTeacherEmail);
         return newTeacherEmail;
     }

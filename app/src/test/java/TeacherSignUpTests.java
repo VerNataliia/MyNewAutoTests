@@ -8,7 +8,6 @@ public class TeacherSignUpTests extends A_BaseTest {
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with username and password")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can sign up with username. Select school page and pricing page are skipped. No linked school for this teacher in BO. Teacher can log in to the system")
-    @AllureId("133")
     public void checkTeacherSignUpWithUsername() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
@@ -22,6 +21,8 @@ public class TeacherSignUpTests extends A_BaseTest {
         app.backOffice.selectUser(teacherUsername);
         app.backOffice.checkTeacherWithoutSchool();
 
+        app.classPage.open();
+        app.teacherHeaderMenu.clickOnSignOutButton();
         app.logInUsernamePage.open();
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
     }
@@ -29,7 +30,6 @@ public class TeacherSignUpTests extends A_BaseTest {
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can select a school from the list during signing up")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can sign up with username and password. Select school in the schools list on a third step. Pricing page is skipped. Selected school is linked to the teacher. The teacher can login.")
-    @AllureId("133")
     public void checkTeacherSignUpWithUsernameAndSchool() {
         app.signUpSelectRolePage.open();
 
@@ -46,6 +46,8 @@ public class TeacherSignUpTests extends A_BaseTest {
         app.backOffice.selectUser(teacherUsername);
         app.backOffice.checkTeacherSchool(selectedSchool);
 
+        app.classPage.open();
+        app.teacherHeaderMenu.clickOnSignOutButton();
         app.logInUsernamePage.open();
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
     }
@@ -53,7 +55,6 @@ public class TeacherSignUpTests extends A_BaseTest {
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can create a custom school during signing up")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can sign up with username and password. Create a custom school on a third step. Pricing page is skipped. Created custom school appeared in BO. The teacher can login.")
-    @AllureId("133")
     public void checkTeacherSignUpWithCustomSchool() {
         app.signUpSelectRolePage.open();
         DataGenerator dataGenerator = new DataGenerator();
@@ -79,6 +80,8 @@ public class TeacherSignUpTests extends A_BaseTest {
         UtilityBOActions.logIn(app);
         UtilityBOActions.checkCustomSchool(app, customSchoolName);
 
+        app.classPage.open();
+        app.teacherHeaderMenu.clickOnSignOutButton();
         app.logInUsernamePage.open();
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
     }

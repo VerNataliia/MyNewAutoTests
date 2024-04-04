@@ -14,7 +14,6 @@ public class LoginTests extends A_BaseTest {
     public void checkStudentLogIn() {
         app.logInUsernamePage.open();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
-
     }
 
     @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to sign up and then log in using username and password credentials")

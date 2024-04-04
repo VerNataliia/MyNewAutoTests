@@ -1,4 +1,5 @@
 import app.App;
+import com.codeborne.selenide.WebDriverRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,7 +12,9 @@ public class UtilityTeacherLogIn extends A_BaseTest {
         app.logInUsernamePage.enterPassword(password);
         app.logInUsernamePage.clickOnLogInButton();
         logger.debug("Clicked on login button");
-
+        if(WebDriverRunner.url().contains("/app/sign-up/school-info")) {
+            app.teacherSignUpStepThreePage.clickOnSkipSelectSchoolPageButton();
+        } // if a teacher doesn't have school, login will not fail
         app.myClassesPage.getMyClassesPageTitle("My Classes");
         logger.info("Teacher logged in successfully and verified 'My Classes' page title");
     }

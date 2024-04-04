@@ -10,22 +10,22 @@ public class NextQuizTests extends A_BaseTest {
     @Test(groups = ("NextQuiz"), priority = 1, description = "Verify if a student is able to complete quizzes")
     //@AllureId("3")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("Check if an existing student can log in and complete quizzes with random answers")
+    @Description("Check if a can complete quizzes with random answers")
     public void checkNextQuizCompletingWithRandomAnswers() {
-        app.logInUsernamePage.open();
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
-        app.dashboardPage.clickOnStartOrContinuePracticingButton();
+        app.signUpSelectRolePage.open();
+        UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
         UtilityCompleteNextQuiz.completeQuizzes(app, 10, 10);
     }
 
     @Test(groups = ("NextQuiz"), priority = 1, description = "Verify if a student is able to pass quizzes")
     //@AllureId("3")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("Check if an existing student can log in and complete quizzes with correct answers")
+    @Description("Check if a student can complete quizzes with correct answers")
     public void checkNextQuizCompletingWithCorrectAnswers() {
-        app.logInUsernamePage.open();
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
-        app.dashboardPage.clickOnStartOrContinuePracticingButton();
+        app.signUpSelectRolePage.open();
+        UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
         UtilityCompleteNextQuiz.completeQuizzes(app, 10, 0);
     }
 }

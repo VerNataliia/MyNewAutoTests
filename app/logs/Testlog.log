@@ -16037,3 +16037,308 @@
 10:37:11.707 [Test worker] DEBUG UtilityCompleteNextQuiz - My progress page is open
 10:37:14.931 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz history tab is selected
 10:37:14.970 [Test worker] DEBUG UtilityCompleteNextQuiz - Taking the Train is found in Quiz History
+11:11:17.295 [Test worker] INFO  UtilityStudentSignUp - Starting student sign-up process
+11:11:23.281 [Test worker] DEBUG UtilityStudentSignUp - Checked select role page title
+11:11:23.396 [Test worker] DEBUG UtilityStudentSignUp - Selected student role for sign-up
+11:11:23.774 [Test worker] DEBUG UtilityStudentSignUp - Checked student sign-up page title
+11:11:24.131 [Test worker] INFO  UtilityStudentSignUp - Student username and password set
+11:11:24.443 [Test worker] DEBUG UtilityStudentSignUp - Selected random student age option
+11:11:24.642 [Test worker] DEBUG UtilityStudentSignUp - Clicked on sign-up button
+11:11:31.211 [Test worker] DEBUG UtilityStudentSignUp - Checked summary page title
+11:11:31.258 [Test worker] INFO  UtilityStudentSignUp - Student sign-up completed successfully with username: NewStudentAutotest7312 and password: qwert6109
+11:11:31.259 [Test worker] INFO  UtilityCompleteOldPretest - Starting old pretest, 8 with random answers and 0 with correct answers
+11:11:31.761 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 1
+11:11:40.449 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 2
+11:11:50.267 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 3
+11:11:58.824 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 4
+11:12:07.313 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 5
+11:12:15.805 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 6
+11:12:24.311 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 7
+11:12:32.830 [Test worker] DEBUG UtilityCompleteOldPretest - Selecting random answer for question 8
+11:12:45.417 [Test worker] INFO  UtilityCompleteOldPretest - Completed old pretest with random answers
+11:12:45.419 [Test worker] INFO  UtilityCompleteNextQuiz - Starting to complete 10 quizzes, 10 with random answers and 0 with correct answers
+11:12:46.337 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz 1: 3 questions to answer
+11:12:51.426 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 1 of quiz 1
+11:12:51.513 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:12:53.612 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:12:58.703 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 2 of quiz 1
+11:12:58.773 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:00.864 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:13:05.944 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 3 of quiz 1
+11:13:06.008 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:08.083 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:13:12.362 [Test worker] DEBUG UtilityCompleteNextQuiz - My progress page is open
+11:13:14.202 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz history tab is selected
+11:13:14.237 [Test worker] DEBUG UtilityCompleteNextQuiz - Cady's Trip is found in Quiz History
+11:13:14.317 [Test worker] DEBUG UtilityCompleteNextQuiz - Next quiz page is open
+11:13:15.101 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz 2: 4 questions to answer
+11:13:20.191 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 1 of quiz 2
+11:13:20.330 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:22.419 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:13:27.496 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 2 of quiz 2
+11:13:27.564 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:29.661 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:13:34.750 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 3 of quiz 2
+11:13:34.818 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:36.914 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:13:41.988 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 4 of quiz 2
+11:13:42.056 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:44.133 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:13:48.271 [Test worker] DEBUG UtilityCompleteNextQuiz - My progress page is open
+11:13:49.669 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz history tab is selected
+11:13:49.765 [Test worker] DEBUG UtilityCompleteNextQuiz - The Ocean is found in Quiz History
+11:13:49.837 [Test worker] DEBUG UtilityCompleteNextQuiz - Next quiz page is open
+11:13:50.694 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz 3: 5 questions to answer
+11:13:55.819 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 1 of quiz 3
+11:13:55.894 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:13:57.995 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:03.087 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 2 of quiz 3
+11:14:03.161 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:05.238 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:10.326 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 3 of quiz 3
+11:14:10.392 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:12.522 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:17.599 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 4 of quiz 3
+11:14:17.669 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:19.768 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:24.851 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 5 of quiz 3
+11:14:24.921 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:27.008 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:31.234 [Test worker] DEBUG UtilityCompleteNextQuiz - My progress page is open
+11:14:32.641 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz history tab is selected
+11:14:32.683 [Test worker] DEBUG UtilityCompleteNextQuiz - Ben's Pets is found in Quiz History
+11:14:32.759 [Test worker] DEBUG UtilityCompleteNextQuiz - Next quiz page is open
+11:14:33.579 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz 4: 4 questions to answer
+11:14:38.671 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 1 of quiz 4
+11:14:38.778 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:40.872 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:45.953 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 2 of quiz 4
+11:14:46.019 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:48.107 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:14:53.190 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 3 of quiz 4
+11:14:53.254 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:14:55.345 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:00.423 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 4 of quiz 4
+11:15:00.565 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:15:02.650 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:06.808 [Test worker] DEBUG UtilityCompleteNextQuiz - My progress page is open
+11:15:08.027 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz history tab is selected
+11:15:08.077 [Test worker] DEBUG UtilityCompleteNextQuiz - The Ocean is found in Quiz History
+11:15:08.157 [Test worker] DEBUG UtilityCompleteNextQuiz - Next quiz page is open
+11:15:09.073 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz 5: 5 questions to answer
+11:15:14.187 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 1 of quiz 5
+11:15:14.274 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:15:16.364 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:21.439 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 2 of quiz 5
+11:15:21.504 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:15:23.596 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:28.671 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 3 of quiz 5
+11:15:28.737 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:15:30.827 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:35.905 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 4 of quiz 5
+11:15:35.970 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:15:38.070 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:43.147 [Test worker] DEBUG UtilityCompleteNextQuiz - Answering question 5 of quiz 5
+11:15:43.214 [Test worker] DEBUG UtilityCompleteNextQuiz - Submitted button is selected
+11:15:45.295 [Test worker] DEBUG UtilityCompleteNextQuiz - Next button is selected
+11:15:49.466 [Test worker] DEBUG UtilityCompleteNextQuiz - My progress page is open
+11:15:50.678 [Test worker] DEBUG UtilityCompleteNextQuiz - Quiz history tab is selected
+17:20:23.569 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:20:27.065 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:20:27.863 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest4706 and password: 12345qwert6481
+17:20:29.325 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Thomas, David
+17:20:29.531 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:20:30.488 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:20:30.790 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:20:31.340 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:20:31.347 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:20:34.348 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:20:34.631 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:20:39.634 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:20:41.779 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest4706 and password: 12345qwert6481
+17:24:33.844 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:24:37.563 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:24:38.306 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest7136 and password: 12345qwert5748
+17:24:39.741 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Adams, Donna
+17:24:39.949 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:24:40.891 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:24:41.149 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:24:41.725 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:24:41.732 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:24:44.734 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:24:45.298 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:24:50.303 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:24:52.779 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest7136 and password: 12345qwert5748
+17:25:53.077 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:25:56.454 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:25:57.306 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest8843 and password: 12345qwert8398
+17:25:58.790 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Thomas, Matthew
+17:25:59.008 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:26:00.164 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:26:00.439 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:26:00.835 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:26:00.841 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:26:03.846 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:26:04.987 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:26:09.988 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:26:11.994 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest8843 and password: 12345qwert8398
+17:26:52.838 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:26:56.783 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:26:57.561 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest5715 and password: 12345qwert2060
+17:27:22.102 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:27:25.393 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:27:26.199 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest5518 and password: 12345qwert8637
+17:27:27.514 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Walker, Barbara
+17:27:27.742 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:27:28.698 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:27:28.996 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:27:29.419 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:27:29.427 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:27:32.429 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:27:32.459 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:27:37.460 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:27:42.051 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest5518 and password: 12345qwert8637
+17:27:43.982 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:28:12.906 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:28:16.676 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:28:17.449 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest9129 and password: 12345qwert6755
+17:28:18.892 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Lopez, Joseph
+17:28:19.104 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:28:20.044 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:28:20.311 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:28:20.978 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:28:20.990 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:28:23.994 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:28:24.281 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:28:29.284 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:28:33.429 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest9129 and password: 12345qwert6755
+17:28:34.191 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:28:38.178 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:31:14.759 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:31:18.987 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:31:19.738 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest8188 and password: 12345qwert5191
+17:31:21.205 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Brown, Paul
+17:31:21.401 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:31:22.343 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:31:22.631 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:31:23.078 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:31:23.090 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:31:26.093 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:31:26.122 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:31:31.125 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:31:35.938 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest8188 and password: 12345qwert5191
+17:31:36.667 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:31:38.462 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:36:03.615 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:36:06.097 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:36:07.056 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest174469563 and password: 12345qwert5476
+17:36:08.481 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Walker, Elizabeth
+17:36:08.692 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:36:44.264 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:36:48.483 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:36:49.227 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest625007061 and password: 12345qwert9462
+17:36:50.645 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Williams, Linda
+17:36:50.884 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:36:51.865 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:36:52.128 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:36:52.548 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:36:52.557 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:36:55.563 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:36:55.604 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:37:00.606 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:37:04.391 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest625007061 and password: 12345qwert9462
+17:37:05.510 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:37:11.368 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:37:29.279 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:37:32.059 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:37:33.004 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest52646291 and password: 12345qwert8056
+17:37:34.771 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Campbell, Barbara
+17:37:34.986 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:37:35.933 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+17:37:36.283 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:37:36.705 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:37:36.714 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:37:39.718 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:37:40.513 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:37:45.531 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:37:50.420 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest52646291 and password: 12345qwert8056
+17:37:51.229 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:37:52.958 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:38:48.411 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:38:52.207 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:38:52.934 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest261497879 and password: 12345qwert3083
+17:38:54.202 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Anderson, James
+17:38:54.417 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:38:56.759 [Test worker] DEBUG UtilityTeacherSignUp - School selected: School
+17:38:56.764 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:38:57.890 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:38:57.899 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:39:00.901 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:39:01.855 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:39:06.860 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:39:15.003 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest261497879 and password: 12345qwert3083
+17:39:15.842 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:39:19.904 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:39:43.373 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:39:45.979 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:39:46.904 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest184888890 and password: 12345qwert1841
+17:39:48.396 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Scott, Ashley
+17:39:48.614 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:39:51.024 [Test worker] DEBUG UtilityTeacherSignUp - School selected: School
+17:39:51.029 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:39:52.052 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:39:52.061 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:39:55.062 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:39:55.091 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:40:00.093 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:40:08.357 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest184888890 and password: 12345qwert1841
+17:40:09.136 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:40:10.874 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:40:28.720 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:40:31.187 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:40:31.935 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest691137341 and password: 12345qwert8382
+17:40:33.930 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Rivera, Donald
+17:40:34.149 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:40:38.120 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test387
+17:40:38.124 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:40:39.713 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:40:39.720 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:40:42.726 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:40:43.774 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:40:48.778 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:40:48.778 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test387
+17:40:50.763 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest691137341 and password: 12345qwert8382
+17:40:51.520 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:40:53.299 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:41:15.733 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:41:18.241 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:41:19.184 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest99531575 and password: 12345qwert4482
+17:41:20.703 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Wright, Margaret
+17:41:20.916 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:41:24.111 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1591
+17:41:24.135 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:41:25.307 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:41:25.318 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:41:28.322 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:41:28.350 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:41:33.354 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:41:33.354 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1591
+17:41:35.866 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest99531575 and password: 12345qwert4482
+17:41:36.637 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:41:41.764 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+17:48:43.392 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+17:48:45.946 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+17:48:46.839 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest46195032 and password: 12345qwert9484
+17:48:48.844 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Taylor, Donna
+17:48:49.037 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+17:48:52.200 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test6152
+17:48:52.223 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+17:48:53.626 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+17:48:53.634 [Test worker] DEBUG UtilityBOActions - Back office opened
+17:48:56.637 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+17:48:56.665 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+17:49:01.670 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+17:49:01.671 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test6152
+17:49:07.512 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest46195032 and password: 12345qwert9484
+17:49:08.425 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+17:49:16.580 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
