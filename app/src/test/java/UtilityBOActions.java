@@ -31,10 +31,39 @@ public class UtilityBOActions extends A_BaseTest {
         logger.info("Enabled subscription for user: {}", teacherUsername);
     }
 
-    public static void checkCustomSchool(App app, String customSchoolName) {
+    public static void checkCustomSchool(App app, String customSchoolName, String customSchoolCountry, String customSchoolCity, String customSchoolState,
+        String customSchoolNumber, String customSchoolAddressOne, String customSchoolAddressTwo, String customSchoolZip, String customSchoolStudentsNumber) {
         logger.info("Starting process to check custom school: {}", customSchoolName);
         app.backOffice.clickOnCustomSchoolButton();
-        app.backOffice.findCustomSchool(customSchoolName);
-        //need to add checking each field in added custom school
+        app.backOffice.selectCustomSchool(customSchoolName);
+        logger.debug("Custom school with the name {} is selected", customSchoolName);
+
+        String actualCustomSchoolName = app.backOffice.checkCustomSchoolName(customSchoolName);
+        logger.debug("Custom school name actual: {}; expected: {}", actualCustomSchoolName, customSchoolName);
+
+        String actualCustomSchoolCountry = app.backOffice.checkCustomSchoolCountry(customSchoolCountry);
+        logger.debug("Custom school country actual: {}; expected: {}", actualCustomSchoolCountry, customSchoolCountry);
+
+        String actualCustomSchoolCity = app.backOffice.checkCustomSchoolCity(customSchoolCity);
+        logger.debug("Custom school city actual: {}; expected: {}", actualCustomSchoolCity, customSchoolCity);
+
+        String actualCustomSchoolState = app.backOffice.checkCustomSchoolState(customSchoolState);
+        logger.debug("Custom school state actual: {}; expected: {}", actualCustomSchoolState, customSchoolState);
+
+        String actualCustomSchoolNumber = app.backOffice.checkCustomSchoolPhoneNumber(customSchoolNumber);
+        logger.debug("Custom school phone number actual: {}; expected: {}", actualCustomSchoolNumber, customSchoolNumber);
+
+        String actualCustomSchoolZip = app.backOffice.checkCustomSchoolZipCode(customSchoolZip);
+        logger.debug("Custom school zip code actual: {}; expected: {}", actualCustomSchoolZip, customSchoolZip);
+
+        String actualCustomSchoolAddressOne = app.backOffice.checkCustomSchoolAddressOne(customSchoolAddressOne);
+        logger.debug("Custom school address one actual: {}; expected: {}", actualCustomSchoolAddressOne, customSchoolAddressOne);
+
+        String actualCustomSchoolAddressTwo = app.backOffice.checkCustomSchoolAddressTwo(customSchoolAddressTwo);
+        logger.debug("Custom school address two actual: {}; expected: {}", actualCustomSchoolAddressTwo, customSchoolAddressTwo);
+
+        String actualCustomSchoolStudentsNumber = app.backOffice.checkCustomSchoolStudentsNumber(customSchoolStudentsNumber);
+        logger.debug("Custom school address two actual: {}; expected: {}", actualCustomSchoolStudentsNumber, customSchoolStudentsNumber);
     }
+
 }

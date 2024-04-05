@@ -1,6 +1,7 @@
 package app.pages.signup.teacher;
 
 import app.DataGenerator;
+import app.helpers.CountryCodeMapper;
 import app.helpers.Driver;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.CollectionCondition;
@@ -27,7 +28,9 @@ public class TeacherSignUpStepThreePage extends BasePage {
         TEACHER_SIGNUP_CONFIRM_AND_CONTINUE_BUTTON = $(byXpath("//div[@class='primary-button btn-continue']")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_NAME_INPUT = $(byXpath("//input[@placeholder='School Name*']")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_NUMBER_OF_STUDENTS_FIELD = $(byXpath("//div[@placeholder='Number of students in school*']//select[@class='rt-select__field']")),
+        TEACHER_SIGNUP_CUSTOM_SCHOOL_NUMBER_OF_STUDENTS_SELECTED = $(byXpath("//div[@placeholder='Number of students in school*']//div[@class='rt-select__floating-control-wrapper']/div[2]")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_COUNTRY_FIELD = $(byXpath("//div[@placeholder='Country*']//select[@class='rt-select__field']")),
+        TEACHER_SIGNUP_CUSTOM_SCHOOL_SELECTED_COUNTRY = $(byXpath("//div[@placeholder='Country*']//div[@class='rt-select__floating-control-wrapper']/div[2]")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_CITY_INPUT = $(byXpath("//input[@placeholder='City*']")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_STATE_INPUT = $(byXpath("//input[@placeholder='State / Administrative area*']")),
         TEACHER_SIGNUP_CUSTOM_SCHOOL_PHONE_INPUT = $(byXpath("//input[@placeholder='School Phone Number']")),
@@ -53,7 +56,7 @@ public class TeacherSignUpStepThreePage extends BasePage {
         TEACHER_SIGNUP_SELECT_SCHOOL_INPUT.shouldBe(Condition.visible).sendKeys(schoolNameForSearch);
         TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.shouldHave(CollectionCondition.sizeGreaterThan(1));
         int numbOfOptionsInSchoolList = TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.size();
-        TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.get(dataGenerator.getRandomNumber(1, numbOfOptionsInSchoolList)).click();
+        TEACHER_SIGNUP_SELECT_SCHOOL_DROP_DOWN_OPTIONS.get(dataGenerator.getRandomNumber(1, numbOfOptionsInSchoolList - 1)).click();
         return TEACHER_SIGNUP_SELECTED_SCHOOL_NAME.shouldBe(Condition.visible).getText();
     }
 
@@ -66,18 +69,22 @@ public class TeacherSignUpStepThreePage extends BasePage {
         TEACHER_SIGNUP_CUSTOM_SCHOOL_NAME_INPUT.shouldBe(Condition.visible).sendKeys(customSchoolName);
     }
 
-    public void selectRandomNumberStudentsOption() {
+    public String selectRandomNumberStudentsOption() {
         TEACHER_SIGNUP_CUSTOM_SCHOOL_NUMBER_OF_STUDENTS_FIELD.shouldBe(Condition.visible).click();
         TEACHER_SIGNUP_CUSTOM_SCHOOL_STUDENTS_OPTIONS.shouldHave(CollectionCondition.sizeGreaterThan(1));
         int studentNumberOptions = TEACHER_SIGNUP_CUSTOM_SCHOOL_STUDENTS_OPTIONS.size();
-        TEACHER_SIGNUP_CUSTOM_SCHOOL_STUDENTS_OPTIONS.get(dataGenerator.getRandomNumber(1, studentNumberOptions)).click();
+        TEACHER_SIGNUP_CUSTOM_SCHOOL_STUDENTS_OPTIONS.get(dataGenerator.getRandomNumber(1, studentNumberOptions - 1)).click();
+        return TEACHER_SIGNUP_CUSTOM_SCHOOL_NUMBER_OF_STUDENTS_SELECTED.getText();
     }
 
-    public void selectRandomCountry() {
+    public String selectRandomCountry() {
         TEACHER_SIGNUP_CUSTOM_SCHOOL_COUNTRY_FIELD.shouldBe(Condition.visible).click();
         TEACHER_SIGNUP_CUSTOM_SCHOOL_COUNTRY_OPTIONS.shouldHave(CollectionCondition.sizeGreaterThan(1));
         int countriesOptions = TEACHER_SIGNUP_CUSTOM_SCHOOL_COUNTRY_OPTIONS.size();
-        TEACHER_SIGNUP_CUSTOM_SCHOOL_COUNTRY_OPTIONS.get(dataGenerator.getRandomNumber(1, countriesOptions)).click();
+        TEACHER_SIGNUP_CUSTOM_SCHOOL_COUNTRY_OPTIONS.get(dataGenerator.getRandomNumber(1, countriesOptions - 1)).click();
+        String customSchoolCountry = TEACHER_SIGNUP_CUSTOM_SCHOOL_SELECTED_COUNTRY.getText();
+        System.out.println("Selected custom country is " + customSchoolCountry);
+        return CountryCodeMapper.getCountryCode(customSchoolCountry);
     }
 
     public void setCity(String cityName) {

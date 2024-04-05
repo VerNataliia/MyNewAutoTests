@@ -13,11 +13,12 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         String[] credentials = createAccount(app);
         String[] personalDetails = enterPersonalDetails(app);
         String selectedSchool = "";
+        String[] customSchool = new String[]{""};
 
         switch (options.schoolSelectionOption) {
             case SKIP -> skipSchoolSelection(app);
             case SELECT -> selectedSchool = selectSchool(app, options.schoolName);
-            case CUSTOM -> addCustomSchool(app, options.customSchool);
+            case CUSTOM -> customSchool = addCustomSchool(app, options.customSchool);
             default -> throw new IllegalArgumentException("Unknown school selection option");
         }
 
@@ -31,7 +32,9 @@ public class UtilityTeacherSignUp extends A_BaseTest {
             personalDetails[0], // lastName
             personalDetails[2], // teacherLastAndFirstName
             personalDetails[3], // email
-            selectedSchool // selectedSchool
+            selectedSchool, // selectedSchool
+            customSchool[0],
+            customSchool[1]
         };
     }
 
@@ -74,11 +77,11 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         return selectedSchool;
     }
 
-    private static void addCustomSchool(App app, SchoolDetails customSchool) {
+    private static String[] addCustomSchool(App app, SchoolDetails customSchool) {
         app.teacherSignUpStepThreePage.clickOnAddSchoolManuallyButton();
         app.teacherSignUpStepThreePage.setCustomSchoolName(customSchool.name);
-        app.teacherSignUpStepThreePage.selectRandomNumberStudentsOption();
-        app.teacherSignUpStepThreePage.selectRandomCountry();
+        String customSchoolStudentsNumber = app.teacherSignUpStepThreePage.selectRandomNumberStudentsOption();
+        String customSchoolCountry = app.teacherSignUpStepThreePage.selectRandomCountry();
         app.teacherSignUpStepThreePage.setCity(customSchool.city);
         app.teacherSignUpStepThreePage.setCustomSchoolState(customSchool.state);
         app.teacherSignUpStepThreePage.setCustomSchoolPhoneNumber(customSchool.phoneNumber);
@@ -87,6 +90,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         app.teacherSignUpStepThreePage.setCustomSchoolZipCode(customSchool.zipCode);
         app.teacherSignUpStepThreePage.saveCustomSchool();
         logger.debug("Custom school added: {}", customSchool.name);
+        return new String[] {customSchoolStudentsNumber, customSchoolCountry};
     }
 
     private static void skipPricing(App app) {

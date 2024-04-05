@@ -134,8 +134,7 @@ public class ActivityCreation {
     public String getDefaultActivityTitle() {
         checkNoLoader();
         ACTIVITY_NAME_INPUT.shouldBe(visible);
-        String inputValue = executeJavaScript("return arguments[0].value;", ACTIVITY_NAME_INPUT);
-        return inputValue;
+        return executeJavaScript("return arguments[0].value;", ACTIVITY_NAME_INPUT);
     }
     public void changeActivityTitle(String activityName) {
         checkNoLoader();

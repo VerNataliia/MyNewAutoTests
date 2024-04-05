@@ -16342,3 +16342,1458 @@
 17:49:07.512 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest46195032 and password: 12345qwert9484
 17:49:08.425 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
 17:49:16.580 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+18:43:54.962 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:43:57.751 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:43:58.715 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest835257359 and password: 12345qwert7158
+18:44:00.525 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Miller, Susan
+18:44:00.766 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:44:01.697 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:44:02.040 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:44:02.659 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:44:02.661 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:44:02.661 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:44:02.747 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:44:05.036 [Test worker] DEBUG UtilityCreateClass - Entered class name: English Tutoring
+18:44:05.037 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:44:05.376 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:44:06.210 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:44:07.280 [Test worker] DEBUG UtilityCreateClass - Class English Tutoring was found in a Classes list
+18:44:07.372 [Test worker] DEBUG UtilityCreateClass - Class English Tutoring was selected
+18:44:08.814 [Test worker] DEBUG UtilityCreateClass - Class English Tutoring was checked on the class page
+18:44:08.814 [Test worker] INFO  UtilityCreateClass - Class English Tutoring created successfully
+18:44:08.816 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:44:10.014 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest581415 and password: qwert4655
+18:44:10.541 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest933247 and password: qwert5288
+18:44:11.043 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest349836 and password: qwert7870
+18:44:11.222 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:44:14.634 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:44:14.635 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:44:14.635 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:44:14.640 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:44:16.530 [Test worker] DEBUG UtilityCreateClass - Entered class name: Middle School
+18:44:16.532 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:44:16.615 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:44:17.488 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:44:18.558 [Test worker] DEBUG UtilityCreateClass - Class Middle School was found in a Classes list
+18:44:18.635 [Test worker] DEBUG UtilityCreateClass - Class Middle School was selected
+18:44:19.984 [Test worker] DEBUG UtilityCreateClass - Class Middle School was checked on the class page
+18:44:19.984 [Test worker] INFO  UtilityCreateClass - Class Middle School created successfully
+18:44:19.985 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:44:21.035 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest375110 and password: qwert3839
+18:44:21.561 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest645592 and password: qwert8718
+18:44:21.997 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest343770 and password: qwert5850
+18:44:22.160 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:44:25.727 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:44:25.727 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:44:25.728 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:44:25.733 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:44:27.539 [Test worker] DEBUG UtilityCreateClass - Entered class name: 2nd Period 2024
+18:44:27.540 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:44:27.659 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:44:28.553 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:44:29.594 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was found in a Classes list
+18:44:29.668 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was selected
+18:44:30.902 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was checked on the class page
+18:44:30.903 [Test worker] INFO  UtilityCreateClass - Class 2nd Period 2024 created successfully
+18:44:30.903 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:44:31.898 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest784150 and password: qwert2293
+18:44:32.365 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest384700 and password: qwert9918
+18:44:32.796 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest113180 and password: qwert3379
+18:44:32.946 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:44:35.254 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:44:35.254 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:44:35.254 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:44:35.258 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:44:37.151 [Test worker] DEBUG UtilityCreateClass - Entered class name: Part-time students
+18:44:37.154 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:44:37.305 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:44:38.192 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:44:39.242 [Test worker] DEBUG UtilityCreateClass - Class Part-time students was found in a Classes list
+18:44:39.323 [Test worker] DEBUG UtilityCreateClass - Class Part-time students was selected
+18:44:40.750 [Test worker] DEBUG UtilityCreateClass - Class Part-time students was checked on the class page
+18:44:40.750 [Test worker] INFO  UtilityCreateClass - Class Part-time students created successfully
+18:44:40.750 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:44:41.861 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest632073 and password: qwert3458
+18:44:42.556 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest247801 and password: qwert9185
+18:44:42.998 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest405823 and password: qwert6893
+18:44:43.151 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:44:45.965 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:44:45.966 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:44:45.966 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:44:45.973 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:44:47.981 [Test worker] DEBUG UtilityCreateClass - Entered class name: Homeschool 2024
+18:44:47.982 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:44:48.076 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:44:48.948 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:44:50.436 [Test worker] DEBUG UtilityCreateClass - Class Homeschool 2024 was found in a Classes list
+18:44:50.540 [Test worker] DEBUG UtilityCreateClass - Class Homeschool 2024 was selected
+18:44:51.762 [Test worker] DEBUG UtilityCreateClass - Class Homeschool 2024 was checked on the class page
+18:44:51.778 [Test worker] INFO  UtilityCreateClass - Class Homeschool 2024 created successfully
+18:44:51.779 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:44:52.902 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest576811 and password: qwert9313
+18:44:53.384 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest349056 and password: qwert6397
+18:44:53.881 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest290541 and password: qwert6081
+18:44:54.056 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:44:56.668 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:44:56.668 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:44:56.669 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:44:56.680 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:44:58.631 [Test worker] DEBUG UtilityCreateClass - Entered class name: High School
+18:44:58.638 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:44:58.759 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:44:59.672 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:45:00.792 [Test worker] DEBUG UtilityCreateClass - Class High School was found in a Classes list
+18:45:00.879 [Test worker] DEBUG UtilityCreateClass - Class High School was selected
+18:45:02.391 [Test worker] DEBUG UtilityCreateClass - Class High School was checked on the class page
+18:45:02.391 [Test worker] INFO  UtilityCreateClass - Class High School created successfully
+18:45:02.391 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:45:03.603 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest282320 and password: qwert4809
+18:45:04.194 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest993869 and password: qwert4002
+18:45:04.749 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest823417 and password: qwert1588
+18:45:04.917 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:45:08.059 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:45:08.059 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:45:08.060 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:45:08.068 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:45:10.049 [Test worker] DEBUG UtilityCreateClass - Entered class name: Elementary Students
+18:45:10.049 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:45:10.128 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:45:11.043 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:45:12.332 [Test worker] DEBUG UtilityCreateClass - Class Elementary Students was found in a Classes list
+18:45:12.411 [Test worker] DEBUG UtilityCreateClass - Class Elementary Students was selected
+18:45:13.918 [Test worker] DEBUG UtilityCreateClass - Class Elementary Students was checked on the class page
+18:45:13.919 [Test worker] INFO  UtilityCreateClass - Class Elementary Students created successfully
+18:45:13.919 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:45:15.032 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest455707 and password: qwert8400
+18:45:15.498 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest164014 and password: qwert9567
+18:45:15.911 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest593085 and password: qwert3165
+18:45:16.083 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:45:18.504 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:45:18.504 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:45:18.505 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:45:18.514 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:45:20.964 [Test worker] DEBUG UtilityCreateClass - Entered class name: 3rd Grade Reading
+18:45:20.964 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:45:21.085 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:45:22.123 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:45:23.344 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was found in a Classes list
+18:45:23.464 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was selected
+18:45:24.979 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was checked on the class page
+18:45:24.980 [Test worker] INFO  UtilityCreateClass - Class 3rd Grade Reading created successfully
+18:45:24.980 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:45:26.231 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest333036 and password: qwert8361
+18:45:26.710 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest349279 and password: qwert5502
+18:45:27.219 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest342779 and password: qwert7573
+18:45:27.384 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:45:30.194 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:45:30.195 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:45:30.195 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:45:30.200 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:45:32.203 [Test worker] DEBUG UtilityCreateClass - Entered class name: Reading Lab
+18:45:32.204 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:45:32.314 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:45:33.238 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:45:34.482 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was found in a Classes list
+18:45:34.572 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was selected
+18:45:35.982 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was checked on the class page
+18:45:35.982 [Test worker] INFO  UtilityCreateClass - Class Reading Lab created successfully
+18:45:35.982 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:45:37.217 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest481032 and password: qwert6969
+18:45:37.691 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest374004 and password: qwert1640
+18:45:38.118 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest550504 and password: qwert5001
+18:45:38.267 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:45:41.631 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:45:41.631 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:45:41.631 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:45:41.635 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:45:43.798 [Test worker] DEBUG UtilityCreateClass - Entered class name: Grade 10
+18:45:43.798 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:45:43.917 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:45:45.093 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:45:46.369 [Test worker] DEBUG UtilityCreateClass - Class Grade 10 was found in a Classes list
+18:45:46.443 [Test worker] DEBUG UtilityCreateClass - Class Grade 10 was selected
+18:45:47.728 [Test worker] DEBUG UtilityCreateClass - Class Grade 10 was checked on the class page
+18:45:47.728 [Test worker] INFO  UtilityCreateClass - Class Grade 10 created successfully
+18:45:47.728 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Starting to create 3 new students
+18:45:48.786 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest918974 and password: qwert3718
+18:45:49.235 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest948302 and password: qwert3536
+18:45:49.634 [Test worker] DEBUG UtilityCreateStudentsAsTeacher - Added new student with username: NewStudentAutotest271313 and password: qwert3265
+18:45:49.794 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Saved 3 new students
+18:45:52.970 [Test worker] INFO  UtilityCreateStudentsAsTeacher - Checked new students in class
+18:45:53.188 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest581415 and password: qwert4655 as student or parent
+18:45:54.072 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest581415
+18:45:54.176 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert4655
+18:45:54.286 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:45:57.836 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:04.189 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:04.338 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:04.644 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:04.785 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:04.786 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest581415
+18:46:05.003 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest933247 and password: qwert5288 as student or parent
+18:46:06.040 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest933247
+18:46:06.270 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert5288
+18:46:06.505 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:10.191 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:10.450 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:10.658 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:10.976 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:11.155 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:11.156 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest933247
+18:46:11.425 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest349836 and password: qwert7870 as student or parent
+18:46:12.067 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest349836
+18:46:12.335 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert7870
+18:46:12.408 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:16.190 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:16.524 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:16.669 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:17.036 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:17.153 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:17.154 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest349836
+18:46:17.348 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest375110 and password: qwert3839 as student or parent
+18:46:18.259 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest375110
+18:46:18.334 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3839
+18:46:18.422 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:22.082 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:22.112 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:22.252 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:22.755 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:22.918 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:22.918 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest375110
+18:46:23.233 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest645592 and password: qwert8718 as student or parent
+18:46:26.395 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest645592
+18:46:26.477 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert8718
+18:46:26.546 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:30.068 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:30.088 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:30.200 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:30.710 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:30.896 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:30.897 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest645592
+18:46:31.180 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest343770 and password: qwert5850 as student or parent
+18:46:32.104 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest343770
+18:46:32.285 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert5850
+18:46:32.386 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:36.089 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:36.112 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:36.238 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:36.510 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:36.651 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:36.651 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest343770
+18:46:36.902 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest784150 and password: qwert2293 as student or parent
+18:46:37.853 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest784150
+18:46:37.998 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert2293
+18:46:38.112 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:41.906 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:42.086 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:42.235 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:42.530 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:42.815 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:42.815 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest784150
+18:46:43.071 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest384700 and password: qwert9918 as student or parent
+18:46:43.740 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest384700
+18:46:43.994 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9918
+18:46:44.098 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:47.943 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:48.065 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:48.224 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:48.703 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:48.916 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:48.917 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest384700
+18:46:49.233 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest113180 and password: qwert3379 as student or parent
+18:46:50.144 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest113180
+18:46:50.378 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3379
+18:46:50.473 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:46:54.147 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:46:54.183 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:46:54.357 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:46:54.892 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:46:55.058 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:46:55.059 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest113180
+18:46:55.312 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest632073 and password: qwert3458 as student or parent
+18:46:56.276 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest632073
+18:46:56.353 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3458
+18:46:56.427 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:00.088 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:00.156 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:00.318 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:00.813 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:01.093 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:01.093 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest632073
+18:47:01.586 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest247801 and password: qwert9185 as student or parent
+18:47:02.557 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest247801
+18:47:02.826 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9185
+18:47:02.927 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:06.902 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:07.067 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:07.236 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:08.037 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:08.363 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:08.363 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest247801
+18:47:08.553 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest405823 and password: qwert6893 as student or parent
+18:47:09.720 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest405823
+18:47:09.849 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert6893
+18:47:09.937 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:13.749 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:13.853 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:13.983 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:14.362 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:14.525 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:14.526 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest405823
+18:47:14.780 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest576811 and password: qwert9313 as student or parent
+18:47:15.782 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest576811
+18:47:15.867 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9313
+18:47:15.966 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:19.639 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:19.998 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:20.131 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:20.576 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:20.882 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:20.882 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest576811
+18:47:21.372 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest349056 and password: qwert6397 as student or parent
+18:47:22.145 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest349056
+18:47:22.466 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert6397
+18:47:22.577 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:26.388 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:26.511 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:26.730 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:27.171 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:27.364 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:27.367 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest349056
+18:47:27.837 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest290541 and password: qwert6081 as student or parent
+18:47:28.661 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest290541
+18:47:28.895 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert6081
+18:47:28.976 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:32.602 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:32.713 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:32.841 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:33.269 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:33.468 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:33.468 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest290541
+18:47:33.682 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest282320 and password: qwert4809 as student or parent
+18:47:34.744 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest282320
+18:47:34.825 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert4809
+18:47:34.912 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:38.510 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:38.544 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:38.687 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:39.155 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:39.297 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:39.297 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest282320
+18:47:39.480 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest993869 and password: qwert4002 as student or parent
+18:47:40.356 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest993869
+18:47:40.437 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert4002
+18:47:40.516 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:44.079 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:44.097 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:44.202 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:44.619 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:44.726 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:44.726 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest993869
+18:47:44.884 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest823417 and password: qwert1588 as student or parent
+18:47:45.745 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest823417
+18:47:45.827 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert1588
+18:47:45.893 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:49.478 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:49.496 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:49.607 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:49.928 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:50.068 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:50.069 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest823417
+18:47:50.246 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest455707 and password: qwert8400 as student or parent
+18:47:51.164 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest455707
+18:47:51.246 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert8400
+18:47:51.313 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:47:54.927 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:47:54.946 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:47:55.086 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:47:55.376 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:47:55.480 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:47:55.480 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest455707
+18:47:55.626 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest164014 and password: qwert9567 as student or parent
+18:47:56.500 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest164014
+18:47:56.590 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert9567
+18:47:56.672 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:00.266 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:00.724 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:00.866 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:01.165 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:01.406 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:01.406 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest164014
+18:48:01.598 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest593085 and password: qwert3165 as student or parent
+18:48:02.611 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest593085
+18:48:02.702 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3165
+18:48:02.771 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:06.469 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:06.622 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:06.752 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:07.060 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:07.275 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:07.276 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest593085
+18:48:07.542 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest333036 and password: qwert8361 as student or parent
+18:48:08.554 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest333036
+18:48:08.631 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert8361
+18:48:08.717 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:12.480 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:12.572 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:12.704 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:13.311 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:13.439 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:13.439 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest333036
+18:48:13.640 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest349279 and password: qwert5502 as student or parent
+18:48:14.385 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest349279
+18:48:14.600 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert5502
+18:48:14.669 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:18.368 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:18.472 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:18.630 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:19.076 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:19.304 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:19.305 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest349279
+18:48:19.660 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest342779 and password: qwert7573 as student or parent
+18:48:20.322 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest342779
+18:48:20.588 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert7573
+18:48:20.668 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:24.354 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:24.382 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:24.528 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:25.023 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:25.156 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:25.156 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest342779
+18:48:25.330 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest481032 and password: qwert6969 as student or parent
+18:48:26.328 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest481032
+18:48:26.468 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert6969
+18:48:26.570 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:30.318 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:30.629 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:30.813 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:31.316 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:31.539 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:31.539 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest481032
+18:48:31.988 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest374004 and password: qwert1640 as student or parent
+18:48:32.939 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest374004
+18:48:33.131 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert1640
+18:48:33.239 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:36.956 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:37.328 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:37.486 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:37.953 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:38.229 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:38.230 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest374004
+18:48:38.764 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest550504 and password: qwert5001 as student or parent
+18:48:39.640 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest550504
+18:48:39.871 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert5001
+18:48:39.959 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:43.607 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:44.216 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:44.380 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:44.705 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:44.862 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:44.862 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest550504
+18:48:45.220 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest918974 and password: qwert3718 as student or parent
+18:48:46.170 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest918974
+18:48:46.280 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3718
+18:48:46.369 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:50.108 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:50.137 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:50.290 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:50.620 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:50.754 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:50.755 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest918974
+18:48:50.940 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest948302 and password: qwert3536 as student or parent
+18:48:51.877 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest948302
+18:48:51.960 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3536
+18:48:52.034 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:48:55.647 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:48:55.679 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:48:55.842 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:48:56.315 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:48:56.439 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:48:56.439 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest948302
+18:48:56.654 [Test worker] INFO  UtilityStudentOrParentLogIn - Attempting to log in with username: NewStudentAutotest271313 and password: qwert3265 as student or parent
+18:48:57.732 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student username: NewStudentAutotest271313
+18:48:57.847 [Test worker] DEBUG UtilityStudentOrParentLogIn - Entered student password: qwert3265
+18:48:57.917 [Test worker] INFO  UtilityStudentOrParentLogIn - Clicked on the Login button
+18:49:01.931 [Test worker] INFO  UtilityStudentOrParentLogIn - Starting student additional age step in sign-up process
+18:49:02.326 [Test worker] DEBUG UtilityStudentOrParentLogIn - Checked student sign-up age page title
+18:49:02.525 [Test worker] DEBUG UtilityStudentOrParentLogIn - Set student first name and last name
+18:49:02.939 [Test worker] DEBUG UtilityStudentOrParentLogIn - Selected random student age from dropdown
+18:49:03.133 [Test worker] DEBUG UtilityStudentOrParentLogIn - Clicked on the next button
+18:49:03.134 [Test worker] INFO  UtilityStudentOrParentLogIn - Logged in successfully as user: NewStudentAutotest271313
+18:49:05.472 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:49:07.521 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:49:08.117 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest797372896 and password: 12345qwert7673
+18:49:09.453 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Robinson, Daniel
+18:49:09.799 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:49:10.786 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:49:11.101 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:49:11.485 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:49:11.485 [Test worker] INFO  UtilityCreateClass - Creating 5 new classes
+18:49:11.485 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:49:11.489 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:49:13.247 [Test worker] DEBUG UtilityCreateClass - Entered class name: Advanced Honors English
+18:49:13.247 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:49:13.392 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:49:14.310 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:49:15.552 [Test worker] DEBUG UtilityCreateClass - Class Advanced Honors English was found in a Classes list
+18:49:15.665 [Test worker] DEBUG UtilityCreateClass - Class Advanced Honors English was selected
+18:49:16.880 [Test worker] DEBUG UtilityCreateClass - Class Advanced Honors English was checked on the class page
+18:49:16.880 [Test worker] INFO  UtilityCreateClass - Class Advanced Honors English created successfully
+18:49:16.880 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:49:16.885 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:49:18.752 [Test worker] DEBUG UtilityCreateClass - Entered class name: Group B
+18:49:18.753 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:49:18.871 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:49:20.068 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:49:21.495 [Test worker] DEBUG UtilityCreateClass - Class Group B was found in a Classes list
+18:49:21.587 [Test worker] DEBUG UtilityCreateClass - Class Group B was selected
+18:49:23.037 [Test worker] DEBUG UtilityCreateClass - Class Group B was checked on the class page
+18:49:23.037 [Test worker] INFO  UtilityCreateClass - Class Group B created successfully
+18:49:23.037 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:49:23.045 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:49:25.078 [Test worker] DEBUG UtilityCreateClass - Entered class name: WRITING AND READING WORKSHOP
+18:49:25.079 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:49:25.185 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:49:26.470 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:49:27.869 [Test worker] DEBUG UtilityCreateClass - Class WRITING AND READING WORKSHOP was found in a Classes list
+18:49:27.964 [Test worker] DEBUG UtilityCreateClass - Class WRITING AND READING WORKSHOP was selected
+18:49:29.440 [Test worker] DEBUG UtilityCreateClass - Class WRITING AND READING WORKSHOP was checked on the class page
+18:49:29.440 [Test worker] INFO  UtilityCreateClass - Class WRITING AND READING WORKSHOP created successfully
+18:49:29.440 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:49:29.446 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:49:31.605 [Test worker] DEBUG UtilityCreateClass - Entered class name: Fourth Grade AG
+18:49:31.606 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:49:31.687 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:49:33.190 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:49:34.845 [Test worker] DEBUG UtilityCreateClass - Class Fourth Grade AG was found in a Classes list
+18:49:34.931 [Test worker] DEBUG UtilityCreateClass - Class Fourth Grade AG was selected
+18:49:36.467 [Test worker] DEBUG UtilityCreateClass - Class Fourth Grade AG was checked on the class page
+18:49:36.467 [Test worker] INFO  UtilityCreateClass - Class Fourth Grade AG created successfully
+18:49:36.467 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:49:36.471 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:49:38.684 [Test worker] DEBUG UtilityCreateClass - Entered class name: Practice class
+18:49:38.684 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:49:38.772 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:49:39.994 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:49:41.498 [Test worker] DEBUG UtilityCreateClass - Class Practice class was found in a Classes list
+18:49:41.600 [Test worker] DEBUG UtilityCreateClass - Class Practice class was selected
+18:49:43.112 [Test worker] DEBUG UtilityCreateClass - Class Practice class was checked on the class page
+18:49:43.112 [Test worker] INFO  UtilityCreateClass - Class Practice class created successfully
+18:49:44.213 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:51:18.636 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:51:22.250 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:51:23.213 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest568377985 and password: 12345qwert7703
+18:51:24.986 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Johnson, Joseph
+18:51:25.338 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:51:26.375 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:51:26.712 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:51:27.673 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:51:27.678 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:51:27.679 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:51:27.719 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:51:29.248 [Test worker] DEBUG UtilityCreateClass - Entered class name: Middle School
+18:51:29.248 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:52:53.963 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:52:56.365 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:52:57.246 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest394556394 and password: 12345qwert7311
+18:52:59.312 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Nguyen, Emily
+18:52:59.532 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:53:00.464 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:53:00.737 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:53:01.393 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:53:01.401 [Test worker] DEBUG UtilityBOActions - Back office opened
+18:53:04.404 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+18:53:04.438 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+18:53:09.442 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+18:53:11.244 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:53:11.245 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:53:11.510 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:53:13.223 [Test worker] DEBUG UtilityCreateClass - Entered class name: Reading Lab
+18:53:13.224 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:53:19.097 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:53:20.165 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:53:21.705 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was found in a Classes list
+18:53:21.777 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was selected
+18:53:23.179 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was checked on the class page
+18:53:23.179 [Test worker] INFO  UtilityCreateClass - Class Reading Lab created successfully
+18:53:42.756 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:53:45.413 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:53:46.184 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest246063781 and password: 12345qwert9387
+18:53:47.633 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Ramirez, Emily
+18:53:47.847 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:53:48.827 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:53:49.168 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:53:49.525 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:53:49.551 [Test worker] DEBUG UtilityBOActions - Back office opened
+18:53:52.555 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+18:53:52.584 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+18:53:57.586 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+18:54:00.223 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:54:00.225 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:54:00.500 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:54:02.579 [Test worker] DEBUG UtilityCreateClass - Entered class name: High School
+18:54:02.580 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:54:47.190 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:54:49.616 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:54:50.463 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest277990803 and password: 12345qwert6554
+18:54:52.468 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Green, Susan
+18:54:52.667 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:54:53.602 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:54:53.858 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:54:54.668 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:54:54.676 [Test worker] DEBUG UtilityBOActions - Back office opened
+18:54:57.679 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+18:54:57.707 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+18:55:02.712 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+18:55:02.721 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest277990803
+18:55:04.734 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest277990803
+18:55:06.735 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+18:55:11.100 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest277990803
+18:55:11.107 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:55:11.108 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:55:11.304 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:55:13.506 [Test worker] DEBUG UtilityCreateClass - Entered class name: High School
+18:55:13.506 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:55:14.953 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:55:16.081 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:55:17.242 [Test worker] DEBUG UtilityCreateClass - Class High School was found in a Classes list
+18:55:17.319 [Test worker] DEBUG UtilityCreateClass - Class High School was selected
+18:55:18.680 [Test worker] DEBUG UtilityCreateClass - Class High School was checked on the class page
+18:55:18.681 [Test worker] INFO  UtilityCreateClass - Class High School created successfully
+18:58:06.807 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+18:58:11.195 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+18:58:11.988 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest869647383 and password: 12345qwert3667
+18:58:13.423 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Hill, Mary
+18:58:13.642 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+18:58:14.581 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+18:58:14.841 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+18:58:15.368 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+18:58:15.376 [Test worker] DEBUG UtilityBOActions - Back office opened
+18:58:18.381 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+18:58:19.337 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+18:58:24.341 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+18:58:24.342 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest869647383
+18:58:25.827 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest869647383
+18:58:27.833 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+18:58:32.513 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest869647383
+18:58:32.526 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+18:58:32.526 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+18:58:32.730 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+18:58:34.920 [Test worker] DEBUG UtilityCreateClass - Entered class name: High School
+18:58:34.921 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+18:58:36.522 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+18:58:37.357 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+18:58:38.592 [Test worker] DEBUG UtilityCreateClass - Class High School was found in a Classes list
+18:58:38.698 [Test worker] DEBUG UtilityCreateClass - Class High School was selected
+18:58:40.074 [Test worker] DEBUG UtilityCreateClass - Class High School was checked on the class page
+18:58:40.074 [Test worker] INFO  UtilityCreateClass - Class High School created successfully
+19:00:22.875 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:00:25.540 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:00:26.324 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest303458267 and password: 12345qwert5863
+19:00:27.834 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Mitchell, Jessica
+19:00:28.047 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+19:00:28.991 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:00:29.325 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:00:29.707 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:00:29.714 [Test worker] DEBUG UtilityBOActions - Back office opened
+19:00:32.720 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:00:32.751 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:00:37.754 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+19:00:37.755 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest303458267
+19:00:39.259 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest303458267
+19:00:41.263 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+19:00:45.898 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest303458267
+19:00:45.905 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+19:00:45.905 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+19:00:46.104 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+19:00:48.535 [Test worker] DEBUG UtilityCreateClass - Entered class name: 3rd Grade Reading
+19:00:48.536 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+19:00:50.048 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+19:00:51.100 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+19:00:52.149 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was found in a Classes list
+19:00:52.242 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was selected
+19:00:53.654 [Test worker] DEBUG UtilityCreateClass - Class 3rd Grade Reading was checked on the class page
+19:00:53.655 [Test worker] INFO  UtilityCreateClass - Class 3rd Grade Reading created successfully
+19:03:21.428 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:03:25.340 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:03:26.054 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest588066427 and password: 12345qwert7782
+19:03:27.459 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Nelson, Jessica
+19:03:27.662 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+19:03:28.676 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:03:28.969 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:03:29.537 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:03:29.546 [Test worker] DEBUG UtilityBOActions - Back office opened
+19:03:32.551 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:03:32.834 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:03:37.839 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+19:03:37.839 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest588066427
+19:03:40.597 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest588066427
+19:03:42.599 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+19:03:47.245 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest588066427
+19:03:47.255 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+19:03:47.255 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+19:03:47.680 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+19:03:49.706 [Test worker] DEBUG UtilityCreateClass - Entered class name: Reading Lab
+19:03:49.707 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+19:03:51.341 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+19:03:52.156 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+19:03:53.210 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was found in a Classes list
+19:03:53.334 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was selected
+19:03:54.733 [Test worker] DEBUG UtilityCreateClass - Class Reading Lab was checked on the class page
+19:03:54.733 [Test worker] INFO  UtilityCreateClass - Class Reading Lab created successfully
+19:05:24.977 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:05:27.585 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:05:28.539 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest666371157 and password: 12345qwert1750
+19:05:30.127 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Roberts, Nancy
+19:05:30.325 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+19:05:31.258 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:05:31.796 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:05:32.162 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:05:32.169 [Test worker] DEBUG UtilityBOActions - Back office opened
+19:05:35.172 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:05:35.200 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:05:40.202 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+19:05:40.202 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest666371157
+19:05:41.674 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest666371157
+19:05:43.686 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+19:05:48.038 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest666371157
+19:05:48.045 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+19:05:48.046 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+19:05:48.266 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+19:05:50.696 [Test worker] DEBUG UtilityCreateClass - Entered class name: 2nd Period 2024
+19:05:50.697 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+19:05:52.164 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+19:05:53.274 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+19:05:54.697 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was found in a Classes list
+19:05:54.800 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was selected
+19:05:56.412 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was checked on the class page
+19:05:56.412 [Test worker] INFO  UtilityCreateClass - Class 2nd Period 2024 created successfully
+19:07:02.694 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:07:05.607 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:07:06.869 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest573283953 and password: 12345qwert1326
+19:07:08.325 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Rodriguez, Kevin
+19:07:08.547 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+19:07:09.486 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:07:09.735 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:07:10.278 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:07:10.287 [Test worker] DEBUG UtilityBOActions - Back office opened
+19:07:13.290 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:07:14.155 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:07:19.158 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+19:07:19.171 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest573283953
+19:07:20.697 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest573283953
+19:07:22.715 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+19:07:27.367 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest573283953
+19:07:27.375 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+19:07:27.375 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+19:07:27.575 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+19:07:29.786 [Test worker] DEBUG UtilityCreateClass - Entered class name: 2nd Period 2024
+19:07:29.786 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+19:07:31.284 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+19:07:32.211 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+19:07:33.345 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was found in a Classes list
+19:07:33.420 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was selected
+19:07:34.776 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was checked on the class page
+19:07:34.777 [Test worker] INFO  UtilityCreateClass - Class 2nd Period 2024 created successfully
+19:08:35.640 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+19:08:39.649 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+19:08:40.482 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest104556322 and password: 12345qwert9949
+19:08:42.072 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Jackson, Charles
+19:08:42.280 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+19:08:43.328 [Test worker] DEBUG UtilityTeacherSignUp - Skipped 'Select School' page
+19:08:43.661 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+19:08:44.094 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+19:08:44.101 [Test worker] DEBUG UtilityBOActions - Back office opened
+19:08:47.105 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+19:08:47.138 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+19:08:52.140 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+19:08:52.141 [Test worker] INFO  UtilityBOActions - Starting process to make teacher premium: NewTeacherAutotest104556322
+19:08:53.898 [Test worker] INFO  UtilityBOActions - Selected user: NewTeacherAutotest104556322
+19:08:55.900 [Test worker] DEBUG UtilityBOActions - Waited 2 seconds after selecting user
+19:09:00.249 [Test worker] INFO  UtilityBOActions - Enabled subscription for user: NewTeacherAutotest104556322
+19:09:00.256 [Test worker] INFO  UtilityCreateClass - Creating 1 new classes
+19:09:00.257 [Test worker] DEBUG UtilityCreateClass - Opening My Classes page
+19:09:00.512 [Test worker] DEBUG UtilityCreateClass - Clicking on Create New Class button
+19:09:02.733 [Test worker] DEBUG UtilityCreateClass - Entered class name: 2nd Period 2024
+19:09:02.734 [Test worker] DEBUG UtilityCreateClass - Selecting additional options for class creation
+19:09:04.219 [Test worker] DEBUG UtilityCreateClass - Clicked on Create Class button
+19:09:05.035 [Test worker] DEBUG UtilityCreateClass - Clicked on My classes button
+19:09:06.238 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was found in a Classes list
+19:09:06.377 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was selected
+19:09:07.832 [Test worker] DEBUG UtilityCreateClass - Class 2nd Period 2024 was checked on the class page
+19:09:07.832 [Test worker] INFO  UtilityCreateClass - Class 2nd Period 2024 created successfully
+20:27:20.558 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+20:27:23.050 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+20:27:23.956 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest410355817 and password: 12345qwert8362
+20:27:25.754 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Gonzalez, Elizabeth
+20:27:25.952 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+20:27:29.495 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test9083
+20:27:29.518 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+20:27:30.710 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+20:27:30.726 [Test worker] DEBUG UtilityBOActions - Back office opened
+20:27:33.731 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+20:27:33.760 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+20:43:33.268 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+20:43:37.109 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+20:43:37.886 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest235804861 and password: 12345qwert6520
+20:43:39.645 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Wright, Mary
+20:43:39.834 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+20:43:43.328 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1422
+20:43:43.334 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+20:43:44.585 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+20:43:44.591 [Test worker] DEBUG UtilityBOActions - Back office opened
+20:43:47.595 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+20:43:47.625 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+20:43:52.625 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+20:43:52.632 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1422
+20:43:55.719 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test1422 is selected
+20:51:31.508 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+20:51:35.264 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+20:51:35.980 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest908276301 and password: 12345qwert3502
+20:51:37.501 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Perez, Mary
+20:51:37.695 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+20:51:40.896 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7590
+20:51:40.900 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+20:51:42.008 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+20:51:42.016 [Test worker] DEBUG UtilityBOActions - Back office opened
+20:51:45.021 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+20:51:45.833 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+20:51:50.854 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+20:51:50.854 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test7590
+20:51:52.867 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test7590 is selected
+20:57:15.657 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+20:57:18.620 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+20:57:19.527 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest755462623 and password: 12345qwert4428
+20:57:20.886 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Roberts, Melissa
+20:57:21.110 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+20:57:24.194 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test6612
+20:57:24.199 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+20:57:25.378 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+20:57:25.385 [Test worker] DEBUG UtilityBOActions - Back office opened
+20:57:28.389 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+20:57:28.417 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+20:57:33.422 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+20:57:33.422 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test6612
+20:57:36.707 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test6612 is selected
+21:01:39.615 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:01:42.150 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:01:43.093 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest252971538 and password: 12345qwert5606
+21:01:44.515 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Perez, Carol
+21:01:44.728 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:01:48.393 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7067
+21:01:48.397 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:01:49.779 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:01:49.787 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:01:52.791 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:01:52.820 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:01:57.820 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:01:57.821 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test7067
+21:02:00.062 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test7067 is selected
+21:06:15.713 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:06:18.221 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:06:19.087 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest698919947 and password: 12345qwert9324
+21:06:21.032 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: White, Daniel
+21:06:21.239 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:06:24.319 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1836
+21:06:24.342 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:06:25.511 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:06:25.524 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:06:28.528 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:06:28.558 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:06:33.562 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:06:33.565 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1836
+21:06:35.909 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test1836 is selected
+21:08:09.951 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:08:12.742 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:08:13.625 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest930379557 and password: 12345qwert4308
+21:08:15.183 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Wilson, Brian
+21:08:15.398 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:08:18.568 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test5754
+21:08:18.592 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:08:19.689 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:08:19.697 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:08:22.699 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:08:22.727 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:08:27.730 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:08:27.742 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test5754
+21:08:29.345 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test5754 is selected
+21:13:10.286 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:13:13.534 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:13:14.543 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest626048052 and password: 12345qwert6687
+21:13:16.125 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Perez, Nancy
+21:13:16.323 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:13:40.903 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:13:44.574 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:13:45.364 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest686594486 and password: 12345qwert2383
+21:13:46.917 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Perez, Matthew
+21:13:47.123 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:20:32.033 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:20:35.082 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:20:35.967 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest839742463 and password: 12345qwert1874
+21:20:37.952 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Jones, Melissa
+21:20:38.149 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:26:47.849 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:26:50.347 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:26:51.174 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest285142127 and password: 12345qwert3931
+21:26:52.660 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Nguyen, Emily
+21:26:52.877 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:29:55.116 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:29:59.014 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:29:59.773 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest167768235 and password: 12345qwert3329
+21:30:01.580 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Hill, Christopher
+21:30:01.858 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:30:05.641 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7018
+21:30:05.649 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:30:06.814 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:30:06.822 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:30:09.826 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:31:04.422 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:31:08.306 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:31:09.043 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest395680233 and password: 12345qwert6758
+21:31:10.352 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Jones, Melissa
+21:31:10.575 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:31:13.676 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7617
+21:31:13.680 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:31:15.041 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:31:15.048 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:31:18.064 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:31:18.094 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:31:23.097 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:31:23.113 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test7617
+21:31:25.406 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test7617 is selected
+21:32:40.640 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:32:44.166 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:32:44.986 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest959294759 and password: 12345qwert8871
+21:32:46.569 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Campbell, Donald
+21:32:46.766 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:32:50.104 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1842
+21:32:50.109 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:32:51.494 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:32:51.503 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:32:54.508 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:32:55.298 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:33:00.304 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:33:00.305 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1842
+21:33:02.432 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test1842 is selected
+21:35:57.877 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:36:00.545 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:36:01.722 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest254091071 and password: 12345qwert7925
+21:36:03.391 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Walker, Thomas
+21:36:03.628 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:36:06.943 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1231
+21:36:06.966 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:36:08.270 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:36:08.280 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:36:11.283 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:36:11.310 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:36:16.315 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:36:16.328 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1231
+21:36:19.826 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test1231 is selected
+21:39:33.889 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:39:36.320 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:39:37.302 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest883705942 and password: 12345qwert4866
+21:39:38.874 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Lee, George
+21:39:39.084 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:39:42.809 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test794
+21:39:42.832 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:39:43.931 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:39:43.938 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:39:46.943 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:39:46.971 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:39:51.973 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:39:51.982 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test794
+21:39:54.263 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test794 is selected
+21:42:30.164 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:42:32.987 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:42:33.956 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest733868828 and password: 12345qwert4868
+21:42:35.284 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Brown, Emily
+21:42:35.526 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:42:38.787 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test9516
+21:42:38.792 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:42:40.148 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:42:40.156 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:42:43.156 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:42:43.186 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:42:48.192 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:42:48.206 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test9516
+21:42:49.816 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test9516 is selected
+21:42:49.825 [Test worker] DEBUG UtilityBOActions - Custom school name actual: ; expected: School AUTO Test9516
+21:56:43.243 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+21:56:46.334 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+21:56:47.297 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest669520399 and password: 12345qwert7896
+21:56:48.711 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Sanchez, Kimberly
+21:56:48.932 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+21:56:52.071 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test9642
+21:56:52.076 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+21:56:53.214 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+21:56:53.227 [Test worker] DEBUG UtilityBOActions - Back office opened
+21:56:56.231 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+21:56:56.264 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+21:57:01.266 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+21:57:01.267 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test9642
+21:57:03.540 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test9642 is selected
+21:57:03.559 [Test worker] DEBUG UtilityBOActions - Custom school name actual: ; expected: School AUTO Test9642
+22:03:22.904 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:03:25.477 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:03:26.391 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest331317883 and password: 12345qwert9204
+22:03:27.889 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Nguyen, Patricia
+22:03:28.103 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+22:03:31.176 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test8748
+22:03:31.180 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:03:32.785 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:03:32.793 [Test worker] DEBUG UtilityBOActions - Back office opened
+22:03:35.797 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:03:37.588 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:03:42.588 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:03:42.589 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test8748
+22:03:45.060 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test8748 is selected
+22:06:03.325 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:06:05.792 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:06:06.711 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest585807706 and password: 12345qwert7054
+22:06:08.095 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Hernandez, Michelle
+22:06:08.326 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+22:06:11.387 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test189
+22:06:11.412 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:06:12.554 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:06:12.564 [Test worker] DEBUG UtilityBOActions - Back office opened
+22:06:15.568 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:06:15.607 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:06:20.612 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:06:20.612 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test189
+22:06:22.065 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test189 is selected
+22:08:09.076 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:08:13.882 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:08:14.717 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest218901910 and password: 12345qwert7701
+22:08:16.380 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Miller, Daniel
+22:08:16.588 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+22:08:20.237 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test6941
+22:08:20.242 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:08:21.736 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:08:21.745 [Test worker] DEBUG UtilityBOActions - Back office opened
+22:08:24.748 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:08:24.788 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:08:29.792 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:08:29.794 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test6941
+22:08:31.456 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test6941 is selected
+22:08:31.475 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test6941; expected: School AUTO Test6941
+22:16:03.217 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:16:05.822 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:16:06.783 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest720114119 and password: 12345qwert3148
+22:16:08.257 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Green, Michael
+22:16:08.472 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+22:16:12.763 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test838
+22:16:12.767 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:16:15.492 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:16:15.500 [Test worker] DEBUG UtilityBOActions - Back office opened
+22:16:18.505 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:16:18.533 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:16:23.536 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:16:23.536 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test838
+22:16:25.188 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test838 is selected
+22:16:25.198 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test838; expected: School AUTO Test838
+22:19:15.532 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:19:19.189 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:19:20.001 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest429892127 and password: 12345qwert5183
+22:19:21.529 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Jones, Edward
+22:19:21.737 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+22:19:25.027 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test5428
+22:19:25.031 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:19:26.109 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:19:26.116 [Test worker] DEBUG UtilityBOActions - Back office opened
+22:19:29.119 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:19:29.151 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:19:34.154 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:19:34.154 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test5428
+22:19:36.048 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test5428 is selected
+22:19:36.058 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test5428; expected: School AUTO Test5428
+22:20:15.647 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+22:20:18.094 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+22:20:18.981 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest428556758 and password: 12345qwert3704
+22:20:20.561 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Anderson, Thomas
+22:20:20.775 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+22:20:23.932 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1622
+22:20:23.956 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+22:20:25.039 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+22:20:25.046 [Test worker] DEBUG UtilityBOActions - Back office opened
+22:20:28.049 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+22:20:28.079 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+22:20:33.081 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+22:20:33.085 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1622
+22:20:35.324 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test1622 is selected
+22:20:35.335 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test1622; expected: School AUTO Test1622
+23:51:16.485 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+23:51:20.000 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+23:51:20.922 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest722467533 and password: 12345qwert1544
+23:51:22.494 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Smith, William
+23:51:22.711 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+23:51:26.212 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test3072
+23:51:26.234 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+23:51:27.702 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+23:51:27.710 [Test worker] DEBUG UtilityBOActions - Back office opened
+23:51:30.712 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+23:51:32.319 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+23:51:37.320 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+23:51:37.320 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test3072
+23:51:39.975 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test3072 is selected
+23:51:39.985 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test3072; expected: School AUTO Test3072
+00:13:10.668 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:13:13.370 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:13:14.371 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest689846415 and password: 12345qwert8466
+00:13:15.920 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Campbell, David
+00:13:16.133 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:13:20.273 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7461
+00:13:20.278 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:13:22.961 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:13:22.968 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:13:25.974 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:13:26.000 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:13:31.002 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:13:31.020 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test7461
+00:13:32.949 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test7461 is selected
+00:13:32.961 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test7461; expected: School AUTO Test7461
+00:18:09.608 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:18:12.637 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:18:13.457 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest175783268 and password: 12345qwert6703
+00:18:14.949 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Clark, David
+00:18:15.155 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:18:18.346 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test886
+00:18:18.351 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:18:19.627 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:18:19.637 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:18:22.640 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:18:23.641 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:18:28.645 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:18:28.655 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test886
+00:18:30.290 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test886 is selected
+00:18:30.300 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test886; expected: School AUTO Test886
+00:20:16.245 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:20:19.841 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:20:20.799 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest665653912 and password: 12345qwert4741
+00:20:23.410 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: White, Amanda
+00:20:23.660 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:20:26.967 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test900
+00:20:26.990 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:20:28.339 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:20:28.345 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:20:31.348 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:20:32.369 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:20:37.373 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:20:37.373 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test900
+00:20:39.027 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test900 is selected
+00:20:39.038 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test900; expected: School AUTO Test900
+00:24:00.194 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:24:03.112 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:24:03.960 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest569359913 and password: 12345qwert2148
+00:24:06.152 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Green, Matthew
+00:24:06.349 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:24:10.025 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test3463
+00:24:10.029 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:24:11.143 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:24:11.150 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:24:14.155 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:24:14.188 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:24:19.191 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:24:19.204 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test3463
+00:24:21.271 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test3463 is selected
+00:24:21.281 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test3463; expected: School AUTO Test3463
+00:27:53.460 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:27:59.054 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:27:59.926 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest270964121 and password: 12345qwert9999
+00:28:01.604 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Rodriguez, Mary
+00:28:01.808 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:28:05.367 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test1623
+00:28:05.372 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:28:07.177 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:28:07.183 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:28:10.188 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:28:10.227 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:28:15.231 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:28:15.231 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test1623
+00:28:18.126 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test1623 is selected
+00:28:18.137 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test1623; expected: School AUTO Test1623
+00:29:02.532 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:29:06.658 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:29:07.678 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest907535212 and password: 12345qwert7738
+00:29:09.677 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Moore, Brian
+00:29:09.958 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:29:13.396 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test9410
+00:29:13.401 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:29:14.688 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:29:14.699 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:29:17.702 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:29:18.815 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:29:23.819 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:29:23.820 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test9410
+00:29:25.293 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test9410 is selected
+00:29:25.305 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test9410; expected: School AUTO Test9410
+00:30:45.706 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:30:49.747 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:30:50.482 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest780569050 and password: 12345qwert2475
+00:30:51.826 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: White, Mark
+00:30:52.036 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:30:55.414 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test493
+00:30:55.419 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:30:57.961 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:30:57.970 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:31:00.975 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:31:03.533 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:31:08.539 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:31:08.540 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test493
+00:31:12.039 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test493 is selected
+00:31:12.049 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test493; expected: School AUTO Test493
+00:32:48.777 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:32:51.260 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:32:52.293 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest623043962 and password: 12345qwert8842
+00:32:53.957 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Wilson, Brian
+00:32:54.167 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:32:57.443 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test3414
+00:32:57.471 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:32:58.574 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:32:58.583 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:33:01.589 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:33:01.627 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:33:06.632 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:33:06.645 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test3414
+00:33:08.824 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test3414 is selected
+00:33:08.837 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test3414; expected: School AUTO Test3414
+00:36:01.044 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:36:05.074 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:36:06.907 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest73089966 and password: 12345qwert7391
+00:36:10.441 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Green, Joseph
+00:36:10.653 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:36:14.867 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7132
+00:36:14.891 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:36:16.940 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:36:16.947 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:36:19.950 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:36:19.972 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:36:24.975 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:36:24.975 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test7132
+00:36:27.654 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test7132 is selected
+00:36:27.667 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test7132; expected: School AUTO Test7132
+00:36:28.005 [Test worker] DEBUG UtilityBOActions - Custom school city actual: ; expected: BFA
+00:36:28.012 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv7961; expected: Kyiv7961
+00:36:28.018 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA5487; expected: KA5487
+00:36:28.023 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +380990963572566; expected: +380990963572566
+00:38:21.610 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+00:38:25.435 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+00:38:26.263 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest225231914 and password: 12345qwert9986
+00:38:27.784 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Harris, Anthony
+00:38:27.974 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+00:38:31.473 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test8068
+00:38:31.479 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+00:38:32.655 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+00:38:32.665 [Test worker] DEBUG UtilityBOActions - Back office opened
+00:38:35.669 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+00:38:35.697 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+00:38:40.700 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+00:38:40.707 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test8068
+00:38:42.847 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test8068 is selected
+00:38:42.858 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test8068; expected: School AUTO Test8068
+00:38:43.218 [Test worker] DEBUG UtilityBOActions - Custom school city actual: ; expected: VEN
+00:38:43.241 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv9192; expected: Kyiv9192
+00:38:43.261 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA4414; expected: KA4414
+00:38:43.269 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635722191; expected: +3809909635722191
+10:55:56.450 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+10:56:00.176 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+10:56:00.922 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest693750088 and password: 12345qwert8499
+10:56:02.291 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: White, Anthony
+10:56:02.525 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+10:56:05.968 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test2107
+10:56:05.993 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+10:56:07.395 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+10:56:07.403 [Test worker] DEBUG UtilityBOActions - Back office opened
+10:56:10.407 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+10:56:10.434 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+10:56:15.438 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+10:56:15.439 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test2107
+10:56:16.912 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test2107 is selected
+10:56:16.928 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test2107; expected: School AUTO Test2107
+10:56:17.263 [Test worker] DEBUG UtilityBOActions - Custom school country actual: ; expected: SDN
+10:56:17.272 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv820; expected: Kyiv820
+10:56:17.307 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA7546; expected: KA7546
+10:56:17.326 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +380990963572955; expected: +380990963572955
+10:59:09.071 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+10:59:11.480 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+10:59:12.373 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest7972234 and password: 12345qwert1226
+10:59:13.958 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Miller, Anthony
+10:59:14.163 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+10:59:17.680 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test3773
+10:59:17.686 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+10:59:18.832 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+10:59:18.839 [Test worker] DEBUG UtilityBOActions - Back office opened
+10:59:21.844 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+10:59:22.595 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+10:59:27.598 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+10:59:27.599 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test3773
+10:59:29.546 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test3773 is selected
+10:59:29.558 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test3773; expected: School AUTO Test3773
+10:59:29.898 [Test worker] DEBUG UtilityBOActions - Custom school country actual: ; expected: CIV
+10:59:29.916 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv4995; expected: Kyiv4995
+10:59:29.934 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA9147; expected: KA9147
+10:59:29.954 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635721813; expected: +3809909635721813
+10:59:29.974 [Test worker] DEBUG UtilityBOActions - Custom school zip code actual: 12345AA968; expected: 12345AA968
+10:59:29.990 [Test worker] DEBUG UtilityBOActions - Custom school address one actual: Street, 78a()!@#$%^&*4683; expected: Street, 78a()!@#$%^&*4683
+10:59:30.009 [Test worker] DEBUG UtilityBOActions - Custom school address two actual: Street2, !@#$%^&*()_+_5096; expected: Street2, !@#$%^&*()_+_5096
+10:59:30.063 [Test worker] DEBUG UtilityBOActions - Custom school address two actual: 100 - 300; expected: 100 - 300
+10:59:31.857 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest7972234 and password: 12345qwert1226
+10:59:32.643 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+10:59:34.364 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+11:15:38.638 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:15:42.236 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:15:43.252 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest103181440 and password: 12345qwert4932
+11:15:44.788 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Nelson, Andrew
+11:15:45.108 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:15:48.688 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test272
+11:15:48.713 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:15:50.275 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:15:50.284 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:15:53.289 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:15:53.319 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:15:58.323 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:15:58.341 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test272
+11:16:00.835 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test272 is selected
+11:16:00.849 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test272; expected: School AUTO Test272
+11:16:01.235 [Test worker] DEBUG UtilityBOActions - Custom school country actual: GGY; expected: GGY
+11:16:01.239 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv7818; expected: Kyiv7818
+11:16:01.243 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA2233; expected: KA2233
+11:16:01.248 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635725992; expected: +3809909635725992
+11:16:01.257 [Test worker] DEBUG UtilityBOActions - Custom school zip code actual: 12345AA497; expected: 12345AA497
+11:16:01.261 [Test worker] DEBUG UtilityBOActions - Custom school address one actual: Street, 78a()!@#$%^&*4209; expected: Street, 78a()!@#$%^&*4209
+11:16:01.264 [Test worker] DEBUG UtilityBOActions - Custom school address two actual: Street2, !@#$%^&*()_+_8043; expected: Street2, !@#$%^&*()_+_8043
+11:16:01.306 [Test worker] DEBUG UtilityBOActions - Custom school address two actual: 1000+; expected: 1000+
+11:16:03.196 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest103181440 and password: 12345qwert4932
+11:16:03.878 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+11:16:08.949 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title
+11:16:24.523 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:16:29.239 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:16:30.035 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest859819242 and password: 12345qwert5801
+11:16:31.402 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Allen, Amanda
+11:16:31.615 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:16:34.854 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test8026
+11:16:34.878 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:16:36.218 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:16:36.226 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:16:39.230 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:16:39.257 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:16:44.261 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:16:44.262 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test8026
+11:16:46.580 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test8026 is selected
+11:16:46.591 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test8026; expected: School AUTO Test8026
+11:16:46.948 [Test worker] DEBUG UtilityBOActions - Custom school country actual: POL; expected: POL
+11:16:46.961 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv9264; expected: Kyiv9264
+11:16:46.966 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA3100; expected: KA3100
+11:16:46.970 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635728509; expected: +3809909635728509
+11:18:24.178 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:18:28.262 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:18:29.037 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest470691649 and password: 12345qwert9260
+11:18:30.625 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Green, Lisa
+11:18:30.841 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:18:34.276 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test7574
+11:18:34.302 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:18:35.493 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:18:35.500 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:18:38.503 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:18:39.321 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:18:44.326 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:18:44.339 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test7574
+11:18:45.791 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test7574 is selected
+11:18:45.803 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test7574; expected: School AUTO Test7574
+11:18:46.136 [Test worker] DEBUG UtilityBOActions - Custom school country actual: MCO; expected: MCO
+11:18:46.159 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv1845; expected: Kyiv1845
+11:18:46.178 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA3649; expected: KA3649
+11:18:46.183 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635723618; expected: +3809909635723618
+11:30:08.565 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:30:11.722 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:30:12.624 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest554988491 and password: 12345qwert3203
+11:30:14.370 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Martinez, Donald
+11:30:14.579 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:30:17.799 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test9880
+11:30:17.804 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:30:19.073 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:30:19.080 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:30:22.084 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:30:23.297 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:30:28.301 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:30:28.301 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test9880
+11:30:30.377 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test9880 is selected
+11:30:30.388 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test9880; expected: School AUTO Test9880
+11:30:30.755 [Test worker] DEBUG UtilityBOActions - Custom school country actual: SDN; expected: SDN
+11:30:30.761 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv5803; expected: Kyiv5803
+11:30:30.766 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA1307; expected: KA1307
+11:30:30.770 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +380990963572933; expected: +380990963572933
+11:32:59.613 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:33:02.067 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:33:02.999 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest467085235 and password: 12345qwert9984
+11:33:05.112 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Williams, Karen
+11:33:05.324 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:33:08.480 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test213
+11:33:08.486 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:33:09.585 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:33:09.593 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:33:12.598 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:33:12.627 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:33:17.630 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:33:17.650 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test213
+11:33:21.819 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test213 is selected
+11:33:21.848 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test213; expected: School AUTO Test213
+11:35:14.383 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:35:17.230 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:35:18.219 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest663437506 and password: 12345qwert2309
+11:35:19.519 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Moore, Richard
+11:35:19.796 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:35:23.243 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test794
+11:35:23.247 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:35:24.347 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:35:24.355 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:35:27.358 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:35:27.387 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:35:32.390 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:35:32.391 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test794
+11:35:35.067 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test794 is selected
+11:35:35.100 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test794; expected: School AUTO Test794
+11:36:34.630 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:36:37.611 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:36:38.397 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest52002042 and password: 12345qwert3714
+11:36:39.871 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Hernandez, Sarah
+11:36:40.084 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:36:43.265 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test316
+11:36:43.289 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:36:44.674 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:36:44.682 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:36:47.682 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:36:48.255 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:36:53.260 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:36:53.262 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test316
+11:36:54.668 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test316 is selected
+11:36:54.691 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test316; expected: School AUTO Test316
+11:36:55.061 [Test worker] DEBUG UtilityBOActions - Custom school country actual: CMR; expected: CMR
+11:36:55.074 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv7967; expected: Kyiv7967
+11:36:55.094 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA8733; expected: KA8733
+11:36:55.116 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635728114; expected: +3809909635728114
+11:40:36.037 [Test worker] INFO  UtilityTeacherSignUp - Starting teacher sign-up process
+11:40:38.554 [Test worker] DEBUG UtilityTeacherSignUp - Selected 'Teacher' role for sign-up
+11:40:39.422 [Test worker] INFO  UtilityTeacherSignUp - Teacher account created with username: NewTeacherAutotest838482397 and password: 12345qwert1796
+11:40:41.065 [Test worker] DEBUG UtilityTeacherSignUp - Teacher's name set: Lopez, Matthew
+11:40:41.267 [Test worker] DEBUG UtilityTeacherSignUp - Entered personal details
+11:40:44.515 [Test worker] DEBUG UtilityTeacherSignUp - Custom school added: School AUTO Test9345
+11:40:44.542 [Test worker] DEBUG UtilityTeacherSignUp - Pricing page wasn't shown
+11:40:45.824 [Test worker] INFO  UtilityTeacherSignUp - Teacher sign-up completed successfully
+11:40:45.831 [Test worker] DEBUG UtilityBOActions - Back office opened
+11:40:48.832 [Test worker] DEBUG UtilityBOActions - Waited 3 seconds after opening back office
+11:40:48.866 [Test worker] INFO  UtilityBOActions - Logged into back office as user: nataliia@readtheory.org
+11:40:53.867 [Test worker] DEBUG UtilityBOActions - Waited 5 seconds after logging in
+11:40:53.867 [Test worker] INFO  UtilityBOActions - Starting process to check custom school: School AUTO Test9345
+11:40:55.948 [Test worker] DEBUG UtilityBOActions - Custom school with the name School AUTO Test9345 is selected
+11:40:55.958 [Test worker] DEBUG UtilityBOActions - Custom school name actual: School AUTO Test9345; expected: School AUTO Test9345
+11:40:56.324 [Test worker] DEBUG UtilityBOActions - Custom school country actual: IRN; expected: IRN
+11:40:56.331 [Test worker] DEBUG UtilityBOActions - Custom school city actual: Kyiv8084; expected: Kyiv8084
+11:40:56.336 [Test worker] DEBUG UtilityBOActions - Custom school state actual: KA3066; expected: KA3066
+11:40:56.340 [Test worker] DEBUG UtilityBOActions - Custom school phone number actual: +3809909635727412; expected: +3809909635727412
+11:40:57.349 [Test worker] DEBUG UtilityBOActions - Custom school zip code actual: 12345AA458; expected: 12345AA458
+11:40:57.354 [Test worker] DEBUG UtilityBOActions - Custom school address one actual: Street, 78a()!@#$%^&*1996; expected: Street, 78a()!@#$%^&*1996
+11:40:57.358 [Test worker] DEBUG UtilityBOActions - Custom school address two actual: Street2, !@#$%^&*()_+_2515; expected: Street2, !@#$%^&*()_+_2515
+11:40:57.398 [Test worker] DEBUG UtilityBOActions - Custom school address two actual: 1000+; expected: 1000+
+11:40:59.031 [Test worker] INFO  UtilityTeacherLogIn - Starting teacher login process with username: NewTeacherAutotest838482397 and password: 12345qwert1796
+11:40:59.766 [Test worker] DEBUG UtilityTeacherLogIn - Clicked on login button
+11:41:01.644 [Test worker] INFO  UtilityTeacherLogIn - Teacher logged in successfully and verified 'My Classes' page title

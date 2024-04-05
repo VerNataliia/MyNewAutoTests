@@ -13,4 +13,11 @@ public class StudentSignUpTests extends A_BaseTest {
         UtilityStudentSignUp.signUpAsStudentWithUsername(app);
     }
 
+    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a student can join a class during signing up")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("A student can sign up with username and password")
+    @AllureId("100")
+    public void checkStudentLinkClassOnSigningUp() {
+
+    }
 }

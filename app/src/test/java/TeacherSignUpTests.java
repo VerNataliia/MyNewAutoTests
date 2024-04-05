@@ -62,12 +62,19 @@ public class TeacherSignUpTests extends A_BaseTest {
         UtilityTeacherSignUp.SchoolDetails customSchoolDetails = new UtilityTeacherSignUp.SchoolDetails();
         String customSchoolName = "School AUTO Test" + dataGenerator.getRandomNumber(100, 10000);
         customSchoolDetails.name = customSchoolName;
-        customSchoolDetails.city = "Kyiv" + dataGenerator.getRandomNumber(100, 10000);
-        customSchoolDetails.state = "KA" + dataGenerator.getRandomNumber(100, 10000);
-        customSchoolDetails.phoneNumber = "+380990963572" + dataGenerator.getRandomNumber(100, 10000);
-        customSchoolDetails.addressOne = "Street, 78a()!@#$%^&*" + dataGenerator.getRandomNumber(100, 10000);
-        customSchoolDetails.addressTwo = "Street2, !@#$%^&*()_+_" + dataGenerator.getRandomNumber(100, 10000);
-        customSchoolDetails.zipCode = "12345AA" + dataGenerator.getRandomNumber(100, 10000);
+        String customSchoolCity = "Kyiv" + dataGenerator.getRandomNumber(100, 10000);
+        customSchoolDetails.city = customSchoolCity;
+        String customSchoolState = "KA" + dataGenerator.getRandomNumber(100, 10000);
+        customSchoolDetails.state = customSchoolState;
+        String customSchoolNumber = "+380990963572" + dataGenerator.getRandomNumber(100, 10000);
+        customSchoolDetails.phoneNumber = customSchoolNumber;
+        String customSchoolAddressOne = "Street, 78a()!@#$%^&*" + dataGenerator.getRandomNumber(100, 10000);
+        customSchoolDetails.addressOne = customSchoolAddressOne;
+        String customSchoolAddressTwo = "Street2, !@#$%^&*()_+_" + dataGenerator.getRandomNumber(100, 10000);
+        customSchoolDetails.addressTwo = customSchoolAddressTwo;
+        String customSchoolZip = "12345AA" + dataGenerator.getRandomNumber(1, 999);
+        System.out.println("ZIP expected" + customSchoolZip);
+        customSchoolDetails.zipCode = customSchoolZip;
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.CUSTOM;
@@ -76,9 +83,13 @@ public class TeacherSignUpTests extends A_BaseTest {
         String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherData[0];
         String teacherPassword  = teacherData[1];
+        String customSchoolStudentsNumber = teacherData[7];
+        String customSchoolCountry = teacherData[8];
+
 
         UtilityBOActions.logIn(app);
-        UtilityBOActions.checkCustomSchool(app, customSchoolName);
+        UtilityBOActions.checkCustomSchool(app, customSchoolName, customSchoolCountry, customSchoolCity, customSchoolState,
+            customSchoolNumber, customSchoolAddressOne, customSchoolAddressTwo, customSchoolZip, customSchoolStudentsNumber);
 
         app.classPage.open();
         app.teacherHeaderMenu.clickOnSignOutButton();

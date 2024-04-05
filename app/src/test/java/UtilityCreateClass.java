@@ -47,6 +47,14 @@ public class UtilityCreateClass extends A_BaseTest {
         if (options.selectQuizGradeSwitcher) {
             app.createEditClassDrawer.selectShowQuizGradeSwitcher();
         }
+        if (options.adsSwitcher) {
+            app.createEditClassDrawer.selectAdsSwitcher(options.switchAds);
+        }
+        if (options.gradeLevelSwitcher) {
+            app.createEditClassDrawer.switchGradeLimitSwitcher(options.switchGradeLevel);
+            app.createEditClassDrawer.setStartLevel(options.startLevel);
+            app.createEditClassDrawer.setEndLevel(options.endLevel);
+        }
     }
 
     private static void finalizeClassCreation(App app, String className) {
@@ -69,7 +77,12 @@ public class UtilityCreateClass extends A_BaseTest {
         boolean selectGrade;
         boolean selectAge13Checkbox;
         boolean selectQuizGradeSwitcher;
+        boolean adsSwitcher;
+        boolean switchAds;
+        boolean gradeLevelSwitcher;
+        boolean switchGradeLevel;
+        int startLevel;
+        int endLevel;
 
-        // Constructor, getters, and setters
     }
 }
