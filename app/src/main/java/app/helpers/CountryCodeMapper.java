@@ -63,7 +63,7 @@ public class CountryCodeMapper {
         COUNTRY_CODE_MAP.put("United Arab Emirates (the)", "ARE");
         COUNTRY_CODE_MAP.put("United Kingdom of Great Britain and Northern Ireland", "GBR");
         COUNTRY_CODE_MAP.put("United States Minor Outlying Islands (the)", "UMI");
-        COUNTRY_CODE_MAP.put("United States of America (the)", "USA");
+        COUNTRY_CODE_MAP.put("United States of America", "USA");
         COUNTRY_CODE_MAP.put("Venezuela (Bolivarian Republic of)", "VEN");
         COUNTRY_CODE_MAP.put("Virgin Islands (British)", "VGB");
         COUNTRY_CODE_MAP.put("Virgin Islands (U.S.)", "VIR");

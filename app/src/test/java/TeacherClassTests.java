@@ -68,8 +68,9 @@ public class TeacherClassTests extends A_BaseTest {
         classOptions.switchAds = true;
         classOptions.gradeLevelSwitcher = true;
         classOptions.switchGradeLevel = true;
-        classOptions.startLevel = 3;
-        classOptions.endLevel = 5;
+        classOptions.gradeLevelsNotRandom = true;
+        classOptions.startLevel = 2;
+        classOptions.endLevel = 8;
 
         UtilityCreateClass.createClass(app, classOptions);
     }

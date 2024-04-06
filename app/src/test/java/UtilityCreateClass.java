@@ -37,23 +37,35 @@ public class UtilityCreateClass extends A_BaseTest {
         logger.debug("Selecting additional options for class creation");
         if (options.selectAvatar) {
             app.createEditClassDrawer.selectClassAvatar();
+            logger.debug("Avatar is selected");
         }
         if (options.selectGrade) {
             app.createEditClassDrawer.selectClassGrade();
+            logger.debug("Random class garde is selected");
         }
         if (options.selectAge13Checkbox) {
             app.createEditClassDrawer.selectAge13CheckBox();
+            logger.debug("Age13 check box is selected");
         }
         if (options.selectQuizGradeSwitcher) {
             app.createEditClassDrawer.selectShowQuizGradeSwitcher();
+            logger.debug("Show quiz grade switcher is selected");
         }
         if (options.adsSwitcher) {
             app.createEditClassDrawer.selectAdsSwitcher(options.switchAds);
+            logger.debug("Switch ads is selected");
         }
         if (options.gradeLevelSwitcher) {
             app.createEditClassDrawer.switchGradeLimitSwitcher(options.switchGradeLevel);
-            app.createEditClassDrawer.setStartLevel(options.startLevel);
-            app.createEditClassDrawer.setEndLevel(options.endLevel);
+            String[] selectedLevels = app.createEditClassDrawer.setStartAndEndLevels(options.gradeLevelsNotRandom, options.startLevel, options.endLevel);
+            String selectedStartLevel = selectedLevels[0];
+            String selectedEndLevel = selectedLevels[1];
+            logger.debug("Start end end levels are set");
+            if(options.gradeLevelsNotRandom) {
+                app.createEditClassDrawer.checkStartAndEndLevel(options.startLevel,options.endLevel);
+                logger.debug("Start end end levels are set as indicated");
+            }
+            logger.debug("Grade level limitation is selected. Start level is {}, end level is {}", selectedStartLevel,selectedEndLevel);
         }
     }
 
@@ -81,6 +93,7 @@ public class UtilityCreateClass extends A_BaseTest {
         boolean switchAds;
         boolean gradeLevelSwitcher;
         boolean switchGradeLevel;
+        boolean gradeLevelsNotRandom;
         int startLevel;
         int endLevel;
 

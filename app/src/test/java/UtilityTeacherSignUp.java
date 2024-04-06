@@ -13,7 +13,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         String[] credentials = createAccount(app);
         String[] personalDetails = enterPersonalDetails(app);
         String selectedSchool = "";
-        String[] customSchool = new String[]{""};
+        String[] customSchool = new String[]{"", ""};
 
         switch (options.schoolSelectionOption) {
             case SKIP -> skipSchoolSelection(app);
@@ -81,7 +81,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         app.teacherSignUpStepThreePage.clickOnAddSchoolManuallyButton();
         app.teacherSignUpStepThreePage.setCustomSchoolName(customSchool.name);
         String customSchoolStudentsNumber = app.teacherSignUpStepThreePage.selectRandomNumberStudentsOption();
-        String customSchoolCountry = app.teacherSignUpStepThreePage.selectRandomCountry();
+        String customSchoolCountry = app.teacherSignUpStepThreePage.selectRandomCountry(customSchool.setUSA);
         app.teacherSignUpStepThreePage.setCity(customSchool.city);
         app.teacherSignUpStepThreePage.setCustomSchoolState(customSchool.state);
         app.teacherSignUpStepThreePage.setCustomSchoolPhoneNumber(customSchool.phoneNumber);
@@ -119,6 +119,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         public String name;
         public String city;
         public String state;
+        boolean setUSA;
         public String phoneNumber;
         public String addressOne;
         public String addressTwo;
