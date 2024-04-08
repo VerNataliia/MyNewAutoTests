@@ -59,7 +59,7 @@ public class MyProgressPage extends BasePage {
     }
 
     public void checkLastQuizResultInQuizHistory(String expectedQuizResult) {
-        MY_PROGRESS_QUIZ_HISTORY_LAST_QUIZ_IN_LIST.$x(".//td[5]").shouldHave(text(expectedQuizResult));
+        MY_PROGRESS_QUIZ_HISTORY_LAST_QUIZ_IN_LIST.$x(".//td[last()]").shouldHave(text(expectedQuizResult));
     }
 
 }

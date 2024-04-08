@@ -1,9 +1,6 @@
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-import static app.StaticTestData.STUDENT_PASSWORD;
-import static app.StaticTestData.STUDENT_USERNAME;
-
 @Epic("StudentTask")
 @Feature("CompletingNextQuiz")
 public class NextQuizTests extends A_BaseTest {

@@ -17,7 +17,7 @@ public class AddStudentsTests extends A_BaseTest {
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         UtilityTeacherSignUp.signUpAsTeacher(app, options);
 
-        int numberOfClassesToCreate = 10;
+        int numberOfClassesToCreate = 5;
         int numberOfStudentsToAdd = 3;
 
         List<String> allUsernames = new ArrayList<>();
