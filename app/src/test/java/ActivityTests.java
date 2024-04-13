@@ -64,12 +64,12 @@ public class ActivityTests extends A_BaseTest {
 
             UtilityCreateClass.createClass(app, classOptions);
 
-            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, false);
+            List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudents(app, numberOfStudentsToAdd, true);
             allStudentCredentials.addAll(students);
         }
 
         // Save credentials to Excel file
-        UtilityCreateStudentsAsTeacher.saveCredentialsToExcel(allStudentCredentials, teacherCredentials);
+        UtilityCreateStudentsAsTeacher.saveCredentialsToExcel("Credentials_RWA_", allStudentCredentials, teacherCredentials, true);
 
         app.teacherHeaderMenu.clickOnActivitiesButton();
 
@@ -125,24 +125,39 @@ public class ActivityTests extends A_BaseTest {
         String formattedDate = yesterday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String filePath = "src/main/resources/files/Credentials_" + formattedDate + ".xlsx";
 
-        List<Map<String, String>> studentCredentialsList = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Student Credentials");
+        Object studentsCredentialsObject = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Student Credentials", false);
+        if (studentsCredentialsObject instanceof List<?>) {
+            List<Map<String, String>> studentCredentialsList = (List<Map<String, String>>) studentsCredentialsObject;
 
-        for (Map<String, String> credentials : studentCredentialsList) {
-            String studentUsername = credentials.get("username");
-            String studentPassword = credentials.get("password");
-            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
-            UtilityCompleteOldPretest.completeOldPretest(app, 1, 1);
-            app.studentHeaderMenu.clickOnMyProgressButton();
-            Driver.wait(3);
-            UtilityCompleteActivity.completeQuizzesForActivity(app, "Recurring Weekly Activity for New Class", 3, 1);
-            app.studentHeaderMenu.clickOnSignOutButton();
+            for (Map<String, String> credentials : studentCredentialsList) {
+                String studentUsername = credentials.get("username");
+                String studentPassword = credentials.get("password");
+
+                UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                UtilityCompleteOldPretest.completeOldPretest(app, 1, 1);
+                app.studentHeaderMenu.clickOnMyProgressButton();
+                Driver.wait(3);
+                UtilityCompleteActivity.completeQuizzesForActivity(app, "Recurring Weekly Activity for New Class", 3, 1);
+                app.studentHeaderMenu.clickOnSignOutButton();
+            }
         }
-        List<Map<String, String>> teacherCredentials = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Teacher Credentials");
-        Map<String, String> firstTeacherCredentials = teacherCredentials.get(0);
-        String username = firstTeacherCredentials.get("username");
-        String password = firstTeacherCredentials.get("password");
-        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app,username, password);
-        app.teacherHeaderMenu.clickOnActivitiesButton();
+        Object teacherCredentialsObject = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Teacher Credentials", false);
+        if (teacherCredentialsObject instanceof List) {
+            List<Map<String, String>> teacherCredentials = (List<Map<String, String>>) teacherCredentialsObject;
+            if (!teacherCredentials.isEmpty()) {
+                Map<String, String> firstTeacherCredentials = teacherCredentials.get(0);
+                String username = firstTeacherCredentials.get("username");
+                String password = firstTeacherCredentials.get("password");
+
+                UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, username, password);
+                app.teacherHeaderMenu.clickOnActivitiesButton();
+            } else {
+                System.out.println("No teacher credentials found in the Excel file.");
+            }
+        } else {
+            System.out.println("The expected credentials format is not correct.");
+        }
+
 
     }
 

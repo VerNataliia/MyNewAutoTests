@@ -5,6 +5,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -44,7 +46,7 @@ public class MyProgressPage extends BasePage {
     public void startActivity(String activityName)  {
         SelenideElement activity = MY_PROGRESS_ACTIVITIES_TITLES_LIST.findBy(Condition.text(activityName));
         SelenideElement startButton = activity.$x(".//div[2]/div[contains(text(),'Start Activity')]");
-        startButton.shouldBe(visible).click();
+        startButton.shouldBe(visible, Duration.ofSeconds(20)).click();
     }
 
     public void checkActivityStatus(String expectedActivityStatus, String activityName) {

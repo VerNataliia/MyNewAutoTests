@@ -63,10 +63,12 @@ public class BO {
         SUBSCRIPTION_ENABLED_CHECKBOX = $(byXpath("//form[@class='v-form pa-5']//div[@class='v-input--selection-controls__ripple']")),
         SUBSCRIPTION_SAVE_BUTTON = $(byXpath("//span[contains(text(),'Save and Activate')]")),
         TEACHER_CARD_PREMIUM_BADGE = $(byXpath("//span[@class='v-chip v-chip--clickable v-chip--label theme--light v-size--default green']")),
-        TEACHER_CARD_SCHOOL_NAME = $(byXpath("//span[@class='v-chip--select v-chip v-chip--clickable v-chip--no-color v-chip--removable theme--light v-size--default']/span"));
+        TEACHER_CARD_SCHOOL_NAME = $(byXpath("//span[@class='v-chip--select v-chip v-chip--clickable v-chip--no-color v-chip--removable theme--light v-size--default']/span")),
+        STUDENT_CARD_DISABLE_ADS = $(byXpath("//body//div[@class='v-card v-sheet theme--light elevation-2']//div//div[4]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]")),
+        USER_CARD_SAVE_BUTTON = $(byXpath("//span[contains(text(),'Save')]"));
 
     private final ElementsCollection
-        TEACHERS_LIST = $$x("//div[@class='v-data-table__wrapper']//table//tbody/tr"),
+        USERS_LIST = $$x("//div[@class='v-data-table__wrapper']//table//tbody/tr"),
         CUSTOM_SCHOOL_LIST = $$x("//tbody/tr");
 
     public void clickOnCustomSchoolButton() {
@@ -77,7 +79,6 @@ public class BO {
         CUSTOM_SCHOOL_SEARCH.shouldBe(visible).sendKeys(customSchoolName);
         CUSTOM_SCHOOL_LIST.find(Condition.text(customSchoolName)).click();
     }
-
 
     public String checkCustomSchoolName(String expectedCustomSchoolName) {
         String customSchoolName = Selenide.executeJavaScript(
@@ -185,7 +186,7 @@ public class BO {
     }
     public void selectUser(String username) {
         USERS_SEARCH.shouldBe(visible).sendKeys(username);
-        TEACHERS_LIST.find(Condition.text(username)).click();
+        USERS_LIST.find(Condition.text(username)).click();
     }
 
     public void enableSubscriptionForUser() {
@@ -203,6 +204,12 @@ public class BO {
 
     public void checkTeacherWithoutSchool() {
         TEACHER_CARD_SCHOOL_NAME.shouldNotBe(visible);
+    }
+
+    public void disableAdsForStudent() {
+        STUDENT_CARD_DISABLE_ADS.shouldBe(visible).click();
+        Driver.wait(2);
+        USER_CARD_SAVE_BUTTON.shouldBe(visible).click();
     }
 
 }

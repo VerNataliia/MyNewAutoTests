@@ -1,4 +1,5 @@
 import app.App;
+import app.helpers.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +23,7 @@ public class UtilityStudentSignUp extends A_BaseTest {
         logger.debug("Selected random student age option");
         app.studentSignUpPage.clickOnSignUpButton();
         logger.debug("Clicked on sign-up button");
+        Driver.wait(5); //because of redirection
 
         app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
         logger.debug("Checked summary page title");

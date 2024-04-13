@@ -17,12 +17,12 @@ public class UtilityCompleteNextQuiz extends A_BaseTest {
             logger.debug("Quiz {}: {} questions to answer", j + 1, numberNotAnsweredQuestions);
 
             for (int i = 0; i < numberNotAnsweredQuestions; i++) {
+                Driver.wait(5);
                 if (j < quizzesWithRandomAnswers) {
                     app.nextQuizPage.selectRandomAnswer();
                 } else {
                     app.nextQuizPage.selectCorrectAnswer();
                 }
-                Driver.wait(5);
                 logger.debug("Answering question {} of quiz {}", i + 1, j + 1);
                 app.nextQuizPage.clickOnSubmitButton();
                 logger.debug("Submitted button is selected");

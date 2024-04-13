@@ -31,6 +31,16 @@ public class UtilityBOActions extends A_BaseTest {
         logger.info("Enabled subscription for user: {}", teacherUsername);
     }
 
+    public static void disableAdsForStudent(String studentUsername) {
+        logger.info("Starting process to disable ads for student: {}", studentUsername);
+        app.backOffice.selectUser(studentUsername);
+        logger.info("Selected user: {}", studentUsername);
+        Driver.wait(2); // doesn't work without wait
+        logger.debug("Waited 2 seconds after selecting user");
+        app.backOffice.disableAdsForStudent();
+        logger.info("Disabled ads for student: {}", studentUsername);
+    }
+
     public static void checkCustomSchool(App app, String customSchoolName, String customSchoolCountry, String customSchoolCity, String customSchoolState,
         String customSchoolNumber, String customSchoolAddressOne, String customSchoolAddressTwo, String customSchoolZip, String customSchoolStudentsNumber) {
         logger.info("Starting process to check custom school: {}", customSchoolName);

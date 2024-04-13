@@ -6,6 +6,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -37,6 +38,12 @@ public class StudentSignUpAgeStepPage extends BasePage {
         STUDENT_SIGNUP_AGE_STEP_FIRST_NANE_INPUT.sendKeys(studentFirstName);
         return studentFirstName;
     }
+    public String getStudentFirstName() {
+        SelenideElement studentFirstName = $("#app > div.app-body > div > div > div.page-card__left-half > div " +
+            "> form > div.inputs-group.group-initial > div.rt-input__wrapper.input-first-name.filled > div > input");
+        studentFirstName.shouldBe(visible);
+        return (String) executeJavaScript("return arguments[0].value;", studentFirstName);
+    }
 
     public String setStudentLastName() {
         String studentLastName = dataGenerator.getRandomLastName();
@@ -45,12 +52,12 @@ public class StudentSignUpAgeStepPage extends BasePage {
     }
 
     public void selectRandomStudentAgeOptionFromDropDown() {
-        STUDENT_SIGNUP_AGE_STEP_AGE_FIELD.shouldBe(Condition.visible).click();
+        STUDENT_SIGNUP_AGE_STEP_AGE_FIELD.shouldBe(visible).click();
         STUDENT_SIGNUP_AGE_STEP_AGE_DROP_DOWN_OPTIONS.get(dataGenerator.getRandomNumber(0, 17)).click();
     }
 
     public void clickOnTheNextButton() {
-        STUDENT_SIGNUP_AGE_STEP_NEXT_BUTTON.shouldBe(Condition.visible).click();
+        STUDENT_SIGNUP_AGE_STEP_NEXT_BUTTON.shouldBe(visible).click();
     }
 
 }

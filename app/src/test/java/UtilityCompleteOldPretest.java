@@ -15,12 +15,12 @@ public class UtilityCompleteOldPretest extends A_BaseTest {
         for (int i = 0; i < totalQuizzesInPretest; i++) {
             if (i < quizzesWithRandomAnswers) {
                 logger.debug("Selecting random answer for question {}", i + 1);
-                app.nextQuizPage.selectRandomAnswer();
                 Driver.wait(5);
+                app.nextQuizPage.selectRandomAnswer();
             } else {
                 logger.debug("Selecting correct answer for question {}", i + 1);
-                app.nextQuizPage.selectCorrectAnswer();
                 Driver.wait(5);
+                app.nextQuizPage.selectCorrectAnswer();
             }
             app.nextQuizPage.clickOnSubmitButton();
             app.nextQuizPage.clickOnNextButton();
