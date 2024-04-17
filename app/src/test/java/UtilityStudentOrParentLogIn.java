@@ -20,17 +20,17 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
 
         if (WebDriverRunner.url().contains("/app/sign-up/more-info")) {
             logger.info("Starting student additional age step in sign-up process");
-            app.studentSignUpAgeStepPage.checkStudentSignUpAgePageTitle("Personal Details");
+            app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
             logger.debug("Checked student sign-up age page title");
-            String studentFirstName = app.studentSignUpAgeStepPage.getStudentFirstName();
+            String studentFirstName = app.studentOrParentPersonalDetailsStepPage.getFirstName();
             if (studentFirstName==null) {
-            app.studentSignUpAgeStepPage.setStudentFirstName();
-            app.studentSignUpAgeStepPage.setStudentLastName();
+            app.studentOrParentPersonalDetailsStepPage.setFirstName();
+            app.studentOrParentPersonalDetailsStepPage.setLastName();
             logger.debug("Set student first name and last name");
             }
-            app.studentSignUpAgeStepPage.selectRandomStudentAgeOptionFromDropDown();
+            app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
             logger.debug("Selected random student age from dropdown");
-            app.studentSignUpAgeStepPage.clickOnTheNextButton();
+            app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
             logger.debug("Clicked on the next button");
         }
         //app.studentHeaderMenu.checkStudentUsername(username); // It will fail if a student has first and last name

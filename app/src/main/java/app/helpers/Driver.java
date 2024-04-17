@@ -78,6 +78,10 @@ public final class Driver {
         open(AppConfig.BASE_URL);
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
+
+        open("https://bo2.readtheory.org/users");
+        Selenide.clearBrowserCookies();
+        Selenide.clearBrowserLocalStorage();
     }
 
     public static void deleteCookie(String cookieName) {

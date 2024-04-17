@@ -15,7 +15,7 @@ public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create recurring weekly activity")
     // @AllureId("3")
-    @Severity(SeverityLevel.BLOCKER)
+    //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new teacher can create recurring weekly activity with default settings for all classes")
     public void teacherCanCreateRecurringWeeklyActivity() {
         app.signUpSelectRolePage.open();
@@ -41,7 +41,7 @@ public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a premium teacher can create recurring weekly activity with custom settings")
     // @AllureId("3")
-    @Severity(SeverityLevel.BLOCKER)
+    //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can create recurring weekly activity with custom settings for all classes")
     public void teacherCanCreateRecurringWeeklyActivityWithCustomSettings() {
         app.signUpSelectRolePage.open();
@@ -117,7 +117,7 @@ public class ActivityTests extends A_BaseTest {
 //    }
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a student can complete recurring weekly activity")
     // @AllureId("3")
-    @Severity(SeverityLevel.NORMAL)
+    //@Severity(SeverityLevel.NORMAL)
     @Description("Check if a student can complete recurring weekly activity")
     public void studentCanCompleteRecurringWeeklyActivity() {
         app.logInUsernamePage.open();
@@ -164,7 +164,7 @@ public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity")
     // @AllureId("3")
-    @Severity(SeverityLevel.BLOCKER)
+    //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if a prem teacher can create specific passage activity with default settings for all students")
     public void teacherCanCreateSpecificPassageActivity() {
         app.signUpSelectRolePage.open();
@@ -188,7 +188,7 @@ public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity with custom settings")
     // @AllureId("3")
-    @Severity(SeverityLevel.BLOCKER)
+    //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can create specific passage activity with  with custom settings")
     public void teacherCanCreateSpecificPassageActivityWithCustomSettings() {
         app.signUpSelectRolePage.open();
@@ -217,7 +217,7 @@ public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if students can complete recurring weekly activity")
     // @AllureId("3")
-    @Severity(SeverityLevel.BLOCKER)
+    //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if teacher can create an activity, activity is started and new student can complete pretest, start activity, complete next quiz and complete activity")
     public void studentCanCompleteSpecificPassageActivity() {
         app.signUpSelectRolePage.open();
@@ -263,7 +263,7 @@ public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create competition activity")
     // @AllureId("3")
-    @Severity(SeverityLevel.BLOCKER)
+    //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can create competition activity with default settings")
     public void teacherCanCreateCompetitionActivity() {
         app.signUpSelectRolePage.open();

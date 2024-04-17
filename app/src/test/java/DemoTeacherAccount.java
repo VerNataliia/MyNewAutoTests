@@ -1,15 +1,9 @@
 import app.DataGenerator;
 import app.helpers.Driver;
 import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.ex.ElementNotFound;
 import io.qameta.allure.Description;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -66,7 +60,7 @@ public class DemoTeacherAccount extends A_BaseTest {
         UtilityActivityCreation.CustomSettingsOptions customSettingsForRecurringWeeklyActivity = new UtilityActivityCreation.CustomSettingsOptions();
         customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions = new UtilityActivityCreation.RecurringWeeklyActivityOptions();
         customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions.passOrComplete = UtilityActivityCreation.PassOrComplete.COMPLETE;
-        customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions.quizzesNumberForActivity = 10;
+        customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions.quizzesNumberForActivity = 30;
         customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions.startWeekDay = DataGenerator.getDayOfWeek(1);
         customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions.startTime = "2:00 am";
         customSettingsForRecurringWeeklyActivity.recurringWeeklyActivityOptions.endWeekDay = DataGenerator.getDayOfWeek(2);
@@ -101,54 +95,34 @@ public class DemoTeacherAccount extends A_BaseTest {
     public void studentsFromFirstClass() throws Exception {
         app.logInUsernamePage.open();
 
-        LocalDate yesterday = LocalDate.now().minusDays(1);
+        LocalDate yesterday = LocalDate.now().minusDays(2);
         String formattedDate = yesterday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String filePath = "src/main/resources/files/Credentials_DemoAccount_" + formattedDate + ".xlsx";
         Object credentialsObject = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Student Credentials", true);
-
-        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
-        Workbook workbook = new XSSFWorkbook(fileInputStream);
-        Sheet sheet = workbook.getSheet("Student Credentials");
-
-        int studentCountInClass = 0;
-        Iterator<Row> rowIterator = sheet.iterator();
-
-        // The first column contains the class index and the second row starts the student data
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-            if (row.getRowNum() == 0) {
-                // Skip header row
-                continue;
-            }
-
-            int classIndex = (int) row.getCell(0).getNumericCellValue();
-            if (classIndex == 0) {
-                studentCountInClass++;
-            }
-        }
-        System.out.println("Number of students in class 0: " + studentCountInClass);
-
-        // Close the workbook and file input stream
-        workbook.close();
-        fileInputStream.close();
 
         if (credentialsObject instanceof List) {
             List<Map<Integer, List<Map<String, String>>>> classStudentDetails = (List<Map<Integer, List<Map<String, String>>>>) credentialsObject;
 
             Random random = new Random();
-            DataGenerator dataGenerator = new DataGenerator();
             for (Map<Integer, List<Map<String, String>>> classDetail : classStudentDetails) {
                 for (Map.Entry<Integer, List<Map<String, String>>> entry : classDetail.entrySet()) {
                     int classIndex = entry.getKey();
                     List<Map<String, String>> students = entry.getValue();
 
+                    int skipCounter = 0; // Counter to track skipped rows
+                    int rowsToSkip = 11;  // Number of rows to skip
+
                     for (Map<String, String> student : students) {
-                        String studentUsername = student.get("username");
-                        String studentPassword = student.get("password");
                         if (classIndex == 0) {
+                            if (skipCounter < rowsToSkip) {
+                                skipCounter++;  // Increment skip counter
+                                continue;       // Skip this iteration
+                            }
+                            String studentUsername = student.get("username");
+                            String studentPassword = student.get("password");
                             int action = random.nextInt(10);  // Assuming you have 3 different actions
                             switch (action) {
-                                case 0, 1, 2, 3, 4, 5, 6 -> {
+                                case 0, 1, 2, 3, 4, 5, 6, 7 -> {
                                     logger.debug("Starting flow with completing pretest");
                                     do {
                                         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
@@ -192,8 +166,17 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     app.myProgressPage.startActivity("Recurring Weekly Activity for students");
                                     logger.debug("Started the activity: {}", "Recurring Weekly Activity for students");
 
-                                    int totalQuizzes = dataGenerator.getRandomNumber(0, 15);
-                                    int quizzesWithCorrectAnswersForActivity = totalQuizzes - dataGenerator.getRandomNumber(0, 15);
+                                    int quizzesCases = random.nextInt(2);
+                                    int totalQuizzes = 0;
+                                    switch (quizzesCases) {
+                                        case 0 -> {
+                                            totalQuizzes = dataGenerator.getRandomNumber(10, 29);
+                                        }
+                                        case 1 -> {
+                                            totalQuizzes = dataGenerator.getRandomNumber(30, 50);
+                                        }
+                                    }
+                                    int quizzesWithCorrectAnswersForActivity = Math.round(totalQuizzes * 0.4f);
                                     int quizzesWithRandomAnswersForActivity = totalQuizzes - quizzesWithCorrectAnswersForActivity;
                                     logger.info("Starting to complete {} quizzes, {} with random answers and {} with correct answers", totalQuizzes, quizzesWithRandomAnswersForActivity, quizzesWithCorrectAnswersForActivity);
 
@@ -203,7 +186,31 @@ public class DemoTeacherAccount extends A_BaseTest {
 
                                         for (int i = 0; i < numberNotAnsweredQuestions; i++) {
                                             Driver.wait(3);
-                                            if (i < quizzesWithRandomAnswersForActivity) {
+                                            if (j < quizzesWithRandomAnswersForActivity) {
+                                                logger.debug("Selecting random answer for question {}", i + 1);
+                                                Driver.wait(4);
+                                                app.nextQuizPage.selectRandomAnswer();
+                                            } else {
+                                                logger.debug("Selecting correct answer for question {}", i + 1);
+                                                Driver.wait(4);
+                                                try {
+                                                    app.nextQuizPage.selectCorrectAnswer();
+                                                } catch (ElementNotFound e) {
+                                                    logger.debug("Correct answer wasn't found for question {}. Random answer is selected", i + 1);
+                                                    app.nextQuizPage.selectRandomAnswer();
+                                                } catch (Exception e) {
+                                                    logger.error("An unexpected error occurred for question {}", i + 1, e);
+                                                    app.nextQuizPage.selectRandomAnswer();
+                                                }
+                                            }
+                                            logger.debug("Answering question {} of quiz {}", i + 1, j + 1);
+                                            app.nextQuizPage.clickOnSubmitButton();
+                                            logger.debug("Submitted button is selected");
+                                            app.nextQuizPage.clickOnNextButton();
+                                            logger.debug("Next button is selected");
+                                        }for (int i = 0; i < numberNotAnsweredQuestions; i++) {
+                                            Driver.wait(3);
+                                            if (j < quizzesWithRandomAnswersForActivity) {
                                                 logger.debug("Selecting random answer for question {}", i + 1);
                                                 Driver.wait(4);
                                                 app.nextQuizPage.selectRandomAnswer();
@@ -213,6 +220,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                                 try {
                                                     app.nextQuizPage.selectCorrectAnswer();
                                                 } catch (Exception e) {
+                                                    logger.error("Exception caught while selecting correct answer", e);
                                                     app.nextQuizPage.selectRandomAnswer();
                                                     logger.debug("Correct answer wasn't found for question {}. Random answer is selected", i + 1);
                                                 }
@@ -229,7 +237,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     logger.info("Completed activity: {}", "Recurring Weekly Activity for students");
                                     app.studentHeaderMenu.clickOnSignOutButton();
                                 }
-                                case 7, 8 -> {
+                                case 8 -> {
                                     logger.debug("Starting flow with pretest In Progress");
                                     do {
                                         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
@@ -270,32 +278,6 @@ public class DemoTeacherAccount extends A_BaseTest {
         String filePath = "src/main/resources/files/Credentials_DemoAccount_" + formattedDate + ".xlsx";
         Object credentialsObject = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Student Credentials", true);
 
-        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
-        Workbook workbook = new XSSFWorkbook(fileInputStream);
-        Sheet sheet = workbook.getSheet("Student Credentials");
-
-        int studentCountInClass = 0;
-        Iterator<Row> rowIterator = sheet.iterator();
-
-        // The first column contains the class index and the second row starts the student data
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-            if (row.getRowNum() == 0) {
-                // Skip header row
-                continue;
-            }
-
-            int classIndex = (int) row.getCell(0).getNumericCellValue();
-            if (classIndex == 1) {
-                studentCountInClass++;
-            }
-        }
-        System.out.println("Number of students in class 1: " + studentCountInClass);
-
-        // Close the workbook and file input stream
-        workbook.close();
-        fileInputStream.close();
-
         if (credentialsObject instanceof List) {
             List<Map<Integer, List<Map<String, String>>>> classStudentDetails = (List<Map<Integer, List<Map<String, String>>>>) credentialsObject;
 
@@ -305,13 +287,20 @@ public class DemoTeacherAccount extends A_BaseTest {
                     int classIndex = entry.getKey();
                     List<Map<String, String>> students = entry.getValue();
 
+                    int skipCounter = 0; // Counter to track skipped rows
+                    int rowsToSkip = 0;  // Number of rows to skip
+
                     for (Map<String, String> student : students) {
-                        String studentUsername = student.get("username");
-                        String studentPassword = student.get("password");
                         if (classIndex == 1) {
+                            if (skipCounter < rowsToSkip) {
+                                skipCounter++;  // Increment skip counter
+                                continue;       // Skip this iteration
+                            }
+                            String studentUsername = student.get("username");
+                            String studentPassword = student.get("password");
                             int action = random.nextInt(10);  // Assuming you have 3 different actions
                             switch (action) {
-                                case 0, 1, 2, 3, 4, 5, 6 -> {
+                                case 0, 1, 2, 3, 4, 5, 6, 7 -> {
                                     logger.debug("Starting flow with completing pretest");
                                     do {
                                         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
@@ -354,8 +343,8 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     app.myProgressPage.startActivity("Competition for current week");
                                     logger.debug("Started the activity: {}", "Competition for current week");
 
-                                    int totalQuizzes = dataGenerator.getRandomNumber(0, 15);
-                                    int quizzesWithCorrectAnswersForActivity = totalQuizzes - dataGenerator.getRandomNumber(0, 15);
+                                    int totalQuizzes = dataGenerator.getRandomNumber(15, 50);
+                                    int quizzesWithCorrectAnswersForActivity = Math.round(totalQuizzes * 0.4f);
                                     int quizzesWithRandomAnswersForActivity = totalQuizzes - quizzesWithCorrectAnswersForActivity;
                                     logger.info("Starting to complete {} quizzes, {} with random answers and {} with correct answers", totalQuizzes, quizzesWithRandomAnswersForActivity, quizzesWithCorrectAnswersForActivity);
 
@@ -365,7 +354,7 @@ public class DemoTeacherAccount extends A_BaseTest {
 
                                         for (int i = 0; i < numberNotAnsweredQuestions; i++) {
                                             Driver.wait(3);
-                                            if (i < quizzesWithRandomAnswersForActivity) {
+                                            if (j < quizzesWithRandomAnswersForActivity) {
                                                 logger.debug("Selecting random answer for question {}", i + 1);
                                                 Driver.wait(4);
                                                 app.nextQuizPage.selectRandomAnswer();
@@ -391,7 +380,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     logger.info("Completed activity: {}", "Competition for current week");
                                     app.studentHeaderMenu.clickOnSignOutButton();
                                 }
-                                case 7, 8 -> {
+                                case 8 -> {
                                     logger.debug("Starting flow with pretest In Progress");
                                     do {
                                         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
@@ -432,32 +421,6 @@ public class DemoTeacherAccount extends A_BaseTest {
         String filePath = "src/main/resources/files/Credentials_DemoAccount_" + formattedDate + ".xlsx";
         Object credentialsObject = UtilityCreateStudentsAsTeacher.readCredentialsFromExcel(filePath, "Student Credentials", true);
 
-        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
-        Workbook workbook = new XSSFWorkbook(fileInputStream);
-        Sheet sheet = workbook.getSheet("Student Credentials");
-
-        int studentCountInClass = 0;
-        Iterator<Row> rowIterator = sheet.iterator();
-
-        // The first column contains the class index and the second row starts the student data
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-            if (row.getRowNum() == 0) {
-                // Skip header row
-                continue;
-            }
-
-            int classIndex = (int) row.getCell(0).getNumericCellValue();
-            if (classIndex == 2) {
-                studentCountInClass++;
-            }
-        }
-        System.out.println("Number of students in class 2: " + studentCountInClass);
-
-        // Close the workbook and file input stream
-        workbook.close();
-        fileInputStream.close();
-
         if (credentialsObject instanceof List) {
             List<Map<Integer, List<Map<String, String>>>> classStudentDetails = (List<Map<Integer, List<Map<String, String>>>>) credentialsObject;
 
@@ -467,13 +430,20 @@ public class DemoTeacherAccount extends A_BaseTest {
                     int classIndex = entry.getKey();
                     List<Map<String, String>> students = entry.getValue();
 
+                    int skipCounter = 0; // Counter to track skipped rows
+                    int rowsToSkip = 11;  // Number of rows to skip
+
                     for (Map<String, String> student : students) {
-                        String studentUsername = student.get("username");
-                        String studentPassword = student.get("password");
                         if (classIndex == 2) {
+                            if (skipCounter < rowsToSkip) {
+                                skipCounter++;  // Increment skip counter
+                                continue;       // Skip this iteration
+                            }
+                            String studentUsername = student.get("username");
+                            String studentPassword = student.get("password");
                             int action = random.nextInt(10);  // Assuming you have 3 different actions
                             switch (action) {
-                                case 0, 1, 2, 3, 4, 5, 6 -> {
+                                case 0, 1, 2, 3, 4, 5, 6, 7 -> {
                                     Driver.wait(3);
                                     logger.debug("Starting flow with completing pretest");
                                     do {
@@ -517,44 +487,52 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     app.myProgressPage.startActivity("Assign Passage - \"Karen's Garden\"");
                                     logger.debug("Started the activity: {}", "Assign Passage - \"Karen's Garden\"");
 
-                                    int totalQuizzes = dataGenerator.getRandomNumber(0, 15);
-                                    int quizzesWithCorrectAnswersForActivity = totalQuizzes - dataGenerator.getRandomNumber(0, 15);
-                                    int quizzesWithRandomAnswersForActivity = totalQuizzes - quizzesWithCorrectAnswersForActivity;
-                                    logger.info("Starting to complete {} quizzes, {} with random answers and {} with correct answers", totalQuizzes, quizzesWithRandomAnswersForActivity, quizzesWithCorrectAnswersForActivity);
+                                    int activityCases = random.nextInt(5);
+                                    switch (activityCases) {
+                                        case 0, 1, 2, 3 -> {
+                                            int totalQuizzes = dataGenerator.getRandomNumber(10, 50);
+                                            int quizzesWithCorrectAnswersForActivity = Math.round(totalQuizzes * 0.4f);
+                                            int quizzesWithRandomAnswersForActivity = totalQuizzes - quizzesWithCorrectAnswersForActivity;
+                                            logger.info("Starting to complete {} quizzes, {} with random answers and {} with correct answers", totalQuizzes, quizzesWithRandomAnswersForActivity, quizzesWithCorrectAnswersForActivity);
 
-                                    for (int j = 0; j < totalQuizzes; j++) {
-                                        int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
-                                        logger.debug("Quiz {}: {} questions to answer", j + 1, numberNotAnsweredQuestions);
+                                            for (int j = 0; j < totalQuizzes; j++) {
+                                                int numberNotAnsweredQuestions = app.nextQuizPage.getNumberNotAnsweredQuestions();
+                                                logger.debug("Quiz {}: {} questions to answer", j + 1, numberNotAnsweredQuestions);
 
-                                        for (int i = 0; i < numberNotAnsweredQuestions; i++) {
-                                            Driver.wait(3);
-                                            if (i < quizzesWithRandomAnswersForActivity) {
-                                                logger.debug("Selecting random answer for question {}", i + 1);
-                                                Driver.wait(4);
-                                                app.nextQuizPage.selectRandomAnswer();
-                                            } else {
-                                                logger.debug("Selecting correct answer for question {}", i + 1);
-                                                Driver.wait(4);
-                                                try {
-                                                    app.nextQuizPage.selectCorrectAnswer();
-                                                } catch (Exception e) {
-                                                    app.nextQuizPage.selectRandomAnswer();
-                                                    logger.debug("Correct answer wasn't found for question {}. Random answer is selected", i + 1);
+                                                for (int i = 0; i < numberNotAnsweredQuestions; i++) {
+                                                    Driver.wait(3);
+                                                    if (j < quizzesWithRandomAnswersForActivity) {
+                                                        logger.debug("Selecting random answer for question {}", i + 1);
+                                                        Driver.wait(4);
+                                                        app.nextQuizPage.selectRandomAnswer();
+                                                    } else {
+                                                        logger.debug("Selecting correct answer for question {}", i + 1);
+                                                        Driver.wait(4);
+                                                        try {
+                                                            app.nextQuizPage.selectCorrectAnswer();
+                                                        } catch (Exception e) {
+                                                            app.nextQuizPage.selectRandomAnswer();
+                                                            logger.debug("Correct answer wasn't found for question {}. Random answer is selected", i + 1);
+                                                        }
+                                                    }
+                                                    logger.debug("Answering question {} of quiz {}", i + 1, j + 1);
+                                                    app.nextQuizPage.clickOnSubmitButton();
+                                                    logger.debug("Submitted button is selected");
+                                                    app.nextQuizPage.clickOnNextButton();
+                                                    logger.debug("Next button is selected");
                                                 }
+                                                Driver.refresh();
                                             }
-                                            logger.debug("Answering question {} of quiz {}", i + 1, j + 1);
-                                            app.nextQuizPage.clickOnSubmitButton();
-                                            logger.debug("Submitted button is selected");
-                                            app.nextQuizPage.clickOnNextButton();
-                                            logger.debug("Next button is selected");
-                                        }
-                                        Driver.refresh();
-                                    }
 
-                                    logger.info("Completed activity: {}", "Assign Passage - \"Karen's Garden\"");
+                                            logger.info("Completed activity: {}", "Assign Passage - \"Karen's Garden\"");
+                                        }
+                                        case 4 -> {
+                                            Driver.wait(4);
+                                        }
+                                    }
                                     app.studentHeaderMenu.clickOnSignOutButton();
                                 }
-                                case 7, 8 -> {
+                                case 8 -> {
                                     Driver.wait(3);
                                     logger.debug("Starting flow with pretest In Progress");
                                     do {

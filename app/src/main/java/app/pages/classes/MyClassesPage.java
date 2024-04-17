@@ -4,6 +4,8 @@ import app.pages.base.BasePage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -14,6 +16,7 @@ public class MyClassesPage extends BasePage {
 
     private final SelenideElement
         MY_CLASSES_PAGE_TITLE = $(byXpath("//h1")),
+        MY_CLASSES_PAGE_EMPTY_LIST_TITLE= $(byXpath("//p[@class='classes-list-page__text']")),
         MY_CLASSES_ADD_NEW_CLASS_BUTTON = $(byXpath("//div[@class='primary-button btn-class-action']"));
 
     private final ElementsCollection
@@ -25,7 +28,10 @@ public class MyClassesPage extends BasePage {
     }
 
     public void getMyClassesPageTitle(String header) {
-        MY_CLASSES_PAGE_TITLE.shouldBe(visible).shouldHave(text(header));
+        MY_CLASSES_PAGE_TITLE.shouldBe(visible, Duration.ofSeconds(20)).shouldHave(text(header));
+    }
+    public void getEmptyListTitle(String header) {
+        MY_CLASSES_PAGE_EMPTY_LIST_TITLE.shouldBe(visible, Duration.ofSeconds(20)).shouldHave(text(header));
     }
 
     public void clickOnCreateNewClassButton() {

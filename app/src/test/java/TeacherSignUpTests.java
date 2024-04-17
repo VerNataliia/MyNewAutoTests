@@ -1,4 +1,5 @@
 import app.DataGenerator;
+import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -18,14 +19,17 @@ public class TeacherSignUpTests extends A_BaseTest {
         String teacherUsername = teacherCredentials[0];
         String teacherPassword  = teacherCredentials[1];
 
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+
+
         UtilityBOActions.logIn(app);
+        app.backOffice.findUserInList(teacherUsername);
         app.backOffice.selectUser(teacherUsername);
         app.backOffice.checkTeacherWithoutSchool();
-
-        app.classPage.open();
-        app.teacherHeaderMenu.clickOnSignOutButton();
-        app.logInUsernamePage.open();
-        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+        Driver.refresh();
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can select a school from the list during signing up")
@@ -44,14 +48,16 @@ public class TeacherSignUpTests extends A_BaseTest {
         String teacherPassword  = teacherData[1];
         String selectedSchool = teacherData[6];
 
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+
         UtilityBOActions.logIn(app);
+        app.backOffice.findUserInList(teacherUsername);
         app.backOffice.selectUser(teacherUsername);
         app.backOffice.checkTeacherSchool(selectedSchool);
-
-        app.classPage.open();
-        app.teacherHeaderMenu.clickOnSignOutButton();
-        app.logInUsernamePage.open();
-        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+        Driver.refresh();
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can create a custom school during signing up")
@@ -65,7 +71,7 @@ public class TeacherSignUpTests extends A_BaseTest {
         UtilityTeacherSignUp.SchoolDetails customSchoolDetails = new UtilityTeacherSignUp.SchoolDetails();
         String customSchoolName = "School AUTO Test" + dataGenerator.getRandomNumber(100, 10000);
         customSchoolDetails.name = customSchoolName;
-        customSchoolDetails.setUSA = true;
+        customSchoolDetails.setUSA = false;
         String customSchoolCity = "Kyiv" + dataGenerator.getRandomNumber(100, 10000);
         customSchoolDetails.city = customSchoolCity;
         String customSchoolState = "KA" + dataGenerator.getRandomNumber(100, 10000);
@@ -90,15 +96,15 @@ public class TeacherSignUpTests extends A_BaseTest {
         String customSchoolStudentsNumber = teacherData[7];
         String customSchoolCountry = teacherData[8];
 
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
 
         UtilityBOActions.logIn(app);
         UtilityBOActions.checkCustomSchool(app, customSchoolName, customSchoolCountry, customSchoolCity, customSchoolState,
             customSchoolNumber, customSchoolAddressOne, customSchoolAddressTwo, customSchoolZip, customSchoolStudentsNumber);
-
-        app.classPage.open();
-        app.teacherHeaderMenu.clickOnSignOutButton();
-        app.logInUsernamePage.open();
-        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+        Driver.refresh();
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can create a custom school during signing up with the country USA")
@@ -137,15 +143,15 @@ public class TeacherSignUpTests extends A_BaseTest {
         String customSchoolStudentsNumber = teacherData[7];
         String customSchoolCountry = teacherData[8];
 
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
 
         UtilityBOActions.logIn(app);
         UtilityBOActions.checkCustomSchool(app, customSchoolName, customSchoolCountry, customSchoolCity, customSchoolState,
             customSchoolNumber, customSchoolAddressOne, customSchoolAddressTwo, customSchoolZip, customSchoolStudentsNumber);
-
-        app.classPage.open();
-        app.teacherHeaderMenu.clickOnSignOutButton();
-        app.logInUsernamePage.open();
-        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+        Driver.refresh();
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
 }

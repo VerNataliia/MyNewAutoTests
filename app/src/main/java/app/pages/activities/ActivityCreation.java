@@ -9,6 +9,7 @@ import static app.pages.base.BasePage.checkNoLoader;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class ActivityCreation {
 

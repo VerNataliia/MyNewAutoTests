@@ -23,7 +23,7 @@ public class TeacherSignupStepTwoPage extends BasePage {
         TEACHER_SIGNUP_STEP_TWO_NEXT_BUTTON = $(byXpath("//div[@class='primary-button']"));
 
     public void checkTeacherSignUpPageTitle(String header) {
-        TEACHER_SIGNUP_STEP_TWO_PAGE_TITLE.shouldHave(Condition.text(header));
+        TEACHER_SIGNUP_STEP_TWO_PAGE_TITLE.shouldBe(Condition.visible).shouldHave(Condition.text(header));
     }
 
     DataGenerator dataGenerator = new DataGenerator();

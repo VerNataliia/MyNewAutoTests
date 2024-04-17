@@ -23,16 +23,37 @@ public class UtilityBOActions extends A_BaseTest {
 
     public static void makeTeacherPremium(App app, String teacherUsername) {
         logger.info("Starting process to make teacher premium: {}", teacherUsername);
+        app.backOffice.findUserInList(teacherUsername);
         app.backOffice.selectUser(teacherUsername);
         logger.info("Selected user: {}", teacherUsername);
         Driver.wait(2); // doesn't work without wait
-        logger.debug("Waited 2 seconds after selecting user");
-        app.backOffice.enableSubscriptionForUser();
+        app.backOffice.enableSubscriptionForTeacher();
         logger.info("Enabled subscription for user: {}", teacherUsername);
+    }
+
+    public static void deleteTeacherStudents(String teacherUsername) {
+        logger.info("Starting process to delete students of the teacher: {}", teacherUsername);
+        app.backOffice.findUserInList(teacherUsername);
+        app.backOffice.selectUser(teacherUsername);
+        logger.info("Selected user: {}", teacherUsername);
+        Driver.wait(2); // doesn't work without wait
+        app.backOffice.bulkAddTeacherStudents();
+        logger.info("Students were added to bulk");
+        app.backOffice.deleteBulkSelectedStudents();
+        logger.info("Students were bulk deleted");
+    }
+
+    public static void deleteUserFromList(String username) {
+        logger.info("Starting process to delete the user: {}", username);
+        app.backOffice.findUserInList(username);
+        logger.info("Selected user: {}", username);
+        Driver.wait(2); // doesn't work without wait
+        app.backOffice.deleteUser(username);
     }
 
     public static void disableAdsForStudent(String studentUsername) {
         logger.info("Starting process to disable ads for student: {}", studentUsername);
+        app.backOffice.findUserInList(studentUsername);
         app.backOffice.selectUser(studentUsername);
         logger.info("Selected user: {}", studentUsername);
         Driver.wait(2); // doesn't work without wait
@@ -45,6 +66,7 @@ public class UtilityBOActions extends A_BaseTest {
         String customSchoolNumber, String customSchoolAddressOne, String customSchoolAddressTwo, String customSchoolZip, String customSchoolStudentsNumber) {
         logger.info("Starting process to check custom school: {}", customSchoolName);
         app.backOffice.clickOnCustomSchoolButton();
+        app.backOffice.findCustomSchool(customSchoolName);
         app.backOffice.selectCustomSchool(customSchoolName);
         logger.debug("Custom school with the name {} is selected", customSchoolName);
 
@@ -74,6 +96,12 @@ public class UtilityBOActions extends A_BaseTest {
 
         String actualCustomSchoolStudentsNumber = app.backOffice.checkCustomSchoolStudentsNumber(customSchoolStudentsNumber);
         logger.debug("Custom school address two actual: {}; expected: {}", actualCustomSchoolStudentsNumber, customSchoolStudentsNumber);
+    }
+
+    public static void deleteCustomSchool(String customSchoolName) {
+        app.backOffice.clickOnCustomSchoolButton();
+        app.backOffice.findCustomSchool(customSchoolName);
+
     }
 
 }

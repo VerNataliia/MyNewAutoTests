@@ -1,4 +1,5 @@
 import app.App;
+import app.helpers.Driver;
 import com.codeborne.selenide.WebDriverRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -54,6 +55,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
     }
 
     private static String[] enterPersonalDetails(App app) {
+        logger.debug("Start 2nd step - Personal Details page");
         app.teacherSignupStepTwoPage.checkTeacherSignUpPageTitle("Personal Details");
         String firstName = app.teacherSignupStepTwoPage.setTeacherFirstName();
         String lastName = app.teacherSignupStepTwoPage.setTeacherLastName();
@@ -62,6 +64,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         String email = app.teacherSignupStepTwoPage.setTeacherEmail();
         app.teacherSignupStepTwoPage.clickOnNextButtonSecondStep();
         logger.debug("Entered personal details");
+        Driver.wait(2); //this waite was added, because class page appears and after few seconds Select school page appears
         return new String[]{firstName, lastName, teacherLastAndFirstName, email};
     }
 
@@ -105,6 +108,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
     private static void verifySignUp(App app, String firstAndLastName) {
         app.myClassesPage.getMyClassesPageTitle("My Classes");
         app.teacherHeaderMenu.checkTeacherLastAndFirstName(firstAndLastName);
+        app.myClassesPage.getEmptyListTitle("First, create your class!");
     }
 
     public static class SignUpOptions {

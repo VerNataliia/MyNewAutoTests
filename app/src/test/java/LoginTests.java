@@ -1,3 +1,4 @@
+import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -22,14 +23,15 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
     public void checkNewStudentLogIn() {
         app.signUpSelectRolePage.open();
-
-        String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
-        String newStudentUsername = userDetails[0];
-        String newStudentPassword = userDetails[1];
+        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        String studentUsername = studentCredentials[0];
+        String studentPassword = studentCredentials[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
 
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(studentUsername);
     }
 
     @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
@@ -49,13 +51,20 @@ public class LoginTests extends A_BaseTest {
         app.signUpSelectRolePage.open();
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
-        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
-        String[] userDetails = UtilityTeacherSignUp.signUpAsTeacher(app, options);
-        String newTeacherUsername = userDetails[0];
-        String newTeacherPassword = userDetails[1];
-        app.teacherHeaderMenu.clickOnSignOutButton();
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
+        options.schoolName = "School";
 
-        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, newTeacherUsername, newTeacherPassword);
+        String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherData[0];
+        String teacherPassword  = teacherData[1];
+        String selectedSchool = teacherData[6];
+
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
+
+        UtilityBOActions.logIn(app);
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
     @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
@@ -80,6 +89,10 @@ public class LoginTests extends A_BaseTest {
         app.studentHeaderMenu.clickOnSignOutButton();
 
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newParentUsername, newParentPassword);
+
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(newParentUsername);
     }
 
     @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")

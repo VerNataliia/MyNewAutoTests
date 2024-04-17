@@ -36,16 +36,16 @@ public class UtilityStudentSignUp extends A_BaseTest {
 
     public static void signUpAsStudentAdditionalAgeStep(App app) {
         logger.info("Starting student additional age step in sign-up process");
-        app.studentSignUpAgeStepPage.checkStudentSignUpAgePageTitle("Personal Details");
+        app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
         logger.debug("Checked student sign-up age page title");
 
-        app.studentSignUpAgeStepPage.setStudentFirstName();
-        app.studentSignUpAgeStepPage.setStudentLastName();
+        app.studentOrParentPersonalDetailsStepPage.setFirstName();
+        app.studentOrParentPersonalDetailsStepPage.setLastName();
         logger.debug("Set student first name and last name");
 
-        app.studentSignUpAgeStepPage.selectRandomStudentAgeOptionFromDropDown();
+        app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
         logger.debug("Selected random student age from dropdown");
-        app.studentSignUpAgeStepPage.clickOnTheNextButton();
+        app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
         logger.debug("Clicked on the next button");
 
         app.summaryPage.checkSummaryPageTitle("Let the learning begin!");

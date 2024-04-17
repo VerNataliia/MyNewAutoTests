@@ -1,3 +1,4 @@
+import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -15,13 +16,18 @@ public class NextQuizTests extends A_BaseTest {
         app.signUpSelectRolePage.open();
         String[] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
         String studentUsername = studentCredentials[0];
-
+        executeJavaScript("window.open('about:blank','_blank');");
+        switchTo().window(1);
         UtilityBOActions.logIn(app);
         UtilityBOActions.disableAdsForStudent(studentUsername);
+        Driver.refresh();
 
-        app.nextQuizPage.open();
+        switchTo().window(0);
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
         UtilityCompleteNextQuiz.completeQuizzes(app, 10, 10);
+
+        switchTo().window(1);
+        UtilityBOActions.deleteUserFromList(studentUsername);
     }
 
     @Test(groups = ("NextQuiz"), priority = 1, description = "Verify if a student is able to pass quizzes")
@@ -36,9 +42,13 @@ public class NextQuizTests extends A_BaseTest {
         switchTo().window(1);
         UtilityBOActions.logIn(app);
         UtilityBOActions.disableAdsForStudent(studentUsername);
+        Driver.refresh();
 
         switchTo().window(0);
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
         UtilityCompleteNextQuiz.completeQuizzes(app, 10, 0);
+
+        switchTo().window(1);
+        UtilityBOActions.deleteUserFromList(studentUsername);
     }
 }

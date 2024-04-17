@@ -17,9 +17,9 @@ import app.pages.quizPage.newPretest.NewPretestPage;
 import app.pages.pricing.PricingPage;
 import app.pages.quizPage.DashboardPage;
 import app.pages.signup.*;
-import app.pages.signup.parent.ParentSignUpPage;
-import app.pages.signup.student.StudentSignUpAgeStepPage;
-import app.pages.signup.student.StudentSignUpPage;
+import app.pages.signup.studentAndParent.ParentSignUpPage;
+import app.pages.signup.studentAndParent.StudentOrParentPersonalDetailsStepPage;
+import app.pages.signup.studentAndParent.StudentSignUpPage;
 import app.pages.signup.teacher.TeacherSignUpStepFourPage;
 import app.pages.signup.teacher.TeacherSignUpStepThreePage;
 import app.pages.signup.teacher.TeacherSignupStepOnePage;
@@ -40,7 +40,7 @@ public class App {
 
     public SignUpSelectRolePage signUpSelectRolePage;
     public StudentSignUpPage studentSignUpPage;
-    public StudentSignUpAgeStepPage studentSignUpAgeStepPage;
+    public StudentOrParentPersonalDetailsStepPage studentOrParentPersonalDetailsStepPage;
     public ParentSignUpPage parentSignUpPage;
     public TeacherSignupStepOnePage teacherSignupStepOnePage;
     public TeacherSignupStepTwoPage teacherSignupStepTwoPage;
@@ -72,7 +72,7 @@ public class App {
         classPage = new ClassPage("app/teacher/class/1340742"); // Need to think how to send dynamic class_id
         signUpSelectRolePage = new SignUpSelectRolePage("/app/sign-up/role");
         studentSignUpPage = new StudentSignUpPage("/app/sign-up/create-account/student");
-        studentSignUpAgeStepPage = new StudentSignUpAgeStepPage("/app/sign-up/more-info");
+        studentOrParentPersonalDetailsStepPage = new StudentOrParentPersonalDetailsStepPage("/app/sign-up/more-info");
         parentSignUpPage = new ParentSignUpPage("/app/sign-up/create-account/parent");
         teacherSignupStepOnePage = new TeacherSignupStepOnePage("/app/sign-up/create-account/teacher");
         teacherSignupStepTwoPage = new TeacherSignupStepTwoPage("/app/sign-up/more-info");

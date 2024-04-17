@@ -15,9 +15,10 @@ public class AddStudentsTests extends A_BaseTest {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherData[0];
 
-        int numberOfClassesToCreate = 5;
+        int numberOfClassesToCreate = 1;
         int numberOfStudentsToAdd = 3;
 
         List<String> allUsernames = new ArrayList<>();
@@ -41,12 +42,17 @@ public class AddStudentsTests extends A_BaseTest {
         }
         app.teacherHeaderMenu.clickOnSignOutButton();
 
-        for (int i = 0; i < allUsernames.size(); i++) {
-            String studentUsername = allUsernames.get(i);
-            String studentPassword = allPasswords.get(i);
-            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
-            app.studentHeaderMenu.clickOnSignOutButton();
-        }
+//        for (int i = 0; i < allUsernames.size(); i++) {
+//            String studentUsername = allUsernames.get(i);
+//            String studentPassword = allPasswords.get(i);
+//            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+//            app.studentHeaderMenu.clickOnSignOutButton();
+//        }
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteTeacherStudents(teacherUsername);
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
 
     }
 }

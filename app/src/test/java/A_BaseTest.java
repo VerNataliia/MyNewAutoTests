@@ -6,6 +6,8 @@ import org.apache.logging.log4j.*;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+
 
 public class A_BaseTest {
 
@@ -26,18 +28,17 @@ public class A_BaseTest {
 
         app = new App();
         softAssert = new SoftAssert();
-
         logger = LogManager.getLogger(A_BaseTest.class);
-
     }
 
     @AfterMethod(alwaysRun = true)
     public void clearCookies() {
         Driver.clearCookies();
-    }
-
-    @AfterClass (alwaysRun = true)
-    public void tearDown() {
         Driver.close();
     }
+
+//    @AfterClass (alwaysRun = true)
+//    public void tearDown() {
+//        Driver.close();
+//    }
 }

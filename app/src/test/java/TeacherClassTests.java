@@ -1,5 +1,10 @@
+
+import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
+
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.switchTo;
 
 @Epic("Class")
 @Feature("ClassCreation")
@@ -11,12 +16,16 @@ public class TeacherClassTests extends A_BaseTest {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherCredentials[0];
 
         UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
         classOptions.classNumber = 5;
 
         UtilityCreateClass.createClass(app, classOptions);
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(teacherUsername);
 
     }
 
@@ -30,9 +39,6 @@ public class TeacherClassTests extends A_BaseTest {
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
 
-        UtilityBOActions.logIn(app);
-        UtilityBOActions.makeTeacherPremium(app, teacherUsername);
-
         app.classPage.open();
         UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
         classOptions.selectAvatar = true;
@@ -42,6 +48,9 @@ public class TeacherClassTests extends A_BaseTest {
         classOptions.classNumber = 1;
 
         UtilityCreateClass.createClass(app, classOptions);
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
     @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes with additional options")
@@ -54,10 +63,13 @@ public class TeacherClassTests extends A_BaseTest {
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
 
+        executeJavaScript("window.open('about:blank','_blank');");
+        switchTo().window(1);
         UtilityBOActions.logIn(app);
         UtilityBOActions.makeTeacherPremium(app, teacherUsername);
+        Driver.refresh();
 
-        app.classPage.open();
+        switchTo().window(0);
         UtilityCreateClass.ClassCreationOptions classOptions = new UtilityCreateClass.ClassCreationOptions();
         classOptions.selectAvatar = true;
         classOptions.selectAge13Checkbox = true;
@@ -73,6 +85,9 @@ public class TeacherClassTests extends A_BaseTest {
         classOptions.endLevel = 8;
 
         UtilityCreateClass.createClass(app, classOptions);
+
+        switchTo().window(1);
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
 }
