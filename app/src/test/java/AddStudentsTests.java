@@ -42,12 +42,12 @@ public class AddStudentsTests extends A_BaseTest {
         }
         app.teacherHeaderMenu.clickOnSignOutButton();
 
-//        for (int i = 0; i < allUsernames.size(); i++) {
-//            String studentUsername = allUsernames.get(i);
-//            String studentPassword = allPasswords.get(i);
-//            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
-//            app.studentHeaderMenu.clickOnSignOutButton();
-//        }
+        for (int i = 0; i < allUsernames.size(); i++) {
+            String studentUsername = allUsernames.get(i);
+            String studentPassword = allPasswords.get(i);
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+            app.studentHeaderMenu.clickOnSignOutButton();
+        }
 
         UtilityBOActions.logIn(app);
         UtilityBOActions.deleteTeacherStudents(teacherUsername);
