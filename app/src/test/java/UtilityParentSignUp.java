@@ -36,7 +36,7 @@ public class UtilityParentSignUp extends A_BaseTest {
 
         app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
         logger.debug("Checked summary page title");
-
+        app.studentHeaderMenu.checkStudentUsername(newParentUsername);
         logger.info("Parent sign-up completed successfully with username: {} and password: {}", newParentUsername, newParentPassword);
 
         return new String[]{newParentUsername, newParentPassword};

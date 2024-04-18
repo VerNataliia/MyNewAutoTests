@@ -85,7 +85,7 @@ tasks.register("everyDayTests", Test) {
 tasks.register("loginTest", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
-        includeGroups 'Login'
+        includeGroups 'LoginUsername'
     }
 }
 

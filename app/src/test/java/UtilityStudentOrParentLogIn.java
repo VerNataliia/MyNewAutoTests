@@ -33,7 +33,8 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
             app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
             logger.debug("Clicked on the next button");
         }
-        //app.studentHeaderMenu.checkStudentUsername(username); // It will fail if a student has first and last name
+        app.studentHeaderMenu.clickOnEditProfileButton();
+        app.studentProfileSettings.checkStudentUsername(username);
 
         logger.info("Logged in successfully as user: {}", username);
     }

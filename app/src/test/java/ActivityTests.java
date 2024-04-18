@@ -9,19 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.switchTo;
+
 @Epic("StudentTask")
 @Feature("Activity")
 public class ActivityTests extends A_BaseTest {
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create recurring weekly activity")
-    // @AllureId("3")
-    //@Severity(SeverityLevel.BLOCKER)
+    //@AllureId("3")
+    @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new teacher can create recurring weekly activity with default settings for all classes")
     public void teacherCanCreateRecurringWeeklyActivity() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
-        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
+        String teacherUsername = teacherData[0];
 
         int numberOfClassesToCreate = 1;
         int numberOfStudentsToAdd = 1;
@@ -37,6 +41,11 @@ public class ActivityTests extends A_BaseTest {
         app.teacherHeaderMenu.clickOnActivitiesButton();
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.RECURRING_WEEKLY, null, false, null);
         UtilityActivityCreation.checkActivityInList(app,activityName);
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteTeacherStudents(teacherUsername);
+        app.backOffice.selectUserButtonInSideMenu();
+        UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
     @Test(groups = ("Activity"), priority = 1, description = "Verify if a premium teacher can create recurring weekly activity with custom settings")
@@ -49,10 +58,13 @@ public class ActivityTests extends A_BaseTest {
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
-
+        executeJavaScript("window.open('about:blank','_blank');");
+        switchTo().window(1);
         UtilityBOActions.logIn(app);
         UtilityBOActions.makeTeacherPremium(app, teacherUsername);
+        Driver.refresh();
 
+        switchTo().window(0);
         int numberOfClassesToCreate = 1;
         int numberOfStudentsToAdd = 1;
 
@@ -85,6 +97,8 @@ public class ActivityTests extends A_BaseTest {
 
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.RECURRING_WEEKLY, null, true, customSettingsOptions);
         UtilityActivityCreation.checkActivityInList(app,activityName);
+
+        //I don't delete users here, because I use them for next test
     }
 
 //    @Test(groups = ("Activity"), priority = 1, description = "Verify if a NON premium teacher cannot change settings when create a recurring weekly activity")

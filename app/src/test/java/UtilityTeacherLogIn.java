@@ -15,7 +15,10 @@ public class UtilityTeacherLogIn extends A_BaseTest {
         if(WebDriverRunner.url().contains("/app/sign-up/school-info")) {
             app.teacherSignUpStepThreePage.clickOnSkipSelectSchoolPageButton();
         } // if a teacher doesn't have school, login will not fail
+
         app.myClassesPage.getMyClassesPageTitle("My Classes");
-        logger.info("Teacher logged in successfully and verified 'My Classes' page title");
+        app.teacherHeaderMenu.clickOnEditProfileButton();
+        app.teacherProfileSettings.checkTeacherUsername(username);
+        logger.info("Teacher with the username {} logged in successfully", username);
     }
 }

@@ -5,11 +5,10 @@ import org.testng.annotations.Test;
 import static app.StaticTestData.*;
 
 @Epic("Login")
-@Feature("LoginUsername")
+@Feature("Login")
 public class LoginTests extends A_BaseTest {
 
-    @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to log in using username and password credentials")
-    @AllureId("3")
+    @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if an existing student is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing student can log in (Positive case)")
     public void checkStudentLogIn() {
@@ -17,8 +16,7 @@ public class LoginTests extends A_BaseTest {
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
     }
 
-    @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to sign up and then log in using username and password credentials")
-//        @AllureId("3")
+    @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if a student is able to sign up and then log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
     public void checkNewStudentLogIn() {
@@ -34,8 +32,7 @@ public class LoginTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(studentUsername);
     }
 
-    @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to log in using username and password credentials")
-    @AllureId("8")
+    @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if an existing teacher is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can log in (Positive case)")
     public void checkTeacherLogIn() {
@@ -43,8 +40,7 @@ public class LoginTests extends A_BaseTest {
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, TEACHER_USERNAME, TEACHER_PASSWORD);
     }
 
-    @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to sign up and then log in using username and password credentials")
-//        @AllureId("8")
+    @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if a teacher is able to sign up and then log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new user can create a teacher's account, log out and then log in (Positive case)")
     public void checkNewTeacherLogIn() {
@@ -67,8 +63,7 @@ public class LoginTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
-    @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to log in using username and password credentials")
-    @AllureId("5")
+    @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if an existing parent is able to log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing parent can log in (Positive case)")
     public void checkParentLogIn() {
@@ -76,8 +71,7 @@ public class LoginTests extends A_BaseTest {
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, PARENT_USERNAME, PARENT_PASSWORD);
     }
 
-    @Test(groups = ("Login"), priority = 1, description = "Verify if a parent is able to sign up and then log in using username and password credentials")
-    //  @AllureId("8")
+    @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if a parent is able to sign up and then log in using username and password credentials")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new user can create a parent's account, log out and then log in (Positive case)")
     public void checkNewParentLogIn() {
@@ -95,8 +89,7 @@ public class LoginTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(newParentUsername);
     }
 
-    @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
-    @AllureId("7")
+    @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
     @Severity(SeverityLevel.NORMAL)
     @Description("Check if a user can't log in using not correct username (Negative case)")
     public void checkLogInWithInvalidUsername() {
@@ -111,8 +104,7 @@ public class LoginTests extends A_BaseTest {
         app.logInUsernamePage.checkLogInError("Error occurred while trying to authenticate.");
     }
 
-    @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
-    @AllureId("6")
+    @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
     @Severity(SeverityLevel.NORMAL)
     @Description("Check if a user can't log in using not correct password (Negative case)")
     public void checkLogInWithInvalidPassword() {
