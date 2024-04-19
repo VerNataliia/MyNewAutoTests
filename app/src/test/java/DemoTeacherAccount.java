@@ -46,7 +46,9 @@ public class DemoTeacherAccount extends A_BaseTest {
             classOptions.selectQuizGradeSwitcher = true;
             classOptions.classNumber = 1;
 
-            String className = UtilityCreateClass.createClass(app, classOptions);
+            List<String> createdClasses= UtilityCreateClass.createClass(app, classOptions);
+            String className = createdClasses.isEmpty() ? null : createdClasses.get(createdClasses.size() - 1);
+
 
             List<Map<String, String>> students = UtilityCreateStudentsAsTeacher.createNewStudents(app, dataGenerator.getRandomNumber(10, 20), true);
             classNames.add(className);

@@ -35,6 +35,7 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
         }
         app.studentHeaderMenu.clickOnEditProfileButton();
         app.studentProfileSettings.checkStudentUsername(username);
+        app.studentProfileSettings.clickOnCloseButton();
 
         logger.info("Logged in successfully as user: {}", username);
     }

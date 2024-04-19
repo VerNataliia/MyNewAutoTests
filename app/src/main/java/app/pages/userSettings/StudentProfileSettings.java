@@ -1,16 +1,17 @@
 package app.pages.userSettings;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.*;
 
 public class StudentProfileSettings {
     private final SelenideElement
-    STUDENT_MY_PROFILE_SETTINGS_USERNAME_INPUT = $(byXpath("//input[@placeholder='User Name']"));
+        STUDENT_MY_PROFILE_SETTINGS_USERNAME_INPUT = $(byXpath("//input[@placeholder='User Name']")),
+        STUDENT_MY_PROFILE_SETTINGS_CLOSE_BUTTON = $(byXpath("//div[@class='edit-profile-panel profile-panel']//div[@class='primary-button btn-close'][contains(text(),'Close')]"));
 
     public void checkStudentUsername(String expectedStudentUsername) {
         STUDENT_MY_PROFILE_SETTINGS_USERNAME_INPUT.shouldBe(visible);
@@ -21,4 +22,8 @@ public class StudentProfileSettings {
             throw new AssertionError("Expected username: " + expectedStudentUsername + ", but found: " + actualStudentUsername);
         }
     }
+    public void clickOnCloseButton() {
+        STUDENT_MY_PROFILE_SETTINGS_CLOSE_BUTTON.shouldBe(visible).click();
+    }
+
 }

@@ -7,7 +7,6 @@ public class BOTests extends A_BaseTest {
     @Test(groups = ("NewPretest"), priority = 1, description = "Verify if an admin acn make teacher premium")
     @Severity(SeverityLevel.BLOCKER)
     @Description("An admin can make teacher premium")
-    //@AllureId("2")
     public void makeTeacherPrem() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();

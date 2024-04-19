@@ -5,14 +5,14 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import static app.pages.base.BasePage.checkNoLoader;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TeacherProfileSettings {
     private final SelenideElement
-        TEACHER_USERNAME_FIELD = $(byXpath("//input[@placeholder='User Name']")),
+        TEACHER_MY_PROFILE_SETTINGS_WINDOW_USERNAME_FIELD = $(byXpath("//input[@placeholder='User Name']")),
+        TEACHER_MY_PROFILE_SETTINGS_WINDOW_CLOSE_BUTTON = $(byXpath("//div[@class='edit-profile-panel profile-panel']//div[@class='primary-button btn-close'][contains(text(),'Close')]")),
         TEACHER_MY_PROFILE_SETTINGS_WINDOW_CREATE_AVATAR_BUTTON = $(byXpath("//div[@class='primary-button btn-edit-avatar']")),
         TEACHER_MY_PROFILE_SETTINGS_WINDOW_CREATE_AVATAR_HEADER_TITLE = $(byXpath("//h2[contains(text(),'Choose an avatar')]")),
         TEACHER_MY_PROFILE_SETTINGS_WINDOW_CREATE_AVATAR_CONFIRM_BUTTON = $(byXpath("//div[@class='primary-button btn-confirm']")),
@@ -24,13 +24,17 @@ public class TeacherProfileSettings {
     DataGenerator dataGenerator = new DataGenerator();
 
     public void checkTeacherUsername(String expectedTeacherUsername) {
-        TEACHER_USERNAME_FIELD.shouldBe(visible);
+        TEACHER_MY_PROFILE_SETTINGS_WINDOW_USERNAME_FIELD.shouldBe(visible);
 
-        String actualTeacherUsername = (String) executeJavaScript("return arguments[0].value;", TEACHER_USERNAME_FIELD);
+        String actualTeacherUsername = (String) executeJavaScript("return arguments[0].value;", TEACHER_MY_PROFILE_SETTINGS_WINDOW_USERNAME_FIELD);
 
         if (!actualTeacherUsername.equals(expectedTeacherUsername)) {
             throw new AssertionError("Expected username: " + expectedTeacherUsername + ", but found: " + actualTeacherUsername);
         }
+    }
+
+    public void clickOnCloseButton() {
+        TEACHER_MY_PROFILE_SETTINGS_WINDOW_CLOSE_BUTTON.shouldBe(visible).click();
     }
 
     public void selectRandomAvatar() {

@@ -19,6 +19,7 @@ public class UtilityTeacherLogIn extends A_BaseTest {
         app.myClassesPage.getMyClassesPageTitle("My Classes");
         app.teacherHeaderMenu.clickOnEditProfileButton();
         app.teacherProfileSettings.checkTeacherUsername(username);
+        app.teacherProfileSettings.clickOnCloseButton();
         logger.info("Teacher with the username {} logged in successfully", username);
     }
 }

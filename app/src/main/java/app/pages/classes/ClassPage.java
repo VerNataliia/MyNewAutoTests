@@ -20,6 +20,7 @@ public class ClassPage extends BasePage {
 
     private final SelenideElement
         MY_CLASS_PAGE_TITLE = $(byXpath("//h1")),
+        MY_CLASS_CODE = $(byXpath("//div[@class='class-code']/b")),
         MY_CLASS_ADD_NEW_STUDENTS_BUTTON = $(byXpath("//div[@class='primary-button btn-class-action add-students btn-flex btn-flex']"));
 
     private final ElementsCollection
@@ -30,12 +31,19 @@ public class ClassPage extends BasePage {
         MY_CLASS_PAGE_TITLE.shouldBe(Condition.visible).shouldHave(Condition.text(className));
     }
 
+    public String getClassCode() {
+        return MY_CLASS_CODE.shouldBe(Condition.visible).getText();
+    }
+
     public void clickOnAddNewStudentsButton() {
         MY_CLASS_ADD_NEW_STUDENTS_BUTTON.shouldBe(Condition.visible).click();
     }
 
     public void checkStudentsInClass(List<String> newStudentsUsernames) {
         STUDENT_LIST_IN_THE_CLASS.should(containExactTextsCaseSensitive(newStudentsUsernames));
+    }
+    public void checkStudentInClass(String studentsUsername) {
+        STUDENT_LIST_IN_THE_CLASS.should(containExactTextsCaseSensitive("(" + studentsUsername + ")"));
     }
 
 }

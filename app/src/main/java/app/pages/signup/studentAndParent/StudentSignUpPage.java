@@ -1,11 +1,13 @@
 package app.pages.signup.studentAndParent;
 
 import app.DataGenerator;
+import app.helpers.Driver;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -65,6 +67,10 @@ public class StudentSignUpPage extends BasePage {
     public void selectRandomStudentAgeOption() {
         STUDENT_SIGNUP_SELECT_AGE_FIELD.shouldBe(Condition.visible).click();
         STUDENT_SIGNUP_SELECT_AGE_DROP_DOWN_OPTIONS.get(dataGenerator.getRandomNumber(0, 17)).click();
+    }
+
+    public void setClassCode(String classCode) {
+        STUDENT_SIGNUP_CLASS_CODE_INPUT.shouldBe(Condition.visible).sendKeys(classCode);
     }
 
     public void clickOnSignUpButton() {

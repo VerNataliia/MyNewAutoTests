@@ -9,7 +9,7 @@ public class PretestTests extends A_BaseTest {
     @Description("A student who was created with username+password can complete a pretest with random answers")
     public void checkPretestExecutionAsNewStudentWithRandomAnswers() {
         app.signUpSelectRolePage.open();
-        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String studentUsername = studentCredentials[0];
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
 
@@ -22,7 +22,7 @@ public class PretestTests extends A_BaseTest {
     @Description("A student who was created with username+password can complete a pretest with correct answers")
     public void checkPretestExecutionAsNewStudentWithCorrectAnswers() {
         app.signUpSelectRolePage.open();
-        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String studentUsername = studentCredentials[0];
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 0);
 

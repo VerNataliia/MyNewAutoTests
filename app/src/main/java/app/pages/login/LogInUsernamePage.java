@@ -13,12 +13,15 @@ public class LogInUsernamePage extends BasePage {
     }
 
     private final SelenideElement
+        LOG_IN_SIGN_UP_BUTTON = $(byXpath("//span[contains(text(),'Sign up')]")),
         LOG_IN_USER_NAME = $(byName("j_username")),
         LOG_IN_PASSWORD = $(byName("j_password")),
         BUTTON_LOG_IN = $(byXpath("//input[@type='submit']")),
         LOG_IN_ERROR = $(byXpath("//li[contains(text(),'Error occurred while trying to authenticate.')]"));
 
-
+    public void clickOnSignUpButton() {
+        LOG_IN_SIGN_UP_BUTTON.shouldBe(visible).click();
+    }
     public void enterUserName(String userName) {
         LOG_IN_USER_NAME.shouldBe(visible).sendKeys(userName);
     }

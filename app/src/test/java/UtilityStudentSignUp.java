@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 public class UtilityStudentSignUp extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityStudentSignUp.class);
 
-    public static String[] signUpAsStudentWithUsername(App app) {
+    public static String[] signUpAsStudentWithUsername(App app, boolean withClassCode, String classCode) {
         logger.info("Starting student sign-up process");
         app.signUpSelectRolePage.checkSelectRolePageTitle("Welcome to ReadTheory!");
         logger.debug("Checked select role page title");
@@ -21,6 +21,12 @@ public class UtilityStudentSignUp extends A_BaseTest {
 
         app.studentSignUpPage.selectRandomStudentAgeOption();
         logger.debug("Selected random student age option");
+
+        if (withClassCode) {
+            logger.debug("Class code should be added");
+            app.studentSignUpPage.setClassCode(classCode);
+            logger.debug("Added class code {}", classCode);
+        }
         app.studentSignUpPage.clickOnSignUpButton();
         logger.debug("Clicked on sign-up button");
         Driver.wait(5); //because of redirection

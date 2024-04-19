@@ -2,22 +2,26 @@ import app.App;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UtilityCreateClass extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityCreateClass.class);
 
-    public static String createClass(App app, ClassCreationOptions options) {
-        String enteredClassName = null;
+    public static List<String> createClass(App app, ClassCreationOptions options) {
+        List<String> createdClassNames = new ArrayList<>();  // List to store class names
         logger.info("Creating {} new classes", options.classNumber);
 
         for (int i = 0; i < options.classNumber; i++) {
             startClassCreationFlow(app);
-            enteredClassName = enterClassName(app);
+            String enteredClassName = enterClassName(app);  // Get the entered class name
             selectAdditionalOptions(app, options);
             finalizeClassCreation(app, enteredClassName);
             logger.info("Class {} created successfully", enteredClassName);
+            createdClassNames.add(enteredClassName);  // Add the class name to the list
         }
 
-        return enteredClassName;
+        return createdClassNames;  // Return the list of created class names
     }
 
     private static void startClassCreationFlow(App app) {
@@ -97,5 +101,11 @@ public class UtilityCreateClass extends A_BaseTest {
         int startLevel;
         int endLevel;
 
+    }
+
+    public static String getClassCode(App app, String className) {
+        app.teacherHeaderMenu.clickOnMyClassesButton();
+        app.myClassesPage.clickOnClass(className);
+        return app.classPage.getClassCode();
     }
 }

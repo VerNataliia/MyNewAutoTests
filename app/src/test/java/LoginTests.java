@@ -1,4 +1,4 @@
-import app.helpers.Driver;
+
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -21,7 +21,7 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
     public void checkNewStudentLogIn() {
         app.signUpSelectRolePage.open();
-        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String studentUsername = studentCredentials[0];
         String studentPassword = studentCredentials[1];
         app.studentHeaderMenu.clickOnSignOutButton();
@@ -95,7 +95,7 @@ public class LoginTests extends A_BaseTest {
     public void checkLogInWithInvalidUsername() {
         app.signUpSelectRolePage.open();
 
-        String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String newStudentUsername = userDetails[0];
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
@@ -110,7 +110,7 @@ public class LoginTests extends A_BaseTest {
     public void checkLogInWithInvalidPassword() {
         app.signUpSelectRolePage.open();
 
-        String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app);
+        String[] userDetails = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String newStudentUsername = userDetails[0];
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();

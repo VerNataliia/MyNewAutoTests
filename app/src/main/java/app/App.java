@@ -26,6 +26,7 @@ import app.pages.signup.teacher.TeacherSignupStepOnePage;
 import app.pages.signup.teacher.TeacherSignupStepTwoPage;
 import app.pages.students.AddNewStudentsPage;
 import app.pages.summaryPage.SummaryPage;
+import app.pages.userSettings.StudentMyTeachers;
 import app.pages.userSettings.StudentProfileSettings;
 import app.pages.userSettings.TeacherProfileSettings;
 
@@ -53,10 +54,12 @@ public class App {
     public PricingPage pricingPage;
 
     public TeacherHeaderMenu teacherHeaderMenu;
+
     public StudentHeaderMenu studentHeaderMenu;
     public CreateEditClassDrawer createEditClassDrawer;
     public TeacherProfileSettings teacherProfileSettings;
     public StudentProfileSettings studentProfileSettings;
+    public StudentMyTeachers studentMyTeachers;
     public AddNewStudentsPage addNewStudentsPage;
     public ActivityHomePage activityHomePage;
     public ActivityCreation activityCreation;
@@ -88,6 +91,7 @@ public class App {
         createEditClassDrawer = new CreateEditClassDrawer();
         teacherProfileSettings = new TeacherProfileSettings();
         studentProfileSettings = new StudentProfileSettings();
+        studentMyTeachers = new StudentMyTeachers();
         addNewStudentsPage = new AddNewStudentsPage();
         activityCreation = new ActivityCreation();
         activityHomePage = new ActivityHomePage("/app/teacher/activities");
