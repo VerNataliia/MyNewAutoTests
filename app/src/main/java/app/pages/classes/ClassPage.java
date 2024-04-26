@@ -8,6 +8,7 @@ import com.codeborne.selenide.SelenideElement;
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.containExactTextsCaseSensitive;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$x;
@@ -28,7 +29,7 @@ public class ClassPage extends BasePage {
 
 
     public void checkClassName(String className) {
-        MY_CLASS_PAGE_TITLE.shouldBe(Condition.visible).shouldHave(Condition.text(className));
+        MY_CLASS_PAGE_TITLE.shouldBe(Condition.visible).shouldHave(text(className));
     }
 
     public String getClassCode() {
@@ -45,5 +46,12 @@ public class ClassPage extends BasePage {
     public void checkStudentInClass(String studentsUsername) {
         STUDENT_LIST_IN_THE_CLASS.should(containExactTextsCaseSensitive("(" + studentsUsername + ")"));
     }
+
+    public void checkNoStudentInClass(String studentUsername) {
+        if (STUDENT_LIST_IN_THE_CLASS.findBy(text(studentUsername)).exists()) {
+            throw new AssertionError("Student with username " + studentUsername + " is present in the class.");
+        }
+    }
+
 
 }

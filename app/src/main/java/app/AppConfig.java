@@ -11,6 +11,8 @@ public class AppConfig {
             BASE_URL = "https://readtheory.org";
         } else if ("production.ai".equals(environment)) {
             BASE_URL = "https://readtheory.ai";
+        } else if ("production.app.com".equals(environment)) {
+            BASE_URL = "https://readtheoryapp.com";
         } else if ("production.com".equals(environment)) {
             BASE_URL = "https://readtheory.com";
         } else if ("staging".equals(environment)) {

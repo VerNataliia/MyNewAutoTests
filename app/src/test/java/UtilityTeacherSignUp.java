@@ -11,7 +11,14 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         logger.info("Starting teacher sign-up process");
 
         selectRole(app);
-        String[] credentials = createAccount(app);
+        String[] credentials = new String[0];
+        switch (options.signUpVariant) {
+            case READTHEORY -> credentials = createAccountWithUsername(app);
+            case GOOGLE -> credentials = createAccountWithGoogle(app, options.teacherCredentialsForSSO);
+            case MS -> credentials = createAccountWithMS(app, options.teacherCredentialsForSSO);
+            case CLEVER -> createAccountWithClever(app);
+            default -> throw new IllegalArgumentException("Unknown sign up type");
+        }
         String[] personalDetails = enterPersonalDetails(app);
         String selectedSchool = "";
         String[] customSchool = new String[]{"", ""};
@@ -45,13 +52,35 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         logger.debug("Selected 'Teacher' role for sign-up");
     }
 
-    private static String[] createAccount(App app) {
+    private static String[] createAccountWithUsername(App app) {
+        logger.info("Starting to create teacher account with username");
         app.teacherSignupStepOnePage.checkTeacherSignUpPageTitle("Create your teacher account");
         String username = app.teacherSignupStepOnePage.setNewTeacherUsername();
         String password = app.teacherSignupStepOnePage.setNewTeacherPassword();
         app.teacherSignupStepOnePage.clickOnSignUpButtonAsTeacher();
         logger.info("Teacher account created with username: {} and password: {}", username, password);
         return new String[]{username, password};
+    }
+
+    private static String[] createAccountWithGoogle(App app, TeacherCredentialsForSSO teacherCredentialsForSSO) {
+        logger.info("Starting to create teacher account with Google");
+        app.teacherSignupStepOnePage.clickOnSignUpGoogleButton();
+
+        app.googleSignUpPage.setEmail(teacherCredentialsForSSO.teacherEmail);
+        logger.debug("Set teacher email as {}", teacherCredentialsForSSO.teacherEmail);
+        app.googleSignUpPage.setPassword(teacherCredentialsForSSO.teacherPassword);
+        logger.debug("Set teacher password as {}", teacherCredentialsForSSO.teacherPassword);
+        return new String[]{teacherCredentialsForSSO.teacherEmail, teacherCredentialsForSSO.teacherPassword};
+    }
+    private static String[] createAccountWithMS(App app, TeacherCredentialsForSSO teacherCredentialsForSSO) {
+        logger.info("Starting to create teacher account with Microsoft");
+        app.teacherSignupStepOnePage.clickOnSignUpMicrosoftButton();
+
+        return new String[]{teacherCredentialsForSSO.teacherEmail, teacherCredentialsForSSO.teacherPassword};
+    }
+    private static void createAccountWithClever(App app) {
+        logger.info("Starting to create teacher account with Clever");
+        app.teacherSignupStepOnePage.clickOnSignUpCleverButton();
     }
 
     private static String[] enterPersonalDetails(App app) {
@@ -61,7 +90,10 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         String lastName = app.teacherSignupStepTwoPage.setTeacherLastName();
         String teacherLastAndFirstName = lastName + ", " + firstName;
         logger.debug("Teacher's name set: {}", teacherLastAndFirstName);
-        String email = app.teacherSignupStepTwoPage.setTeacherEmail();
+        String email = app.teacherSignupStepTwoPage.getTeacherEmail();
+        if (email == null) {
+            email = app.teacherSignupStepTwoPage.setTeacherEmail();
+        }
         app.teacherSignupStepTwoPage.clickOnNextButtonSecondStep();
         logger.debug("Entered personal details");
         Driver.wait(2); //this waite was added, because class page appears and after few seconds Select school page appears
@@ -107,16 +139,30 @@ public class UtilityTeacherSignUp extends A_BaseTest {
 
     private static void verifySignUp(App app, String firstAndLastName) {
         app.myClassesPage.getMyClassesPageTitle("My Classes");
+        logger.info("My Classes page is checked");
         app.teacherHeaderMenu.checkTeacherLastAndFirstName(firstAndLastName);
+        logger.info("Teacher name in header is checked");
         app.myClassesPage.getEmptyListTitle("First, create your class!");
     }
 
     public static class SignUpOptions {
+        SignUpVariant signUpVariant;
+        TeacherCredentialsForSSO teacherCredentialsForSSO;
         SchoolSelectionOption schoolSelectionOption;
         String schoolName;
         SchoolDetails customSchool;
+    }
 
-        // Constructor, getters, and setters
+    public enum SignUpVariant {
+        READTHEORY,
+        GOOGLE,
+        MS,
+        CLEVER;
+    }
+
+    public static class TeacherCredentialsForSSO {
+        public String teacherEmail;
+        public String teacherPassword;
     }
 
     public static class SchoolDetails {
@@ -135,4 +181,5 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         SELECT,
         CUSTOM
     }
+
 }

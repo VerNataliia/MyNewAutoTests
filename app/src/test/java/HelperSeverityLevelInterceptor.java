@@ -14,7 +14,7 @@ public class HelperSeverityLevelInterceptor implements IMethodInterceptor {
         List<IMethodInstance> result = new ArrayList<>();
         for (IMethodInstance method : methods) {
             Severity severity = method.getMethod().getConstructorOrMethod().getMethod().getAnnotation(Severity.class);
-            if (severity != null && (severity.value().equals(SeverityLevel.BLOCKER) || severity.value().equals(SeverityLevel.CRITICAL))) {
+            if (severity != null && (severity.value().equals(SeverityLevel.BLOCKER) || severity.value().equals(SeverityLevel.CRITICAL) || severity.value().equals(SeverityLevel.NORMAL))) {
                 result.add(method);
             }
         }

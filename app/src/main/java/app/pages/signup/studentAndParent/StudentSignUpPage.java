@@ -1,13 +1,11 @@
 package app.pages.signup.studentAndParent;
 
 import app.DataGenerator;
-import app.helpers.Driver;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -39,15 +37,15 @@ public class StudentSignUpPage extends BasePage {
     }
 
     public void clickOnSignUpGoogleButton() {
-        STUDENT_SIGNUP_WITH_GOOGLE_BUTTON.click();
+        STUDENT_SIGNUP_WITH_GOOGLE_BUTTON.shouldBe(Condition.visible).click();
     }
 
     public void clickOnSignUpMicrosoftButton() {
-        STUDENT_SIGNUP_WITH_MICROSOFT_BUTTON.click();
+        STUDENT_SIGNUP_WITH_MICROSOFT_BUTTON.shouldBe(Condition.visible).click();
     }
 
     public void clickOnSignUpCleverButton() {
-        STUDENT_SIGNUP_WITH_CLEVER_BUTTON.click();
+        STUDENT_SIGNUP_WITH_CLEVER_BUTTON.shouldBe(Condition.visible).click();
     }
 
     DataGenerator dataGenerator = new DataGenerator();

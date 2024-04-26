@@ -5,37 +5,56 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class StudentMyTeachers {
     private final SelenideElement
         STUDENT_MY_TEACHERS_FIRST_NAME_INPUT = $(byXpath("//input[@placeholder='Real First Name Initial']")),
         STUDENT_MY_TEACHERS_LAST_NAME_INPUT = $(byXpath("//input[@placeholder='Real Last Name']")),
         STUDENT_MY_TEACHERS_UPDATE_INFORMATION_BUTTON = $(byXpath("//div[@class='primary-button']")),
+        STUDENT_MY_TEACHERS_LIST_HEADER = $(byXpath("//h2[contains(text(),'Current teachers')]")),
+        STUDENT_MY_TEACHERS_CLASS_CODE_OR_TEACHER_EMAIL_INPUT = $(byXpath("//input[@placeholder='Class code or Teacher’s email']")),
+        STUDENT_MY_TEACHERS_SEND_REQUEST_BUTTON = $(byXpath("//div[@class='primary-button']")),
         STUDENT_MY_TEACHERS_CLOSE_ICON = $(byXpath("//div[@class='primary-button btn-normal btn-close']"));
 
-    private final ElementsCollection STUDENT_MY_TEACHERS_LIST = $$x("//ul[@class='teachers-list']");
+    private final ElementsCollection
+        STUDENT_MY_TEACHERS_LIST = $$x("//ul[@class='teachers-list']");
 
-    public boolean checkIfAdditionalPageOpens() {
+    public boolean checkIfTeachersListShown() {
         try {
-            STUDENT_MY_TEACHERS_FIRST_NAME_INPUT.isDisplayed();
-            return true;
+            return STUDENT_MY_TEACHERS_LIST_HEADER.isDisplayed();
         } catch (Exception e) {
             return false;
         }
     }
-    public void setStudentFirstName() {
-        STUDENT_MY_TEACHERS_FIRST_NAME_INPUT.shouldBe(visible).sendKeys("A");
+
+    public String setStudentFirstName() {
+        String firstName = "A";
+        STUDENT_MY_TEACHERS_FIRST_NAME_INPUT.shouldBe(visible).sendKeys(firstName);
+        return firstName;
     }
-    public void setStudentLastName() {
-        STUDENT_MY_TEACHERS_LAST_NAME_INPUT.shouldBe(visible).sendKeys("Test");
+    public String setStudentLastName() {
+        String lastName = "Test";
+        STUDENT_MY_TEACHERS_LAST_NAME_INPUT.shouldBe(visible).sendKeys(lastName);
+        return lastName;
     }
     public void clickOnUpdateInformationButton() {
         STUDENT_MY_TEACHERS_UPDATE_INFORMATION_BUTTON.shouldBe(visible).click();
     }
+
+    public void sendRequest(String teacherEmailOrClassCode) {
+        STUDENT_MY_TEACHERS_CLASS_CODE_OR_TEACHER_EMAIL_INPUT.shouldBe(visible).sendKeys(teacherEmailOrClassCode);
+        STUDENT_MY_TEACHERS_SEND_REQUEST_BUTTON.shouldBe(interactable).click();
+    }
     public void checkTeacherInList(String teacherEmail) {
         SelenideElement teacherRow = STUDENT_MY_TEACHERS_LIST.findBy(text(teacherEmail));
+        teacherRow.shouldBe(visible);
+    }
+
+    public void checkNoTeacherInList(String teacherEmail) {
+        if(STUDENT_MY_TEACHERS_LIST.findBy(text(teacherEmail)).exists()) {
+            throw new AssertionError("Teacher with username " + teacherEmail + " is present in the class.");
+        }
     }
     public void checkRequestStatus(String teacherEmail, String requestStatus) {
         SelenideElement teacherRow = STUDENT_MY_TEACHERS_LIST.findBy(text(teacherEmail));

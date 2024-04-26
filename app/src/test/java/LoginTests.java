@@ -12,8 +12,8 @@ public class LoginTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing student can log in (Positive case)")
     public void checkStudentLogIn() {
-        app.logInUsernamePage.open();
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
+        app.logInPage.open();
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
     }
 
     @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if a student is able to sign up and then log in using username and password credentials")
@@ -26,7 +26,7 @@ public class LoginTests extends A_BaseTest {
         String studentPassword = studentCredentials[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
 
         UtilityBOActions.logIn(app);
         UtilityBOActions.deleteUserFromList(studentUsername);
@@ -36,7 +36,7 @@ public class LoginTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can log in (Positive case)")
     public void checkTeacherLogIn() {
-        app.logInUsernamePage.open();
+        app.logInPage.open();
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, TEACHER_USERNAME, TEACHER_PASSWORD);
     }
 
@@ -47,6 +47,7 @@ public class LoginTests extends A_BaseTest {
         app.signUpSelectRolePage.open();
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
         options.schoolName = "School";
 
@@ -67,8 +68,8 @@ public class LoginTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing parent can log in (Positive case)")
     public void checkParentLogIn() {
-        app.logInUsernamePage.open();
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, PARENT_USERNAME, PARENT_PASSWORD);
+        app.logInPage.open();
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, PARENT_USERNAME, PARENT_PASSWORD);
     }
 
     @Test(groups = ("LoginUsername"), priority = 1, description = "Verify if a parent is able to sign up and then log in using username and password credentials")
@@ -82,7 +83,7 @@ public class LoginTests extends A_BaseTest {
         String newParentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newParentUsername, newParentPassword);
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newParentUsername, newParentPassword);
 
 
         UtilityBOActions.logIn(app);
@@ -90,7 +91,7 @@ public class LoginTests extends A_BaseTest {
     }
 
     @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
-    @Severity(SeverityLevel.NORMAL)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a user can't log in using not correct username (Negative case)")
     public void checkLogInWithInvalidUsername() {
         app.signUpSelectRolePage.open();
@@ -100,12 +101,12 @@ public class LoginTests extends A_BaseTest {
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername + "56", newStudentPassword);
-        app.logInUsernamePage.checkLogInError("Error occurred while trying to authenticate.");
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newStudentUsername + "56", newStudentPassword);
+        app.logInPage.checkLogInError("Error occurred while trying to authenticate.");
     }
 
     @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
-    @Severity(SeverityLevel.NORMAL)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a user can't log in using not correct password (Negative case)")
     public void checkLogInWithInvalidPassword() {
         app.signUpSelectRolePage.open();
@@ -115,8 +116,8 @@ public class LoginTests extends A_BaseTest {
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword + "66");
-        app.logInUsernamePage.checkLogInError("Error occurred while trying to authenticate.");
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newStudentUsername, newStudentPassword + "66");
+        app.logInPage.checkLogInError("Error occurred while trying to authenticate.");
     }
 
 //    @Feature("LoginSSO")

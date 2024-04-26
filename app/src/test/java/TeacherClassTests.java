@@ -15,6 +15,7 @@ public class TeacherClassTests extends A_BaseTest {
     public void checkClassCreation() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
@@ -30,11 +31,12 @@ public class TeacherClassTests extends A_BaseTest {
     }
 
     @Test(groups = ("Class"), priority = 1, description = "Verify if a non prem teacher can create classes with additional options")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.NORMAL)
     @Description("A non prem teacher can create classes with available additional settings")
     public void checkClassCreationWithAdditionalInfoAsNonPremiumTeacher() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
@@ -53,12 +55,13 @@ public class TeacherClassTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
-    @Test(groups = ("Class"), priority = 1, description = "Verify if a teacher can create classes with additional options")
-    @Severity(SeverityLevel.BLOCKER)
+    @Test(groups = ("Class"), priority = 1, description = "Verify if a prem teacher can create classes with additional options")
+    @Severity(SeverityLevel.NORMAL)
     @Description("A prem teacher can create classes with all additional settings")
     public void checkClassCreationWithAdditionalInfoAsPremiumTeacher() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];

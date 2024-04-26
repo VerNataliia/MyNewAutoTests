@@ -40,6 +40,7 @@ public class NewPretestTests extends A_BaseTest {
     public void checkPretestExecutionAsNewTeacherStudent() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherData[0];
@@ -52,7 +53,7 @@ public class NewPretestTests extends A_BaseTest {
         String newStudentUsername = studentCredentials.get(0).toString();
         String newStudentPassword = studentCredentials.get(1).toString();
         app.teacherHeaderMenu.clickOnSignOutButton();
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newStudentUsername, newStudentPassword);
         UtilityCompleteNewPretest.completeNewPretest(app, 8, 8);
 
 

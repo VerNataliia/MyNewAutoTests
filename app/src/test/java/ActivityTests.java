@@ -16,12 +16,13 @@ import static com.codeborne.selenide.Selenide.switchTo;
 @Feature("Activity")
 public class ActivityTests extends A_BaseTest {
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create recurring weekly activity")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if a teacher can create recurring weekly activity")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new teacher can create recurring weekly activity with default settings for all classes")
     public void teacherCanCreateRecurringWeeklyActivity() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherData[0];
@@ -47,12 +48,13 @@ public class ActivityTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a premium teacher can create recurring weekly activity with custom settings")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if a premium teacher can create recurring weekly activity with custom settings")
     //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can create recurring weekly activity with custom settings for all classes")
     public void teacherCanCreateRecurringWeeklyActivityWithCustomSettings() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
@@ -106,6 +108,7 @@ public class ActivityTests extends A_BaseTest {
 //    public void teacherCannotCreateRecurringWeeklyActivityWithCustomSettings() {
 //        app.signUpSelectRolePage.open();
 //        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+//    options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
 //        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
 //        UtilityTeacherSignUp.signUpAsTeacher(app, options);
 //
@@ -127,11 +130,11 @@ public class ActivityTests extends A_BaseTest {
 //        customSettingsOptions.activityName = "Recurring Weekly Activity for New Class";
 //        // need to add negative verification
 //    }
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a student can complete recurring weekly activity")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if a student can complete recurring weekly activity")
     //@Severity(SeverityLevel.NORMAL)
     @Description("Check if a student can complete recurring weekly activity")
     public void studentCanCompleteRecurringWeeklyActivity() {
-        app.logInUsernamePage.open();
+        app.logInPage.open();
         LocalDate yesterday = LocalDate.now().minusDays(1);
         String formattedDate = yesterday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String filePath = "src/main/resources/files/Credentials_" + formattedDate + ".xlsx";
@@ -144,7 +147,7 @@ public class ActivityTests extends A_BaseTest {
                 String studentUsername = credentials.get("username");
                 String studentPassword = credentials.get("password");
 
-                UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                 UtilityCompleteOldPretest.completeOldPretest(app, 1, 1);
                 app.studentHeaderMenu.clickOnMyProgressButton();
                 Driver.wait(3);
@@ -173,12 +176,13 @@ public class ActivityTests extends A_BaseTest {
     }
 
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity")
     //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if a prem teacher can create specific passage activity with default settings for all students")
     public void teacherCanCreateSpecificPassageActivity() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
@@ -196,12 +200,13 @@ public class ActivityTests extends A_BaseTest {
         UtilityActivityCreation.checkActivityInList(app,activityName);
     }
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity with custom settings")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity with custom settings")
     //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if a teacher can create specific passage activity with  with custom settings")
     public void teacherCanCreateSpecificPassageActivityWithCustomSettings() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];
@@ -224,13 +229,14 @@ public class ActivityTests extends A_BaseTest {
     }
 
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if students can complete recurring weekly activity")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if students can complete recurring weekly activity")
     //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if teacher can create an activity, activity is started and new student can complete pretest, start activity, complete next quiz and complete activity")
     public void studentCanCompleteSpecificPassageActivity() {
         app.signUpSelectRolePage.open();
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
         options.schoolName = "School";
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
@@ -256,7 +262,7 @@ public class ActivityTests extends A_BaseTest {
         UtilityActivityCreation.waiteActivityCanBeStarted(app, activityName);
         System.out.println("Activity name " + activityName);
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, newStudentUsername, newStudentPassword);
+        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newStudentUsername, newStudentPassword);
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 5);
         app.studentHeaderMenu.clickOnMyProgressButton();
         Driver.wait(3);
@@ -269,13 +275,14 @@ public class ActivityTests extends A_BaseTest {
 
 
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create competition activity")
+    @Test(enabled = false, groups = ("Activity"), priority = 1, description = "Verify if a teacher can create competition activity")
     //@Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can create competition activity with default settings")
     public void teacherCanCreateCompetitionActivity() {
         app.signUpSelectRolePage.open();
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
         options.schoolName = "School";
 

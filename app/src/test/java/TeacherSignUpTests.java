@@ -13,6 +13,7 @@ public class TeacherSignUpTests extends A_BaseTest {
     public void checkTeacherSignUpWithUsername() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
 
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
@@ -40,6 +41,7 @@ public class TeacherSignUpTests extends A_BaseTest {
         app.signUpSelectRolePage.open();
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
         options.schoolName = "School";
 
@@ -87,6 +89,7 @@ public class TeacherSignUpTests extends A_BaseTest {
         customSchoolDetails.zipCode = customSchoolZip;
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.CUSTOM;
         options.customSchool = customSchoolDetails;
 
@@ -134,6 +137,7 @@ public class TeacherSignUpTests extends A_BaseTest {
         customSchoolDetails.zipCode = customSchoolZip;
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.CUSTOM;
         options.customSchool = customSchoolDetails;
 
@@ -152,6 +156,32 @@ public class TeacherSignUpTests extends A_BaseTest {
         Driver.refresh();
         app.backOffice.selectUserButtonInSideMenu();
         UtilityBOActions.deleteUserFromList(teacherUsername);
+    }
+
+    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with Google")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("A teacher can sign up with Google and log out. Teacher can log in to the system with Google")
+    public void checkTeacherSignUpWithGoogle() {
+        app.signUpSelectRolePage.open();
+
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        UtilityTeacherSignUp.TeacherCredentialsForSSO teacherCredentialsForSSO = new UtilityTeacherSignUp.TeacherCredentialsForSSO();
+        options.teacherCredentialsForSSO = teacherCredentialsForSSO;
+        String teacherEmail = "nataaverba@gmail.com";
+        teacherCredentialsForSSO.teacherEmail = teacherEmail;
+        teacherCredentialsForSSO.teacherPassword = "349872yD";
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.GOOGLE;
+
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithGoogleAsTeacher(app, teacherEmail);
+
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(teacherEmail);
     }
 
 }

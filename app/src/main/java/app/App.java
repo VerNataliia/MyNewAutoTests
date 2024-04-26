@@ -8,8 +8,7 @@ import app.pages.classes.CreateEditClassDrawer;
 import app.pages.classes.MyClassesPage;
 import app.pages.headerMenu.StudentHeaderMenu;
 import app.pages.headerMenu.TeacherHeaderMenu;
-import app.pages.login.LogInGooglePage;
-import app.pages.login.LogInUsernamePage;
+import app.pages.login.LogInPage;
 import app.pages.myProgress.MyProgressPage;
 import app.pages.quizPage.NextQuizPage;
 import app.pages.quizPage.ResultPage;
@@ -33,8 +32,7 @@ import app.pages.userSettings.TeacherProfileSettings;
 
 public class App {
 
-    public LogInUsernamePage logInUsernamePage;
-    public LogInGooglePage logInGooglePage;
+    public LogInPage logInPage;
     public DashboardPage dashboardPage;
     public MyClassesPage myClassesPage;
     public ClassPage classPage;
@@ -47,6 +45,7 @@ public class App {
     public TeacherSignupStepTwoPage teacherSignupStepTwoPage;
     public TeacherSignUpStepThreePage teacherSignUpStepThreePage;
     public TeacherSignUpStepFourPage teacherSignUpStepFourPage;
+    public GoogleSignUpPage googleSignUpPage;
     public SummaryPage summaryPage;
     public NewPretestPage newPretestPage;
     public NextQuizPage nextQuizPage;
@@ -68,8 +67,7 @@ public class App {
 
 
     public App() {
-        logInUsernamePage = new LogInUsernamePage("/auth/login");
-        logInGooglePage = new LogInGooglePage("/auth/login");
+        logInPage = new LogInPage("/auth/login");
         dashboardPage = new DashboardPage("/app/student/dashboard");
         myClassesPage = new MyClassesPage("/app/teacher/class/list");
         classPage = new ClassPage("app/teacher/class/1340742"); // Need to think how to send dynamic class_id
@@ -81,6 +79,7 @@ public class App {
         teacherSignupStepTwoPage = new TeacherSignupStepTwoPage("/app/sign-up/more-info");
         teacherSignUpStepThreePage = new TeacherSignUpStepThreePage("/app/sign-up/school-info");
         teacherSignUpStepFourPage = new TeacherSignUpStepFourPage("/app/sign-up/pricing");
+        googleSignUpPage = new GoogleSignUpPage();
         summaryPage = new SummaryPage("/app/sign-up/summary");
         newPretestPage = new NewPretestPage("https://staging.readtheory.org/app/v2/student/pretest");
         nextQuizPage = new NextQuizPage("/app/student/quiz");

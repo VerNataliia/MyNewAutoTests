@@ -21,8 +21,9 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_FIRST_NANE_INPUT = $(byXpath("//input[contains(@placeholder,'First Name')]")),
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_FIRST_NANE_INITIAL_INPUT = $(byXpath("//input[@placeholder='First Name Initial']")),
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_LAST_NANE_INPUT = $(byXpath("//input[@placeholder='Last Name']")),
+        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_AGE_FIELD = $(byXpath("//div[@class='vs__selected-options']")),
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON = $(byXpath("//div[@class='primary-button']")),
-        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_AGE_FIELD = $(byXpath("//div[@class='vs__selected-options']"));
+        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT = $(byXpath("//input[@placeholder='Class Code (Optional)']"));
 
     private final ElementsCollection
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_AGE_DROP_DOWN_OPTIONS = $$(".vs__dropdown-option");
@@ -66,7 +67,12 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
     }
 
     public void clickOnTheNextButton() {
-        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.shouldBe(visible).click();
+        if (STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.exists()) {
+            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.click();
+        } else {
+            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.shouldBe(visible);
+            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.pressEnter();
+        }
     }
 
 }

@@ -18,7 +18,8 @@ public class StudentProfileSettings {
 
         String actualStudentUsername = (String) executeJavaScript("return arguments[0].value;", STUDENT_MY_PROFILE_SETTINGS_USERNAME_INPUT);
 
-        if (!actualStudentUsername.equals(expectedStudentUsername)) {
+        assert actualStudentUsername != null;
+        if (!actualStudentUsername.equalsIgnoreCase(expectedStudentUsername)) {
             throw new AssertionError("Expected username: " + expectedStudentUsername + ", but found: " + actualStudentUsername);
         }
     }

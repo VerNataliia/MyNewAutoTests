@@ -3,25 +3,32 @@ package app.helpers;
 import app.AppConfig;
 import com.codeborne.selenide.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import static java.lang.Thread.sleep;
 
 
 public final class Driver {
-    private Driver() {} // Private constructor to prevent instantiation
     public static void initDriver() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        options.addArguments("excludeSwitches", Arrays.toString(new String[]{"enable-automation"}));
+        options.addArguments("useAutomationExtension", String.valueOf(false));
+
+        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
         Configuration.browser = Browsers.CHROME;
         Configuration.pageLoadStrategy = "none";
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.timeout = 10000;
     }
-
     public static void open(String url) {
         Selenide.open(url);
     }

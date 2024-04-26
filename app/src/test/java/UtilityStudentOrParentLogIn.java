@@ -7,13 +7,13 @@ import org.apache.logging.log4j.Logger;
 public class UtilityStudentOrParentLogIn extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityStudentOrParentLogIn.class);
 
-    public static void logInWithUsernameAndPasswordAsStudentORParent(App app, String username, String password) {
+    public static void logInWithUsernameAndPasswordAsStudentOrParent(App app, String username, String password) {
         logger.info("Attempting to log in with username: {} and password: {} as student or parent", username, password);
-        app.logInUsernamePage.enterUserName(username);
+        app.logInPage.enterUserName(username);
         logger.debug("Entered student username: {}", username);
-        app.logInUsernamePage.enterPassword(password);
+        app.logInPage.enterPassword(password);
         logger.debug("Entered student password: {}", password);
-        app.logInUsernamePage.clickOnLogInButton();
+        app.logInPage.clickOnLogInButton();
         logger.info("Clicked on the Login button");
 
         Driver.wait(10); // it was added because of redirection
@@ -38,5 +38,14 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
         app.studentProfileSettings.clickOnCloseButton();
 
         logger.info("Logged in successfully as user: {}", username);
+    }
+
+    public static void logInWithGoogleAsStudentOrParent(App app, String googleEmail, String password) {
+        logger.info("Attempting to log in with Google email: {} and password: {} as student or parent", googleEmail, password);
+        app.logInPage.clickOnSignInWithGoogle();
+
+        app.studentHeaderMenu.clickOnEditProfileButton();
+        app.studentProfileSettings.checkStudentUsername(googleEmail);
+        app.studentProfileSettings.clickOnCloseButton();
     }
 }

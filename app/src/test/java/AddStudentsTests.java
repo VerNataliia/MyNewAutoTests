@@ -14,6 +14,7 @@ public class AddStudentsTests extends A_BaseTest {
     public void checkClassAndStudentCreation() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherData[0];
@@ -45,7 +46,7 @@ public class AddStudentsTests extends A_BaseTest {
         for (int i = 0; i < allUsernames.size(); i++) {
             String studentUsername = allUsernames.get(i);
             String studentPassword = allPasswords.get(i);
-            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+            UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
             app.studentHeaderMenu.clickOnSignOutButton();
         }
 

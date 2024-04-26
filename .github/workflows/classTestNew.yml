@@ -10,6 +10,7 @@ on:
         type: choice
         options:
           - production.org
+          - production.app.com
           - production.com
           - production.ai
           - staging

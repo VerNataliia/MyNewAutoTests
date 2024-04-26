@@ -1,5 +1,6 @@
 import app.App;
 import app.helpers.Driver;
+import com.codeborne.selenide.WebDriverRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -40,21 +41,70 @@ public class UtilityStudentSignUp extends A_BaseTest {
         return new String[]{newStudentUsername, newStudentPassword};
     }
 
-    public static void signUpAsStudentAdditionalAgeStep(App app) {
+
+    public static void signUpAsStudentWithGoogle(App app, String studentEmail, String studentPassword) {
+        logger.info("Starting student sign up with Google");
+        app.signUpSelectRolePage.checkSelectRolePageTitle("Welcome to ReadTheory!");
+        logger.debug("Checked select role page title");
+        app.signUpSelectRolePage.selectStudentRoleForSignUp();
+        logger.debug("Selected student role for sign-up");
+
+        app.studentSignUpPage.clickOnSignUpGoogleButton();
+        logger.debug("Clicked on Sign up with Google");
+
+        app.googleSignUpPage.setEmail(studentEmail);
+        logger.debug("Set student email as {}", studentEmail);
+        app.googleSignUpPage.setPassword(studentPassword);
+        logger.debug("Set student password as {}", studentPassword);
+        Driver.wait(5); //because of redirection
+
         logger.info("Starting student additional age step in sign-up process");
         app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
         logger.debug("Checked student sign-up age page title");
 
-        app.studentOrParentPersonalDetailsStepPage.setFirstName();
-        app.studentOrParentPersonalDetailsStepPage.setLastName();
-        logger.debug("Set student first name and last name");
+        if(WebDriverRunner.url().contains("sign-up/more-info")) {
+            logger.info("Starting student additional age step in sign-up process with first and last name");
+            app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
+            logger.debug("Checked student sign-up age page title");
 
-        app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
-        logger.debug("Selected random student age from dropdown");
-        app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
-        logger.debug("Clicked on the next button");
+            String firstName = app.studentOrParentPersonalDetailsStepPage.setFirstName();
+            String lastName = app.studentOrParentPersonalDetailsStepPage.setLastName();
+            logger.debug("Set student first name and last name");
 
-        app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
-        logger.info("Student additional age step in sign-up process completed");
-    } // it doesn't use because no tests for signing up with SSO
+            app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
+            logger.debug("Selected random student age from dropdown");
+
+            app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
+            logger.debug("Clicked on the next button");
+
+            app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
+            logger.debug("Checked summary page title");
+
+            app.studentHeaderMenu.clickOnEditProfileButton();
+            app.studentProfileSettings.checkStudentUsername(studentEmail);
+            app.studentProfileSettings.clickOnCloseButton();
+
+        } else if(WebDriverRunner.url().contains("sign-up/student-info")) {
+            logger.info("Starting student additional age step in sign-up process without first and last name");
+            app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
+            logger.debug("Checked student sign-up age page title");
+
+            app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
+            logger.debug("Selected random student age from dropdown");
+            app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
+            logger.debug("Clicked on the next button");
+
+            app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
+            logger.debug("Checked summary page title");
+
+            app.studentHeaderMenu.checkStudentUsername(studentEmail);
+
+        } else {
+            logger.debug("Page with the age is skipped");
+        }
+
+        logger.info("Student sign-up completed successfully with username: {} and password: {}", studentEmail, studentPassword);
+
+    }
+
 }

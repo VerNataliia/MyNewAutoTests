@@ -8,9 +8,9 @@ public class UtilityTeacherLogIn extends A_BaseTest {
 
     public static void logInWithUsernameAndPasswordAsTeacher(App app, String username, String password) {
         logger.info("Starting teacher login process with username: {} and password: {}", username, password);
-        app.logInUsernamePage.enterUserName(username);
-        app.logInUsernamePage.enterPassword(password);
-        app.logInUsernamePage.clickOnLogInButton();
+        app.logInPage.enterUserName(username);
+        app.logInPage.enterPassword(password);
+        app.logInPage.clickOnLogInButton();
         logger.debug("Clicked on login button");
         if(WebDriverRunner.url().contains("/app/sign-up/school-info")) {
             app.teacherSignUpStepThreePage.clickOnSkipSelectSchoolPageButton();
@@ -21,5 +21,17 @@ public class UtilityTeacherLogIn extends A_BaseTest {
         app.teacherProfileSettings.checkTeacherUsername(username);
         app.teacherProfileSettings.clickOnCloseButton();
         logger.info("Teacher with the username {} logged in successfully", username);
+    }
+
+    public static void logInWithGoogleAsTeacher(App app, String teacherEmail) {
+        logger.info("Starting teacher login process with Google");
+        app.logInPage.clickOnSignInWithGoogle();
+
+        app.myClassesPage.getMyClassesPageTitle("My Classes");
+        app.teacherHeaderMenu.clickOnEditProfileButton();
+        app.teacherProfileSettings.checkTeacherUsername(teacherEmail);
+        app.teacherProfileSettings.clickOnCloseButton();
+
+        logger.info("Teacher logged in successfully with Google");
     }
 }

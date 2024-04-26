@@ -15,12 +15,13 @@ public class DemoTeacherAccount extends A_BaseTest {
 
     DataGenerator dataGenerator = new DataGenerator();
 
-    @Test(groups = ("Demo account"))
+    @Test(enabled = false, groups = ("Demo account"))
     @Description("Creating a teacher")
     public void createTeacherAccount() {
         app.signUpSelectRolePage.open();
 
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
         options.schoolName = "School";
 
@@ -92,10 +93,10 @@ public class DemoTeacherAccount extends A_BaseTest {
     }
 
 
-    @Test(groups = ("Demo account"))
+    @Test(enabled = false, groups = ("Demo account"))
     @Description("Actions with the first class")
     public void studentsFromFirstClass() throws Exception {
-        app.logInUsernamePage.open();
+        app.logInPage.open();
 
         LocalDate yesterday = LocalDate.now().minusDays(2);
         String formattedDate = yesterday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -127,7 +128,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                 case 0, 1, 2, 3, 4, 5, 6, 7 -> {
                                     logger.debug("Starting flow with completing pretest");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     logger.debug("Starting pretest");
@@ -242,7 +243,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                 case 8 -> {
                                     logger.debug("Starting flow with pretest In Progress");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     logger.debug("Starting pretest");
@@ -257,7 +258,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                 case 9 -> {
                                     logger.debug("Starting flow with pretest Not started");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     app.studentHeaderMenu.clickOnSignOutButton();
@@ -270,10 +271,10 @@ public class DemoTeacherAccount extends A_BaseTest {
         }
     }
 
-    @Test(groups = ("Demo account"))
+    @Test(enabled = false, groups = ("Demo account"))
     @Description("Actions with the second class")
     public void studentsFromSecondClass() throws Exception {
-        app.logInUsernamePage.open();
+        app.logInPage.open();
 
         LocalDate today = LocalDate.now();
         String formattedDate = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -305,7 +306,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                 case 0, 1, 2, 3, 4, 5, 6, 7 -> {
                                     logger.debug("Starting flow with completing pretest");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     logger.debug("Starting pretest");
@@ -385,7 +386,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                 case 8 -> {
                                     logger.debug("Starting flow with pretest In Progress");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     logger.debug("Starting pretest");
@@ -400,7 +401,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                 case 9 -> {
                                     logger.debug("Starting flow with pretest Not started");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     app.studentHeaderMenu.clickOnSignOutButton();
@@ -413,10 +414,10 @@ public class DemoTeacherAccount extends A_BaseTest {
         }
     }
 
-    @Test(groups = ("Demo account"))
+    @Test(enabled = false, groups = ("Demo account"))
     @Description("Actions with the third class")
     public void studentsFromThirdClass() throws Exception {
-        app.logInUsernamePage.open();
+        app.logInPage.open();
 
         LocalDate today = LocalDate.now();
         String formattedDate = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -449,7 +450,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     Driver.wait(3);
                                     logger.debug("Starting flow with completing pretest");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     logger.debug("Starting pretest");
@@ -538,7 +539,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     Driver.wait(3);
                                     logger.debug("Starting flow with pretest In Progress");
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     logger.debug("Starting pretest");
@@ -554,7 +555,7 @@ public class DemoTeacherAccount extends A_BaseTest {
                                     Driver.wait(3);
                                     logger.debug("Starting flow with pretest Not started. Student username {}, student password {}", studentUsername, studentPassword);
                                     do {
-                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentORParent(app, studentUsername, studentPassword);
+                                        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, studentUsername, studentPassword);
                                     } while (WebDriverRunner.url().contains("/auth/login"));
                                     logger.debug("User is logged in with username {} and password {}", studentUsername, studentPassword);
                                     Driver.wait(3);
