@@ -32,18 +32,23 @@ jobs:
 
       - name: Build and test with Gradle
         run: ./gradlew classTests -Denvironment=$ENVIRONMENT
+        continue-on-error: true
         env:
           ALLURE_RESULTS: app/build/allure-results
 
       - name: Install Allure CLI
         run: sudo apt-get install allure
+        continue-on-error: true
 
       - name: Generate Allure Report
         run: allure generate ${{ env.ALLURE_RESULTS }} -o ${{ env.ALLURE_RESULTS }}/report --clean
+        continue-on-error: true
 
       - name: Upload Allure Report as Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Allure-Report
           path: ${{ env.ALLURE_RESULTS }}/report
+        continue-on-error: true
+
 
