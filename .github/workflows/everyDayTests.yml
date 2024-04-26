@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,10 +37,10 @@ jobs:
           ALLURE_RESULTS: app/build/allure-results
 
       - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@v1.0
+        uses: allure-framework/allure-action@v2.9.4
         with:
-          allure_results: app/build/allure-results
-          allure_report: app/build/allure-report
+          results-directory: app/build/allure-results
+          report-directory: app/build/allure-report
 
       - name: Upload Allure Report as Artifact
         uses: actions/upload-artifact@v2
