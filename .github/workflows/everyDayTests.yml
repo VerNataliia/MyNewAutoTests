@@ -6,29 +6,43 @@ on:
         description: 'Set environment'
         required: true
         default: 'production.org'
-    schedule:
-      - cron: '17 10 * * *'
+  schedule:
+    - cron: '17 10 * * *'
 
 permissions:
   contents: write
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     env:
       ENVIRONMENT: 'production.org'
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'zulu'
+
       - uses: browser-actions/setup-chrome@v1
+
       - run: chrome --version
-      - run: ./gradlew everyDayTests -Denvironment=$ENVIRONMENT
+
+      - run: ./gradlew classTests -Denvironment=$ENVIRONMENT
         env:
           ALLURE_RESULTS: app/build/allure-results
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v1.0
+        with:
+          allure_results: app/build/allure-results
+          allure_report: app/build/allure-report
+
+      - name: Upload Allure Report as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Allure-Report
+          path: app/build/allure-report
