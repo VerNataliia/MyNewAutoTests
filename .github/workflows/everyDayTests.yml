@@ -12,7 +12,6 @@ on:
 permissions:
   contents: write
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,21 +28,22 @@ jobs:
           distribution: 'zulu'
 
       - uses: browser-actions/setup-chrome@v1
-
       - run: chrome --version
 
-      - run: ./gradlew classTests -Denvironment=$ENVIRONMENT
+      - name: Build and test with Gradle
+        run: ./gradlew classTests -Denvironment=$ENVIRONMENT
         env:
           ALLURE_RESULTS: app/build/allure-results
 
+      - name: Install Allure CLI
+        run: sudo apt-get install allure
+
       - name: Generate Allure Report
-        uses: allure-framework/allure-action@v2.9.4
-        with:
-          results-directory: app/build/allure-results
-          report-directory: app/build/allure-report
+        run: allure generate ${{ env.ALLURE_RESULTS }} -o ${{ env.ALLURE_RESULTS }}/report --clean
 
       - name: Upload Allure Report as Artifact
         uses: actions/upload-artifact@v2
         with:
           name: Allure-Report
-          path: app/build/allure-report
+          path: ${{ env.ALLURE_RESULTS }}/report
+
