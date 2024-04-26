@@ -47,14 +47,6 @@ jobs:
           retention-days: 1
           continue-on-error: true
 
-      - name: Generate Allure results link
-        id: allure-link
-        run: echo "${{ secrets.GITHUB_SERVER_URL }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/allure-results"
-        shell: bash
-
-      - name: Print Allure results URL
-        run: echo "${{ steps.allure-link.outputs.allure-link }}"
-
   generate-report:
     runs-on: ubuntu-latest
     needs: tests
