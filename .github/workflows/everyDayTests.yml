@@ -66,15 +66,24 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - run: allure generate -c app/build/allure-results -o _site
+
       - name: Store generated report
         uses: actions/upload-artifact@v3
         with:
           name: _site
           path: _site
           retention-days: 1
+
+      - name: Set report URL
+        id: report_url
+        run: echo "::set-output name=url::https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure-report"
+
+      - name: Print report URL
+        run: echo "${{ steps.generate-report.outputs.report_url }}"
 
   publish-report:
     runs-on: ubuntu-latest
