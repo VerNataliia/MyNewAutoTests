@@ -48,6 +48,11 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 1
+      - name: Debugging step
+        run: |
+          pwd
+          ls -la
+          ls -R allure-results
 
   generate-report:
     runs-on: ubuntu-latest
