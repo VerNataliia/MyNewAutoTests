@@ -41,6 +41,7 @@ jobs:
 
       - name: List results
         run: ls -R allure-results
+        continue-on-error: true
 
       - name: Store allure results
         uses: actions/upload-artifact@v3
@@ -48,11 +49,13 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 1
+          continue-on-error: true
       - name: Debugging step
         run: |
           pwd
           ls -la
           ls -R allure-results
+        continue-on-error: true
 
   generate-report:
     runs-on: ubuntu-latest
