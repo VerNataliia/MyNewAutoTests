@@ -39,10 +39,6 @@ jobs:
         run: ./gradlew classTests -Denvironment=$ENVIRONMENT
         continue-on-error: true
 
-      - name: List results
-        run: ls -R allure-results
-        continue-on-error: true
-
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
@@ -50,12 +46,12 @@ jobs:
           path: app/build/allure-results
           retention-days: 1
           continue-on-error: true
-      - name: Debugging step
-        run: |
-          pwd
-          ls -la
-          ls -R allure-results
-        continue-on-error: true
+      - name: Get Allure results URL
+        id: allure-url
+        run: echo "https://github.com/${{ github.repository }}/runs/${{ github.run_id }}/artifacts/allure-results"
+
+      - name: Print Allure results URL
+        run: echo "${{ steps.allure-url.outputs.allure-url }}"
 
   generate-report:
     runs-on: ubuntu-latest
