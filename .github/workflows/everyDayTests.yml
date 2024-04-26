@@ -1,8 +1,13 @@
 name: Everyday tests
-
 on:
-  schedule:
-    - cron: '15 10 * * *'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Set environment'
+        required: true
+        default: 'production.org'
+    schedule:
+      - cron: '17 10 * * *'
 
 permissions:
   contents: write
