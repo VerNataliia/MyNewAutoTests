@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'zulu'
+          distribution: 'microsoft' # Adjusted to ensure consistency across jobs
 
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
@@ -32,14 +32,16 @@ jobs:
       - name: Build and test with Gradle
         run: ./gradlew classTests -Denvironment=$ENVIRONMENT
         continue-on-error: true
+
+      - name: List results
+        run: ls -R allure-results
+
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
-          path:
-            allure-results
+          path: allure-results/
           retention-days: 1
-
 
   generate-report:
     runs-on: ubuntu-latest
@@ -47,8 +49,8 @@ jobs:
     steps:
       - uses: actions/setup-java@v3
         with:
-          distribution: 'microsoft' # See 'Supported distributions' for available options
           java-version: '17'
+          distribution: 'microsoft'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
@@ -69,5 +71,4 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v1.2.9
