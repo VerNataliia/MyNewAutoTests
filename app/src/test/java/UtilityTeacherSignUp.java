@@ -91,7 +91,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         String teacherLastAndFirstName = lastName + ", " + firstName;
         logger.debug("Teacher's name set: {}", teacherLastAndFirstName);
         String email = app.teacherSignupStepTwoPage.getTeacherEmail();
-        if (email == null) {
+        if (email == null || email.isEmpty()) {
             email = app.teacherSignupStepTwoPage.setTeacherEmail();
         }
         app.teacherSignupStepTwoPage.clickOnNextButtonSecondStep();
