@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'microsoft' # Adjusted to ensure consistency across jobs
+          distribution: 'microsoft'
 
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
@@ -46,12 +46,14 @@ jobs:
           path: app/build/allure-results
           retention-days: 1
           continue-on-error: true
-      - name: Get Allure results URL
-        id: allure-url
-        run: echo "https://github.com/${{ github.repository }}/runs/${{ github.run_id }}/artifacts/allure-results"
+
+      - name: Generate Allure results link
+        id: allure-link
+        run: echo "${{ secrets.GITHUB_SERVER_URL }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/allure-results"
+        shell: bash
 
       - name: Print Allure results URL
-        run: echo "${{ steps.allure-url.outputs.allure-url }}"
+        run: echo "${{ steps.allure-link.outputs.allure-link }}"
 
   generate-report:
     runs-on: ubuntu-latest
@@ -73,22 +75,6 @@ jobs:
           name: _site
           path: _site
           retention-days: 1
-
-      - name: Set report URL
-        id: set_report_url
-        run: echo "REPORT_URL=https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure-report" >> $GITHUB_ENV
-
-      - name: Print report URL
-        run: echo "$REPORT_URL"
-
-      - name: Save report URL to file
-        run: echo "https://${{ github.repository_owner }}.github.io/${{ github.repository }}/allure-report" > report_url.txt
-
-      - name: Upload report URL as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: report-url
-          path: report_url.txt
 
   publish-report:
     runs-on: ubuntu-latest
