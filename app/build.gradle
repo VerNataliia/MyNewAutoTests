@@ -10,6 +10,7 @@ repositories {
     mavenCentral()
 }
 
+
 //Properties
 ext {
     guavaVersion = '31.1-jre'
@@ -62,11 +63,19 @@ application {
 tasks.named('test') {
     useTestNG()
 }
+
 test {
     useTestNG()
     testLogging {
         events 'passed', 'skipped', 'failed'
     }
+    // System property for Allure results directory
+    systemProperty 'allure.results.directory', file('build/allure-results').absolutePath
+}
+
+// Ensure each test task is correctly setting the Allure results directory
+tasks.withType(Test) {
+    systemProperties['allure.results.directory'] = file('build/allure-results').absolutePath
 }
 
 test {
@@ -104,7 +113,7 @@ tasks.register("newPretestTests", Test) {
 }
 
 tasks.register("classTests", Test) {
-    systemProperty 'environment', System.properties['environment']
+    systemProperty 'environment', System.getProperty('environment')
     useTestNG {
         includeGroups 'Class'
     }
