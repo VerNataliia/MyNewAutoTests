@@ -3,6 +3,7 @@ package app.helpers;
 import app.AppConfig;
 import com.codeborne.selenide.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
@@ -14,9 +15,12 @@ import static java.lang.Thread.sleep;
 
 
 public final class Driver {
+    private static ChromeOptions options = new ChromeOptions();
+
     public static void initDriver() {
-        ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-blink-features=AutomationControlled");
+        options.addArguments("--disable-extensions-except=src/main/resources/adBlocker.crx");
+        options.addArguments("--load-extension=src/main/resources/adBlocker.crx");
         options.addArguments("excludeSwitches", Arrays.toString(new String[]{"enable-automation"}));
         options.addArguments("useAutomationExtension", String.valueOf(false));
 
@@ -29,10 +33,12 @@ public final class Driver {
         Configuration.screenshots = false;
         Configuration.headless = false;
         Configuration.timeout = 10000;
+
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverRunner.setWebDriver(driver);
     }
 
     public static void useAddBlocker() {
-        ChromeOptions options = new ChromeOptions();
         options.addExtensions(new File("src/main/resources/adBlocker.crx"));
     }
 
