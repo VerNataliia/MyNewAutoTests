@@ -25,6 +25,7 @@ public final class Driver {
         options.addArguments("useAutomationExtension", String.valueOf(false));
 
         Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        options.addExtensions(new File("src/main/resources/adBlocker.crx"));
 
         Configuration.browser = Browsers.CHROME;
         Configuration.pageLoadStrategy = "none";
@@ -40,6 +41,8 @@ public final class Driver {
 
     public static void useAddBlocker() {
         options.addExtensions(new File("src/main/resources/adBlocker.crx"));
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverRunner.setWebDriver(driver);
     }
 
     public static void open(String url) {

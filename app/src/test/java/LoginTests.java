@@ -14,7 +14,6 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if an existing student can log in (Positive case)")
     public void checkStudentLogIn() {
         app.logInPage.open();
-        Driver.useAddBlocker();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
     }
 

@@ -6,9 +6,6 @@ import org.apache.logging.log4j.*;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-
-
 public class A_BaseTest {
 
     @BeforeSuite(alwaysRun = true)
