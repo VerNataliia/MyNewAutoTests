@@ -1,4 +1,5 @@
 
+import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -13,6 +14,7 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if an existing student can log in (Positive case)")
     public void checkStudentLogIn() {
         app.logInPage.open();
+        Driver.useAddBlocker();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, STUDENT_USERNAME, STUDENT_PASSWORD);
     }
 
@@ -21,6 +23,7 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
     public void checkNewStudentLogIn() {
         app.signUpSelectRolePage.open();
+        Driver.useAddBlocker();
         String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String studentUsername = studentCredentials[0];
         String studentPassword = studentCredentials[1];
@@ -69,6 +72,7 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if an existing parent can log in (Positive case)")
     public void checkParentLogIn() {
         app.logInPage.open();
+        Driver.useAddBlocker();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, PARENT_USERNAME, PARENT_PASSWORD);
     }
 
@@ -77,7 +81,7 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a parent's account, log out and then log in (Positive case)")
     public void checkNewParentLogIn() {
         app.signUpSelectRolePage.open();
-
+        Driver.useAddBlocker();
         String[] userDetails = UtilityParentSignUp.signUpAsParentWithUsername(app);
         String newParentUsername = userDetails[0];
         String newParentPassword = userDetails[1];

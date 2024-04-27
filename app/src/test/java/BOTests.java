@@ -10,6 +10,7 @@ public class BOTests extends A_BaseTest {
     public void makeTeacherPrem() {
         app.signUpSelectRolePage.open();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
         String[] teacherCredentials = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherCredentials[0];

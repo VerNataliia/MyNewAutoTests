@@ -4,7 +4,9 @@ import app.DataGenerator;
 import app.pages.base.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.ex.ElementNotFound;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -41,9 +43,18 @@ public class TeacherSignupStepTwoPage extends BasePage {
     }
 
     public String getTeacherEmail() {
-        return TEACHER_SIGNUP_EMAIL_INPUT.getText();
+        try {
+            SelenideElement teacherEmail = $("#app > div.app-body > div > div > div.page-card__left-half > div > form > div.rt-input__wrapper.filled > div > input");
+            teacherEmail.shouldBe(visible);
+            return (String) executeJavaScript("return arguments[0].value;", teacherEmail);
+        }
+        catch (ElementNotFound e) {
+            return null;
+        }
+        catch (Exception e) {  // A more general catch to handle any other unexpected issues
+            return null;
+        }
     }
-
     public String setTeacherEmail() {
         String newTeacherEmail = "autoTestTeacher" + dataGenerator.getRandomNumber(1000, 9999999) + "@gmail.com";
         TEACHER_SIGNUP_EMAIL_INPUT.shouldBe(Condition.visible).sendKeys(newTeacherEmail);

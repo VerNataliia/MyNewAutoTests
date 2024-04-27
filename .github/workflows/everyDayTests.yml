@@ -45,7 +45,6 @@ jobs:
           name: allure-results
           path: app/build/allure-results
           retention-days: 1
-          continue-on-error: true
 
       - name: Allure report create
         run: |

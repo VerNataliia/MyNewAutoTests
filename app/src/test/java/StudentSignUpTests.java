@@ -1,3 +1,4 @@
+import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -9,6 +10,7 @@ public class StudentSignUpTests extends A_BaseTest {
     @Description("A student can sign up with username and password, log out and login again")
     public void checkStudentSignUpWithUsername() {
         app.signUpSelectRolePage.open();
+        Driver.useAddBlocker();
         String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String studentUsername = studentCredentials[0];
         String studentPassword = studentCredentials[1];
@@ -25,6 +27,7 @@ public class StudentSignUpTests extends A_BaseTest {
     @Description("A student can sign up with Google, log out and login with Google again")
     public void checkStudentSignUpWithGoogle() {
         app.signUpSelectRolePage.open();
+        Driver.useAddBlocker();
         String studentEmail = "autoTestStudent1@gmail.com";
         String studentPassword = "349872yd";
         UtilityStudentSignUp.signUpAsStudentWithGoogle(app, studentEmail, studentPassword);

@@ -5,6 +5,7 @@ import com.codeborne.selenide.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -26,9 +27,15 @@ public final class Driver {
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.timeout = 10000;
     }
+
+    public static void useAddBlocker() {
+        ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("src/main/resources/adBlocker.crx"));
+    }
+
     public static void open(String url) {
         Selenide.open(url);
     }
