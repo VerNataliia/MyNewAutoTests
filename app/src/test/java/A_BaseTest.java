@@ -34,8 +34,4 @@ public class A_BaseTest {
         Driver.close();
     }
 
-//    @AfterClass (alwaysRun = true)
-//    public void tearDown() {
-//        Driver.close();
-//    }
 }

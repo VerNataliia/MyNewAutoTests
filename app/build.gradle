@@ -132,3 +132,11 @@ tasks.register("demoAccount", Test) {
         includeGroups 'Demo account OldP'
     }
 }
+
+
+    tasks.register("linkStudentToTeacher", Test) {
+        systemProperty 'environment', System.properties['environment']
+        useTestNG {
+            includeGroups 'LinkStudentToTeacher'
+        }
+    }

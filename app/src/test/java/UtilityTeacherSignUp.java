@@ -4,6 +4,8 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static app.StaticTestData.*;
+
 public class UtilityTeacherSignUp extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityTeacherSignUp.class);
 
@@ -11,28 +13,50 @@ public class UtilityTeacherSignUp extends A_BaseTest {
         logger.info("Starting teacher sign-up process");
 
         selectRole(app);
-        String[] credentials = new String[0];
+        String[] credentials;
         switch (options.signUpVariant) {
             case READTHEORY -> credentials = createAccountWithUsername(app);
             case GOOGLE -> credentials = createAccountWithGoogle(app, options.teacherCredentialsForSSO);
             case MS -> credentials = createAccountWithMS(app, options.teacherCredentialsForSSO);
-            case CLEVER -> createAccountWithClever(app);
+            case CLEVER -> credentials = createAccountWithClever(app);
             default -> throw new IllegalArgumentException("Unknown sign up type");
         }
-        String[] personalDetails = enterPersonalDetails(app);
-        String selectedSchool = "";
-        String[] customSchool = new String[]{"", ""};
 
-        switch (options.schoolSelectionOption) {
-            case SKIP -> skipSchoolSelection(app);
-            case SELECT -> selectedSchool = selectSchool(app, options.schoolName);
-            case CUSTOM -> customSchool = addCustomSchool(app, options.customSchool);
-            default -> throw new IllegalArgumentException("Unknown school selection option");
+        String[] personalDetails = null;
+        String selectedSchool = null;
+        String[] customSchool = new String[0];
+        switch (options.signUpVariant) {
+            case READTHEORY, GOOGLE, MS -> {
+                personalDetails = enterPersonalDetails(app);
+                selectedSchool = "";
+                customSchool = new String[]{"", ""};
+
+                switch (options.schoolSelectionOption) {
+                    case SKIP -> skipSchoolSelection(app);
+                    case SELECT -> selectedSchool = selectSchool(app, options.schoolName);
+                    case CUSTOM -> customSchool = addCustomSchool(app, options.customSchool);
+                    default -> throw new IllegalArgumentException("Unknown school selection option");
+                }
+
+                skipPricing(app);
+                verifySignUp(app, personalDetails[2]);
+            }
+            case CLEVER -> {
+                personalDetails = new String[]{"", "", CLEVER_TEACHER_FIRST_AND_LAST_NAME, CLEVER_TEACHER_EMAIL};
+                selectedSchool = "";
+                customSchool = new String[]{"", ""};
+                switch (options.schoolSelectionOption) {
+                    case SKIP -> skipSchoolSelection(app);
+                    case SELECT -> selectedSchool = selectSchool(app, options.schoolName);
+                    case CUSTOM -> customSchool = addCustomSchool(app, options.customSchool);
+                    default -> throw new IllegalArgumentException("Unknown school selection option");
+                }
+                verifySignUp(app, CLEVER_TEACHER_FIRST_AND_LAST_NAME);
+            }
         }
 
-        skipPricing(app);
-        verifySignUp(app, personalDetails[2]);
         logger.info("Teacher sign-up completed successfully");
+
         return new String[]{
             credentials[0], // username
             credentials[1], // password
@@ -42,9 +66,9 @@ public class UtilityTeacherSignUp extends A_BaseTest {
             personalDetails[3], // email
             selectedSchool, // selectedSchool
             customSchool[0],
-            customSchool[1]
-        };
+            customSchool[1]};
     }
+
 
     private static void selectRole(App app) {
         app.signUpSelectRolePage.checkSelectRolePageTitle("Welcome to ReadTheory!");
@@ -75,12 +99,17 @@ public class UtilityTeacherSignUp extends A_BaseTest {
     private static String[] createAccountWithMS(App app, TeacherCredentialsForSSO teacherCredentialsForSSO) {
         logger.info("Starting to create teacher account with Microsoft");
         app.teacherSignupStepOnePage.clickOnSignUpMicrosoftButton();
-
+        app.microsoftSignUpPage.setEmail(teacherCredentialsForSSO.teacherEmail);
+        logger.debug("Set teacher email as {}", teacherCredentialsForSSO.teacherEmail);
+        app.microsoftSignUpPage.setPassword(teacherCredentialsForSSO.teacherPassword);
+        logger.debug("Set teacher password as {}", teacherCredentialsForSSO.teacherPassword);
+        app.microsoftSignUpPage.confirmNotLeave();
         return new String[]{teacherCredentialsForSSO.teacherEmail, teacherCredentialsForSSO.teacherPassword};
     }
-    private static void createAccountWithClever(App app) {
+    private static String[] createAccountWithClever(App app) {
         logger.info("Starting to create teacher account with Clever");
         app.teacherSignupStepOnePage.clickOnSignUpCleverButton();
+        return new String[]{CLEVER_STUDENT_EMAIL, ""};
     }
 
     private static String[] enterPersonalDetails(App app) {

@@ -7,7 +7,7 @@ on:
         required: true
         default: 'production.org'
   schedule:
-    - cron: '17 10 * * *'
+    - cron: '00 05 * * 0-5' ##From Sunday to Friday
 
 permissions:
   contents: write
@@ -36,7 +36,7 @@ jobs:
       - run: chrome --version
 
       - name: Build and test with Gradle
-        run: ./gradlew classTests -Denvironment=$ENVIRONMENT
+        run: ./gradlew everyDayTests -Denvironment=$ENVIRONMENT
         continue-on-error: true
 
       - name: Store allure results

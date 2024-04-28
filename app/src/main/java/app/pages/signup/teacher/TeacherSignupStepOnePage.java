@@ -31,15 +31,15 @@ public class TeacherSignupStepOnePage extends BasePage {
     }
 
     public void clickOnSignUpGoogleButton() {
-        TEACHER_SIGNUP_WITH_GOOGLE_BUTTON.click();
+        TEACHER_SIGNUP_WITH_GOOGLE_BUTTON.shouldBe(Condition.visible).click();
     }
 
     public void clickOnSignUpMicrosoftButton() {
-        TEACHER_SIGNUP_WITH_MICROSOFT_BUTTON.click();
+        TEACHER_SIGNUP_WITH_MICROSOFT_BUTTON.shouldBe(Condition.visible).click();
     }
 
     public void clickOnSignUpCleverButton() {
-        TEACHER_SIGNUP_WITH_CLEVER_BUTTON.click();
+        TEACHER_SIGNUP_WITH_CLEVER_BUTTON.shouldBe(Condition.visible).click();
     }
 
     DataGenerator dataGenerator = new DataGenerator();

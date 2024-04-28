@@ -15,15 +15,16 @@ import static java.lang.Thread.sleep;
 
 
 public final class Driver {
+
     public static void initDriver() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-blink-features=AutomationControlled");
         options.addArguments("excludeSwitches", Arrays.toString(new String[]{"enable-automation"}));
         options.addArguments("useAutomationExtension", String.valueOf(false));
 
-        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
         options.addExtensions(new File("src/main/resources/adBlocker.crx"));
 
+        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
         Configuration.browser = Browsers.CHROME;
         Configuration.pageLoadStrategy = "none";
         Configuration.browserSize = "1920x1080";
@@ -31,11 +32,6 @@ public final class Driver {
         Configuration.screenshots = false;
         Configuration.headless = false;
         Configuration.timeout = 10000;
-    }
-
-    public static void useAddBlocker() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addExtensions(new File("src/main/resources/adBlocker.crx"));
     }
 
     public static void open(String url) {

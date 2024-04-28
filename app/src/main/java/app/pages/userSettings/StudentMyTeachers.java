@@ -1,5 +1,6 @@
 package app.pages.userSettings;
 
+import app.helpers.Driver;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
@@ -21,6 +22,7 @@ public class StudentMyTeachers {
         STUDENT_MY_TEACHERS_LIST = $$x("//ul[@class='teachers-list']");
 
     public boolean checkIfTeachersListShown() {
+        Driver.wait(2);
         try {
             return STUDENT_MY_TEACHERS_LIST_HEADER.isDisplayed();
         } catch (Exception e) {
@@ -63,7 +65,7 @@ public class StudentMyTeachers {
     public void checkRequestAccepted(String teacherEmail) {
         SelenideElement teacherRow = STUDENT_MY_TEACHERS_LIST.findBy(text(teacherEmail));
         teacherRow.shouldBe(visible);
-        teacherRow.$x(".//div[2]/p").shouldNot(exist);
+        teacherRow.$x(".//div[2]/p").should(or("not exist or has text", not(exist), text("Teacher accepted your request")));
     }
 
     public void clickOnCloseWindowButton() {

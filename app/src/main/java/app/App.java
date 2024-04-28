@@ -46,6 +46,8 @@ public class App {
     public TeacherSignUpStepThreePage teacherSignUpStepThreePage;
     public TeacherSignUpStepFourPage teacherSignUpStepFourPage;
     public GoogleSignUpPage googleSignUpPage;
+    public MicrosoftSignUpPage microsoftSignUpPage;
+    public CleverSignUpPage cleverSignUpPage;
     public SummaryPage summaryPage;
     public NewPretestPage newPretestPage;
     public NextQuizPage nextQuizPage;
@@ -80,6 +82,8 @@ public class App {
         teacherSignUpStepThreePage = new TeacherSignUpStepThreePage("/app/sign-up/school-info");
         teacherSignUpStepFourPage = new TeacherSignUpStepFourPage("/app/sign-up/pricing");
         googleSignUpPage = new GoogleSignUpPage();
+        microsoftSignUpPage = new MicrosoftSignUpPage();
+        cleverSignUpPage = new CleverSignUpPage();
         summaryPage = new SummaryPage("/app/sign-up/summary");
         newPretestPage = new NewPretestPage("https://staging.readtheory.org/app/v2/student/pretest");
         nextQuizPage = new NextQuizPage("/app/student/quiz");

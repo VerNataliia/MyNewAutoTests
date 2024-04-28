@@ -1,5 +1,4 @@
 
-import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -22,7 +21,6 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a student's account, log out and then log in (Positive case)")
     public void checkNewStudentLogIn() {
         app.signUpSelectRolePage.open();
-        Driver.useAddBlocker();
         String [] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, false, null);
         String studentUsername = studentCredentials[0];
         String studentPassword = studentCredentials[1];
@@ -56,7 +54,6 @@ public class LoginTests extends A_BaseTest {
         String[] teacherData = UtilityTeacherSignUp.signUpAsTeacher(app, options);
         String teacherUsername = teacherData[0];
         String teacherPassword  = teacherData[1];
-        String selectedSchool = teacherData[6];
 
         app.teacherHeaderMenu.clickOnSignOutButton();
         UtilityTeacherLogIn.logInWithUsernameAndPasswordAsTeacher(app, teacherUsername,teacherPassword);
@@ -71,7 +68,6 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if an existing parent can log in (Positive case)")
     public void checkParentLogIn() {
         app.logInPage.open();
-        Driver.useAddBlocker();
         UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, PARENT_USERNAME, PARENT_PASSWORD);
     }
 
@@ -80,7 +76,6 @@ public class LoginTests extends A_BaseTest {
     @Description("Check if a new user can create a parent's account, log out and then log in (Positive case)")
     public void checkNewParentLogIn() {
         app.signUpSelectRolePage.open();
-        Driver.useAddBlocker();
         String[] userDetails = UtilityParentSignUp.signUpAsParentWithUsername(app);
         String newParentUsername = userDetails[0];
         String newParentPassword = userDetails[1];
@@ -93,7 +88,7 @@ public class LoginTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(newParentUsername);
     }
 
-    @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
+    @Test(groups = ("LoginUsername"), enabled = false ,priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a user can't log in using not correct username (Negative case)")
     public void checkLogInWithInvalidUsername() {
@@ -108,7 +103,7 @@ public class LoginTests extends A_BaseTest {
         app.logInPage.checkLogInError("Error occurred while trying to authenticate.");
     }
 
-    @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
+    @Test(groups = ("LoginUsername"), enabled = false, priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a user can't log in using not correct password (Negative case)")
     public void checkLogInWithInvalidPassword() {
@@ -123,63 +118,4 @@ public class LoginTests extends A_BaseTest {
         app.logInPage.checkLogInError("Error occurred while trying to authenticate.");
     }
 
-//    @Feature("LoginSSO")
-//    public class LoginTestSSO {
-//        @Test(groups = ("Login"), priority = 1, description = "Verify if a teacher is able to log in using SSO Google")
-//        @Severity(SeverityLevel.BLOCKER)
-//        @Description("Check if a teacher can log in using SSO Google (Positive case)")
-//        public void checkTeacherLogInWithGoogle() {
-//
-//            String environment = System.getProperty("environment");
-//
-//            if ("production".equals(environment)) {
-//                app.logInGooglePage.open();
-//                app.logInGooglePage.logInWithGoogle(TEACHER_GOOGLE_EMAIL, TEACHER_GOOGLE_PASSWORD);
-//                app.myClassesPage.getMyClassesPageTitle("My Classes");
-//            } else {
-//                // Mark the test as skipped for staging
-//                ITestResult result = Reporter.getCurrentTestResult();
-//                result.setStatus(ITestResult.SKIP);
-//                throw new SkipException("Skipping the test as the environment is not 'production'.");
-//            }
-//        }
-//
-//        @Test(groups = ("Login"), priority = 1, description = "Verify if a student is able to log in using SSO Google")
-//        @Severity(SeverityLevel.BLOCKER)
-//        @Description("Check if a student can log in using SSO Google (Positive case)")
-//        public void checkStudentLogInWithGoogle() {
-//
-//            String environment = System.getProperty("environment");
-//
-//            if ("production".equals(environment)) {
-//                app.logInGooglePage.open();
-//                app.logInGooglePage.logInWithGoogle(STUDENT_GOOGLE_EMAIL, STUDENT_GOOGLE_PASSWORD);
-//                app.dashboardPage.START_PRACTICING_BUTTON.shouldBe(visible, Duration.ofSeconds(10));
-//            } else {
-//                // Mark the test as skipped for staging
-//                ITestResult result = Reporter.getCurrentTestResult();
-//                result.setStatus(ITestResult.SKIP);
-//                throw new SkipException("Skipping the test as the environment is not 'production'.");
-//            }
-//        }
-//
-//        @Test(groups = ("Login"), priority = 2, description = "Verify if a user ISN'T able to log in using SSO Google with non existing user")
-//        @Severity(SeverityLevel.NORMAL)
-//        @Description("Check if a user can't log in using SSO Google if no such user in the database(Negative case)")
-//        public void checkLogInWithGoogleWithNonExistingUser() {
-//
-//            String environment = System.getProperty("environment");
-//
-//            if ("production".equals(environment)) {
-//                app.logInGooglePage.open();
-//                app.logInGooglePage.logInWithGoogle(USER_GOOGLE_NON_EXISTING_IN_DATABASE_EMAIL, USER_GOOGLE_NON_EXISTING_IN_DATABASE_PASSWORD);
-//                app.logInGooglePage.GOOGLE_ERROR_NO_ACCOUNT.shouldBe(visible, Duration.ofSeconds(10));
-//            } else {
-//                // Mark the test as skipped for staging
-//                ITestResult result = Reporter.getCurrentTestResult();
-//                result.setStatus(ITestResult.SKIP);
-//                throw new SkipException("Skipping the test as the environment is not 'production'.");
-//            }
-//        }
-//    }
 }

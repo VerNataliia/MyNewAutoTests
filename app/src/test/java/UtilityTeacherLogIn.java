@@ -12,22 +12,39 @@ public class UtilityTeacherLogIn extends A_BaseTest {
         app.logInPage.enterUserName(username);
         app.logInPage.enterPassword(password);
         app.logInPage.clickOnLogInButton();
+        checkAndSkipSchoolInfoPage(app);
         logger.debug("Clicked on login button");
-        Driver.wait(2); // added waited, because it doesn't catch URL correctly without waite
-        if(WebDriverRunner.url().contains("/app/sign-up/school-info")) {
-            app.teacherSignUpStepThreePage.clickOnSkipSelectSchoolPageButton();
-        } // if a teacher doesn't have school, login will not fail
 
         app.myClassesPage.getMyClassesPageTitle("My Classes");
+        checkAndSkipSchoolInfoPage(app);
+
         app.teacherHeaderMenu.clickOnEditProfileButton();
+        checkAndSkipSchoolInfoPage(app);
+
         app.teacherProfileSettings.checkTeacherUsername(username);
         app.teacherProfileSettings.clickOnCloseButton();
         logger.info("Teacher with the username {} logged in successfully", username);
     }
 
-    public static void logInWithGoogleAsTeacher(App app, String teacherEmail) {
-        logger.info("Starting teacher login process with Google");
-        app.logInPage.clickOnSignInWithGoogle();
+    private static void checkAndSkipSchoolInfoPage(App app) {
+        if (WebDriverRunner.url().contains("/app/sign-up/school-info")) {
+            logger.info("Detected school info sign-up page, clicking skip button.");
+            app.teacherSignUpStepThreePage.clickOnSkipSelectSchoolPageButton();
+        }
+    }
+
+
+    public static void logInWithSSOTeacher(App app, String teacherEmail, SignInVariant signInVariant) {
+        logger.info("Starting teacher login process");
+        switch (signInVariant) {
+            case GOOGLE -> app.logInPage.clickOnSignInWithGoogle();
+            case MS -> {
+                Driver.wait(2); //without waite it clicks on incorrect button
+                app.logInPage.clickOnSignInWithMicrosoft();
+            }
+            case CLEVER -> app.logInPage.clickOnSignInWithClever();
+            default -> throw new IllegalArgumentException("Unknown sign in type");
+        }
         Driver.wait(2); // added waited, because it doesn't catch URL correctly without waite
         
         if(WebDriverRunner.url().contains("/app/sign-up/school-info")) {
@@ -40,5 +57,11 @@ public class UtilityTeacherLogIn extends A_BaseTest {
         app.teacherProfileSettings.clickOnCloseButton();
 
         logger.info("Teacher logged in successfully with Google");
+    }
+
+    public enum SignInVariant {
+        GOOGLE,
+        MS,
+        CLEVER;
     }
 }

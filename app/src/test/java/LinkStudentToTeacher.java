@@ -12,7 +12,6 @@ public class LinkStudentToTeacher extends A_BaseTest {
     @Description("A student can join to class during signing up")
     public void checkStudentLinkClassOnSigningUp() {
         app.signUpSelectRolePage.open();
-        Driver.useAddBlocker();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
@@ -34,6 +33,7 @@ public class LinkStudentToTeacher extends A_BaseTest {
 
         String[] studentCredentials = UtilityStudentSignUp.signUpAsStudentWithUsername(app, true, classCode);
         String studentUsername = studentCredentials[0];
+        app.studentHeaderMenu.clickOnMyTeachersButton();
         UtilityLinkStudentToTeacher.checkAcceptedRequestStatusInMyTeachersList(app, teacherEmail);
         app.studentMyTeachers.clickOnCloseWindowButton();
         app.studentHeaderMenu.clickOnSignOutButton();
@@ -54,7 +54,6 @@ public class LinkStudentToTeacher extends A_BaseTest {
     @Description("A student can send request to join to a teacher using teacher email. Teacher can accept this request")
     public void checkStudentJoinToTeacherViaTeacherEmail() {
         app.signUpSelectRolePage.open();
-        Driver.useAddBlocker();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
@@ -106,7 +105,6 @@ public class LinkStudentToTeacher extends A_BaseTest {
     @Description("A student can send request to join to a teacher using teacher email. Teacher can reject this request")
     public void checkTeacherRejectStudentRequest() {
         app.signUpSelectRolePage.open();
-        Driver.useAddBlocker();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
@@ -162,7 +160,6 @@ public class LinkStudentToTeacher extends A_BaseTest {
     @Description("A student can join to class using class code")
     public void checkStudentJoinToTeacherViaClassCode() {
         app.signUpSelectRolePage.open();
-        Driver.useAddBlocker();
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.READTHEORY;
         options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;

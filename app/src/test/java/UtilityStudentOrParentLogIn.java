@@ -16,7 +16,7 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
         app.logInPage.clickOnLogInButton();
         logger.info("Clicked on the Login button");
 
-        Driver.wait(10); // it was added because of redirection
+        Driver.wait(6); // it was added because of redirection
 
         if (WebDriverRunner.url().contains("/app/sign-up/more-info")) {
             logger.info("Starting student additional age step in sign-up process");
@@ -40,12 +40,26 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
         logger.info("Logged in successfully as user: {}", username);
     }
 
-    public static void logInWithGoogleAsStudentOrParent(App app, String googleEmail, String password) {
-        logger.info("Attempting to log in with Google email: {} and password: {} as student or parent", googleEmail, password);
-        app.logInPage.clickOnSignInWithGoogle();
+    public static void logInWithSSOAsStudentOrParent(App app, String studentEmail, String password, SignInVariant signInVariant) {
+        logger.info("Starting teacher login process");
+        switch (signInVariant) {
+            case GOOGLE -> app.logInPage.clickOnSignInWithGoogle();
+            case MS -> {
+                app.logInPage.clickOnSignInWithMicrosoft();
+                Driver.wait(2); //without waite it clicks on incorrect button
+            }
+            case CLEVER -> app.logInPage.clickOnSignInWithClever();
+            default -> throw new IllegalArgumentException("Unknown sign in type");
+        }
 
         app.studentHeaderMenu.clickOnEditProfileButton();
-        app.studentProfileSettings.checkStudentUsername(googleEmail);
+        app.studentProfileSettings.checkStudentUsername(studentEmail);
         app.studentProfileSettings.clickOnCloseButton();
+    }
+
+    public enum SignInVariant {
+        GOOGLE,
+        MS,
+        CLEVER;
     }
 }

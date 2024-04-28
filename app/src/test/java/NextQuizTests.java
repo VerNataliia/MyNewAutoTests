@@ -23,7 +23,7 @@ public class NextQuizTests extends A_BaseTest {
 
         switchTo().window(0);
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
-        UtilityCompleteNextQuiz.completeQuizzes(app, 10, 10);
+        UtilityCompleteNextQuiz.completeQuizzes(app, 1, 1);
 
         switchTo().window(1);
         UtilityBOActions.deleteUserFromList(studentUsername);
@@ -44,7 +44,7 @@ public class NextQuizTests extends A_BaseTest {
 
         switchTo().window(0);
         UtilityCompleteOldPretest.completeOldPretest(app, 8, 8);
-        UtilityCompleteNextQuiz.completeQuizzes(app, 10, 0);
+        UtilityCompleteNextQuiz.completeQuizzes(app, 1, 0);
 
         switchTo().window(1);
         UtilityBOActions.deleteUserFromList(studentUsername);

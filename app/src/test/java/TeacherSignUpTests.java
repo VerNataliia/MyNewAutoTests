@@ -3,6 +3,11 @@ import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
+import static app.StaticTestData.CLEVER_TEACHER_EMAIL;
+import static app.StaticTestData.CLEVER_TEACHER_ID;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.switchTo;
+
 @Epic("SignUp")
 @Feature("TeacherSignUp")
 public class TeacherSignUpTests extends A_BaseTest {
@@ -167,21 +172,77 @@ public class TeacherSignUpTests extends A_BaseTest {
         UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
         UtilityTeacherSignUp.TeacherCredentialsForSSO teacherCredentialsForSSO = new UtilityTeacherSignUp.TeacherCredentialsForSSO();
         options.teacherCredentialsForSSO = teacherCredentialsForSSO;
-        String teacherEmail = "nataaverba@gmail.com";
+        String teacherEmail = "autoTestTeacher@gmail.com";
         teacherCredentialsForSSO.teacherEmail = teacherEmail;
-        teacherCredentialsForSSO.teacherPassword = "349872yD";
+        teacherCredentialsForSSO.teacherPassword = "349872yd";
         options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.GOOGLE;
 
-        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SKIP;
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
+        options.schoolName = "School";
 
         UtilityTeacherSignUp.signUpAsTeacher(app, options);
 
         app.teacherHeaderMenu.clickOnSignOutButton();
-        UtilityTeacherLogIn.logInWithGoogleAsTeacher(app, teacherEmail);
+        UtilityTeacherLogIn.logInWithSSOTeacher(app, teacherEmail, UtilityTeacherLogIn.SignInVariant.GOOGLE);
 
 
         UtilityBOActions.logIn(app);
         UtilityBOActions.deleteUserFromList(teacherEmail);
+    }
+
+    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with MS")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("A teacher can sign up with Microsoft and log out. Teacher can log in to the system with Microsoft")
+    public void checkTeacherSignUpWithMS() {
+        app.signUpSelectRolePage.open();
+
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        UtilityTeacherSignUp.TeacherCredentialsForSSO teacherCredentialsForSSO = new UtilityTeacherSignUp.TeacherCredentialsForSSO();
+        options.teacherCredentialsForSSO = teacherCredentialsForSSO;
+        String teacherEmail = "testing1@readtheory1.onmicrosoft.com";
+        teacherCredentialsForSSO.teacherEmail = teacherEmail;
+        teacherCredentialsForSSO.teacherPassword = "349872yD";
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.MS;
+
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
+        options.schoolName = "School";
+
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithSSOTeacher(app, teacherEmail, UtilityTeacherLogIn.SignInVariant.MS);
+
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(teacherEmail);
+    }
+
+    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with CLEVER")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("A teacher can sign up with Clever and log out. Teacher can log in to the system with Clever")
+    public void checkTeacherSignUpWithClever() {
+        app.signUpSelectRolePage.open();
+
+        executeJavaScript("window.open('about:blank','_blank');");
+        switchTo().window(1);
+        UtilityCleverPortal.loginToPortal(app);
+        UtilityCleverPortal.startTeacherSession(CLEVER_TEACHER_ID);
+
+        switchTo().window(0);
+        Driver.refresh();
+
+        UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
+        options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.CLEVER;
+        options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
+        options.schoolName = "School";
+        UtilityTeacherSignUp.signUpAsTeacher(app, options);
+
+        app.teacherHeaderMenu.clickOnSignOutButton();
+        UtilityTeacherLogIn.logInWithSSOTeacher(app, CLEVER_TEACHER_EMAIL, UtilityTeacherLogIn.SignInVariant.CLEVER);
+
+
+        UtilityBOActions.logIn(app);
+        UtilityBOActions.deleteUserFromList(CLEVER_TEACHER_EMAIL);
     }
 
 }

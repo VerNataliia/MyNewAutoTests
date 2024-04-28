@@ -4,6 +4,8 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static app.StaticTestData.*;
+
 public class UtilityStudentSignUp extends A_BaseTest {
     private static final Logger logger = LogManager.getLogger(UtilityStudentSignUp.class);
 
@@ -42,21 +44,38 @@ public class UtilityStudentSignUp extends A_BaseTest {
     }
 
 
-    public static void signUpAsStudentWithGoogle(App app, String studentEmail, String studentPassword) {
+    public static void signUpAsStudentWithSSO(App app, String studentEmail, String studentPassword, SignUpVariant signUpVariant) {
         logger.info("Starting student sign up with Google");
         app.signUpSelectRolePage.checkSelectRolePageTitle("Welcome to ReadTheory!");
         logger.debug("Checked select role page title");
         app.signUpSelectRolePage.selectStudentRoleForSignUp();
         logger.debug("Selected student role for sign-up");
-
-        app.studentSignUpPage.clickOnSignUpGoogleButton();
-        logger.debug("Clicked on Sign up with Google");
-
-        app.googleSignUpPage.setEmail(studentEmail);
-        logger.debug("Set student email as {}", studentEmail);
-        app.googleSignUpPage.setPassword(studentPassword);
-        logger.debug("Set student password as {}", studentPassword);
-        Driver.wait(5); //because of redirection
+        switch (signUpVariant) {
+            case GOOGLE -> {
+                app.studentSignUpPage.clickOnSignUpGoogleButton();
+                logger.debug("Clicked on Sign up with Google");
+                app.googleSignUpPage.setEmail(studentEmail);
+                logger.debug("Set student email as {}", studentEmail);
+                app.googleSignUpPage.setPassword(studentPassword);
+                logger.debug("Set student password as {}", studentPassword);
+                Driver.wait(5); //because of redirection
+            }
+            case MS -> {
+                app.studentSignUpPage.clickOnSignUpMicrosoftButton();
+                logger.debug("Clicked on Sign up with Microsoft");
+                app.microsoftSignUpPage.setEmail(studentEmail);
+                logger.debug("Set student email as {}", studentEmail);
+                app.microsoftSignUpPage.setPassword(studentPassword);
+                logger.debug("Set student password as {}", studentPassword);
+                app.microsoftSignUpPage.confirmNotLeave();
+                Driver.wait(5); //because of redirection
+                }
+            case CLEVER -> {
+                app.studentSignUpPage.clickOnSignUpCleverButton();
+                logger.debug("Clicked on Sign up with Clever");
+            }
+            default -> throw new IllegalArgumentException("Unknown sign up type");
+        }
 
         logger.info("Starting student additional age step in sign-up process");
         app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
@@ -67,10 +86,15 @@ public class UtilityStudentSignUp extends A_BaseTest {
             app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
             logger.debug("Checked student sign-up age page title");
 
-            String firstName = app.studentOrParentPersonalDetailsStepPage.setFirstName();
-            String lastName = app.studentOrParentPersonalDetailsStepPage.setLastName();
-            logger.debug("Set student first name and last name");
-
+            switch (signUpVariant) {
+                case GOOGLE, MS -> {
+                    String firstName = app.studentOrParentPersonalDetailsStepPage.setFirstName();
+                    String lastName = app.studentOrParentPersonalDetailsStepPage.setLastName();
+                    logger.debug("Set student first name and last name");
+                }
+                case CLEVER -> {
+                }
+            }
             app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
             logger.debug("Selected random student age from dropdown");
 
@@ -97,14 +121,27 @@ public class UtilityStudentSignUp extends A_BaseTest {
             app.summaryPage.checkSummaryPageTitle("Let the learning begin!");
             logger.debug("Checked summary page title");
 
-            app.studentHeaderMenu.checkStudentUsername(studentEmail);
+            switch (signUpVariant) {
+                case GOOGLE, MS -> app.studentHeaderMenu.checkStudentUsername(studentEmail);
+                case CLEVER -> app.studentHeaderMenu.checkStudentUsername(CLEVER_STUDENT_FIRS_AND_LAST_NAMES);
+            }
+
+            app.studentHeaderMenu.clickOnEditProfileButton();
+            app.studentProfileSettings.checkStudentUsername(studentEmail);
+            app.studentProfileSettings.clickOnCloseButton();
 
         } else {
             logger.debug("Page with the age is skipped");
         }
 
-        logger.info("Student sign-up completed successfully with username: {} and password: {}", studentEmail, studentPassword);
+        logger.info("Student sign-up completed successfully");
 
+    }
+
+    public enum SignUpVariant {
+        GOOGLE,
+        MS,
+        CLEVER
     }
 
 }
