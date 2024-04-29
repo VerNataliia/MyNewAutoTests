@@ -7,7 +7,7 @@ on:
         required: true
         default: 'production.org'
   schedule:
-    - cron: '00 05 * * 0-5' ##From Sunday to Friday
+    - cron: '00 04 * * 0-5' ##From Sunday to Friday
 
 permissions:
   contents: write

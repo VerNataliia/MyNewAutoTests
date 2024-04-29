@@ -4,7 +4,7 @@ import app.helpers.Driver;
 import static app.StaticTestData.CLEVER_ADMIN_PASSWORD;
 import static app.StaticTestData.CLEVER_ADMIN_USERNAME;
 
-public class UtilityCleverPortal extends A_BaseTest{
+public class UtilityCleverPortal extends A_BaseTest {
     public static void loginToPortal(App app) {
         Driver.open("https://clever.com/oauth/district_admin/login?target=%3BNGM2M2MxY2Y2MjNkY2U4MmNhYWM%3D%3BaHR0cHM6Ly9jbGV2ZXIuY29tL2luL2F1dGhfY2FsbGJhY2s%3D%3BZjE3NmY4YjE1Y2RhZGIyYzEwYjI4NDA4OTBlYTQ4ZmEzMTY3ZGYyMTI5YzFiNGU5Zjk2OGE5NWRhNDRmNGUyYw%3D%3D%3BY29kZQ%3D%3D%3BZGlzdHJpY3RfYWRtaW4%3D");
         Driver.waitForPageLoad();

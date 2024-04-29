@@ -3,7 +3,6 @@ package app.helpers;
 import app.AppConfig;
 import com.codeborne.selenide.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;

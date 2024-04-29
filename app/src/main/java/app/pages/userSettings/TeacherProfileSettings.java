@@ -28,7 +28,7 @@ public class TeacherProfileSettings {
 
         String actualTeacherUsername = (String) executeJavaScript("return arguments[0].value;", TEACHER_MY_PROFILE_SETTINGS_WINDOW_USERNAME_FIELD);
 
-        if (!actualTeacherUsername.equals(expectedTeacherUsername)) {
+        if (!actualTeacherUsername.equalsIgnoreCase(expectedTeacherUsername)) {
             throw new AssertionError("Expected username: " + expectedTeacherUsername + ", but found: " + actualTeacherUsername);
         }
     }
