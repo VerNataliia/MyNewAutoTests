@@ -59,11 +59,11 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4
       - run: allure generate -c app/build/allure-results -o _site
-      - name: List directory contents  # Debugging step to check directory contents
-        run: ls -alh _site
+
       - name: Store generated report
         uses: actions/upload-artifact@v4
         with:
@@ -76,10 +76,10 @@ jobs:
     needs: generate-report
     name: Publish report
     steps:
+
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4
-      - name: List directory contents  # Debugging step to confirm contents before packaging
-        run: ls -alh _site
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
