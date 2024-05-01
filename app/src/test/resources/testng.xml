@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Login tests" verbose="1">
-    <test name="Login tests">
+<suite name="Complete Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <!-- Login Tests -->
+    <test name="LoginTests">
+        <groups>
+            <run>
+                <include name="LoginUsername"/>
+            </run>
+        </groups>
         <classes>
             <class name="LoginTests"/>
         </classes>
     </test>
+
+    <!-- Sign Up Tests -->
+    <test name="SignUpTests">
+        <groups>
+            <run>
+                <include name="SignUp"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TeacherSignUpTests"/>
+            <class name="StudentSignUpTests"/>
+        </classes>
+    </test>
+
+    <!-- Add Students Tests -->
+    <test name="AddStudentsTests">
+        <groups>
+            <run>
+                <include name="AddStudents"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="AddStudentsTests"/>
+        </classes>
+    </test>
+
+    <!-- New Pretest Tests -->
+    <test name="NewPretestTests">
+        <groups>
+            <run>
+                <include name="NewPretest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="NewPretestTests"/>
+        </classes>
+    </test>
+
+    <!-- Class Tests -->
+    <test name="ClassTests">
+        <groups>
+            <run>
+                <include name="Class"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TeacherClassTests"/>
+        </classes>
+    </test>
+
+    <!-- Next Quiz Tests -->
+    <test name="NextQuizTests">
+        <groups>
+            <run>
+                <include name="NextQuiz"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="NextQuizTests"/>
+        </classes>
+    </test>
+
+    <!-- Demo Account Tests -->
+    <test name="DemoAccountTests">
+        <groups>
+            <run>
+                <include name="Demo account OldP"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="DemoTeacherAccount"/>
+        </classes>
+    </test>
+
 </suite>

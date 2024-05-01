@@ -22,10 +22,6 @@ ext {
     slf4jVersion = '2.0.9'
 }
 
-configurations {
-    allureCommandLine
-}
-
 dependencies {
     implementation "com.google.guava:guava:$guavaVersion"
     implementation group: 'com.codeborne', name: 'selenide', version: "$selenideVersion"
@@ -41,7 +37,6 @@ dependencies {
     implementation group: 'org.apache.xmlbeans', name: 'xmlbeans', version: "$xmlbeansVersion"
     implementation group: 'io.qameta.allure', name: 'allure-testng', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: "$allureVersion"
-    allureCommandLine 'io.qameta.allure:allure-commandline:2.13.9'
     implementation group: 'io.qameta.allure', name: 'allure-assertj', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: "$allureVersion"
     implementation group: 'com.codeborne', name: 'selenide-testng', version: "$selenideTestngVersion"
@@ -52,22 +47,10 @@ application {
     mainClass = 'readtheoty.App'
 }
 
-tasks.register("generateAllureReport", JavaExec) {
-    group = "Reporting"
-    description = "Generates Allure report from test results."
-    main = 'io.qameta.allure.CommandLine'
-    classpath = configurations.allureCommandLine
-    args = ['generate', 'build/allure-results', '-o', 'build/reports/allure-report', '--clean']
-    doLast {
-        println 'Allure report generated in build/reports/allure-report'
-    }
-}
 
 tasks.named('test') {
     useTestNG()
-    systemProperty 'allure.results.directory', file('build/allure-results').absolutePath
     systemProperty 'aspectj.version', "$aspectjVersion"
-    finalizedBy 'generateAllureReport'
 }
 
 tasks.register("everyDayTests", Test) {
@@ -76,7 +59,6 @@ tasks.register("everyDayTests", Test) {
         listeners.add('HelperSeverityLevelInterceptor')
     }
 }
-
 
 tasks.register("loginTest", Test) {
     systemProperty 'environment', System.properties['environment']
@@ -107,7 +89,7 @@ tasks.register("newPretestTests", Test) {
 }
 
 tasks.register("classTests", Test) {
-    systemProperty 'environment', System.getProperty('environment')
+    systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'Class'
     }

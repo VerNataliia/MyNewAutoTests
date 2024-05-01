@@ -12,7 +12,7 @@ on:
 
 permissions:
   contents: write
-  pages: write      # to deploy to Pages
+  pages: write
   id-token: write
 
 jobs:
@@ -34,18 +34,3 @@ jobs:
       - name: Build and test with Gradle
         run: ./gradlew addStudents -Denvironment=$ENVIRONMENT
         continue-on-error: true
-
-      - name: Generate Allure Report
-        run: ./gradlew generateAllureReport
-        continue-on-error: true
-
-      - name: Create .nojekyll
-        run: echo "" > build/reports/allure-report/.nojekyll
-
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: gh-pages
-          build_dir: build/reports/allure-report
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
