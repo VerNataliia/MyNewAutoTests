@@ -41,7 +41,7 @@ dependencies {
     implementation group: 'org.apache.xmlbeans', name: 'xmlbeans', version: "$xmlbeansVersion"
     implementation group: 'io.qameta.allure', name: 'allure-testng', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: "$allureVersion"
-    implementation group: 'io.qameta.allure', name: 'allure-commandline', version: "$allureVersion"
+    allureCommandLine 'io.qameta.allure:allure-commandline:2.13.9'
     implementation group: 'io.qameta.allure', name: 'allure-assertj', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: "$allureVersion"
     implementation group: 'com.codeborne', name: 'selenide-testng', version: "$selenideTestngVersion"
