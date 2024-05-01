@@ -40,20 +40,27 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
         logger.info("Logged in successfully as user: {}", username);
     }
 
-    public static void logInWithSSOAsStudentOrParent(App app, String studentEmail, String password, SignInVariant signInVariant) {
-        logger.info("Starting teacher login process");
+    public static void logInWithSSOAsStudentOrParent(App app, String usernameInHeader, String password, SignInVariant signInVariant) {
+        logger.info("Starting student/parent login process");
         switch (signInVariant) {
-            case GOOGLE -> app.logInPage.clickOnSignInWithGoogle();
-            case MS -> {
-                app.logInPage.clickOnSignInWithMicrosoft();
-                Driver.wait(2); //without waite it clicks on incorrect button
+            case GOOGLE -> {
+                app.logInPage.clickOnSignInWithGoogle();
+                logger.debug("Google button is clicked");
             }
-            case CLEVER -> app.logInPage.clickOnSignInWithClever();
+            case MS -> {
+                Driver.wait(2); //without waite it clicks on incorrect button
+                app.logInPage.clickOnSignInWithMicrosoft();
+                logger.debug("MS button is clicked");
+            }
+            case CLEVER -> {
+                app.logInPage.clickOnSignInWithClever();
+                logger.debug("Clever button is clicked");
+            }
             default -> throw new IllegalArgumentException("Unknown sign in type");
         }
 
         app.studentHeaderMenu.clickOnEditProfileButton();
-        app.studentProfileSettings.checkStudentUsername(studentEmail);
+        app.studentProfileSettings.checkStudentUsername(usernameInHeader);
         app.studentProfileSettings.clickOnCloseButton();
     }
 

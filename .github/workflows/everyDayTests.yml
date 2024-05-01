@@ -36,7 +36,7 @@ jobs:
       - run: chrome --version
 
       - name: Build and test with Gradle
-        run: ./gradlew everyDayTests -Denvironment=$ENVIRONMENT
+        run: ./gradlew classTests -Denvironment=$ENVIRONMENT
         continue-on-error: true
 
       - name: Store allure results
@@ -79,13 +79,13 @@ jobs:
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1.2.9
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          permissions: 'write'
+        uses: actions/deploy-pages@v4

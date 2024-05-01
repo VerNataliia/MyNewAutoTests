@@ -1,7 +1,5 @@
 package app.pages.userSettings;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
@@ -13,6 +11,7 @@ public class StudentProfileSettings {
         STUDENT_MY_PROFILE_SETTINGS_USERNAME_INPUT = $(byXpath("//input[@placeholder='User Name']")),
         STUDENT_MY_PROFILE_SETTINGS_CLOSE_BUTTON = $(byXpath("//div[@class='edit-profile-panel profile-panel']//div[@class='primary-button btn-close'][contains(text(),'Close')]"));
 
+    // Edit profile tab
     public void checkStudentUsername(String expectedStudentUsername) {
         STUDENT_MY_PROFILE_SETTINGS_USERNAME_INPUT.shouldBe(visible);
 
