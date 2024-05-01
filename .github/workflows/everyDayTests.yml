@@ -20,9 +20,9 @@ jobs:
     env:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
     steps:
-      - uses: actions/checkout@v3  # Node.js 20 supported version
+      - uses: actions/checkout@v3
       - name: Set up JDK 17
-        uses: actions/setup-java@v3  # Node.js 20 supported version
+        uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'microsoft'
@@ -54,7 +54,7 @@ jobs:
     needs: tests
     name: Generate report
     steps:
-      - uses: actions/setup-java@v3  # Ensure this version supports Node.js 20
+      - uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'microsoft'
