@@ -105,6 +105,13 @@ tasks.register("signUpTests", Test) {
     }
 }
 
+tasks.register("addStudents", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'AddStudents'
+    }
+}
+
 tasks.register("newPretestTests", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {

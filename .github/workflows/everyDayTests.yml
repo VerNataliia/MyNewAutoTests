@@ -36,7 +36,7 @@ jobs:
       - run: chrome --version
 
       - name: Build and test with Gradle
-        run: ./gradlew classTests -Denvironment=$ENVIRONMENT
+        run: ./gradlew addStudents -Denvironment=$ENVIRONMENT
         continue-on-error: true
 
       - name: Store allure results
@@ -89,3 +89,5 @@ jobs:
         uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: _site
