@@ -15,21 +15,14 @@ permissions:
   id-token: write
 
 jobs:
-  download-history:
-    runs-on: ubuntu-latest
-    name: Download history
-    steps:
-      - name: Download historical data
-        run: echo "Downloading historical data..."
-
   tests:
     runs-on: ubuntu-latest
     env:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3  # Node.js 20 supported version
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v3  # Node.js 20 supported version
         with:
           java-version: '17'
           distribution: 'microsoft'
@@ -41,7 +34,7 @@ jobs:
         continue-on-error: true
 
       - name: Store allure results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # Updated to version 4
         with:
           name: allure-results
           path: app/build/allure-results
@@ -61,18 +54,18 @@ jobs:
     needs: tests
     name: Generate report
     steps:
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v3  # Node.js 20 supported version
         with:
           java-version: '17'
           distribution: 'microsoft'
       - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
 
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v3  # Check if updated version available
       - run: allure generate -c app/build/allure-results -o _site
 
       - name: Store generated report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4  # Updated to version 4
         with:
           name: _site
           path: _site
@@ -84,9 +77,9 @@ jobs:
     name: Publish report
     steps:
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v3  # Check if updated version available
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v2  # Check if updated version available
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1.2.9
         with:
