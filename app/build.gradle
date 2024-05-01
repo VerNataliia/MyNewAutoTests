@@ -1,17 +1,12 @@
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'io.qameta.allure' version '2.11.2'
-
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
-
-//Properties
 ext {
     guavaVersion = '31.1-jre'
     seleniumVersion = '4.12.1'
@@ -27,60 +22,52 @@ ext {
     slf4jVersion = '2.0.9'
 }
 
+configurations {
+    allureCommandLine
+}
+
 dependencies {
     implementation "com.google.guava:guava:$guavaVersion"
     implementation group: 'com.codeborne', name: 'selenide', version: "$selenideVersion"
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: "$seleniumVersion"
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-api', version: "$seleniumVersion"
     implementation group: 'org.testng', name: 'testng', version: "$testngVersion"
     implementation group: 'io.rest-assured', name: 'rest-assured', version: "$restAssuredVersion"
     implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$log4jVersion"
     implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: "$log4jVersion"
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: "$slf4jVersion"
-
     implementation group: 'org.apache.poi', name: 'poi', version: "$poiVersion"
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: "$poiVersion"
     implementation group: 'org.apache.poi', name: 'poi-ooxml-lite', version: "$poiVersion"
     implementation group: 'org.apache.xmlbeans', name: 'xmlbeans', version: "$xmlbeansVersion"
-
     implementation group: 'io.qameta.allure', name: 'allure-testng', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: "$allureVersion"
-    implementation group: 'io.qameta.allure', name: 'allure-commandline', version: "$allureVersion", ext: 'pom'
+    implementation group: 'io.qameta.allure', name: 'allure-commandline', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-assertj', version: "$allureVersion"
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: "$allureVersion"
     implementation group: 'com.codeborne', name: 'selenide-testng', version: "$selenideTestngVersion"
     runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: "$aspectjVersion"
-
 }
 
-
-// Define the main class for the application
 application {
     mainClass = 'readtheoty.App'
 }
 
-// Use TestNG for unit tests
+tasks.register("generateAllureReport", JavaExec) {
+    group = "Reporting"
+    description = "Generates Allure report from test results."
+    main = 'io.qameta.allure.CommandLine'
+    classpath = configurations.allureCommandLine
+    args = ['generate', 'build/allure-results', '-o', 'build/reports/allure-report', '--clean']
+    doLast {
+        println 'Allure report generated in build/reports/allure-report'
+    }
+}
+
 tasks.named('test') {
     useTestNG()
-}
-
-test {
-    useTestNG()
-    testLogging {
-        events 'passed', 'skipped', 'failed'
-    }
-    // System property for Allure results directory
     systemProperty 'allure.results.directory', file('build/allure-results').absolutePath
-}
-
-// Ensure each test task is correctly setting the Allure results directory
-tasks.withType(Test) {
-    systemProperties['allure.results.directory'] = file('build/allure-results').absolutePath
-}
-
-test {
     systemProperty 'aspectj.version', "$aspectjVersion"
-    systemProperty 'aspectj.version', "$aspectjVersion"
+    finalizedBy 'generateAllureReport'
 }
 
 tasks.register("everyDayTests", Test) {

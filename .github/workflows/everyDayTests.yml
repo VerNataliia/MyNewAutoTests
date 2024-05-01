@@ -1,4 +1,5 @@
 name: Everyday tests
+
 on:
   workflow_dispatch:
     inputs:
@@ -7,7 +8,7 @@ on:
         required: true
         default: 'production.org'
   schedule:
-    - cron: '00 04 * * 0-5' ##From Sunday to Friday
+    - cron: '00 04 * * 0-5' # From Sunday to Friday
 
 permissions:
   contents: write
@@ -35,13 +36,16 @@ jobs:
         continue-on-error: true
 
       - name: Generate Allure Report
-        run: ./gradlew allureReport
+        run: ./gradlew generateAllureReport
         continue-on-error: true
+
+      - name: Create .nojekyll
+        run: echo "" > build/reports/allure-report/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: app/build/allure-results
+          build_dir: build/reports/allure-report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
