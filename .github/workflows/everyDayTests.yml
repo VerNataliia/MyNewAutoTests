@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: write
+  pages: write      # to deploy to Pages
+  id-token: write
 
 jobs:
   download-history:
@@ -34,7 +36,6 @@ jobs:
 
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
-
       - name: Build and test with Gradle
         run: ./gradlew addStudents -Denvironment=$ENVIRONMENT
         continue-on-error: true
@@ -58,6 +59,7 @@ jobs:
   generate-report:
     runs-on: ubuntu-latest
     needs: tests
+    name: Generate report
     steps:
       - uses: actions/setup-java@v3
         with:
@@ -79,15 +81,13 @@ jobs:
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write
+    name: Publish report
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1.2.9
         with:
           artifact_name: _site
