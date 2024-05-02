@@ -1,3 +1,20 @@
+name: Everyday tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Set environment'
+        required: true
+        default: 'production.org'
+  schedule:
+    - cron: '00 04 * * 0-5' # From Sunday to Friday
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -5,6 +22,8 @@ jobs:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Ensures the entire history is fetched
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -28,7 +47,9 @@ jobs:
       - name: Copy historical data to new report directory
         run: |
           mkdir -p ./app/build/reports/allure-report/allureReport/history
-          cp -r old-data/allure-report/allureReport/history ./app/build/reports/allure-report/allureReport/
+          if [ -d "old-data/allure-report/allureReport/history" ]; then
+            cp -r old-data/allure-report/allureReport/history ./app/build/reports/allure-report/allureReport/
+          fi
 
       - name: Generate Allure Report
         run: ./gradlew allureReport
