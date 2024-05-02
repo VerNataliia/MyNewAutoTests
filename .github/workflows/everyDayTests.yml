@@ -42,7 +42,7 @@ jobs:
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          allure_results: build/allure-results
+          allure_results: ./app/build/allure-results
           gh_pages: gh-pages
           allure_report: ./app/build/reports/allure-report/allureReport
           allure_history: ./app/build/reports/allure-report/allureReport/history
