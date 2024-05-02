@@ -38,11 +38,26 @@ jobs:
       - name: Generate Allure Report
         run: ./gradlew allureReport
 
-      - name: Publish Allure Report with History
-        uses: simple-elf/allure-report-action@master
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-          allure_results: ./app/build/allure-results
-          gh_pages: gh-pages
-          allure_report: ./app/build/reports/allure-report/allureReport
-          allure_history: ./app/build/reports/allure-report/allureReport/history
+            gh_pages: gh-pages
+            allure_history: allure-history
+            allure_results: ./app/build/allure-results
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: allure-history
