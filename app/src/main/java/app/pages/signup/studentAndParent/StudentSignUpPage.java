@@ -37,7 +37,7 @@ public class StudentSignUpPage extends BasePage {
     }
 
     public void clickOnSignUpGoogleButton() {
-        STUDENT_SIGNUP_WITH_GOOGLE_BUTTON.shouldBe(Condition.visible).click();
+        STUDENT_SIGNUP_WITH_GOOGLE_BUTTON.shouldBe(Condition.interactable).click();
     }
 
     public void clickOnSignUpMicrosoftButton() {

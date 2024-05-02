@@ -52,6 +52,7 @@ public class UtilityStudentSignUp extends A_BaseTest {
         logger.debug("Selected student role for sign-up");
         switch (signUpVariant) {
             case GOOGLE -> {
+                Driver.wait(2); // fails without waiting
                 app.studentSignUpPage.clickOnSignUpGoogleButton();
                 logger.debug("Clicked on Sign up with Google");
                 app.googleSignUpPage.setEmail(studentEmail);
