@@ -36,7 +36,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: allure-history
-          path: app/build/reports/allure-results/history
+          path: app/build/reports/allure-report/allureReport/history
 
       - name: Build and test with Gradle
         run: ./gradlew addStudents -Denvironment=$ENVIRONMENT
@@ -49,11 +49,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
-          path: app/build/reports/allure-results
+          path: app/build/reports/allure-report/allureReport/history
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/reports/allure-report
+          publish_dir: ./app/build/reports/allure-report/allureReport
           publish_branch: gh-pages
