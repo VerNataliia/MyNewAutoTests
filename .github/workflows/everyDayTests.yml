@@ -44,12 +44,14 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
+          path: gh-pages-history
 
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
             allure_results: app/build/allure-results
+            gh_pages: .
             allure_report: app/build/reports/allure-report
             allure_history: allure-history
 
