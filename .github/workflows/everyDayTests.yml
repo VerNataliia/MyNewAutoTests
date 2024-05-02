@@ -52,7 +52,7 @@ jobs:
         with:
             gh_pages: gh-pages-history # the same as path in Load test repo history
             allure_history: allure-history
-            allure_results: app/build/reports/allure-report/allureReport
+            allure_results: app/build/allure-results
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
