@@ -51,7 +51,7 @@ jobs:
         if: always()
         with:
             allure_results: app/build/allure-results
-            gh_pages: ''
+            gh_pages: gh-pages
             allure_report: app/build/reports/allure-report
             allure_history: allure-history
 
