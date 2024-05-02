@@ -1,22 +1,5 @@
-name: Everyday Tests
-
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Set environment'
-        required: true
-        default: 'production.org'
-  schedule:
-    - cron: '00 04 * * 0-5' # From Sunday to Friday
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
-  test-job:
+  tests:
     runs-on: ubuntu-latest
     env:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
@@ -36,43 +19,26 @@ jobs:
         run: ./gradlew addStudents -Denvironment=$ENVIRONMENT
         continue-on-error: true
 
+      - name: Checkout gh-pages branch for historical data
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: old-data
+
+      - name: Copy historical data to new report directory
+        run: |
+          mkdir -p ./app/build/reports/allure-report/allureReport/history
+          cp -r old-data/allure-report/allureReport/history ./app/build/reports/allure-report/allureReport/
+
       - name: Generate Allure Report
         run: ./gradlew allureReport
 
       - name: List Allure Report Directory
-        run: ls -al ./app/build/reports/allure-report
+        run: ls -al ./app/build/reports/allure-report/allureReport
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./app/build/reports/allure-report/allureReport
-          destination_dir: 'reports/${{ github.job }}/${{ github.run_id }}-${{ github.run_number }}'
-
-  create-index-and-cleanup:
-    needs: test-job
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: 'gh-pages'
-
-      - name: Generate Index HTML
-        run: |
-          echo "<html><body><h1>Allure Reports Index</h1><ul>" > index.html
-          for dir in $(ls -d reports/*/*); do
-            echo "<li><a href='$dir/index.html'>$dir</a></li>" >> index.html
-          done
-          echo "</ul></body></html>" >> index.html
-
-      - name: Cleanup Old Reports
-        run: |
-          find reports/ -type d -mtime +30 -exec rm -rf {} +
-
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          git add .
-          git commit -m "Update report index and cleanup old reports" || echo "No changes to commit"
-          git push origin gh-pages
+          publish_branch: gh-pages
