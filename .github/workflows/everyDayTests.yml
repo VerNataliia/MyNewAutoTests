@@ -44,14 +44,14 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
-          path: gh-pages/historicalData
+          path: gh-pages-history
 
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-            gh_pages: gh-pages/historicalData # the same as path in Load test repo history
-            allure_history:  gh-pages/allure-history
+            gh_pages: gh-pages-history # the same as path in Load test repo history
+            allure_history: allure-history
             allure_results: app/build/reports/allure-report/allureReport
 
       - name: Publish test report
@@ -60,4 +60,4 @@ jobs:
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_branch: gh-pages
-            publish_dir:  gh-pages/allure-history
+            publish_dir:  allure-history
