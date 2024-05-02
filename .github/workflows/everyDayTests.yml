@@ -38,9 +38,11 @@ jobs:
       - name: Generate Allure Report
         run: ./gradlew allureReport
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Publish Allure Report with History
+        uses: simple-elf/allure-report-action@master
+        if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/reports/allure-report/allureReport
-          publish_branch: gh-pages
+          allure_results: build/allure-results
+          gh_pages: gh-pages
+          allure_report: ./app/build/reports/allure-report/allureReport
+          allure_history: ./app/build/reports/allure-report/allureReport/history
