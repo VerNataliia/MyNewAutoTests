@@ -17,7 +17,7 @@ public class PretestTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(studentUsername);
     }
 
-    @Test(groups = ("NewPretest"), priority = 1, description = "Verify if a new student can complete a pretest with correct answers")
+    @Test(groups = ("Pretest"), priority = 1, description = "Verify if a new student can complete a pretest with correct answers")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A student who was created with username+password can complete a pretest with correct answers")
     public void checkPretestExecutionAsNewStudentWithCorrectAnswers() {

@@ -30,6 +30,18 @@
         </classes>
     </test>
 
+    <!-- Social Tests -->
+    <test name="SocialTests">
+        <groups>
+            <run>
+                <include name="Social"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="SocialLinkingTests"/>
+        </classes>
+    </test>
+
     <!-- Add Students Tests -->
     <test name="AddStudentsTests">
         <groups>
@@ -54,6 +66,18 @@
         </classes>
     </test>
 
+    <!-- Pretest Tests -->
+    <test name="PretestTests">
+        <groups>
+            <run>
+                <include name="Pretest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="PretestTests"/>
+        </classes>
+    </test>
+
     <!-- Class Tests -->
     <test name="ClassTests">
         <groups>
@@ -75,6 +99,18 @@
         </groups>
         <classes>
             <class name="NextQuizTests"/>
+        </classes>
+    </test>
+
+    <!-- Activity Tests -->
+    <test name="ActivityTests">
+        <groups>
+            <run>
+                <include name="Activity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ActivityTests"/>
         </classes>
     </test>
 

@@ -74,6 +74,14 @@ tasks.register("signUpTests", Test) {
     }
 }
 
+tasks.register("social", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'Social'
+    }
+}
+
+
 tasks.register("addStudents", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
@@ -85,6 +93,13 @@ tasks.register("newPretestTests", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'NewPretest'
+    }
+}
+
+tasks.register("pretestTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'Pretest'
     }
 }
 
@@ -102,6 +117,13 @@ tasks.register("nextQuizTests", Test) {
     }
 }
 
+tasks.register("activityTests", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'Activity'
+    }
+}
+
 tasks.register("demoAccount", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
@@ -110,9 +132,9 @@ tasks.register("demoAccount", Test) {
 }
 
 
-    tasks.register("linkStudentToTeacher", Test) {
-        systemProperty 'environment', System.properties['environment']
-        useTestNG {
-            includeGroups 'LinkStudentToTeacher'
-        }
+tasks.register("linkStudentToTeacher", Test) {
+    systemProperty 'environment', System.properties['environment']
+    useTestNG {
+        includeGroups 'LinkStudentToTeacher'
     }
+}
