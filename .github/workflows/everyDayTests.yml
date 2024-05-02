@@ -32,28 +32,31 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
-      - name: Download Allure History
-        uses: actions/download-artifact@v3
-        with:
-          name: allure-history
-          path: app/build/reports/allure-report/allureReport/history
-
       - name: Build and test with Gradle
         run: ./gradlew addStudents -Denvironment=$ENVIRONMENT
         continue-on-error: true
 
       - name: Generate Allure Report
-        run: ./gradlew allureReport
-
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: app/build/reports/allure-report/allureReport/history
+        run: |
+          ./gradlew allureReport
+          mkdir -p allure-results/history
+          cp -r allure-report/history/* allure-results/history || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/reports/allure-report/allureReport
+          publish_dir: ./app/build/reports/allure-report
           publish_branch: gh-pages
+          keep_files: true # Important to keep historical data
+
+      - name: Update Allure Report History
+        run: |
+          git fetch --depth=1 origin gh-pages
+          git checkout origin/gh-pages -b old-gh-pages
+          mkdir -p allure-results/history
+          cp -r old-gh-pages/allure-report/history allure-results/history || true
+          git checkout ${{ github.ref }}
+          git add allure-results/history
+          git commit -m "Update historical data for Allure Report"
+          git push origin HEAD:gh-pages
