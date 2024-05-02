@@ -8,7 +8,7 @@ on:
         required: true
         default: 'production.org'
   schedule:
-    - cron: '00 04 * * 0-5' # From Sunday to Friday
+    - cron: '00 04 * * 0-5' # From Sunday to Friday/
 
 permissions:
   contents: write
@@ -22,7 +22,6 @@ jobs:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
@@ -37,26 +36,11 @@ jobs:
         continue-on-error: true
 
       - name: Generate Allure Report
-        run: |
-          ./gradlew allureReport
-          mkdir -p allure-results/history
-          cp -r allure-report/history/* allure-results/history || true
+        run: ./gradlew allureReport
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/reports/allure-report
+          publish_dir: ./app/build/reports/allure-report/allureReport
           publish_branch: gh-pages
-          keep_files: true # Important to keep historical data
-
-      - name: Update Allure Report History
-        run: |
-          git fetch --depth=1 origin gh-pages
-          git checkout origin/gh-pages -b old-gh-pages
-          mkdir -p allure-results/history
-          cp -r old-gh-pages/allure-report/history allure-results/history || true
-          git checkout ${{ github.ref }}
-          git add allure-results/history
-          git commit -m "Update historical data for Allure Report"
-          git push origin HEAD:gh-pages
