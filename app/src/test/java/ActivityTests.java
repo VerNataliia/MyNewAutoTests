@@ -145,7 +145,7 @@ public class ActivityTests extends A_BaseTest {
             System.out.println("The expected credentials format is not correct.");
         }
 
-        UtilityBOActions.logIn(app);
+        app.backOffice.open();
         UtilityBOActions.deleteTeacherStudents(teacherUsername);
         app.backOffice.selectUserButtonInSideMenu();
         UtilityBOActions.deleteUserFromList(teacherUsername);
@@ -175,7 +175,7 @@ public class ActivityTests extends A_BaseTest {
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.SPECIFIC_PASSAGE, null, false, null);
         UtilityActivityCreation.checkActivityInList(app,activityName);
 
-        UtilityBOActions.logIn(app);
+        app.backOffice.open();
         UtilityBOActions.deleteTeacherStudents(teacherUsername);
         app.backOffice.selectUserButtonInSideMenu();
         UtilityBOActions.deleteUserFromList(teacherUsername);
@@ -224,7 +224,7 @@ public class ActivityTests extends A_BaseTest {
         app.teacherHeaderMenu.clickOnActivitiesButton();
         UtilityCompleteActivity.checkStudentStatusOnActivityHomePage(app,activityName, newStudentUsername, UtilityCompleteActivity.ActivityStatus.COMPLETED);
 
-        UtilityBOActions.logIn(app);
+        app.backOffice.open();
         UtilityBOActions.deleteTeacherStudents(teacherUsername);
         app.backOffice.selectUserButtonInSideMenu();
         UtilityBOActions.deleteUserFromList(teacherUsername);
@@ -255,7 +255,7 @@ public class ActivityTests extends A_BaseTest {
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.COMPETITION, null, false, null);
         UtilityActivityCreation.checkActivityInList(app, activityName);
 
-        UtilityBOActions.logIn(app);
+        app.backOffice.open();
         UtilityBOActions.deleteTeacherStudents(teacherUsername);
         app.backOffice.selectUserButtonInSideMenu();
         UtilityBOActions.deleteUserFromList(teacherUsername);
@@ -291,7 +291,7 @@ public class ActivityTests extends A_BaseTest {
         String activityName = UtilityActivityCreation.createActivity(app, UtilityActivityCreation.ActivityType.COMPETITION, null, true, customSettingsOptions);
         UtilityActivityCreation.checkActivityInList(app, activityName);
 
-        UtilityBOActions.logIn(app);
+        app.backOffice.open();
         UtilityBOActions.deleteTeacherStudents(teacherUsername);
         app.backOffice.selectUserButtonInSideMenu();
         UtilityBOActions.deleteUserFromList(teacherUsername);
