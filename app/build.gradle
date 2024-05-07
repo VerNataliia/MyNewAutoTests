@@ -54,14 +54,14 @@ tasks.named('test') {
 }
 
 tasks.register("everyDayTests", Test) {
-    systemProperty 'environment', System.properties['environment']
+    systemProperty 'environment', System.getenv('ENVIRONMENT')
     useTestNG {
         listeners.add('HelperSeverityLevelInterceptor')
     }
 }
 
-tasks.register("loginTest", Test) {
-    systemProperty 'environment', System.properties['environment']
+tasks.register("loginTests", Test) {
+    systemProperty 'environment', System.getenv('ENVIRONMENT')
     useTestNG {
         includeGroups 'LoginUsername'
     }
