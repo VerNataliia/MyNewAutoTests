@@ -1,4 +1,4 @@
-name: Login tests
+name: Pretest tests
 
 on:
   workflow_dispatch:

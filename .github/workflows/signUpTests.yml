@@ -1,4 +1,4 @@
-name: Login tests
+name: Signup tests
 
 on:
   workflow_dispatch:

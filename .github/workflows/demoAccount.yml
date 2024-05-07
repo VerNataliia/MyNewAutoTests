@@ -1,4 +1,4 @@
-name: Login tests
+name: Demo account
 
 on:
   workflow_dispatch:

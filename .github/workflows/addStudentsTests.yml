@@ -1,4 +1,4 @@
-name: Login tests
+name: Add students tests
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Login tests
+name: Next quiz tests
 
 on:
   workflow_dispatch:
