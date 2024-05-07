@@ -7,6 +7,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.ex.ElementNotFound;
 
+import static com.codeborne.selenide.Condition.interactable;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
@@ -68,7 +69,7 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
 
     public void clickOnTheNextButton() {
         if (STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.exists()) {
-            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.click();
+            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.shouldBe(interactable).click();
         } else {
             STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.shouldBe(visible);
             STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.pressEnter();
