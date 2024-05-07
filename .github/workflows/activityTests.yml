@@ -38,7 +38,7 @@ jobs:
       - run: chrome --version
 
       - name: Build and test with Gradle
-        run: ./gradlew classTests -Denvironment=${{ env.ENVIRONMENT }}
+        run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
         continue-on-error: true
 
       - name: Generate Allure Report

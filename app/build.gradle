@@ -74,7 +74,7 @@ tasks.register("signUpTests", Test) {
     }
 }
 
-tasks.register("social", Test) {
+tasks.register("socialTests", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'Social'
@@ -82,7 +82,7 @@ tasks.register("social", Test) {
 }
 
 
-tasks.register("addStudents", Test) {
+tasks.register("addStudentsTests", Test) {
     systemProperty 'environment', System.properties['environment']
     useTestNG {
         includeGroups 'AddStudents'
