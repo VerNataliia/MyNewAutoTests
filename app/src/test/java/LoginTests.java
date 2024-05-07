@@ -1,5 +1,6 @@
 
 import io.qameta.allure.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static app.StaticTestData.*;
@@ -88,7 +89,7 @@ public class LoginTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(newParentUsername);
     }
 
-    @Test(groups = ("LoginUsername"), enabled = false ,priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
+    @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using invalid username")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a user can't log in using not correct username (Negative case)")
     public void checkLogInWithInvalidUsername() {
@@ -99,11 +100,14 @@ public class LoginTests extends A_BaseTest {
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newStudentUsername + "56", newStudentPassword);
+        app.logInPage.enterUserName(newStudentUsername + "a");
+        app.logInPage.enterPassword(newStudentPassword);
+        app.logInPage.clickOnLogInButton();
+
         app.logInPage.checkLogInError("Error occurred while trying to authenticate.");
     }
 
-    @Test(groups = ("LoginUsername"), enabled = false, priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
+    @Test(groups = ("LoginUsername"), priority = 2, description = "Verify if a user ISN'T able to log in using incorrect password")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a user can't log in using not correct password (Negative case)")
     public void checkLogInWithInvalidPassword() {
@@ -114,7 +118,10 @@ public class LoginTests extends A_BaseTest {
         String newStudentPassword = userDetails[1];
         app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithUsernameAndPasswordAsStudentOrParent(app, newStudentUsername, newStudentPassword + "66");
+        app.logInPage.enterUserName(newStudentUsername);
+        app.logInPage.enterPassword(newStudentPassword + "a");
+        app.logInPage.clickOnLogInButton();
+
         app.logInPage.checkLogInError("Error occurred while trying to authenticate.");
     }
 

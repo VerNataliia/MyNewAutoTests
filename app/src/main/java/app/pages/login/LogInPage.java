@@ -47,7 +47,7 @@ public class LogInPage extends BasePage {
     }
 
     public void checkLogInError(String errorText) {
-        LOG_IN_ERROR.shouldHave(text(errorText));
+        LOG_IN_ERROR.shouldBe(visible).shouldHave(text(errorText));
     }
 
 }
