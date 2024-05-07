@@ -7,6 +7,16 @@ on:
         description: 'Set environment'
         required: true
         default: 'production.org'
+        type: choice
+        options:
+          - production.org
+          - production.com
+          - production.app.com
+          - production.ai
+          - staging
+          - testing.org
+          - testing.com
+          - testing.app.com
   schedule:
     - cron: '00 04 * * 0-5' # From Sunday to Friday/
 

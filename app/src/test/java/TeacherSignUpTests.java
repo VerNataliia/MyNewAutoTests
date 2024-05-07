@@ -217,7 +217,7 @@ public class TeacherSignUpTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(teacherEmail);
     }
 
-    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with CLEVER")
+    @Test(groups = ("SignUp"), priority = 1, description = "Verify if a teacher can sign up with Clever")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A teacher can sign up with Clever and log out. Teacher can log in to the system with Clever")
     public void checkTeacherSignUpWithClever() {

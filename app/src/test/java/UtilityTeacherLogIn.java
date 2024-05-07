@@ -27,6 +27,7 @@ public class UtilityTeacherLogIn extends A_BaseTest {
     }
 
     private static void checkAndSkipSchoolInfoPage(App app) {
+        Driver.wait(3);
         if (WebDriverRunner.url().contains("/app/sign-up/school-info")) {
             logger.info("Detected school info sign-up page, clicking skip button.");
             app.teacherSignUpStepThreePage.clickOnSkipSelectSchoolPageButton();
