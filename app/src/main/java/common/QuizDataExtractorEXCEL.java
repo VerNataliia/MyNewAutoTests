@@ -20,7 +20,7 @@ public class QuizDataExtractorEXCEL {
     }
 
     public String extractAnswer(String titleQuiz, String titleQuestion) {
-        try (FileInputStream fis = new FileInputStream("/Users/nataliiaverba/readtheoty/app/src/main/resources/files/QuizAnswers.xlsx");
+        try (FileInputStream fis = new FileInputStream("src/main/resources/files/QuizAnswers.xlsx");
              Workbook workbook = new XSSFWorkbook(fis)) {
 
             Sheet sheet = workbook.getSheetAt(0); // The first sheet contains the quiz data
