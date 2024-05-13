@@ -1,5 +1,7 @@
-Run test - 
-mvn test -Dbrowser=chrome -Dheadless=1 or just mvn test
+Run test -
+export ENVIRONMENT=production.org 
+./gradlew loginTests
+
 
 parameters:
 browser - chrome or firefox. default - chrome
