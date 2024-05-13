@@ -2,8 +2,7 @@ import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-import static app.StaticTestData.CLEVER_STUDENT_EMAIL;
-import static app.StaticTestData.CLEVER_STUDENT_ID;
+import static app.StaticTestData.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.switchTo;
 
@@ -29,53 +28,85 @@ public class StudentSignUpTests extends A_BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("A student can sign up with Google, log out and login with Google again")
     public void checkStudentSignUpWithGoogle() {
-        app.signUpSelectRolePage.open();
-        String studentEmail = "autoTestStudent1@gmail.com";
-        String studentPassword = "349872yd";
-        UtilityStudentSignUp.signUpAsStudentWithSSO(app, studentEmail, studentPassword, UtilityStudentSignUp.SignUpVariant.GOOGLE);
-        app.studentHeaderMenu.clickOnSignOutButton();
+        String studentEmail = null;
+        try{
+            app.signUpSelectRolePage.open();
+            studentEmail = "autoTestStudent1@gmail.com";
+            String studentPassword = "349872yd";
+            UtilityStudentSignUp.signUpAsStudentWithSSO(app, studentEmail, studentPassword, UtilityStudentSignUp.SignUpVariant.GOOGLE);
+            app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithSSOAsStudentOrParent(app, studentEmail, studentPassword, UtilityStudentOrParentLogIn.SignInVariant.GOOGLE);
+            UtilityStudentOrParentLogIn.logInWithSSOAsStudentOrParent(app, studentEmail, studentPassword, UtilityStudentOrParentLogIn.SignInVariant.GOOGLE);
 
-        UtilityBOActions.logIn(app);
-        UtilityBOActions.deleteUserFromList(studentEmail);
+        } catch (Throwable throwable) {
+            System.out.println("An error occurred during test execution: " + throwable.getMessage());
+            throw throwable;
+        } finally {
+            try {
+                UtilityBOActions.logIn(app);
+                UtilityBOActions.deleteUserFromList(studentEmail);
+            } catch (Throwable throwable) {
+                System.out.println("Failed during cleanup: " + throwable.getMessage());
+            }
+        }
     }
 
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a student can sign up with Microsoft")
     @Severity(SeverityLevel.BLOCKER)
     @Description("A student can sign up with Microsoft, log out and login with Microsoft again")
     public void checkStudentSignUpWithMicrosoft() {
-        app.signUpSelectRolePage.open();
-        String studentEmail = "testing2@readtheory1.onmicrosoft.com";
-        String studentPassword = "349872yD";
-        UtilityStudentSignUp.signUpAsStudentWithSSO(app, studentEmail, studentPassword, UtilityStudentSignUp.SignUpVariant.MS);
-        app.studentHeaderMenu.clickOnSignOutButton();
+        String studentEmail = null;
+        try{
+            app.signUpSelectRolePage.open();
+            studentEmail = "testing2@readtheory1.onmicrosoft.com";
+            String studentPassword = "349872yD";
+            UtilityStudentSignUp.signUpAsStudentWithSSO(app, studentEmail, studentPassword, UtilityStudentSignUp.SignUpVariant.MS);
+            app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithSSOAsStudentOrParent(app, studentEmail, studentPassword, UtilityStudentOrParentLogIn.SignInVariant.MS);
+            UtilityStudentOrParentLogIn.logInWithSSOAsStudentOrParent(app, studentEmail, studentPassword, UtilityStudentOrParentLogIn.SignInVariant.MS);
 
-        UtilityBOActions.logIn(app);
-        UtilityBOActions.deleteUserFromList(studentEmail);
+        } catch (Throwable throwable) {
+            System.out.println("An error occurred during test execution: " + throwable.getMessage());
+            throw throwable;
+        } finally {
+            try {
+                UtilityBOActions.logIn(app);
+                UtilityBOActions.deleteUserFromList(studentEmail);
+            } catch (Throwable throwable) {
+                System.out.println("Failed during cleanup: " + throwable.getMessage());
+            }
+        }
     }
     @Test(groups = ("SignUp"), priority = 1, description = "Verify if a student can sign up with Clever")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("A student can sign up with Clever, log out and login with Microsoft again")
+    @Description("A student can sign up with Clever, log out and login with Clever again")
     public void checkStudentSignUpWithClever() {
-        app.signUpSelectRolePage.open();
+        try{
+            app.signUpSelectRolePage.open();
 
-        executeJavaScript("window.open('about:blank','_blank');");
-        switchTo().window(1);
-        UtilityCleverPortal.loginToPortal(app);
-        UtilityCleverPortal.startStudentSession(CLEVER_STUDENT_ID);
+            executeJavaScript("window.open('about:blank','_blank');");
+            switchTo().window(1);
+            UtilityCleverPortal.loginToPortal(app);
+            UtilityCleverPortal.startStudentSession(CLEVER_STUDENT_ID);
 
-        switchTo().window(0);
-        Driver.refresh();
-        UtilityStudentSignUp.signUpAsStudentWithSSO(app, CLEVER_STUDENT_EMAIL, "", UtilityStudentSignUp.SignUpVariant.CLEVER);
-        app.studentHeaderMenu.clickOnSignOutButton();
+            switchTo().window(0);
+            Driver.refresh();
+            UtilityStudentSignUp.signUpAsStudentWithSSO(app, CLEVER_STUDENT_EMAIL, "", UtilityStudentSignUp.SignUpVariant.CLEVER);
+            app.studentHeaderMenu.clickOnSignOutButton();
 
-        UtilityStudentOrParentLogIn.logInWithSSOAsStudentOrParent(app, CLEVER_STUDENT_EMAIL, "", UtilityStudentOrParentLogIn.SignInVariant.CLEVER);
+            UtilityStudentOrParentLogIn.logInWithSSOAsStudentOrParent(app, CLEVER_STUDENT_EMAIL, "", UtilityStudentOrParentLogIn.SignInVariant.CLEVER);
 
-        UtilityBOActions.logIn(app);
-        UtilityBOActions.deleteUserFromList(CLEVER_STUDENT_EMAIL);
+        } catch (Throwable throwable) {
+            System.out.println("An error occurred during test execution: " + throwable.getMessage());
+            throw throwable;
+        } finally {
+            try {
+                UtilityBOActions.logIn(app);
+                UtilityBOActions.deleteUserFromList(CLEVER_STUDENT_EMAIL);
+            } catch (Throwable throwable) {
+                System.out.println("Failed during cleanup: " + throwable.getMessage());
+            }
+        }
     }
 
 }
