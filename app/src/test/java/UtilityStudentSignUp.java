@@ -116,7 +116,7 @@ public class UtilityStudentSignUp extends A_BaseTest {
 
             app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
             logger.debug("Selected random student age from dropdown");
-            app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
+            app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButtonV2();
             logger.debug("Clicked on the next button");
 
             app.summaryPage.checkSummaryPageTitle("Let the learning begin!");

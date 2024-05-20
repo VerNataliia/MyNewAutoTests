@@ -24,6 +24,7 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_LAST_NANE_INPUT = $(byXpath("//input[@placeholder='Last Name']")),
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_AGE_FIELD = $(byXpath("//div[@class='vs__selected-options']")),
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON = $(byXpath("//div[@class='primary-button']")),
+        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON_V2 = $(byXpath("//div[@class='primary-button btn-next']")), //this is button on /app/sign-up/student-info
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT = $(byXpath("//input[@placeholder='Class Code (Optional)']"));
 
     private final ElementsCollection
@@ -69,6 +70,10 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
 
     public void clickOnTheNextButton() {
         STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.shouldBe(interactable).click();
+    }
+
+    public void clickOnTheNextButtonV2() {
+        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON_V2.shouldBe(interactable).click();
     }
 
     public void clickOnTheNextButtonThroughPressEnter() {
