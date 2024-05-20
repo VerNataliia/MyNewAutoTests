@@ -162,7 +162,7 @@ public class SocialLinkingTests extends A_BaseTest {
         String teacherPassword = TEACHER_MS_PASSWORD;
         UtilityLinkToSocial.linkToSocial(app, teacherEmail, teacherPassword, UtilityLinkToSocial.SignInVariant.MS);
 
-        app.studentHeaderMenu.clickOnSignOutButton();
+        app.teacherHeaderMenu.clickOnSignOutButton();
         UtilityTeacherLogIn.logInWithSSOTeacher(app, teacherEmail, UtilityTeacherLogIn.SignInVariant.MS);
         } catch (Throwable throwable) {
             System.out.println("An error occurred during test execution: " + throwable.getMessage());
@@ -204,7 +204,8 @@ public class SocialLinkingTests extends A_BaseTest {
             app.teacherHeaderMenu.clickOnEditProfileButton();
             UtilityLinkToSocial.linkToSocial(app, "", "", UtilityLinkToSocial.SignInVariant.CLEVER);
 
-            app.studentHeaderMenu.clickOnSignOutButton();
+            app.teacherHeaderMenu.clickOnSignOutButton();
+
             UtilityTeacherLogIn.logInWithSSOTeacher(app, CLEVER_TEACHER_EMAIL, UtilityTeacherLogIn.SignInVariant.CLEVER);
         } catch (Throwable throwable) {
             System.out.println("An error occurred during test execution: " + throwable.getMessage());
