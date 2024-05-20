@@ -30,7 +30,11 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
             }
             app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
             logger.debug("Selected random student age from dropdown");
-            app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
+            try {
+                app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButton();
+            } catch (Throwable throwable) {
+                app.studentOrParentPersonalDetailsStepPage.clickOnTheNextButtonThroughPressEnter();
+            }
             logger.debug("Clicked on the next button");
         }
         app.studentHeaderMenu.clickOnEditProfileButton();

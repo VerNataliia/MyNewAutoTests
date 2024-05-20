@@ -68,12 +68,11 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
     }
 
     public void clickOnTheNextButton() {
-        if (STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.exists()) {
-            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.shouldBe(interactable).click();
-        } else {
-            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.shouldBe(visible);
-            STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.pressEnter();
-        }
+        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_NEXT_BUTTON.shouldBe(interactable).click();
+    }
+
+    public void clickOnTheNextButtonThroughPressEnter() {
+        STUDENT_PARENT_PERSONAL_DETAILS_PAGE_CLASS_CODE_INPUT.shouldBe(visible).pressEnter();
     }
 
 }

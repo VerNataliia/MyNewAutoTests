@@ -18,8 +18,8 @@ public class CountryCodeMapper {
         COUNTRY_CODE_MAP.put("Bolivia (Plurinational State of)", "BOL");
         COUNTRY_CODE_MAP.put("Bonaire, Sint Eustatius and Saba", "BES");
         COUNTRY_CODE_MAP.put("British Indian Ocean Territory (the)", "IOT");
-        COUNTRY_CODE_MAP.put("Cayman Islands (the)", "CYM");
-        COUNTRY_CODE_MAP.put("Central African Republic (the)", "CAF");
+        COUNTRY_CODE_MAP.put("Cayman Islands", "CYM");
+        COUNTRY_CODE_MAP.put("Central African Republic", "CAF");
         COUNTRY_CODE_MAP.put("Cocos Islands", "CCK");
         COUNTRY_CODE_MAP.put("Comoros (the)", "COM");
         COUNTRY_CODE_MAP.put("Congo (the Democratic Republic of the)", "COD");
@@ -33,7 +33,7 @@ public class CountryCodeMapper {
         COUNTRY_CODE_MAP.put("Gambia (the)", "GMB");
         COUNTRY_CODE_MAP.put("Guinea-Bissau", "GNB");
         COUNTRY_CODE_MAP.put("Heard Island and McDonald Islands", "HMD");
-        COUNTRY_CODE_MAP.put("Holy See (the)", "VAT");
+        COUNTRY_CODE_MAP.put("Holy See", "VAT");
         COUNTRY_CODE_MAP.put("Iran (Islamic Republic of)", "IRN");
         COUNTRY_CODE_MAP.put("Korea (the Democratic People's Republic of)", "PRK");
         COUNTRY_CODE_MAP.put("Korea (the Republic of)", "KOR");
