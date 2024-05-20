@@ -26,7 +26,7 @@ public class CleverSignUpPage {
     }
 
     public void startPortalSession() {
-        START_PORTAL_SESSION_BUTTON.shouldBe(Condition.visible, Duration.ofSeconds(20)).click();
+        START_PORTAL_SESSION_BUTTON.shouldBe(Condition.visible, Duration.ofSeconds(40)).click();
     }
 
 }

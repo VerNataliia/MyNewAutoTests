@@ -188,7 +188,7 @@ public class SocialLinkingTests extends A_BaseTest {
             executeJavaScript("window.open('about:blank','_blank');");
             switchTo().window(1);
             UtilityCleverPortal.loginToPortal(app);
-            UtilityCleverPortal.startStudentSession(CLEVER_STUDENT_ID);
+            UtilityCleverPortal.startTeacherSession(CLEVER_TEACHER_ID);
 
             switchTo().window(0);
             Driver.refresh();
@@ -206,7 +206,7 @@ public class SocialLinkingTests extends A_BaseTest {
 
             app.teacherHeaderMenu.clickOnSignOutButton();
 
-            UtilityTeacherLogIn.logInWithSSOTeacher(app, CLEVER_TEACHER_EMAIL, UtilityTeacherLogIn.SignInVariant.CLEVER);
+            UtilityTeacherLogIn.logInWithSSOTeacher(app, teacherUsername, UtilityTeacherLogIn.SignInVariant.CLEVER);
         } catch (Throwable throwable) {
             System.out.println("An error occurred during test execution: " + throwable.getMessage());
             throw throwable;

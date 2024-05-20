@@ -35,7 +35,7 @@ public class UtilityTeacherLogIn extends A_BaseTest {
     }
 
 
-    public static void logInWithSSOTeacher(App app, String teacherEmail, SignInVariant signInVariant) {
+    public static void logInWithSSOTeacher(App app, String teacherUsername, SignInVariant signInVariant) {
         logger.info("Starting teacher login process");
         switch (signInVariant) {
             case GOOGLE -> app.logInPage.clickOnSignInWithGoogle();
@@ -54,7 +54,7 @@ public class UtilityTeacherLogIn extends A_BaseTest {
 
         app.myClassesPage.getMyClassesPageTitle("My Classes");
         app.teacherHeaderMenu.clickOnEditProfileButton();
-        app.teacherProfileSettings.checkTeacherUsername(teacherEmail);
+        app.teacherProfileSettings.checkTeacherUsername(teacherUsername);
         app.teacherProfileSettings.clickOnCloseButton();
 
         logger.info("Teacher logged in successfully with Google");

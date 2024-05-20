@@ -109,7 +109,7 @@ public class UtilityTeacherSignUp extends A_BaseTest {
     private static String[] createAccountWithClever(App app) {
         logger.info("Starting to create teacher account with Clever");
         app.teacherSignupStepOnePage.clickOnSignUpCleverButton();
-        return new String[]{CLEVER_STUDENT_EMAIL, ""};
+        return new String[]{CLEVER_TEACHER_EMAIL, ""};
     }
 
     private static String[] enterPersonalDetails(App app) {
