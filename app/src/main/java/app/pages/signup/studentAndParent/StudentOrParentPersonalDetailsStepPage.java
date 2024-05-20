@@ -44,7 +44,7 @@ public class StudentOrParentPersonalDetailsStepPage extends BasePage {
     }
     public String getFirstName() {
         try {
-            SelenideElement studentFirstName = $("#app > div.app-body > div > div > div.page-card__left-half > div > form > div.inputs-group.group-initial > div.rt-input__wrapper.input-first-name.filled > div > input");
+            SelenideElement studentFirstName = $("#app > div.app-body > div > div > div.page-card__left-half > div > form > div.inputs-group.group-initial > div:nth-of-type(1) > div > input");
             studentFirstName.shouldBe(visible);
             return (String) executeJavaScript("return arguments[0].value;", studentFirstName);
         }

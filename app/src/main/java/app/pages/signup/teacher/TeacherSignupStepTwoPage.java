@@ -44,7 +44,7 @@ public class TeacherSignupStepTwoPage extends BasePage {
 
     public String getTeacherEmail() {
         try {
-            SelenideElement teacherEmail = $("#app > div.app-body > div > div > div.page-card__left-half > div > form > div.rt-input__wrapper.filled > div > input");
+            SelenideElement teacherEmail = $("#app > div.app-body > div > div > div.page-card__left-half > div > form > div:nth-of-type(2) > div > input");
             teacherEmail.shouldBe(visible);
             return (String) executeJavaScript("return arguments[0].value;", teacherEmail);
         }
