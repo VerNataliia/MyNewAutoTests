@@ -31,8 +31,8 @@ public class StudentSignUpTests extends A_BaseTest {
         String studentEmail = null;
         try{
             app.signUpSelectRolePage.open();
-            studentEmail = "autoTestStudent1@gmail.com";
-            String studentPassword = "349872yd";
+            studentEmail = STUDENT_GOOGLE_EMAIL;
+            String studentPassword = STUDENT_GOOGLE_PASSWORD;
             UtilityStudentSignUp.signUpAsStudentWithSSO(app, studentEmail, studentPassword, UtilityStudentSignUp.SignUpVariant.GOOGLE);
             app.studentHeaderMenu.clickOnSignOutButton();
 
@@ -58,8 +58,8 @@ public class StudentSignUpTests extends A_BaseTest {
         String studentEmail = null;
         try{
             app.signUpSelectRolePage.open();
-            studentEmail = "testing2@readtheory1.onmicrosoft.com";
-            String studentPassword = "349872yD";
+            studentEmail = STUDENT_MS_EMAIL;
+            String studentPassword = STUDENT_MS_PASSWORD;
             UtilityStudentSignUp.signUpAsStudentWithSSO(app, studentEmail, studentPassword, UtilityStudentSignUp.SignUpVariant.MS);
             app.studentHeaderMenu.clickOnSignOutButton();
 

@@ -11,6 +11,14 @@ public class StaticTestData {
     public static String CLEVER_STUDENT_EMAIL = "s_kristen@example.net";
     public static String CLEVER_STUDENT_ID = "646c5fee60fc32044d1a365a";
     public static String CLEVER_STUDENT_FIRS_AND_LAST_NAMES = "Stark, Kristen";
+    public static String TEACHER_GOOGLE_EMAIL = "autoTestTeacher@gmail.com";
+    public static String TEACHER_GOOGLE_PASSWORD = "349872yd";
+    public static String STUDENT_GOOGLE_EMAIL = "autoTestStudent1@gmail.com";
+    public static String STUDENT_GOOGLE_PASSWORD = "349872yd";
+    public static String TEACHER_MS_EMAIL = "testing1@readtheory1.onmicrosoft.com";
+    public static String TEACHER_MS_PASSWORD = "349872yD";
+    public static String STUDENT_MS_EMAIL = "testing2@readtheory1.onmicrosoft.com";
+    public static String STUDENT_MS_PASSWORD = "349872yD";
     public static String STUDENT_USERNAME;
     public static String STUDENT_PASSWORD;
 

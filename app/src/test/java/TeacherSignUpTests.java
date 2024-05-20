@@ -3,8 +3,7 @@ import app.helpers.Driver;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-import static app.StaticTestData.CLEVER_TEACHER_EMAIL;
-import static app.StaticTestData.CLEVER_TEACHER_ID;
+import static app.StaticTestData.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.switchTo;
 
@@ -174,9 +173,9 @@ public class TeacherSignUpTests extends A_BaseTest {
             UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
             UtilityTeacherSignUp.TeacherCredentialsForSSO teacherCredentialsForSSO = new UtilityTeacherSignUp.TeacherCredentialsForSSO();
             options.teacherCredentialsForSSO = teacherCredentialsForSSO;
-            teacherEmail = "autoTestTeacher@gmail.com";
+            teacherEmail = TEACHER_GOOGLE_EMAIL;
             teacherCredentialsForSSO.teacherEmail = teacherEmail;
-            teacherCredentialsForSSO.teacherPassword = "349872yd";
+            teacherCredentialsForSSO.teacherPassword = TEACHER_GOOGLE_PASSWORD;
             options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.GOOGLE;
 
             options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
@@ -216,9 +215,9 @@ public class TeacherSignUpTests extends A_BaseTest {
             UtilityTeacherSignUp.SignUpOptions options = new UtilityTeacherSignUp.SignUpOptions();
             UtilityTeacherSignUp.TeacherCredentialsForSSO teacherCredentialsForSSO = new UtilityTeacherSignUp.TeacherCredentialsForSSO();
             options.teacherCredentialsForSSO = teacherCredentialsForSSO;
-            teacherEmail = "testing1@readtheory1.onmicrosoft.com";
+            teacherEmail = TEACHER_MS_EMAIL;
             teacherCredentialsForSSO.teacherEmail = teacherEmail;
-            teacherCredentialsForSSO.teacherPassword = "349872yD";
+            teacherCredentialsForSSO.teacherPassword = TEACHER_MS_PASSWORD;
             options.signUpVariant = UtilityTeacherSignUp.SignUpVariant.MS;
 
             options.schoolSelectionOption = UtilityTeacherSignUp.SchoolSelectionOption.SELECT;
