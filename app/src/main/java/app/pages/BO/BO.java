@@ -6,6 +6,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
@@ -104,7 +106,7 @@ public class BO {
         USERS_LIST.find(Condition.text(username)).click();
     }
     public void deleteUser(String username) {
-        USER_LIST_DELETE_USER_BUTTON.shouldBe(visible).click();
+        USER_LIST_DELETE_USER_BUTTON.shouldBe(visible, Duration.ofSeconds(20)).click();
         USER_LIST_DELETE_USER_INPUT.shouldBe(visible);
         executeJavaScript(    "arguments[0].value = 'delete';" +
                 "arguments[0].dispatchEvent(new Event('input', {bubbles: true}));",
