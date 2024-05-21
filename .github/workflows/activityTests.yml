@@ -81,7 +81,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: credentials-artifact-${{ env.CURRENT_DATE }}
-          path: path/to/your/artifact
+          path: app/src/main/resources/files/
 
       - name: List all artifacts
         env:
