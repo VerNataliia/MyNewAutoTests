@@ -38,6 +38,12 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: credentials-artifact
+          path: app/src/main/resources/files
+
       - name: Build and test with Gradle
         run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
         continue-on-error: true
