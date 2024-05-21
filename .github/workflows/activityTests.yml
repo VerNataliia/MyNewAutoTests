@@ -1,4 +1,4 @@
-name: Activity tests - Upload
+name: Activity tests
 
 on:
   workflow_dispatch:
