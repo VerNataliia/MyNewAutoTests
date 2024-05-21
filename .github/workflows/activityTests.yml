@@ -46,18 +46,12 @@ jobs:
           echo "Listing all artifacts..."
           gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
 
-      - name: Download the most recent credentials artifact
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Fetching latest artifact ID..."
-          latest_artifact_id=$(gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name | contains("credentials-artifact")) | .id' | sort -n | tail -n 1)
-          echo "Latest artifact ID: $latest_artifact_id"
-          echo "Fetching download URL..."
-          artifact_url=$(gh api -H "Accept: application/vnd.github.v3+json" repos/${{ github.repository }}/actions/artifacts/$latest_artifact_id | jq -r .archive_download_url)
-          echo "Artifact URL: $artifact_url"
-          curl -L -o credentials-artifact.zip "$artifact_url"
-          unzip credentials-artifact.zip -d app/src/main/resources/files/
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: credentials-artifact-1
+          path: app/src/main/resources/files/
+        continue-on-error: true
 
       - name: Build and test with Gradle
         run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
@@ -97,5 +91,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: credentials-artifact-${{ github.run_id }}
+          name: credentials-artifact-1
           path: app/src/main/resources/files/
