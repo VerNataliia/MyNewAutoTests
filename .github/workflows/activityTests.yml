@@ -39,20 +39,6 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
-      - name: List all artifacts
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Listing all artifacts..."
-          gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
-
-      - name: Download credentials artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: credentials-artifact-1
-          path: app/src/main/resources/files/
-        continue-on-error: true
-
       - name: Build and test with Gradle
         run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
         continue-on-error: true
@@ -87,9 +73,27 @@ jobs:
       - name: Verify credentials file exists
         run: ls -la app/src/main/resources/files/
 
-      - name: Upload credentials artifact
-        if: always()
+      - name: Set current date
+        id: vars
+        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Create artifact
         uses: actions/upload-artifact@v4
         with:
-          name: credentials-artifact-1
+          name: credentials-artifact-${{ env.CURRENT_DATE }}
+          path: path/to/your/artifact
+
+      - name: List all artifacts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Listing all artifacts..."
+          gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
+
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: credentials-artifact-${{ env.CURRENT_DATE }}
           path: app/src/main/resources/files/
+        continue-on-error: true
+
