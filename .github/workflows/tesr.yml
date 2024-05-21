@@ -36,7 +36,7 @@ jobs:
           path: app/src/main/resources/files
 
       - name: Verify downloaded credentials file
-        run: ls -la app/src/main/resources/files
+        run: ls -la app/src/main/resources/files/Credentials_*.xlsx
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
