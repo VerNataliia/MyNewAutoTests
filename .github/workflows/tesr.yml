@@ -33,7 +33,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: credentials-artifact
-          path: app/src/main/resources/files
+          path: app/src/main/resources/files/Credentials_*.xlsx
 
       - name: Verify downloaded credentials file
         run: ls -la app/src/main/resources/files/Credentials_*.xlsx
