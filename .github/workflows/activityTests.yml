@@ -20,7 +20,7 @@ on:
 
 permissions:
   contents: write
-  actions: read  # Ensure actions read permission
+  actions: read
 
 jobs:
   tests:
@@ -39,30 +39,20 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh -y
-
-      - name: List all artifacts and get latest credentials-artifact ID and URL
+      - name: List all artifacts
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Listing all artifacts and getting latest credentials-artifact ID and URL..."
-          ARTIFACT_INFO=$(gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name=="credentials-artifact" and .expired==false) | {id, archive_download_url} | sort_by(.id) | last')
-          ARTIFACT_ID=$(echo $ARTIFACT_INFO | jq -r '.id')
-          DOWNLOAD_URL=$(echo $ARTIFACT_INFO | jq -r '.archive_download_url')
-          echo "ARTIFACT_ID=$ARTIFACT_ID" >> $GITHUB_ENV
-          echo "DOWNLOAD_URL=$DOWNLOAD_URL" >> $GITHUB_ENV
+          echo "Listing all artifacts..."
+          gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
 
-      - name: Download latest credentials-artifact
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Downloading artifact with ID: $ARTIFACT_ID"
-          curl -H "Authorization: token $GH_TOKEN" -L $DOWNLOAD_URL -o credentials-artifact.zip
-          unzip credentials-artifact.zip -d app/src/main/resources/files
 
-      - name: Verify credentials file exists
-        run: ls -la app/src/main/resources/files
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: credentials-artifact
+          path: app/src/main/resources/files/
+        continue-on-error: true
 
       - name: Build and test with Gradle
         run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
@@ -95,9 +85,12 @@ jobs:
           publish_branch: gh-pages
           publish_dir: allure-history
 
+      - name: Verify credentials file exists
+        run: ls -la app/src/main/resources/files/
+
       - name: Upload credentials artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: credentials-artifact
-          path: app/src/main/resources/files
+          path: app/src/main/resources/files/
