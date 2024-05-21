@@ -51,7 +51,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           latest_artifact_id=$(gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name | contains("credentials-artifact")) | .id' | sort -n | tail -n 1)
-          gh api repos/${{ github.repository }}/actions/artifacts/$latest_artifact_id/zip --output credentials-artifact.zip
+          artifact_url=$(gh api repos/${{ github.repository }}/actions/artifacts/$latest_artifact_id/zip --silent --include | grep "Location:" | cut -d' ' -f2)
+          curl -L -o credentials-artifact.zip "$artifact_url"
           unzip credentials-artifact.zip -d app/src/main/resources/files/
 
       - name: Build and test with Gradle
