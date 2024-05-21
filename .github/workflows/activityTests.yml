@@ -22,7 +22,7 @@ permissions:
   contents: write
 
 jobs:
-  tests:
+  create-recurring-activity:
     runs-on: ubuntu-latest
     env:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
@@ -68,5 +68,61 @@ jobs:
           publish_branch: gh-pages
           publish_dir:  allure-history
 
+      - name: Upload test credentials
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-credentials
+          path: src/main/resources/files/Credentials_*.xlsx
 
+  complete-recurring-activity:
+    runs-on: ubuntu-latest
+    needs: create-recurring-activity
+    env:
+      ENVIRONMENT: ${{ github.event.inputs.environment }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'microsoft'
 
+      - uses: browser-actions/setup-chrome@v1
+      - run: chrome --version
+
+      - name: Download test credentials
+        uses: actions/download-artifact@v3
+        with:
+          name: test-credentials
+          path: src/main/resources/files/
+
+      - name: Build and test with Gradle
+        run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
+        continue-on-error: true
+
+      - name: Generate Allure Report
+        run: ./gradlew allureReport
+
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: app/build/allure-results
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir:  allure-history
