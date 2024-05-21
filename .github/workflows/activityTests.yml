@@ -42,20 +42,22 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get install gh -y
 
-      - name: List all artifacts and get latest credentials-artifact ID
+      - name: List all artifacts and get latest credentials-artifact ID and URL
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Listing all artifacts and getting latest credentials-artifact ID..."
-          ARTIFACT_ID=$(gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name=="credentials-artifact" and .expired==false) | .id' | sort -n | tail -1)
+          echo "Listing all artifacts and getting latest credentials-artifact ID and URL..."
+          ARTIFACT_INFO=$(gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name=="credentials-artifact" and .expired==false) | {id, archive_download_url} | sort_by(.id) | last')
+          ARTIFACT_ID=$(echo $ARTIFACT_INFO | jq -r '.id')
+          DOWNLOAD_URL=$(echo $ARTIFACT_INFO | jq -r '.archive_download_url')
           echo "ARTIFACT_ID=$ARTIFACT_ID" >> $GITHUB_ENV
+          echo "DOWNLOAD_URL=$DOWNLOAD_URL" >> $GITHUB_ENV
 
       - name: Download latest credentials-artifact
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Downloading artifact with ID: $ARTIFACT_ID"
-          DOWNLOAD_URL=$(gh api repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip --jq '.archive_download_url')
           curl -H "Authorization: token $GH_TOKEN" -L $DOWNLOAD_URL -o credentials-artifact.zip
           unzip credentials-artifact.zip -d app/src/main/resources/files
 
