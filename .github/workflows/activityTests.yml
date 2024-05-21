@@ -33,7 +33,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: credentials-artifact
-          path: src/main/resources/files
+          path: app/src/main/resources/files
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -80,4 +80,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: credentials-artifact
-          path: src/main/resources/files/Credentials_*.xlsx
+          path: app/src/main/resources/files
