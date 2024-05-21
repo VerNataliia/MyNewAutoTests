@@ -70,11 +70,11 @@ jobs:
           publish_dir: allure-history
 
       - name: Verify credentials file exists
-        run: ls -la src/main/resources/files
+        run: ls -la app/src/main/resources/files
 
       - name: Upload credentials artifact
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: credentials-artifact
-          path: src/main/resources/files/Credentials_*.xlsx
+          path: app/src/main/resources/files/Credentials_*.xlsx
