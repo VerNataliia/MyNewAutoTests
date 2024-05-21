@@ -38,7 +38,14 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
+      - name: Verify previous artifact upload
+        run: |
+          echo "Checking for existing artifacts..."
+          gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name=="credentials-artifact") | {id, name, expired}' | tee artifacts.json
+        id: check-artifacts
+
       - name: Download credentials artifact
+        if: steps.check-artifacts.outputs.expired != 'true'
         uses: actions/download-artifact@v4
         with:
           name: credentials-artifact
