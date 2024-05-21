@@ -55,7 +55,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Downloading artifact with ID: $ARTIFACT_ID"
-          gh api repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip -q -o credentials-artifact.zip
+          DOWNLOAD_URL=$(gh api repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip --jq '.archive_download_url')
+          curl -H "Authorization: token $GH_TOKEN" -L $DOWNLOAD_URL -o credentials-artifact.zip
           unzip credentials-artifact.zip -d app/src/main/resources/files
 
       - name: Verify credentials file exists
