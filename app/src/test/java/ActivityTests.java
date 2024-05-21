@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.switchTo;
 @Feature("Activity")
 public class ActivityTests extends A_BaseTest {
 
-    @Test(groups = ("Activity1"), priority = 1, description = "Verify if a teacher can create recurring weekly activity")
+    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create recurring weekly activity")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a new teacher can create recurring weekly activity with default settings for all classes")
     public void teacherCanCreateRecurringWeeklyActivity() {
@@ -152,7 +152,7 @@ public class ActivityTests extends A_BaseTest {
 
     }
 
-    @Test(groups = ("Activity1"), priority = 1, description = "Verify if a teacher can create specific passage activity")
+    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create specific passage activity")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if a prem teacher can create specific passage activity with default settings for all students")
     public void teacherCanCreateSpecificPassageActivity() {
@@ -181,7 +181,7 @@ public class ActivityTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
-    @Test(groups = ("Activity1"), priority = 1, description = "Verify if students can complete specific passage activity")
+    @Test(groups = ("Activity"), priority = 1, description = "Verify if students can complete specific passage activity")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if teacher can create an activity, activity is started and new student can complete pretest, start activity, complete next quiz and complete activity")
     public void studentCanCompleteSpecificPassageActivity() {
@@ -232,7 +232,7 @@ public class ActivityTests extends A_BaseTest {
 
 
 
-    @Test(groups = ("Activity1"), priority = 1, description = "Verify if a teacher can create competition activity")
+    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create competition activity")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can create competition activity with default settings")
     public void teacherCanCreateCompetitionActivity() {
@@ -261,7 +261,7 @@ public class ActivityTests extends A_BaseTest {
         UtilityBOActions.deleteUserFromList(teacherUsername);
     }
 
-    @Test(groups = ("Activity1"), priority = 1, description = "Verify if a teacher can create competition activity with custom settings")
+    @Test(groups = ("Activity"), priority = 1, description = "Verify if a teacher can create competition activity with custom settings")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Check if an existing teacher can create competition activity with custom settings")
     public void teacherCanCreateCompetitionActivityWithCustomSettings() {
