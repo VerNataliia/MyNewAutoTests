@@ -39,6 +39,17 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
+      - name: Set previous date
+        id: vars
+        run: echo "PREVIOUS_DATE=$(date --date='yesterday' +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: credentials-artifact-${{ env.PREVIOUS_DATE }}
+          path: app/src/main/resources/files/
+        continue-on-error: true
+
       - name: Build and test with Gradle
         run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
         continue-on-error: true
@@ -89,11 +100,4 @@ jobs:
         run: |
           echo "Listing all artifacts..."
           gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
-
-      - name: Download credentials artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: credentials-artifact-${{ env.CURRENT_DATE }}
-          path: app/src/main/resources/files/
-        continue-on-error: true
 
