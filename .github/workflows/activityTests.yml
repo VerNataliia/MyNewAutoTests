@@ -19,7 +19,10 @@ on:
           - testing.app.com
 
 permissions:
-  contents: write
+  contents: read
+  actions: read
+  artifacts: write
+  statuses: write
 
 jobs:
   tests:
