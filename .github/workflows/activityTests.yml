@@ -70,7 +70,7 @@ jobs:
           publish_dir: allure-history
 
       - name: Verify credentials file exists
-        run: ls -la app/src/main/resources/files
+        run: ls -la app/src/main/resources/files/Credentials_*.xlsx
 
       - name: Upload credentials artifact
         if: always()
