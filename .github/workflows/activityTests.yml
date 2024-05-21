@@ -1,4 +1,4 @@
-name: Activity tests
+name: Activity tests - Upload
 
 on:
   workflow_dispatch:
@@ -28,12 +28,6 @@ jobs:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
     steps:
       - uses: actions/checkout@v3
-
-      - name: Download credentials artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: credentials-artifact
-          path: app/src/main/resources/files
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -75,9 +69,12 @@ jobs:
           publish_branch: gh-pages
           publish_dir: allure-history
 
+      - name: Verify credentials file exists
+        run: ls -la src/main/resources/files
+
       - name: Upload credentials artifact
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: credentials-artifact
-          path: app/src/main/resources/files
+          path: src/main/resources/files/Credentials_*.xlsx
