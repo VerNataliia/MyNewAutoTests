@@ -20,7 +20,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: read  # Ensure actions read permission
 
 jobs:
   tests:
@@ -39,20 +39,27 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
-      - name: List all artifacts
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh -y
+
+      - name: List all artifacts and get latest credentials-artifact ID
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Listing all artifacts..."
-          gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
+          echo "Listing all artifacts and getting latest credentials-artifact ID..."
+          ARTIFACT_ID=$(gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | select(.name=="credentials-artifact" and .expired==false) | .id' | sort -n | tail -1)
+          echo "ARTIFACT_ID=$ARTIFACT_ID" >> $GITHUB_ENV
 
+      - name: Download latest credentials-artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Downloading artifact with ID: $ARTIFACT_ID"
+          gh api repos/${{ github.repository }}/actions/artifacts/$ARTIFACT_ID/zip -q -o credentials-artifact.zip
+          unzip credentials-artifact.zip -d app/src/main/resources/files
 
-      - name: Download credentials artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: credentials-artifact
-          path: app/src/main/resources/files/
-        continue-on-error: true
+      - name: Verify credentials file exists
+        run: ls -la app/src/main/resources/files
 
       - name: Build and test with Gradle
         run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
@@ -85,12 +92,9 @@ jobs:
           publish_branch: gh-pages
           publish_dir: allure-history
 
-      - name: Verify credentials file exists
-        run: ls -la app/src/main/resources/files/
-
       - name: Upload credentials artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: credentials-artifact
-          path: app/src/main/resources/files/
+          path: app/src/main/resources/files
