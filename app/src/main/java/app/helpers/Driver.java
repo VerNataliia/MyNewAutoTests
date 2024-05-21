@@ -29,7 +29,7 @@ public final class Driver {
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.timeout = 10000;
     }
 
