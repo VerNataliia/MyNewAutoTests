@@ -39,14 +39,14 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
 
-      - name: Set previous date
-        id: set_previous_date
-        run: echo "PREVIOUS_DATE=$(date --date='yesterday' +'%Y-%m-%d')" >> $GITHUB_ENV
+      - name: Set current date
+        id: set_current_date
+        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Download credentials artifact
         uses: actions/download-artifact@v4
         with:
-          name: credentials-artifact-${{ env.PREVIOUS_DATE }}
+          name: credentials-artifact-${{ env.CURRENT_DATE }}
           path: app/src/main/resources/files/
         continue-on-error: true
 
