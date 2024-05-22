@@ -40,7 +40,7 @@ jobs:
       - run: chrome --version
 
       - name: Set previous date
-        id: vars
+        id: set_previous_date
         run: echo "PREVIOUS_DATE=$(date --date='yesterday' +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: List all artifacts
@@ -92,7 +92,7 @@ jobs:
         run: ls -la app/src/main/resources/files/
 
       - name: Set current date
-        id: vars
+        id: set_current_date
         run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Create artifact
