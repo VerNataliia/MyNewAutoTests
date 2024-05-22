@@ -36,19 +36,7 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
 
-      - uses: browser-actions/setup-chrome@v1
-      - run: chrome --version
 
-      - name: Set current date
-        id: set_current_date
-        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-
-      - name: Download credentials artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: credentials-artifact-${{ env.CURRENT_DATE }}
-          path: app/src/main/resources/files/
-        continue-on-error: true
 
       - name: List all artifacts
         env:
@@ -57,3 +45,9 @@ jobs:
           echo "Listing all artifacts..."
           gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
 
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: credentials-artifact-${{ env.CURRENT_DATE }}
+          path: app/src/main/resources/files/
+        continue-on-error: true
