@@ -36,7 +36,64 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
 
+      - uses: browser-actions/setup-chrome@v1
+      - run: chrome --version
 
+      - name: Set previous date
+        id: set_previous_date
+        run: echo "PREVIOUS_DATE=$(date --date='yesterday' +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Download credentials artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: credentials-artifact-${{ env.PREVIOUS_DATE }}
+          path: app/src/main/resources/files/
+        continue-on-error: true
+
+
+      - name: Build and test with Gradle
+        run: ./gradlew activityTests -Denvironment=${{ env.ENVIRONMENT }}
+        continue-on-error: true
+
+      - name: Generate Allure Report
+        run: ./gradlew allureReport
+
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: app/build/allure-results
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
+      - name: Verify credentials file exists
+        run: ls -la app/src/main/resources/files/
+
+      - name: Set current date
+        id: vars
+        run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Create artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: credentials-artifact-${{ env.CURRENT_DATE }}
+          path: app/src/main/resources/files/
 
       - name: List all artifacts
         env:
@@ -45,9 +102,3 @@ jobs:
           echo "Listing all artifacts..."
           gh api repos/${{ github.repository }}/actions/artifacts --jq '.artifacts[] | {id, name, expired}' | tee artifacts.json
 
-      - name: Download credentials artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: credentials-artifact-${{ env.CURRENT_DATE }}
-          path: app/src/main/resources/files/
-        continue-on-error: true
