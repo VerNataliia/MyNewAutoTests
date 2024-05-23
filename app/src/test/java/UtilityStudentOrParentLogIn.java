@@ -23,10 +23,11 @@ public class UtilityStudentOrParentLogIn extends A_BaseTest {
             app.studentOrParentPersonalDetailsStepPage.checkPersonalDetailsPageTitle("Personal Details");
             logger.debug("Checked student sign-up age page title");
             String studentFirstName = app.studentOrParentPersonalDetailsStepPage.getFirstName();
-            if (studentFirstName==null) {
-            app.studentOrParentPersonalDetailsStepPage.setFirstName();
-            app.studentOrParentPersonalDetailsStepPage.setLastName();
-            logger.debug("Set student first name and last name");
+            logger.debug("Student name is {}", studentFirstName);
+            if (studentFirstName==null || studentFirstName.isEmpty()) {
+                app.studentOrParentPersonalDetailsStepPage.setFirstName();
+                app.studentOrParentPersonalDetailsStepPage.setLastName();
+                logger.debug("Set student first name and last name");
             }
             app.studentOrParentPersonalDetailsStepPage.selectRandomAgeOptionFromDropDown();
             logger.debug("Selected random student age from dropdown");
