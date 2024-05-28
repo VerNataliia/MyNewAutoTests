@@ -102,7 +102,9 @@ public class ActivityTests extends A_BaseTest {
         //I don't delete users here, because I use them for next test
     }
 
-    @Test(groups = ("Activity"), priority = 1, description = "Verify if a student can complete recurring weekly activity")
+    //@Test(groups = ("Activity"), priority = 1, description = "Verify if a student can complete recurring weekly activity")
+    // according to logic this test takes credentials from previous test (previous day)
+    // need to finish instalation in yml file
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if a student can complete recurring weekly activity")
     public void studentCanCompleteRecurringWeeklyActivity() {
